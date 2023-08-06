@@ -1,0 +1,42 @@
+import React from 'react';
+import {TextInput} from '@component/molecules/textinput';
+import {Text} from '@component/atoms/text';
+import {
+  ContainerStyled,
+  TextInputContainerStyled,
+  ForgotPassContainerStyled,
+  AccountContainerStyled,
+  SignUpButtonStyled,
+} from './styled';
+import {Bbutton} from '@component/molecules/bbutton';
+import {UseWelcomeHooks} from '@screens/welcome/hooks';
+import {colors} from '@themes';
+const LoginFormScreen = props => {
+  const {signInPress} = props;
+  const {handleSignUp} = UseWelcomeHooks();
+  return (
+    <ContainerStyled>
+      <TextInputContainerStyled>
+        <TextInput Label="Email" />
+        <TextInput Label="Password" type="password" />
+      </TextInputContainerStyled>
+      <Bbutton
+        onPress={signInPress}
+        border={10}
+        bcolor={'#d6f3f3'}
+        title="SIGN IN"
+      />
+      <ForgotPassContainerStyled>
+        <Text>Forgot Password?</Text>
+      </ForgotPassContainerStyled>
+      <AccountContainerStyled>
+        <Text TextMode="TextNormal">Forgot Password?</Text>
+        <SignUpButtonStyled onPress={handleSignUp}>
+          <Text>Sign Up here</Text>
+        </SignUpButtonStyled>
+      </AccountContainerStyled>
+    </ContainerStyled>
+  );
+};
+
+export default LoginFormScreen;
