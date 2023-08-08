@@ -1,3 +1,4 @@
+/* global require */
 module.exports = {
   extends: [
     // '@react-native-community',

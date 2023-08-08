@@ -13,13 +13,16 @@ import {
 } from './styles';
 const HomeScreen = () => {
   const pcities = useSelector(state => state.pcities.data);
+  const loading = useSelector(state => state.pcities.loading);
   const suggestedJobs = useSelector(state => state.suggetedjob.data);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchPCities());
     dispatch(fetchSuggested());
-  }, [dispatch]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  console.log('pcities', loading);
   return (
     <ScrollViewContainer>
       <HomeHeaderList />

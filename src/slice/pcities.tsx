@@ -1,11 +1,16 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 import {PopularListData} from '@screens/home/constant';
+
+import {useDispatch} from 'react-redux';
+
 export const fetchPCities = createAsyncThunk('pcities/get', async () => {
+  console.log('response', response);
   // Here you can use axios with your own api
   try {
     const response = await fetch(
       'https://run.mocky.io/v3/cfcd5f2e-97c4-4394-bc20-44db3d53c979',
     );
+
     return PopularListData;
     // return response.data;
   } catch (error) {
@@ -33,4 +38,5 @@ export const pcities = createSlice({
     });
   },
 });
+
 export default pcities.reducer;
