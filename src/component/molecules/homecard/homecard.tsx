@@ -12,7 +12,7 @@ const HomeCardScreen = props => {
   return (
     <Container>
       <ImageContainerstyled>
-        <ImageHeaderStyled size={50} source={imgsource} resizeMode="stretch" />
+        <ImageHeaderStyled resizeMode="stretch" size={50} source={imgsource} />
       </ImageContainerstyled>
       <TextContainer>
         <Text TextMode="Htitle">{title}</Text>

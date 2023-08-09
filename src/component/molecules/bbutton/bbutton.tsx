@@ -1,18 +1,27 @@
 import React from 'react';
 import {Text} from '@/component/atoms/text';
 import Button from '@/component/atoms/button/button';
-
+import type {BbuttonProps} from './types';
 import {ContainerStyled} from './styles';
-const Bbutton = props => {
-  const {onPress, title, border = 10, bcolor = 'transparent', padding} = props;
+const Bbutton = (props: BbuttonProps) => {
+  const {
+    onPress,
+    title,
+    border = 10,
+    bcolor = 'transparent',
+    padding,
+    borderw,
+    borderc,
+  } = props;
   return (
     <ContainerStyled>
       <Button
-        onPress={onPress}
-        alignment={'center'}
+        bcolor={bcolor}
         border={border}
+        borderc={borderc}
+        borderw={borderw}
         padding={padding}
-        bcolor={bcolor}>
+        onPress={onPress}>
         <Text TextMode="Stext">{title}</Text>
       </Button>
     </ContainerStyled>
