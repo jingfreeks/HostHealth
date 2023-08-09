@@ -1,7 +1,8 @@
 import React from 'react';
 import {ButtonContainer, ContainerStyled} from './styles';
+import type {ButtonProps} from './types';
 // import {colors} from '@/utils/themes';
-const Button = props => {
+const Button = (props: ButtonProps) => {
   const {
     children,
     bcolor,
