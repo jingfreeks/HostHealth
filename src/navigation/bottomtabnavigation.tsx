@@ -7,9 +7,9 @@ import {
   SearchIcon,
   TimecardIcon,
   HamburgerIcon,
-} from '@assets';
-import {HomeScreen, Pcities, MyJobs} from '@screens';
-import {colors} from '@themes';
+} from '@/assets';
+import {HomeScreen, Pcities, MyJobs} from '@/screens';
+import {colors} from '@/utils/themes';
 const Tab = createBottomTabNavigator();
 
 const BottomTabScreen = () => {

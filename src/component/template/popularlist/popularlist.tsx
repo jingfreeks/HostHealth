@@ -1,8 +1,8 @@
 import React from 'react';
-import HomeEmptyCard from '@component/molecules/homeemptycard/homeemptycard';
+import HomeEmptyCard from '@/component/molecules/homeemptycard/homeemptycard';
 import {PopularEmptyContainerStyled, PopularContainerStyled} from './styles';
-import {PcitiesEmptyIcon} from '@assets';
-import {PopularCard} from '@component/molecules/popularcard';
+import {PcitiesEmptyIcon} from '@/assets';
+import {PopularCard} from '@/component/molecules/popularcard';
 const PopularListScreen = props => {
   const {data} = props;
   if (data?.length > 0) {

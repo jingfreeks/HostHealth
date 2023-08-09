@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
-import {Text} from '@component/atoms/text';
-import {SuggestedList} from '@component/template/suggestedlist';
-import {PopularList} from '@component/template/popularlist';
-import {HomeHeaderList} from '@component/template/homeheaderlist';
+import {Text} from '@/component/atoms/text';
+import {SuggestedList} from '@/component/template/suggestedlist';
+import {PopularList} from '@/component/template/popularlist';
+import {HomeHeaderList} from '@/component/template/homeheaderlist';
 import {useSelector, useDispatch} from 'react-redux';
-import {fetchPCities} from '@slice/pcities';
-import {fetchSuggested} from '@slice/suggested';
+import {fetchPCities} from '@/slice/pcities';
+import {fetchSuggested} from '@/slice/suggested';
 import {
   ScrollViewContainer,
   ListsContainerStyled,

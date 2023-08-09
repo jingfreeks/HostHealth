@@ -1,6 +1,6 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 
-import {Jobslist} from '@screens/home/constant';
+import {Jobslist} from '@/screens/home/constant';
 export const fetchSuggested = createAsyncThunk('pcities/get', async () => {
   // Here you can use axios with your own api
   try {

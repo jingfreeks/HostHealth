@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import {verticalScale} from 'react-native-size-matters';
-import {Text} from '@component/atoms/text';
-import {colors} from '@themes';
+import {Text} from '@/component/atoms/text';
+import {colors} from '@/utils/themes';
 export const Container = styled.View`
   flex: 1;
   align-self: stretch;

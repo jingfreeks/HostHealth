@@ -3,8 +3,8 @@ import {
   NavigationContainer,
   useNavigationContainerRef,
 } from '@react-navigation/native';
-import {AuthNavigation} from '@navigation/authnavigation';
-import {Appnavigation} from '@navigation/appnavigation';
+import {AuthNavigation} from '@/navigation/authnavigation';
+import {Appnavigation} from '@/navigation/appnavigation';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Navigation} from './constant';
 

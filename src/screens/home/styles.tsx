@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import {colors} from '@themes';
+import {colors} from '@/utils/themes';
 export const ScrollViewContainer = styled.ScrollView`
   background-color: ${colors.primary};
 `;

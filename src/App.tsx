@@ -7,7 +7,7 @@
 
 import React from 'react';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
-import {RootNavigator} from '@navigation';
+import {RootNavigator} from '@/navigation';
 import {Provider} from 'react-redux';
 import {store} from './config/store';
 function App(): JSX.Element {

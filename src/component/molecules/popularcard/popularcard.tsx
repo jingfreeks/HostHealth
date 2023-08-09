@@ -9,7 +9,7 @@ import {
   MatchesContainerStyled,
   PriceContainerStyled,
 } from './styles';
-import {Text} from '@component/atoms/text';
+import {Text} from '@/component/atoms/text';
 const PopularCardScreen = props => {
   const {item} = props;
   return (

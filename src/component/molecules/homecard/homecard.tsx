@@ -6,7 +6,7 @@ import {
   ImageHeaderStyled,
 } from './styles';
 
-import {Text} from '@component/atoms/text';
+import {Text} from '@/component/atoms/text';
 const HomeCardScreen = props => {
   const {imgsource, title, subtitle} = props;
   return (

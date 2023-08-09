@@ -1,8 +1,8 @@
 import React from 'react';
-import {TextInput} from '@component/molecules/textinput';
-import {Text} from '@component/atoms/text';
-import Bbutton from '@component/molecules/bbutton/bbutton';
-import {colors} from '@themes';
+import {TextInput} from '@/component/molecules/textinput';
+import {Text} from '@/component/atoms/text';
+import Bbutton from '@/component/molecules/bbutton/bbutton';
+import {colors} from '@/utils/themes';
 import {
   ContainerStyled,
   TextInputContainerStyled,

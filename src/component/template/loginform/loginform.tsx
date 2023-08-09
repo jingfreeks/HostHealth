@@ -1,6 +1,6 @@
 import React from 'react';
-import {TextInput} from '@component/molecules/textinput';
-import {Text} from '@component/atoms/text';
+import {TextInput} from '@/component/molecules/textinput';
+import {Text} from '@/component/atoms/text';
 import {
   ContainerStyled,
   TextInputContainerStyled,
@@ -8,9 +8,9 @@ import {
   AccountContainerStyled,
   SignUpButtonStyled,
 } from './styled';
-import {Bbutton} from '@component/molecules/bbutton';
-import {UseWelcomeHooks} from '@screens/welcome/hooks';
-import {colors} from '@themes';
+import {Bbutton} from '@/component/molecules/bbutton';
+import {UseWelcomeHooks} from '@/screens/welcome/hooks';
+import {colors} from '@/utils/themes';
 const LoginFormScreen = props => {
   const {signInPress} = props;
   const {handleSignUp} = UseWelcomeHooks();

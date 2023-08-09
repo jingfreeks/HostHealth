@@ -1,13 +1,14 @@
-const alias = {
-  '@navigation': './src/navigation/',
-  '@screens': './src/screens/',
-  '@themes': './src/utils/themes',
-  '@utils': './src/utils/',
-  '@assets': './src/assets/',
-  '@component': './src/component/',
-  '@config': './src/config/',
-  '@slice': './src/slice/',
-};
+// const alias = {
+//   '@navigation': './src/navigation/',
+//   '@screens': './src/screens/',
+//   '@/utils/themes': './src/utils/themes',
+//   '@utils': './src/utils/',
+//   '@assets': './src/assets/',
+//   '@component': './src/component/',
+//   '@config': './src/config/',
+//   '@slice': './src/slice/',
+// };
+const alias = {'^@/(.+)': './src/\\1'};
 const extensions = ['.android.js', '.ios.js', '.js', '.json', '.native', 'jsx'];
 const root = ['./'];
 module.exports = {
@@ -15,6 +16,7 @@ module.exports = {
     'module:metro-react-native-babel-preset',
     '@babel/preset-react',
     '@babel/preset-env',
+    '@babel/preset-typescript',
   ],
   plugins: [
     [

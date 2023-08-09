@@ -1,6 +1,6 @@
 import React from 'react';
 import {ButtonContainer, ContainerStyled} from './styles';
-// import {colors} from '@themes';
+// import {colors} from '@/utils/themes';
 const Button = ({
   children,
   bcolor,

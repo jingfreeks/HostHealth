@@ -1,7 +1,7 @@
 import React from 'react';
-import {Vcontainer} from '@component/atoms/vcontainer';
-import {Text} from '@component/atoms/text';
-import {ImageHeaderStyled} from '@navigation/styles';
+import {Vcontainer} from '@/component/atoms/vcontainer';
+import {Text} from '@/component/atoms/text';
+import {ImageHeaderStyled} from '@/navigation/styles';
 const HomeEmptyCardScreen = props => {
   const {imgsource, message} = props;
   return (

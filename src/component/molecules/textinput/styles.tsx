@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import {colors} from '@themes';
+import {colors} from '@/utils/themes';
 export const TextInputStyled = styled.TextInput`
   height: 30px;
   flex: 1;

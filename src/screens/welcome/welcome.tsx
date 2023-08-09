@@ -1,6 +1,6 @@
 import React from 'react';
-import {WelcomeContent} from '@component/template/welcomecontent';
-import {WelcomebuttonGroup} from '@component/template/welcomebuttongroup';
+import {WelcomeContent} from '@/component/template/welcomecontent';
+import {WelcomebuttonGroup} from '@/component/template/welcomebuttongroup';
 import {UseWelcomeHooks} from './hooks';
 import {ContainerStyled} from './styles';
 const WelcomeScreen = () => {

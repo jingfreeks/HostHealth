@@ -32,12 +32,12 @@ import {
   AlertModalTextContainerStyled,
   AlertModalTextSubtitleStyled,
 } from './styles';
-import {ImageHeaderStyled} from '@navigation/styles';
-import {ShareIcon, HeartRedIcon, LocationIcon, DropDownIcon} from '@assets';
-import {colors} from '@themes';
+import {ImageHeaderStyled} from '@/navigation/styles';
+import {ShareIcon, HeartRedIcon, LocationIcon, DropDownIcon} from '@/assets';
+import {colors} from '@/utils/themes';
 import {Details} from './component/details';
 import {Requirements} from './component/requirements';
-import Bbutton from '@component/molecules/bbutton/bbutton';
+import Bbutton from '@/component/molecules/bbutton/bbutton';
 const JobDetailScreen = props => {
   const {route} = props;
   const {jobdetail} = route.params;
@@ -51,19 +51,19 @@ const JobDetailScreen = props => {
             <FavoriteContainerStyled>
               <FavoriteImageContainer>
                 <ImageHeaderStyled
-                  source={HeartRedIcon}
                   resizeMode={'contain'}
+                  source={HeartRedIcon}
                 />
               </FavoriteImageContainer>
               <FavoriteImageContainer>
-                <ImageHeaderStyled source={ShareIcon} resizeMode={'contain'} />
+                <ImageHeaderStyled resizeMode={'contain'} source={ShareIcon} />
               </FavoriteImageContainer>
             </FavoriteContainerStyled>
             <LocationContainerStyled>
               <ImageHeaderStyled
-                source={LocationIcon}
                 resizeMode={'contain'}
                 size={15}
+                source={LocationIcon}
               />
               <LocationTextStyled>{jobdetail.address}</LocationTextStyled>
             </LocationContainerStyled>
