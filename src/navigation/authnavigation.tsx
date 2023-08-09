@@ -1,6 +1,6 @@
 import React from 'react';
-import {Login, Welcome, Signup} from '@screens';
-import {colors} from '@themes';
+import {Login, Welcome, Signup} from '@/screens';
+import {colors} from '@/utils/themes';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 // import {AuthStackParamList} from './types';
 

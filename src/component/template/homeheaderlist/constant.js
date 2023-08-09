@@ -1,4 +1,4 @@
-import {HometimecardIcon, CertificateIcon} from '@assets';
+import {HometimecardIcon, CertificateIcon} from '@/assets';
 
 export const Hheaderlist = [
   {

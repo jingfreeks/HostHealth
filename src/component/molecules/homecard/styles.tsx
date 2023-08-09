@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import {colors} from '@themes';
+import {colors} from '@/utils/themes';
 import {verticalScale} from 'react-native-size-matters';
 
 export const Container = styled.View`

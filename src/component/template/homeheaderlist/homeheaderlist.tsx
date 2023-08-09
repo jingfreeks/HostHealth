@@ -1,5 +1,5 @@
 import React from 'react';
-import {HomeCard} from '@component/molecules/homecard';
+import {HomeCard} from '@/component/molecules/homecard';
 import {Hheaderlist} from './constant';
 const HomeHeaderList = () => {
   return Hheaderlist.map((item, idx) => (

@@ -1,5 +1,5 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
-import {PopularListData} from '@screens/home/constant';
+import {PopularListData} from '@/screens/home/constant';
 
 import {useDispatch} from 'react-redux';
 

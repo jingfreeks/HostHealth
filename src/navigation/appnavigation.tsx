@@ -1,6 +1,6 @@
 import React from 'react';
 import bottomtab from './bottomtabnavigation';
-import {JobsDetails} from '@screens';
+import {JobsDetails} from '@/screens';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();

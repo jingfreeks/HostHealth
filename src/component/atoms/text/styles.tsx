@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import {colors} from '@themes';
+import {colors} from '@/utils/themes';
 
 const Text = styled.Text`
   font-size: 16px;

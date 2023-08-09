@@ -1,7 +1,7 @@
 import React from 'react';
 import {ContainerStyled, FlatlistStyled} from './styles';
-import {SuggestedCard} from '@component/molecules/suggesstedcard';
-import {Jobslist} from '@screens/home/constant';
+import {SuggestedCard} from '@/component/molecules/suggesstedcard';
+import {Jobslist} from '@/screens/home/constant';
 const MyJobs = () => {
   return (
     <ContainerStyled>

@@ -32,11 +32,11 @@ import {
   StethoscopeIcon,
   CalendarIcon,
   SunICon,
-} from '@assets';
-import {ImageHeaderStyled} from '@navigation/styles';
-import Bbutton from '@component/molecules/bbutton/bbutton';
+} from '@/assets';
+import {ImageHeaderStyled} from '@/navigation/styles';
+import Bbutton from '@/component/molecules/bbutton/bbutton';
 import {UseSuggestedCardHooks} from './hooks';
-import {Text} from '@component/atoms/text';
+import {Text} from '@/component/atoms/text';
 const SuggestedCardScreen = props => {
   const {data} = props;
   const {handlesubmit} = UseSuggestedCardHooks();

@@ -1,6 +1,6 @@
 import React from 'react';
-import {Vcontainer} from '@component/atoms/vcontainer';
-import {MainLogIcon} from '@assets';
+import {Vcontainer} from '@/component/atoms/vcontainer';
+import {MainLogIcon} from '@/assets';
 import {ImageHeaderStyled, ImageContainerStyled} from './styles';
 const LogoHeader = () => {
   return (

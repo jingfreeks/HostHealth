@@ -1,6 +1,6 @@
 import React from 'react';
-import {Text} from '@component/atoms/text';
-import Button from '@component/atoms/button/button';
+import {Text} from '@/component/atoms/text';
+import Button from '@/component/atoms/button/button';
 
 import {ContainerStyled} from './styles';
 const Bbutton = props => {

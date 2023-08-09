@@ -1,7 +1,7 @@
 import React from 'react';
-import HomeEmptyCard from '@component/molecules/homeemptycard/homeemptycard';
-import SuggestedCard from '@component/molecules/suggesstedcard/suggestedcard';
-import {SuggestedEmptyIcon} from '@assets';
+import HomeEmptyCard from '@/component/molecules/homeemptycard/homeemptycard';
+import SuggestedCard from '@/component/molecules/suggesstedcard/suggestedcard';
+import {SuggestedEmptyIcon} from '@/assets';
 import {
   SuggestedListContainerStyled,
   FlatlistStyled,
