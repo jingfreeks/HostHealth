@@ -14,18 +14,18 @@ const TextInput = props => {
       <Text TextMode="Title">{Label}</Text>
       <Hcontainer>
         <TextInputStyled
-          onChangeText={onChangeText}
-          value={value}
           secureTextEntry={isVisible}
+          value={value}
+          onChangeText={onChangeText}
         />
         {type === 'Text' ? (
-          <IconIonic name={'close-circle'} size={25} color={colors.gray} />
+          <IconIonic color={colors.gray} name={'close-circle'} size={25} />
         ) : (
           <MaterialIcons
-            name={isVisible ? 'visibility-off' : 'visibility'}
-            onPress={() => setIsVisible(!isVisible)}
-            size={25}
             color={colors.gray}
+            name={isVisible ? 'visibility-off' : 'visibility'}
+            size={25}
+            onPress={() => setIsVisible(!isVisible)}
           />
         )}
       </Hcontainer>

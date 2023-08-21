@@ -21,10 +21,10 @@ const LoginFormScreen = props => {
         <TextInput Label="Password" type="password" />
       </TextInputContainerStyled>
       <Bbutton
-        onPress={signInPress}
-        border={10}
         bcolor={'#d6f3f3'}
+        border={10}
         title="SIGN IN"
+        onPress={signInPress}
       />
       <ForgotPassContainerStyled>
         <Text>Forgot Password?</Text>

@@ -17,6 +17,8 @@ const SuggestedList = props => {
         <FlatlistStyled
           horizontal
           data={data}
+          extraData={data}
+          keyExtractor={item => item.id}
           renderItem={({item}) => {
             return (
               <RenderItemStyled>
@@ -24,8 +26,6 @@ const SuggestedList = props => {
               </RenderItemStyled>
             );
           }}
-          keyExtractor={item => item.id}
-          extraData={data}
         />
       </SuggestedListContainerStyled>
     );

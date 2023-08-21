@@ -17,3 +17,5 @@ export type SuggestedCardDetailsProps = {
   joborderno: string;
   id: number;
 };
+
+

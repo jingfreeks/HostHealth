@@ -27,53 +27,53 @@ const BottomTabScreen = () => {
           tabBarLabel: 'Home',
           // eslint-disable-next-line react/no-unstable-nested-components
           tabBarIcon: () => (
-            <ImageHeaderStyled source={HomeIcon} resizeMode={'contain'} />
+            <ImageHeaderStyled resizeMode={'contain'} source={HomeIcon} />
           ),
           // eslint-disable-next-line react/no-unstable-nested-components
           headerLeft: () => (
             <HeaderLeftStyled>
               <ImageHeaderStyled
-                source={HamburgerIcon}
                 resizeMode={'contain'}
                 size={25}
+                source={HamburgerIcon}
               />
             </HeaderLeftStyled>
           ),
         }}
       />
       <Tab.Screen
-        name="Search"
         component={Pcities}
+        name="Search"
         options={{
           tabBarLabel: 'Search',
           title: 'Search',
           // eslint-disable-next-line react/no-unstable-nested-components
           tabBarIcon: () => (
-            <ImageHeaderStyled source={SearchIcon} resizeMode={'contain'} />
+            <ImageHeaderStyled resizeMode={'contain'} source={SearchIcon} />
           ),
         }}
       />
       <Tab.Screen
-        name="MyJob"
         component={MyJobs}
+        name="MyJob"
         options={{
           tabBarLabel: 'My Jobs ',
           title: 'My Jobs',
           // eslint-disable-next-line react/no-unstable-nested-components
           tabBarIcon: () => (
-            <ImageHeaderStyled source={MyjobsIcon} resizeMode={'contain'} />
+            <ImageHeaderStyled resizeMode={'contain'} source={MyjobsIcon} />
           ),
         }}
       />
       <Tab.Screen
-        name="TimeCard"
         component={HomeScreen}
+        name="TimeCard"
         options={{
           tabBarLabel: 'Time Card',
           title: 'Time Card',
           // eslint-disable-next-line react/no-unstable-nested-components
           tabBarIcon: () => (
-            <ImageHeaderStyled source={TimecardIcon} resizeMode={'contain'} />
+            <ImageHeaderStyled resizeMode={'contain'} source={TimecardIcon} />
           ),
         }}
       />

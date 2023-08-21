@@ -1,3 +1,5 @@
+//@ts-check
+
 import React from 'react';
 import {ContainerStyled, FlatlistStyled} from './styles';
 import {SuggestedCard} from '@/component/molecules/suggesstedcard';
@@ -7,11 +9,11 @@ const MyJobs = () => {
     <ContainerStyled>
       <FlatlistStyled
         data={Jobslist}
+        extraData={Jobslist}
+        keyExtractor={item => item.id}
         renderItem={({item}) => {
           return <SuggestedCard data={item} />;
         }}
-        keyExtractor={item => item.id}
-        extraData={Jobslist}
       />
     </ContainerStyled>
   );

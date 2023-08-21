@@ -13,7 +13,7 @@ export const MockProvider = (props: MockProviderType): React$Node => {
   return <Provider store={mocked}>{children}</Provider>;
 };
 
-export const testingProps = (reference: string): Object => ({
+export const testingProps = (reference: string): unknown => ({
   testID: reference,
   accessibilityLabel: reference,
 });

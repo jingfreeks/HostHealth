@@ -24,10 +24,10 @@ const SignupFormScreen = props => {
           <TextInput Label="Password Confirm" type="password" />
         </TextInputContainerStyled>
         <Bbutton
-          onPress={handleSignUp}
-          border={10}
           bcolor={colors.lightergreen}
+          border={10}
           title="SIGN UP"
+          onPress={handleSignUp}
         />
         <AccountTextContainerStyled>
           <Text TextMode="TextNormal">Have an account?</Text>

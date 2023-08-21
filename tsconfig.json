@@ -5,6 +5,7 @@
     "target": "ESNext",
     "lib": ["ES2017", "DOM"],
     "module": "CommonJS",
+    "checkJs":true,
     "moduleResolution": "node",
     "baseUrl": "./",
     "types": [

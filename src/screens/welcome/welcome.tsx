@@ -8,8 +8,8 @@ const WelcomeScreen = () => {
   return (
     <ContainerStyled>
       <WelcomeContent
-        title={'Welcome to Host Healthcare!'}
         subTitle={'Sign up to find your perfect job today.'}
+        title={'Welcome to Host Healthcare!'}
       />
       <WelcomebuttonGroup
         signInPress={handleSignIn}
