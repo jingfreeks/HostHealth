@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Empty Card Component Should work as expected to get snapshot 1`] = `
+<RCTSafeAreaView
+  style={
+    [
+      {},
+    ]
+  }
+>
+  <View
+    alignType="center"
+    style={
+      [
+        {
+          "alignItems": "center",
+          "alignSelf": "center",
+          "flexDirection": "column",
+        },
+      ]
+    }
+  >
+    <Image
+      resizeMode="contain"
+      size={150}
+      style={
+        [
+          {
+            "height": 294.2647058823529,
+            "width": 294.2647058823529,
+          },
+        ]
+      }
+    />
+    <Text
+      style={
+        [
+          {
+            "color": "#000000",
+            "fontFamily": "Avenir",
+            "fontSize": 16,
+            "fontWeight": "400",
+          },
+        ]
+      }
+    />
+  </View>
+</RCTSafeAreaView>
+`;

@@ -36,32 +36,33 @@ import {
 import {ImageHeaderStyled} from '@/navigation/styles';
 import Bbutton from '@/component/molecules/bbutton/bbutton';
 import {UseSuggestedCardHooks} from './hooks';
+import type {SuggestedCardProps} from './types';
 import {Text} from '@/component/atoms/text';
-const SuggestedCardScreen = props => {
+const SuggestedCardScreen = (props: SuggestedCardProps) => {
   const {data} = props;
   const {handlesubmit} = UseSuggestedCardHooks();
   return (
     <Container>
       <ImageHeaderContainer>
         <ImageStyled
+          resizeMode={'stretch'}
           source={{
             uri: data.image,
           }}
-          resizeMode={'stretch'}
         />
         <FavoriteContainerStyled>
           <FavoriteImageContainer>
-            <ImageHeaderStyled source={HeartIcon} resizeMode={'contain'} />
+            <ImageHeaderStyled resizeMode={'contain'} source={HeartIcon} />
           </FavoriteImageContainer>
           <FavoriteImageContainer>
-            <ImageHeaderStyled source={ShareIcon} resizeMode={'contain'} />
+            <ImageHeaderStyled resizeMode={'contain'} source={ShareIcon} />
           </FavoriteImageContainer>
         </FavoriteContainerStyled>
         <LocationContainerStyled>
           <ImageHeaderStyled
-            source={LocationIcon}
             resizeMode={'contain'}
             size={15}
+            source={LocationIcon}
           />
           <LocationTextStyled>
             {data.city}, {data.state}
@@ -83,9 +84,9 @@ const SuggestedCardScreen = props => {
       <DeptContainerStyled>
         <DeptImageContainerStyled>
           <ImageHeaderStyled
-            source={StethoscopeIcon}
             resizeMode={'contain'}
             size={15}
+            source={StethoscopeIcon}
           />
         </DeptImageContainerStyled>
         <DeptTitleTextStyled>{data.dept}</DeptTitleTextStyled>
@@ -93,9 +94,9 @@ const SuggestedCardScreen = props => {
       <WeeksContaienrStyled>
         <DeptImageContainerStyled>
           <ImageHeaderStyled
-            source={CalendarIcon}
             resizeMode={'contain'}
             size={15}
+            source={CalendarIcon}
           />
         </DeptImageContainerStyled>
         <WeeksTitleTextStyled>{data.weeks} Weeks</WeeksTitleTextStyled>
@@ -103,9 +104,9 @@ const SuggestedCardScreen = props => {
       <ShiftContainerStyled>
         <DeptImageContainerStyled>
           <ImageHeaderStyled
-            source={SunICon}
             resizeMode={'contain'}
             size={15}
+            source={SunICon}
           />
         </DeptImageContainerStyled>
         <DeptTitleTextStyled>{data.shift}</DeptTitleTextStyled>
@@ -117,11 +118,11 @@ const SuggestedCardScreen = props => {
       </EstimatedContainerStyled>
       <SubmitContainerStyled>
         <Bbutton
-          onPress={() => handlesubmit(data)}
-          padding={5}
-          border={50}
           bcolor={'#d6f3f3'}
+          border={50}
+          padding={5}
           title="PLEASE SUBMIT"
+          onPress={() => handlesubmit(data)}
         />
       </SubmitContainerStyled>
     </Container>

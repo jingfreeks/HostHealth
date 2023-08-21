@@ -21,8 +21,8 @@ const BottomTabScreen = () => {
         tabBarInactiveTintColor: colors.black,
       }}>
       <Tab.Screen
-        name="Home"
         component={HomeScreen}
+        name="Home"
         options={{
           tabBarLabel: 'Home',
           // eslint-disable-next-line react/no-unstable-nested-components

@@ -1,10 +1,10 @@
 import React from 'react';
 import {render} from '@testing-library/react-native';
-import Vcontainer from '../vcontainer';
+import LogoHeader from '../logoheader';
 
-describe('VContainer Component', () => {
+describe('Logo Header Component', () => {
   it('Should work as expected to get snapshot', () => {
-    const all = render(<Vcontainer />);
+    const all = render(<LogoHeader />);
     expect(all.toJSON()).toMatchSnapshot();
   });
 });

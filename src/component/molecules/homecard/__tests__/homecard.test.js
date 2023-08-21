@@ -1,10 +1,10 @@
 import React from 'react';
 import {render} from '@testing-library/react-native';
-import Vcontainer from '../vcontainer';
+import HomeCard from '../homecard';
 
-describe('VContainer Component', () => {
+describe('HomeCard Component', () => {
   it('Should work as expected to get snapshot', () => {
-    const all = render(<Vcontainer />);
+    const all = render(<HomeCard />);
     expect(all.toJSON()).toMatchSnapshot();
   });
 });

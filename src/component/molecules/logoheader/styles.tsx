@@ -1,7 +1,10 @@
 import styled from 'styled-components/native';
 import {verticalScale} from 'react-native-size-matters';
 
-export const ImageHeaderStyled = styled.Image`
+export const ImageHeaderStyled = styled.Image<{
+  source?: string | undefined;
+  resizeMode: 'contain' | 'stretch';
+}>`
   height: ${verticalScale(100)}px;
   width: ${verticalScale(230)}px;
 `;

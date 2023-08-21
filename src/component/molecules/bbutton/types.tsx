@@ -4,6 +4,6 @@ export type BbuttonProps = {
   border: number;
   bcolor: string;
   padding: number;
-  borderw: number;
-  borderc: string;
+  borderw?: number;
+  borderc?: string;
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import {HContainerProps} from './types';
+import type {HContainerProps} from './types';
 import {Container} from './styles';
 
 const HContainerScreen = (props: HContainerProps) => {

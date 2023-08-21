@@ -5,9 +5,9 @@ import {
   ImageContainerstyled,
   ImageHeaderStyled,
 } from './styles';
-
+import type {HomecardProps} from './types';
 import {Text} from '@/component/atoms/text';
-const HomeCardScreen = props => {
+const HomeCardScreen = (props: HomecardProps) => {
   const {imgsource, title, subtitle} = props;
   return (
     <Container>

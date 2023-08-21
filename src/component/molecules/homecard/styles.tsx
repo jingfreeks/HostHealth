@@ -28,7 +28,11 @@ export const ImageContainerstyled = styled.View`
   flex: 1;
 `;
 
-export const ImageHeaderStyled = styled.Image`
+export const ImageHeaderStyled = styled.Image<{
+  source?: string | undefined;
+  resizeMode: 'contain' | 'stretch';
+  size: number;
+}>`
   height: ${verticalScale(60)}px;
   width: ${verticalScale(50)}px;
 `;
