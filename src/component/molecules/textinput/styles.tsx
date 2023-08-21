@@ -9,7 +9,7 @@ export const TextInputStyled = styled.TextInput`
 export const LineTextStyled = styled.View`
   border-width: 0.5px;
   align-self: stretch;
-  border-color: ${colors.grey};
+  border-color: ${colors.gray};
   flex-direction: row;
   margin-bottom: 15px;
 `;

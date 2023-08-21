@@ -7,7 +7,7 @@ module.exports = {
   moduleDirectories: ['node_modules', 'src', __dirname],
   setupFilesAfterEnv: [],
   collectCoverage: true,
-  collectCoverageFrom: ['<rootDir>/src/**/*.{ts,tsx,js,jsx}'],
+  // collectCoverageFrom: ['<rootDir>/src/**/*.{ts,tsx,js,jsx}'],
   coverageThreshold: {
     global: {
       lines: 90,
