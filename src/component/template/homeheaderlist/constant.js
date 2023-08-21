@@ -1,6 +1,6 @@
 import {HometimecardIcon, CertificateIcon} from '@/assets';
-
-export const Hheaderlist = [
+import type {HeaderListProps} from './types';
+export const Hheaderlist: HeaderListProps[] = [
   {
     imagesource: HometimecardIcon,
     title: 'Timecards',
