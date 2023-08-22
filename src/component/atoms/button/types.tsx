@@ -5,5 +5,5 @@ export type ButtonProps = {
   borderw?: number;
   borderc?: string;
   onPress: () => void;
-  padding: number;
+  padding?: number;
 };

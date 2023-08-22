@@ -10,8 +10,9 @@ import {
 } from './styled';
 import {Bbutton} from '@/component/molecules/bbutton';
 import {UseWelcomeHooks} from '@/screens/welcome/hooks';
+import type {LoginFormProps} from './types';
 import {colors} from '@/utils/themes';
-const LoginFormScreen = props => {
+const LoginFormScreen = (props: LoginFormProps) => {
   const {signInPress} = props;
   const {handleSignUp} = UseWelcomeHooks();
   return (
