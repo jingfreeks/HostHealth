@@ -1,35 +1,37 @@
 import React from 'react';
+import {FlatList} from 'react-native';
 import HomeEmptyCard from '@/component/molecules/homeemptycard/homeemptycard';
 import SuggestedCard from '@/component/molecules/suggesstedcard/suggestedcard';
 import {SuggestedEmptyIcon} from '@/assets';
+import type {SuggestedListProps} from './types';
 import {
   SuggestedListContainerStyled,
   FlatlistStyled,
   RenderItemStyled,
   SuggestedListEmptyContainerStyled,
 } from './styles';
-const SuggestedList = props => {
+const SuggestedList = (props: SuggestedListProps) => {
   const {data} = props;
-
-  if (data.length > 0) {
-    return (
-      <SuggestedListContainerStyled>
-        <FlatlistStyled
-          horizontal
-          data={data}
-          extraData={data}
-          keyExtractor={item => item.id}
-          renderItem={({item}) => {
-            return (
-              <RenderItemStyled>
-                <SuggestedCard data={item} />
-              </RenderItemStyled>
-            );
-          }}
-        />
-      </SuggestedListContainerStyled>
-    );
-  }
+  console.log('data', data);
+  // if (data.length > 0) {
+  //   return (
+  //     <SuggestedListContainerStyled>
+  //       <FlatList
+  //         horizontal
+  //         data={data}
+  //         extraData={data}
+  //         keyExtractor={item => item.id}
+  //         renderItem={({item}) => {
+  //           return (
+  //             <RenderItemStyled>
+  //               <SuggestedCard data={item} />
+  //             </RenderItemStyled>
+  //           );
+  //         }}
+  //       />
+  //     </SuggestedListContainerStyled>
+  //   );
+  // }
   return (
     <SuggestedListEmptyContainerStyled>
       <HomeEmptyCard

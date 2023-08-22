@@ -3,6 +3,7 @@ import {Text} from '@/component/atoms/text';
 import {SuggestedList} from '@/component/template/suggestedlist';
 import {PopularList} from '@/component/template/popularlist';
 import {HomeHeaderList} from '@/component/template/homeheaderlist';
+import {Jobslist, PopularListData} from '@/screens/home/constant';
 import {useSelector, useDispatch} from 'react-redux';
 import {fetchPCities} from '@/slice/pcities';
 import {fetchSuggested} from '@/slice/suggested';
@@ -22,7 +23,7 @@ const HomeScreen = () => {
     dispatch(fetchSuggested());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log('pcities', loading);
+  console.log('pcities', Jobslist);
   return (
     <ScrollViewContainer>
       <HomeHeaderList />
@@ -31,10 +32,10 @@ const HomeScreen = () => {
         <SuggestedTextContainerStyled>
           <Text TextMode="Htitlenormal">SUGGESTED</Text>
         </SuggestedTextContainerStyled>
-        <SuggestedList data={suggestedJobs} />
+        <SuggestedList data={Jobslist} />
         <SuggestedTextContainerStyled>
           <Text TextMode="Htitlenormal">POPULAR CITIES</Text>
-          <PopularList data={pcities} />
+          <PopularList data={PopularListData} />
         </SuggestedTextContainerStyled>
       </ListsContainerStyled>
     </ScrollViewContainer>
