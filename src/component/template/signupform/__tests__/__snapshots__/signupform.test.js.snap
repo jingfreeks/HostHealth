@@ -1,0 +1,677 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Content Template Component Should work as expected to get snapshot 1`] = `
+<View
+  style={
+    [
+      {
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+      },
+    ]
+  }
+>
+  <RCTScrollView
+    style={
+      [
+        {
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+          "marginBottom": 10,
+        },
+      ]
+    }
+  >
+    <View>
+      <View
+        style={
+          [
+            {
+              "paddingBottom": 10,
+              "paddingLeft": 10,
+              "paddingRight": 10,
+              "paddingTop": 10,
+            },
+          ]
+        }
+      >
+        <RCTSafeAreaView
+          style={
+            [
+              {},
+            ]
+          }
+        >
+          <View
+            alignType="flex-start"
+            style={
+              [
+                {
+                  "alignItems": "flex-start",
+                  "alignSelf": "flex-start",
+                  "flexDirection": "column",
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#0e3f6c",
+                    "fontFamily": "Avenir",
+                    "fontSize": 18,
+                    "fontWeight": "900",
+                  },
+                ]
+              }
+            >
+              First Name
+            </Text>
+            <View
+              style={
+                [
+                  {
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <TextInput
+                secureTextEntry={false}
+                style={
+                  [
+                    {
+                      "flexBasis": 0,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
+                      "height": 30,
+                      "marginBottom": 5,
+                    },
+                  ]
+                }
+              />
+              <Text
+                allowFontScaling={false}
+                selectable={false}
+                style={
+                  [
+                    {
+                      "color": "#C2D6DC",
+                      "fontSize": 25,
+                    },
+                    undefined,
+                    {
+                      "fontFamily": "Ionicons",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    {},
+                  ]
+                }
+              >
+                
+              </Text>
+            </View>
+            <View
+              style={
+                [
+                  {
+                    "alignSelf": "stretch",
+                    "borderColor": "#C2D6DC",
+                    "borderWidth": 0.5,
+                    "flexDirection": "row",
+                    "marginBottom": 15,
+                  },
+                ]
+              }
+            />
+          </View>
+        </RCTSafeAreaView>
+        <RCTSafeAreaView
+          style={
+            [
+              {},
+            ]
+          }
+        >
+          <View
+            alignType="flex-start"
+            style={
+              [
+                {
+                  "alignItems": "flex-start",
+                  "alignSelf": "flex-start",
+                  "flexDirection": "column",
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#0e3f6c",
+                    "fontFamily": "Avenir",
+                    "fontSize": 18,
+                    "fontWeight": "900",
+                  },
+                ]
+              }
+            >
+              Last Name
+            </Text>
+            <View
+              style={
+                [
+                  {
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <TextInput
+                secureTextEntry={false}
+                style={
+                  [
+                    {
+                      "flexBasis": 0,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
+                      "height": 30,
+                      "marginBottom": 5,
+                    },
+                  ]
+                }
+              />
+              <Text
+                allowFontScaling={false}
+                selectable={false}
+                style={
+                  [
+                    {
+                      "color": "#C2D6DC",
+                      "fontSize": 25,
+                    },
+                    undefined,
+                    {
+                      "fontFamily": "Ionicons",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    {},
+                  ]
+                }
+              >
+                
+              </Text>
+            </View>
+            <View
+              style={
+                [
+                  {
+                    "alignSelf": "stretch",
+                    "borderColor": "#C2D6DC",
+                    "borderWidth": 0.5,
+                    "flexDirection": "row",
+                    "marginBottom": 15,
+                  },
+                ]
+              }
+            />
+          </View>
+        </RCTSafeAreaView>
+        <RCTSafeAreaView
+          style={
+            [
+              {},
+            ]
+          }
+        >
+          <View
+            alignType="flex-start"
+            style={
+              [
+                {
+                  "alignItems": "flex-start",
+                  "alignSelf": "flex-start",
+                  "flexDirection": "column",
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#0e3f6c",
+                    "fontFamily": "Avenir",
+                    "fontSize": 18,
+                    "fontWeight": "900",
+                  },
+                ]
+              }
+            >
+              Email
+            </Text>
+            <View
+              style={
+                [
+                  {
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <TextInput
+                secureTextEntry={false}
+                style={
+                  [
+                    {
+                      "flexBasis": 0,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
+                      "height": 30,
+                      "marginBottom": 5,
+                    },
+                  ]
+                }
+              />
+              <Text
+                allowFontScaling={false}
+                selectable={false}
+                style={
+                  [
+                    {
+                      "color": "#C2D6DC",
+                      "fontSize": 25,
+                    },
+                    undefined,
+                    {
+                      "fontFamily": "Ionicons",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    {},
+                  ]
+                }
+              >
+                
+              </Text>
+            </View>
+            <View
+              style={
+                [
+                  {
+                    "alignSelf": "stretch",
+                    "borderColor": "#C2D6DC",
+                    "borderWidth": 0.5,
+                    "flexDirection": "row",
+                    "marginBottom": 15,
+                  },
+                ]
+              }
+            />
+          </View>
+        </RCTSafeAreaView>
+        <RCTSafeAreaView
+          style={
+            [
+              {},
+            ]
+          }
+        >
+          <View
+            alignType="flex-start"
+            style={
+              [
+                {
+                  "alignItems": "flex-start",
+                  "alignSelf": "flex-start",
+                  "flexDirection": "column",
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#0e3f6c",
+                    "fontFamily": "Avenir",
+                    "fontSize": 18,
+                    "fontWeight": "900",
+                  },
+                ]
+              }
+            >
+              Password
+            </Text>
+            <View
+              style={
+                [
+                  {
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <TextInput
+                secureTextEntry={false}
+                style={
+                  [
+                    {
+                      "flexBasis": 0,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
+                      "height": 30,
+                      "marginBottom": 5,
+                    },
+                  ]
+                }
+              />
+              <Text
+                allowFontScaling={false}
+                onPress={[Function]}
+                selectable={false}
+                style={
+                  [
+                    {
+                      "color": "#C2D6DC",
+                      "fontSize": 25,
+                    },
+                    undefined,
+                    {
+                      "fontFamily": "Material Icons",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    {},
+                  ]
+                }
+              >
+                
+              </Text>
+            </View>
+            <View
+              style={
+                [
+                  {
+                    "alignSelf": "stretch",
+                    "borderColor": "#C2D6DC",
+                    "borderWidth": 0.5,
+                    "flexDirection": "row",
+                    "marginBottom": 15,
+                  },
+                ]
+              }
+            />
+          </View>
+        </RCTSafeAreaView>
+        <RCTSafeAreaView
+          style={
+            [
+              {},
+            ]
+          }
+        >
+          <View
+            alignType="flex-start"
+            style={
+              [
+                {
+                  "alignItems": "flex-start",
+                  "alignSelf": "flex-start",
+                  "flexDirection": "column",
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#0e3f6c",
+                    "fontFamily": "Avenir",
+                    "fontSize": 18,
+                    "fontWeight": "900",
+                  },
+                ]
+              }
+            >
+              Password Confirm
+            </Text>
+            <View
+              style={
+                [
+                  {
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <TextInput
+                secureTextEntry={false}
+                style={
+                  [
+                    {
+                      "flexBasis": 0,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
+                      "height": 30,
+                      "marginBottom": 5,
+                    },
+                  ]
+                }
+              />
+              <Text
+                allowFontScaling={false}
+                onPress={[Function]}
+                selectable={false}
+                style={
+                  [
+                    {
+                      "color": "#C2D6DC",
+                      "fontSize": 25,
+                    },
+                    undefined,
+                    {
+                      "fontFamily": "Material Icons",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    {},
+                  ]
+                }
+              >
+                
+              </Text>
+            </View>
+            <View
+              style={
+                [
+                  {
+                    "alignSelf": "stretch",
+                    "borderColor": "#C2D6DC",
+                    "borderWidth": 0.5,
+                    "flexDirection": "row",
+                    "marginBottom": 15,
+                  },
+                ]
+              }
+            />
+          </View>
+        </RCTSafeAreaView>
+      </View>
+      <View
+        style={
+          [
+            {
+              "marginLeft": 5,
+              "marginRight": 5,
+              "paddingBottom": 5,
+              "paddingLeft": 5,
+              "paddingRight": 5,
+              "paddingTop": 5,
+            },
+          ]
+        }
+      >
+        <View
+          border={10}
+          borderc="#99E1E1"
+          borderw={2}
+          style={
+            [
+              {
+                "borderColor": "#99E1E1",
+                "borderRadius": 10,
+                "borderWidth": 2,
+              },
+            ]
+          }
+        >
+          <View
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={false}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "alignItems": "center",
+                "backgroundColor": "#d6f3f3",
+                "borderRadius": 10,
+                "opacity": 1,
+                "paddingBottom": 15,
+                "paddingLeft": 15,
+                "paddingRight": 15,
+                "paddingTop": 15,
+              }
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#03606A",
+                    "fontFamily": "Avenir",
+                    "fontSize": 15,
+                    "fontWeight": "500",
+                  },
+                ]
+              }
+            >
+              SIGN UP
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          [
+            {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginTop": 10,
+            },
+          ]
+        }
+      >
+        <Text
+          style={
+            [
+              {
+                "color": "#000000",
+                "fontFamily": "Avenir",
+                "fontSize": 16,
+                "fontWeight": "400",
+              },
+            ]
+          }
+        >
+          Have an account?
+        </Text>
+        <View
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "marginLeft": 5,
+              "opacity": 1,
+            }
+          }
+        >
+          <Text
+            style={
+              [
+                {
+                  "color": "#0e3f6c",
+                  "fontFamily": "Avenir",
+                  "fontSize": 16,
+                  "fontWeight": "400",
+                },
+                {
+                  "textDecorationLine": "underline",
+                },
+              ]
+            }
+          >
+            Sign In here
+          </Text>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;

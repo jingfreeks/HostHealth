@@ -11,7 +11,7 @@ import {
   SignTextStyled,
   SignInButtonStyled,
 } from './styles';
-const SignupFormScreen = props => {
+const SignupFormScreen = (props: {handleSignUp: () => void}) => {
   const {handleSignUp} = props;
   return (
     <ContainerStyled>
