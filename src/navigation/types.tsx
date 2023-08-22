@@ -16,4 +16,6 @@ export type RootNavigationProps = {
       id: number;
     };
   };
+  Login: undefined;
+  Signup: undefined;
 };

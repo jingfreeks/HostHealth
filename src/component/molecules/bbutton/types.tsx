@@ -3,7 +3,7 @@ export type BbuttonProps = {
   title: string;
   border: number;
   bcolor: string;
-  padding: number;
+  padding?: number;
   borderw?: number;
   borderc?: string;
 };
