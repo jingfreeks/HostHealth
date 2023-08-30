@@ -1,9 +1,10 @@
 import React from 'react';
 import Bbutton from '@/component/molecules/bbutton/bbutton';
 import {ContainerStyled} from './styles';
+import type {WelcomeButtonGroupProps} from './types';
 import {colors} from '@/utils/themes';
 
-const WelcomeButtonGroup = props => {
+const WelcomeButtonGroup = (props: WelcomeButtonGroupProps) => {
   const {signInPress, signUpPress} = props;
   return (
     <ContainerStyled>

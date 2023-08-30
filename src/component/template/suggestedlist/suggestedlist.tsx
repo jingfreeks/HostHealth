@@ -1,31 +1,37 @@
-import React from 'react';
+import React, {useCallback} from 'react';
+import {ListRenderItem} from 'react-native';
 import HomeEmptyCard from '@/component/molecules/homeemptycard/homeemptycard';
 import SuggestedCard from '@/component/molecules/suggesstedcard/suggestedcard';
 import {SuggestedEmptyIcon} from '@/assets';
+import type {SuggestedListProps, SuggestedCardDetailsProps} from './types';
 import {
   SuggestedListContainerStyled,
   FlatlistStyled,
   RenderItemStyled,
   SuggestedListEmptyContainerStyled,
 } from './styles';
-const SuggestedList = props => {
-  const {data} = props;
+const SuggestedList = (props: SuggestedListProps) => {
+  const {data = []} = props;
 
-  if (data.length > 0) {
+  const renderItem = useCallback(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    ({item}: {item: any}) => (
+      <RenderItemStyled>
+        <SuggestedCard data={item} />
+      </RenderItemStyled>
+    ),
+    [],
+  );
+  if (data?.length > 0) {
     return (
       <SuggestedListContainerStyled>
         <FlatlistStyled
           horizontal
           data={data}
           extraData={data}
-          keyExtractor={item => item.id}
-          renderItem={({item}) => {
-            return (
-              <RenderItemStyled>
-                <SuggestedCard data={item} />
-              </RenderItemStyled>
-            );
-          }}
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          keyExtractor={(item: any) => item.id}
+          renderItem={renderItem}
         />
       </SuggestedListContainerStyled>
     );

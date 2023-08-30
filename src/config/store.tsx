@@ -2,6 +2,7 @@ import {configureStore} from '@reduxjs/toolkit';
 import {setupListeners} from '@reduxjs/toolkit/query';
 import {healtHostApi} from './api';
 import pcitiesslice from '@/slice/pcities';
+import thunkMiddleware from 'redux-thunk';
 import suggestedjobs from '@/slice/suggested';
 export const store = configureStore({
   reducer: {

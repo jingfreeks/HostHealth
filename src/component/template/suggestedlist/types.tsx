@@ -1,5 +1,5 @@
-export type SuggestedCardProps = {
-  data?: SuggestedCardDetailsProps | undefined;
+export type SuggestedListProps = {
+  data?: SuggestedCardDetailsProps[];
 };
 
 export type SuggestedCardDetailsProps = {
@@ -16,4 +16,9 @@ export type SuggestedCardDetailsProps = {
   address?: string;
   joborderno?: string;
   id?: number;
+};
+
+export type RenderItemProps = {
+  item?: SuggestedCardDetailsProps;
+  index?: number;
 };

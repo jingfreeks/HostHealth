@@ -29,6 +29,7 @@ module.exports = {
         moduleName: 'react-native-dotenv',
       },
     ],
+    '@babel/plugin-transform-flow-strip-types',
     '@babel/plugin-transform-private-methods',
     '@babel/plugin-transform-private-property-in-object',
     '@babel/plugin-transform-class-properties',

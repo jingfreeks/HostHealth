@@ -45,6 +45,7 @@
     "@babel/core": "^7.12.9",
     "@babel/eslint-parser": "^7.22.5",
     "@babel/plugin-syntax-jsx": "^7.22.5",
+    "@babel/plugin-transform-flow-strip-types": "^7.22.5",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.18.6",
     "@babel/runtime": "^7.12.5",
@@ -53,9 +54,10 @@
     "@testing-library/react-native": "^12.2.0",
     "@tsconfig/react-native": "^2.0.3",
     "@types/jest": "^29.5.0",
-    "@types/react-native": "^0.71.5",
+    "@types/react-native": "^0.72.2",
     "@types/react-native-vector-icons": "^6.4.14",
     "@types/react-test-renderer": "^18.0.0",
+    "@types/redux-mock-store": "^1.0.3",
     "@types/styled-components-react-native": "^5.2.1",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "@typescript-eslint/parser": "^6.4.0",
@@ -72,6 +74,7 @@
     "metro-react-native-babel-preset": "^0.64.0",
     "prettier": "^2.4.1",
     "react-test-renderer": "^18.2.0",
+    "redux-mock-store": "^1.5.4",
     "typescript": "^5.1.6"
   },
   "engines": {
