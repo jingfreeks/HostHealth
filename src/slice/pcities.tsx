@@ -1,4 +1,4 @@
-import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
+import {createSlice, createAsyncThunk, PayloadAction} from '@reduxjs/toolkit';
 import {PopularListData} from '@/screens/home/constant';
 
 import {useDispatch} from 'react-redux';
@@ -28,10 +28,14 @@ export const pcities = createSlice({
     builder.addCase(fetchPCities.pending, state => {
       state.loading = true;
     });
-    builder.addCase(fetchPCities.fulfilled, (state, action) => {
-      state.data = action.payload;
-      state.loading = false;
-    });
+    builder.addCase(
+      fetchPCities.fulfilled,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (state, action: PayloadAction<any>) => {
+        state.data = action.payload;
+        state.loading = false;
+      },
+    );
     builder.addCase(fetchPCities.rejected, state => {
       state.loading = false;
     });

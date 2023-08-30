@@ -1,9 +1,9 @@
 export type SuggestedListProps = {
-  data: SuggestedCardDetailsProps[];
+  data?: SuggestedCardDetailsProps[];
 };
 
 export type SuggestedCardDetailsProps = {
-  image?: string | undefined;
+  image?: string;
   city?: string;
   state?: string;
   jobtitle?: string;

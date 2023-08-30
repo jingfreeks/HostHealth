@@ -6,7 +6,11 @@ import thunk from 'redux-thunk';
 // // import {DARK_THEME} from '@/utils/constants';
 // // import {ThemeProvider} from 'styled-components/native';
 
-export const MockProvider = (props: MockProviderType): React$Node => {
+type MockProviderType = {
+  children?: React.ReactNode;
+  store?: object;
+};
+export const MockProvider = (props: MockProviderType) => {
   const {store, children} = props;
   const mockStore = configureStore([thunk]);
   const mocked = mockStore(store);

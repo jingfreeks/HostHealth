@@ -1,9 +1,9 @@
-import React from 'react';
-import {FlatList} from 'react-native';
+import React, {useCallback} from 'react';
+import {ListRenderItem} from 'react-native';
 import HomeEmptyCard from '@/component/molecules/homeemptycard/homeemptycard';
 import SuggestedCard from '@/component/molecules/suggesstedcard/suggestedcard';
 import {SuggestedEmptyIcon} from '@/assets';
-import type {SuggestedListProps} from './types';
+import type {SuggestedListProps, SuggestedCardDetailsProps} from './types';
 import {
   SuggestedListContainerStyled,
   FlatlistStyled,
@@ -11,27 +11,31 @@ import {
   SuggestedListEmptyContainerStyled,
 } from './styles';
 const SuggestedList = (props: SuggestedListProps) => {
-  const {data} = props;
-  console.log('data', data);
-  // if (data.length > 0) {
-  //   return (
-  //     <SuggestedListContainerStyled>
-  //       <FlatList
-  //         horizontal
-  //         data={data}
-  //         extraData={data}
-  //         keyExtractor={item => item.id}
-  //         renderItem={({item}) => {
-  //           return (
-  //             <RenderItemStyled>
-  //               <SuggestedCard data={item} />
-  //             </RenderItemStyled>
-  //           );
-  //         }}
-  //       />
-  //     </SuggestedListContainerStyled>
-  //   );
-  // }
+  const {data = []} = props;
+
+  const renderItem = useCallback(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    ({item}: {item: any}) => (
+      <RenderItemStyled>
+        <SuggestedCard data={item} />
+      </RenderItemStyled>
+    ),
+    [],
+  );
+  if (data?.length > 0) {
+    return (
+      <SuggestedListContainerStyled>
+        <FlatlistStyled
+          horizontal
+          data={data}
+          extraData={data}
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          keyExtractor={(item: any) => item.id}
+          renderItem={renderItem}
+        />
+      </SuggestedListContainerStyled>
+    );
+  }
   return (
     <SuggestedListEmptyContainerStyled>
       <HomeEmptyCard
