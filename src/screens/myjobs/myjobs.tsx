@@ -10,8 +10,9 @@ const MyJobs = () => {
       <FlatlistStyled
         data={Jobslist}
         extraData={Jobslist}
-        keyExtractor={item => item.id}
-        renderItem={({item}) => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        keyExtractor={(item: any) => item.id}
+        renderItem={({item}: {item: any}) => {
           return <SuggestedCard data={item} />;
         }}
       />
