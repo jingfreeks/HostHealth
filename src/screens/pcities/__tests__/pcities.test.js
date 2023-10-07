@@ -1,7 +1,7 @@
 import React from 'react';
 import {render} from '@testing-library/react-native';
 import {MockProvider} from '@/utils/testframework';
-import Myjobs from '../myjobs';
+import Pcities from '../pcities';
 
 jest.mock('@react-navigation/native', () => {
   return {
@@ -14,7 +14,7 @@ jest.mock('@react-navigation/native', () => {
     useDispatch: () => ({dispatch: jest.fn()}),
   };
 });
-describe('My Jobs Screen', () => {
+describe('Popular Cities Screen', () => {
   it('Should work as expected to get snapshot', () => {
     const all = render(
       <MockProvider
@@ -22,7 +22,7 @@ describe('My Jobs Screen', () => {
           pcities: {loading: false, data: []},
           suggetedjob: {loading: false, data: []},
         }}>
-        <Myjobs />
+        <Pcities />
       </MockProvider>,
     );
     expect(all.toJSON()).toMatchSnapshot();
