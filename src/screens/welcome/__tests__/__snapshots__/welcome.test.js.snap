@@ -1,0 +1,321 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Welcome Screen Should work as expected to get snapshot 1`] = `
+<View
+  style={
+    [
+      {
+        "backgroundColor": "#FFFFFF",
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+      },
+    ]
+  }
+>
+  <RCTSafeAreaView
+    style={
+      [
+        {},
+      ]
+    }
+  >
+    <View
+      alignType="center"
+      style={
+        [
+          {
+            "alignItems": "center",
+            "alignSelf": "center",
+            "flexDirection": "column",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          [
+            {
+              "marginBottom": 58.85294117647059,
+              "marginTop": 58.85294117647059,
+            },
+          ]
+        }
+      >
+        <RCTSafeAreaView
+          style={
+            [
+              {},
+            ]
+          }
+        >
+          <View
+            alignType="center"
+            style={
+              [
+                {
+                  "alignItems": "center",
+                  "alignSelf": "center",
+                  "flexDirection": "column",
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "marginBottom": 58.85294117647059,
+                    "marginTop": 98.08823529411764,
+                  },
+                ]
+              }
+            >
+              <Image
+                resizeMode="contain"
+                source={
+                  {
+                    "testUri": "../../../src/assets/mainlogo.png",
+                  }
+                }
+                style={
+                  [
+                    {
+                      "height": 196.17647058823528,
+                      "width": 451.20588235294116,
+                    },
+                  ]
+                }
+              />
+            </View>
+          </View>
+        </RCTSafeAreaView>
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "marginBottom": 20,
+                "marginTop": 20,
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              [
+                {
+                  "color": "#0e3f6c",
+                  "fontFamily": "Avenir",
+                  "fontSize": 18,
+                  "fontWeight": "900",
+                },
+              ]
+            }
+          >
+            Welcome to Host Healthcare!
+          </Text>
+          <Text
+            style={
+              [
+                {
+                  "color": "#0e3f6c",
+                  "fontFamily": "Avenir",
+                  "fontSize": 16,
+                  "fontWeight": "400",
+                },
+              ]
+            }
+          >
+            Sign up to find your perfect job today.
+          </Text>
+        </View>
+      </View>
+    </View>
+  </RCTSafeAreaView>
+  <View
+    style={
+      [
+        {
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        [
+          {
+            "marginLeft": 5,
+            "marginRight": 5,
+            "paddingBottom": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+            "paddingTop": 5,
+          },
+        ]
+      }
+    >
+      <View
+        border={10}
+        borderc="#99E1E1"
+        borderw={2}
+        style={
+          [
+            {
+              "borderColor": "#99E1E1",
+              "borderRadius": 10,
+              "borderWidth": 2,
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "backgroundColor": "#d6f3f3",
+              "borderRadius": 10,
+              "opacity": 1,
+              "paddingBottom": 15,
+              "paddingLeft": 15,
+              "paddingRight": 15,
+              "paddingTop": 15,
+            }
+          }
+        >
+          <Text
+            style={
+              [
+                {
+                  "color": "#03606A",
+                  "fontFamily": "Avenir",
+                  "fontSize": 15,
+                  "fontWeight": "500",
+                },
+              ]
+            }
+          >
+            SIGN UP
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        [
+          {
+            "marginLeft": 5,
+            "marginRight": 5,
+            "paddingBottom": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+            "paddingTop": 5,
+          },
+        ]
+      }
+    >
+      <View
+        border={10}
+        borderc="#99E1E1"
+        borderw={2}
+        style={
+          [
+            {
+              "borderColor": "#99E1E1",
+              "borderRadius": 10,
+              "borderWidth": 2,
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "backgroundColor": "#FFFFFF",
+              "borderRadius": 10,
+              "opacity": 1,
+              "paddingBottom": 15,
+              "paddingLeft": 15,
+              "paddingRight": 15,
+              "paddingTop": 15,
+            }
+          }
+        >
+          <Text
+            style={
+              [
+                {
+                  "color": "#03606A",
+                  "fontFamily": "Avenir",
+                  "fontSize": 15,
+                  "fontWeight": "500",
+                },
+              ]
+            }
+          >
+            SIGN IN
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
