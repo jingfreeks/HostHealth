@@ -39,10 +39,11 @@ import {colors} from '@/utils/themes';
 import {Details} from './component/details';
 import {Requirements} from './component/requirements';
 import Bbutton from '@/component/molecules/bbutton/bbutton';
-const JobDetailScreen = props => {
+import type {RoutesProps} from './types';
+const JobDetailScreen = (props: RoutesProps) => {
   const {route} = props;
   const {jobdetail} = route.params;
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
   return (
     <>
       <ScrollViewContainer>

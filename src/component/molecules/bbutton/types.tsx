@@ -1,5 +1,5 @@
 export type BbuttonProps = {
-  onPress: () => void;
+  onPress?: () => void;
   title: string;
   border: number;
   bcolor: string;

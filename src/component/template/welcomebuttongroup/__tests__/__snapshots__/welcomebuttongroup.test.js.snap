@@ -60,7 +60,7 @@ exports[`Welcome Button group Template Component Should work as expected to get 
         }
         accessible={true}
         collapsable={false}
-        focusable={false}
+        focusable={true}
         onClick={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
@@ -146,7 +146,7 @@ exports[`Welcome Button group Template Component Should work as expected to get 
         }
         accessible={true}
         collapsable={false}
-        focusable={false}
+        focusable={true}
         onClick={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}

@@ -8,8 +8,8 @@ import {
   SubDetailsDetailsContainerStyled,
   DetailsSubTitleTextStyled,
 } from '../../styles';
-
-const DetailScreen = props => {
+import type {DetailsTypes} from './types';
+const DetailScreen = (props: DetailsTypes) => {
   const {data} = props;
   return (
     <>

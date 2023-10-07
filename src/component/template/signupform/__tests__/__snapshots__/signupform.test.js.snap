@@ -553,7 +553,7 @@ exports[`Login Content Template Component Should work as expected to get snapsho
             }
             accessible={true}
             collapsable={false}
-            focusable={false}
+            focusable={true}
             onClick={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}

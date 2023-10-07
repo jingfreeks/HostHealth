@@ -5,7 +5,7 @@ import type {BbuttonProps} from './types';
 import {ContainerStyled} from './styles';
 const Bbutton = (props: BbuttonProps) => {
   const {
-    onPress,
+    onPress = () => {},
     title,
     border = 10,
     bcolor = 'transparent',

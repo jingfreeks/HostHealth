@@ -260,7 +260,7 @@ exports[`Login Form  Template Component Should work as expected to get snapshot 
         }
         accessible={true}
         collapsable={false}
-        focusable={false}
+        focusable={true}
         onClick={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
