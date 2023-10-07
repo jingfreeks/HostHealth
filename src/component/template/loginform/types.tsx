@@ -1,3 +1,3 @@
 export type LoginFormProps = {
-  signInPress: () => void;
+  signInPress?: () => void;
 };

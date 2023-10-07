@@ -13,7 +13,7 @@ import {UseWelcomeHooks} from '@/screens/welcome/hooks';
 import type {LoginFormProps} from './types';
 import {colors} from '@/utils/themes';
 const LoginFormScreen = (props: LoginFormProps) => {
-  const {signInPress} = props;
+  const {signInPress = () => {}} = props;
   const {handleSignUp} = UseWelcomeHooks();
   return (
     <ContainerStyled>
