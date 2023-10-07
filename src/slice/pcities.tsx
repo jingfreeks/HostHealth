@@ -17,12 +17,13 @@ export const fetchPCities = createAsyncThunk('pcities/get', async () => {
   }
 });
 
+export const initialState = {
+  loading: false,
+  data: [],
+};
 export const pcities = createSlice({
   name: 'pcities',
-  initialState: {
-    loading: false,
-    data: [],
-  },
+  initialState,
   reducers: {},
   extraReducers: builder => {
     builder.addCase(fetchPCities.pending, state => {
