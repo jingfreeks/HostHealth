@@ -14,12 +14,13 @@ export const fetchSuggested = createAsyncThunk('pcities/get', async () => {
   }
 });
 
+export const initialState = {
+  loading: false,
+  data: [],
+};
 export const suggestedjobs = createSlice({
   name: 'suggestedjobs',
-  initialState: {
-    loading: false,
-    data: [],
-  },
+  initialState,
   reducers: {},
   extraReducers: builder => {
     builder.addCase(fetchSuggested.pending, state => {

@@ -12,6 +12,7 @@ const MyJobs = () => {
         extraData={Jobslist}
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         keyExtractor={(item: any) => item.id}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         renderItem={({item}: {item: any}) => {
           return <SuggestedCard data={item} />;
         }}
