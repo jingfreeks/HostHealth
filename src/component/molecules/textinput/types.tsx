@@ -1,6 +1,7 @@
 export type TextInputProps = {
   Label?: string;
-  onChangeText?: () => void;
+  onChangeText?: (params) => void;
+  onBlur?: (params) => void;
   value?: string;
   type?: string;
   isError?: boolean;
