@@ -161,6 +161,7 @@ exports[`Signup Screen Should work as expected to get snapshot 1`] = `
                 }
               >
                 <TextInput
+                  placeholder=""
                   secureTextEntry={false}
                   style={
                     [
@@ -254,6 +255,7 @@ exports[`Signup Screen Should work as expected to get snapshot 1`] = `
                 }
               >
                 <TextInput
+                  placeholder=""
                   secureTextEntry={false}
                   style={
                     [
@@ -347,6 +349,7 @@ exports[`Signup Screen Should work as expected to get snapshot 1`] = `
                 }
               >
                 <TextInput
+                  placeholder=""
                   secureTextEntry={false}
                   style={
                     [
@@ -440,6 +443,7 @@ exports[`Signup Screen Should work as expected to get snapshot 1`] = `
                 }
               >
                 <TextInput
+                  placeholder=""
                   secureTextEntry={false}
                   style={
                     [
@@ -534,6 +538,7 @@ exports[`Signup Screen Should work as expected to get snapshot 1`] = `
                 }
               >
                 <TextInput
+                  placeholder=""
                   secureTextEntry={false}
                   style={
                     [

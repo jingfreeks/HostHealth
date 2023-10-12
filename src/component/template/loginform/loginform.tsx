@@ -1,6 +1,13 @@
 import React from 'react';
 import {TextInput} from '@/component/molecules/textinput';
+import {FormTextController} from '@/component/molecules/formtextcontroller';
 import {Text} from '@/component/atoms/text';
+import {
+  useForm,
+  Controller,
+  useFormContext,
+  FormProvider,
+} from 'react-hook-form';
 import {
   ContainerStyled,
   TextInputContainerStyled,
@@ -12,30 +19,63 @@ import {Bbutton} from '@/component/molecules/bbutton';
 import {UseWelcomeHooks} from '@/screens/welcome/hooks';
 import type {LoginFormProps} from './types';
 import {colors} from '@/utils/themes';
+import {yupResolver} from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 const LoginFormScreen = (props: LoginFormProps) => {
   const {signInPress = () => {}} = props;
   const {handleSignUp} = UseWelcomeHooks();
+  const schema = yup
+    .object({
+      email: yup.string().required('Email Name Should be required'),
+      password: yup.string().required('Password Should be required'),
+    })
+    .required();
+  type FormData = yup.InferType<typeof schema>;
+  const formMethod = useForm<FormData>({
+    defaultValues: {
+      email: '',
+      password: '',
+    },
+    resolver: yupResolver(schema),
+  });
+
   return (
     <ContainerStyled>
-      <TextInputContainerStyled>
-        <TextInput Label="Email" />
-        <TextInput Label="Password" type="password" />
-      </TextInputContainerStyled>
-      <Bbutton
-        bcolor={'#d6f3f3'}
-        border={10}
-        title="SIGN IN"
-        onPress={signInPress}
-      />
-      <ForgotPassContainerStyled>
-        <Text>Forgot Password?</Text>
-      </ForgotPassContainerStyled>
-      <AccountContainerStyled>
-        <Text TextMode="TextNormal">Forgot Password?</Text>
-        <SignUpButtonStyled onPress={handleSignUp}>
-          <Text>Sign Up here</Text>
-        </SignUpButtonStyled>
-      </AccountContainerStyled>
+      <FormProvider {...formMethod}>
+        <TextInputContainerStyled>
+          <FormTextController
+            Label="Email"
+            name="email"
+            placeholder="Email"
+            rules={{
+              required: true,
+            }}
+          />
+          <FormTextController
+            Label="Password"
+            name="password"
+            placeholder="Password"
+            rules={{
+              required: true,
+            }}
+          />
+        </TextInputContainerStyled>
+        <Bbutton
+          bcolor={'#d6f3f3'}
+          border={10}
+          title="SIGN IN"
+          onPress={formMethod.handleSubmit(signInPress)}
+        />
+        <ForgotPassContainerStyled>
+          <Text>Forgot Password?</Text>
+        </ForgotPassContainerStyled>
+        <AccountContainerStyled>
+          <Text TextMode="TextNormal">Forgot Password?</Text>
+          <SignUpButtonStyled onPress={handleSignUp}>
+            <Text>Sign Up here</Text>
+          </SignUpButtonStyled>
+        </AccountContainerStyled>
+      </FormProvider>
     </ContainerStyled>
   );
 };
