@@ -18,7 +18,6 @@ const TextInput = (props: TextInputProps) => {
     placeholder = '',
   } = props;
   const [isVisible, setIsVisible] = useState<boolean>(false);
-  console.log('errorrs', isError);
   return (
     <Vcontainer>
       <Text TextMode="Title">{Label}</Text>

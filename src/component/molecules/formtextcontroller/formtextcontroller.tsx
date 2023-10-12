@@ -1,11 +1,11 @@
 import React from 'react';
 import {TextInput} from '@/component/molecules/textinput';
 import {Controller, useFormContext} from 'react-hook-form';
+import type {FormTextControllerTypes} from './types';
+const FormTextController = (props: FormTextControllerTypes) => {
+  const {name = '', rules, onBlur = () => {}, ...rest} = props;
 
-const FormTextController = (props: any) => {
-  const {name, rules, onBlur, ...rest} = props;
-
-  const {control, formState} = useFormContext();
+  const {control, formState} = useFormContext() ?? {};
 
   return (
     <Controller
@@ -14,7 +14,7 @@ const FormTextController = (props: any) => {
       render={({field}) => (
         <TextInput
           {...rest}
-          errmessage={formState.errors[name]?.message}
+          errmessage={formState.errors[name]?.message?.toString()}
           isError={formState.errors[name]?.type === 'required' ? true : false}
           value={field.value}
           onBlur={(event: any) => {
