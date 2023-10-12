@@ -57,6 +57,12 @@ const MtextBold = styled(Text)`
   font-size: 14px;
   font-weight: 900;
 `;
+
+const ErrorText = styled(Text)`
+  font-size: 14px;
+  font-weight: 900;
+  color: red;
+`;
 export default {
   Text,
   Title,
@@ -70,4 +76,5 @@ export default {
   TextNormalBold,
   TextNormalRegular,
   MtextBold,
+  ErrorText,
 };

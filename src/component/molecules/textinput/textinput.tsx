@@ -8,13 +8,23 @@ import {colors} from '@/utils/themes';
 import type {TextInputProps} from './types';
 import {TextInputStyled, LineTextStyled} from './styles';
 const TextInput = (props: TextInputProps) => {
-  const {Label, onChangeText, value, type = 'Text'} = props;
-  const [isVisible, setIsVisible] = useState(false);
+  const {
+    Label,
+    onChangeText,
+    value,
+    type = 'Text',
+    isError = false,
+    errmessage = '',
+    placeholder = '',
+  } = props;
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+  console.log('errorrs', isError);
   return (
     <Vcontainer>
       <Text TextMode="Title">{Label}</Text>
       <Hcontainer>
         <TextInputStyled
+          placeholder={placeholder}
           secureTextEntry={isVisible}
           value={value}
           onChangeText={onChangeText}
@@ -31,6 +41,7 @@ const TextInput = (props: TextInputProps) => {
         )}
       </Hcontainer>
       <LineTextStyled />
+      {isError && <Text TextMode="ErrorText">{errmessage}</Text>}
     </Vcontainer>
   );
 };

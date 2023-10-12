@@ -10,7 +10,8 @@ export type textmode =
   | 'Pstitle'
   | 'TextNormalBold'
   | 'TextNormalRegular'
-  | 'MtextBold';
+  | 'MtextBold'
+  | 'ErrorText';
 
 export type TextTypes = {
   TextMode?: textmode;

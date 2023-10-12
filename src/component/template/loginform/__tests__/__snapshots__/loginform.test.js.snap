@@ -67,6 +67,8 @@ exports[`Login Form  Template Component Should work as expected to get snapshot 
           }
         >
           <TextInput
+            onChangeText={[Function]}
+            placeholder="Email"
             secureTextEntry={false}
             style={
               [
@@ -79,6 +81,7 @@ exports[`Login Form  Template Component Should work as expected to get snapshot 
                 },
               ]
             }
+            value=""
           />
           <Text
             allowFontScaling={false}
@@ -160,6 +163,8 @@ exports[`Login Form  Template Component Should work as expected to get snapshot 
           }
         >
           <TextInput
+            onChangeText={[Function]}
+            placeholder="Password"
             secureTextEntry={false}
             style={
               [
@@ -172,10 +177,10 @@ exports[`Login Form  Template Component Should work as expected to get snapshot 
                 },
               ]
             }
+            value=""
           />
           <Text
             allowFontScaling={false}
-            onPress={[Function]}
             selectable={false}
             style={
               [
@@ -185,7 +190,7 @@ exports[`Login Form  Template Component Should work as expected to get snapshot 
                 },
                 undefined,
                 {
-                  "fontFamily": "Material Icons",
+                  "fontFamily": "Ionicons",
                   "fontStyle": "normal",
                   "fontWeight": "normal",
                 },
@@ -193,7 +198,7 @@ exports[`Login Form  Template Component Should work as expected to get snapshot 
               ]
             }
           >
-            
+            
           </Text>
         </View>
         <View
