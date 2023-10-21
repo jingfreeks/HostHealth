@@ -1,6 +1,7 @@
 import React from 'react';
 import {Text} from '@/component/atoms/text';
 import Button from '@/component/atoms/button/button';
+import {Loaders} from '@/component/atoms/loaders';
 import type {BbuttonProps} from './types';
 import {ContainerStyled} from './styles';
 const Bbutton = (props: BbuttonProps) => {
@@ -12,6 +13,9 @@ const Bbutton = (props: BbuttonProps) => {
     padding,
     borderw,
     borderc,
+    loaders = false,
+    loaderColor,
+    loaderSize,
   } = props;
   return (
     <ContainerStyled>
@@ -22,7 +26,11 @@ const Bbutton = (props: BbuttonProps) => {
         borderw={borderw}
         padding={padding}
         onPress={onPress}>
-        <Text TextMode="Stext">{title}</Text>
+        {loaders ? (
+          <Loaders color={loaderColor} size={loaderSize} />
+        ) : (
+          <Text TextMode="Stext">{title}</Text>
+        )}
       </Button>
     </ContainerStyled>
   );
