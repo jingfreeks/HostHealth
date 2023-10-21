@@ -6,7 +6,6 @@ const FormTextController = (props: FormTextControllerTypes) => {
   const {name = '', rules, onBlur = () => {}, ...rest} = props;
 
   const {control, formState} = useFormContext() ?? {};
-
   return (
     <Controller
       control={control}
@@ -15,9 +14,9 @@ const FormTextController = (props: FormTextControllerTypes) => {
         <TextInput
           {...rest}
           errmessage={formState.errors[name]?.message?.toString()}
-          isError={formState.errors[name]?.type === 'required' ? true : false}
+          isError={formState.errors[name]?.type ? true : false}
           value={field.value}
-          onBlur={(event: any) => {
+          onBlur={(event: string) => {
             field.onBlur();
             onBlur?.(event);
           }}

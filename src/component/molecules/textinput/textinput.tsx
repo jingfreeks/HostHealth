@@ -18,13 +18,14 @@ const TextInput = (props: TextInputProps) => {
     placeholder = '',
   } = props;
   const [isVisible, setIsVisible] = useState<boolean>(false);
+
   return (
     <Vcontainer>
       <Text TextMode="Title">{Label}</Text>
       <Hcontainer>
         <TextInputStyled
           placeholder={placeholder}
-          secureTextEntry={isVisible}
+          secureTextEntry={type === 'Text' ? isVisible : !isVisible}
           value={value}
           onChangeText={onChangeText}
         />
