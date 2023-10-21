@@ -80,7 +80,8 @@ exports[`Login Content Template Component Should work as expected to get snapsho
               }
             >
               <TextInput
-                placeholder=""
+                onChangeText={[Function]}
+                placeholder="First Name"
                 secureTextEntry={false}
                 style={
                   [
@@ -93,6 +94,7 @@ exports[`Login Content Template Component Should work as expected to get snapsho
                     },
                   ]
                 }
+                value=""
               />
               <Text
                 allowFontScaling={false}
@@ -174,7 +176,8 @@ exports[`Login Content Template Component Should work as expected to get snapsho
               }
             >
               <TextInput
-                placeholder=""
+                onChangeText={[Function]}
+                placeholder="Last Name"
                 secureTextEntry={false}
                 style={
                   [
@@ -187,6 +190,7 @@ exports[`Login Content Template Component Should work as expected to get snapsho
                     },
                   ]
                 }
+                value=""
               />
               <Text
                 allowFontScaling={false}
@@ -268,7 +272,8 @@ exports[`Login Content Template Component Should work as expected to get snapsho
               }
             >
               <TextInput
-                placeholder=""
+                onChangeText={[Function]}
+                placeholder="Email Address"
                 secureTextEntry={false}
                 style={
                   [
@@ -281,6 +286,7 @@ exports[`Login Content Template Component Should work as expected to get snapsho
                     },
                   ]
                 }
+                value=""
               />
               <Text
                 allowFontScaling={false}
@@ -362,8 +368,9 @@ exports[`Login Content Template Component Should work as expected to get snapsho
               }
             >
               <TextInput
-                placeholder=""
-                secureTextEntry={false}
+                onChangeText={[Function]}
+                placeholder="Password"
+                secureTextEntry={true}
                 style={
                   [
                     {
@@ -375,6 +382,7 @@ exports[`Login Content Template Component Should work as expected to get snapsho
                     },
                   ]
                 }
+                value=""
               />
               <Text
                 allowFontScaling={false}
@@ -445,7 +453,7 @@ exports[`Login Content Template Component Should work as expected to get snapsho
                 ]
               }
             >
-              Password Confirm
+              Confirm Password
             </Text>
             <View
               style={
@@ -457,8 +465,9 @@ exports[`Login Content Template Component Should work as expected to get snapsho
               }
             >
               <TextInput
-                placeholder=""
-                secureTextEntry={false}
+                onChangeText={[Function]}
+                placeholder="Confirm Password"
+                secureTextEntry={true}
                 style={
                   [
                     {
@@ -470,6 +479,7 @@ exports[`Login Content Template Component Should work as expected to get snapsho
                     },
                   ]
                 }
+                value=""
               />
               <Text
                 allowFontScaling={false}
