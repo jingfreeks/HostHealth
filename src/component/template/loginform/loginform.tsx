@@ -20,23 +20,24 @@ import {UseWelcomeHooks} from '@/screens/welcome/hooks';
 import type {LoginFormProps} from './types';
 import {colors} from '@/utils/themes';
 import {yupResolver} from '@hookform/resolvers/yup';
+import {Schema} from './schema';
 import * as yup from 'yup';
 const LoginFormScreen = (props: LoginFormProps) => {
   const {signInPress = () => {}} = props;
   const {handleSignUp} = UseWelcomeHooks();
-  const schema = yup
-    .object({
-      email: yup.string().required('Email Name Should be required'),
-      password: yup.string().required('Password Should be required'),
-    })
-    .required();
-  type FormData = yup.InferType<typeof schema>;
+  // const schema = yup
+  //   .object({
+  //     email: yup.string().required('Email Name Should be required'),
+  //     password: yup.string().required('Password Should be required'),
+  //   })
+  //   .required();
+  type FormData = yup.InferType<typeof Schema>;
   const formMethod = useForm<FormData>({
     defaultValues: {
       email: '',
       password: '',
     },
-    resolver: yupResolver(schema),
+    resolver: yupResolver(Schema),
   });
 
   return (
