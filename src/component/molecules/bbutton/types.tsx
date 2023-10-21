@@ -6,4 +6,7 @@ export type BbuttonProps = {
   padding?: number;
   borderw?: number;
   borderc?: string;
+  loaders?: boolean;
+  loaderColor?: string;
+  loaderSize?: string;
 };
