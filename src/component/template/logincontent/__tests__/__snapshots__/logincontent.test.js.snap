@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Content Template Component Should work as expected to get snapshot 1`] = `
+<RCTSafeAreaView
+  style={
+    [
+      {},
+    ]
+  }
+>
+  <View
+    alignType="center"
+    style={
+      [
+        {
+          "alignItems": "center",
+          "alignSelf": "center",
+          "flexDirection": "column",
+        },
+      ]
+    }
+  >
+    <RCTSafeAreaView
+      style={
+        [
+          {},
+        ]
+      }
+    >
+      <View
+        alignType="center"
+        style={
+          [
+            {
+              "alignItems": "center",
+              "alignSelf": "center",
+              "flexDirection": "column",
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            [
+              {
+                "marginBottom": 58.85294117647059,
+                "marginTop": 98.08823529411764,
+              },
+            ]
+          }
+        >
+          <Image
+            resizeMode="contain"
+            source={
+              {
+                "testUri": "../../../src/assets/mainlogo.png",
+              }
+            }
+            style={
+              [
+                {
+                  "height": 196.17647058823528,
+                  "width": 451.20588235294116,
+                },
+              ]
+            }
+          />
+        </View>
+      </View>
+    </RCTSafeAreaView>
+  </View>
+</RCTSafeAreaView>
+`;

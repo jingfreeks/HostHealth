@@ -2,9 +2,11 @@ import React from 'react';
 import HomeEmptyCard from '@/component/molecules/homeemptycard/homeemptycard';
 import {PopularEmptyContainerStyled, PopularContainerStyled} from './styles';
 import {PcitiesEmptyIcon} from '@/assets';
+import type {PopularListProps} from './types';
 import {PopularCard} from '@/component/molecules/popularcard';
-const PopularListScreen = props => {
+const PopularListScreen = (props: PopularListProps) => {
   const {data} = props;
+
   if (data?.length > 0) {
     return data?.map((item, idx) => {
       return (

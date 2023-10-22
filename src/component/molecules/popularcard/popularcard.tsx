@@ -10,16 +10,17 @@ import {
   PriceContainerStyled,
 } from './styles';
 import {Text} from '@/component/atoms/text';
-const PopularCardScreen = props => {
+import type {PopularCardProps} from './types';
+const PopularCardScreen = (props: PopularCardProps) => {
   const {item} = props;
   return (
     <ContainerStyled>
       <ImageContainerStyled>
         <ImageStyled
+          resizeMode={'stretch'}
           source={{
             uri: item.image,
           }}
-          resizeMode={'stretch'}
         />
       </ImageContainerStyled>
       <InfoContainerStyled>

@@ -6,8 +6,8 @@ const HomeHeaderList = () => {
     <HomeCard
       key={idx}
       imgsource={item.imagesource}
-      title={item.title}
       subtitle={item.subtitle}
+      title={item.title}
     />
   ));
 };

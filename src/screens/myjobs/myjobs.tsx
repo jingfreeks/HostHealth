@@ -1,3 +1,5 @@
+//@ts-check
+
 import React from 'react';
 import {ContainerStyled, FlatlistStyled} from './styles';
 import {SuggestedCard} from '@/component/molecules/suggesstedcard';
@@ -7,11 +9,13 @@ const MyJobs = () => {
     <ContainerStyled>
       <FlatlistStyled
         data={Jobslist}
-        renderItem={({item}) => {
+        extraData={Jobslist}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        keyExtractor={(item: any) => item.id}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        renderItem={({item}: {item: any}) => {
           return <SuggestedCard data={item} />;
         }}
-        keyExtractor={item => item.id}
-        extraData={Jobslist}
       />
     </ContainerStyled>
   );

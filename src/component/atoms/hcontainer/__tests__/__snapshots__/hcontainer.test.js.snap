@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HContainer Component Should work as expected to get snapshot 1`] = `
+<View
+  style={
+    [
+      {
+        "flexDirection": "row",
+      },
+    ]
+  }
+/>
+`;

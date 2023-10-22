@@ -36,95 +36,99 @@ import {
 import {ImageHeaderStyled} from '@/navigation/styles';
 import Bbutton from '@/component/molecules/bbutton/bbutton';
 import {UseSuggestedCardHooks} from './hooks';
+import type {SuggestedCardProps} from './types';
 import {Text} from '@/component/atoms/text';
-const SuggestedCardScreen = props => {
+const SuggestedCardScreen = (props: SuggestedCardProps) => {
   const {data} = props;
   const {handlesubmit} = UseSuggestedCardHooks();
-  return (
-    <Container>
-      <ImageHeaderContainer>
-        <ImageStyled
-          source={{
-            uri: data.image,
-          }}
-          resizeMode={'stretch'}
-        />
-        <FavoriteContainerStyled>
-          <FavoriteImageContainer>
-            <ImageHeaderStyled source={HeartIcon} resizeMode={'contain'} />
-          </FavoriteImageContainer>
-          <FavoriteImageContainer>
-            <ImageHeaderStyled source={ShareIcon} resizeMode={'contain'} />
-          </FavoriteImageContainer>
-        </FavoriteContainerStyled>
-        <LocationContainerStyled>
-          <ImageHeaderStyled
-            source={LocationIcon}
-            resizeMode={'contain'}
-            size={15}
+  if (data) {
+    return (
+      <Container>
+        <ImageHeaderContainer>
+          <ImageStyled
+            resizeMode={'stretch'}
+            source={{
+              uri: data?.image,
+            }}
           />
-          <LocationTextStyled>
-            {data.city}, {data.state}
-          </LocationTextStyled>
-        </LocationContainerStyled>
-      </ImageHeaderContainer>
-      <JobInfoContainerStyled>
-        <JobInfoTextContainerStyled>
-          <Text TextMode="Ptitle">{data.jobtitle}</Text>
-          <JobTextSubTitleStyled>{data.company}</JobTextSubTitleStyled>
-        </JobInfoTextContainerStyled>
-        <MatchContainersStyled>
-          <MatchTextStyled>{data.match}</MatchTextStyled>
-        </MatchContainersStyled>
-      </JobInfoContainerStyled>
-      <MatchContainerStyled>
-        <MatchSubTextStyled>% match</MatchSubTextStyled>
-      </MatchContainerStyled>
-      <DeptContainerStyled>
-        <DeptImageContainerStyled>
-          <ImageHeaderStyled
-            source={StethoscopeIcon}
-            resizeMode={'contain'}
-            size={15}
+          <FavoriteContainerStyled>
+            <FavoriteImageContainer>
+              <ImageHeaderStyled resizeMode={'contain'} source={HeartIcon} />
+            </FavoriteImageContainer>
+            <FavoriteImageContainer>
+              <ImageHeaderStyled resizeMode={'contain'} source={ShareIcon} />
+            </FavoriteImageContainer>
+          </FavoriteContainerStyled>
+          <LocationContainerStyled>
+            <ImageHeaderStyled
+              resizeMode={'contain'}
+              size={15}
+              source={LocationIcon}
+            />
+            <LocationTextStyled>
+              {data?.city}, {data?.state}
+            </LocationTextStyled>
+          </LocationContainerStyled>
+        </ImageHeaderContainer>
+        <JobInfoContainerStyled>
+          <JobInfoTextContainerStyled>
+            <Text TextMode="Ptitle">{data?.jobtitle}</Text>
+            <JobTextSubTitleStyled>{data?.company}</JobTextSubTitleStyled>
+          </JobInfoTextContainerStyled>
+          <MatchContainersStyled>
+            <MatchTextStyled>{data?.match}</MatchTextStyled>
+          </MatchContainersStyled>
+        </JobInfoContainerStyled>
+        <MatchContainerStyled>
+          <MatchSubTextStyled>% match</MatchSubTextStyled>
+        </MatchContainerStyled>
+        <DeptContainerStyled>
+          <DeptImageContainerStyled>
+            <ImageHeaderStyled
+              resizeMode={'contain'}
+              size={15}
+              source={StethoscopeIcon}
+            />
+          </DeptImageContainerStyled>
+          <DeptTitleTextStyled>{data?.dept}</DeptTitleTextStyled>
+        </DeptContainerStyled>
+        <WeeksContaienrStyled>
+          <DeptImageContainerStyled>
+            <ImageHeaderStyled
+              resizeMode={'contain'}
+              size={15}
+              source={CalendarIcon}
+            />
+          </DeptImageContainerStyled>
+          <WeeksTitleTextStyled>{data?.weeks} Weeks</WeeksTitleTextStyled>
+        </WeeksContaienrStyled>
+        <ShiftContainerStyled>
+          <DeptImageContainerStyled>
+            <ImageHeaderStyled
+              resizeMode={'contain'}
+              size={15}
+              source={SunICon}
+            />
+          </DeptImageContainerStyled>
+          <DeptTitleTextStyled>{data?.shift}</DeptTitleTextStyled>
+        </ShiftContainerStyled>
+        <EstimatedContainerStyled>
+          <EstimatedTextStyled>Estimated</EstimatedTextStyled>
+          <EstimatedAmount>${data?.salaryrange}</EstimatedAmount>
+          <EstimatedTextStyled>/wk</EstimatedTextStyled>
+        </EstimatedContainerStyled>
+        <SubmitContainerStyled>
+          <Bbutton
+            bcolor={'#d6f3f3'}
+            border={50}
+            padding={5}
+            title="PLEASE SUBMIT"
+            onPress={() => handlesubmit(data)}
           />
-        </DeptImageContainerStyled>
-        <DeptTitleTextStyled>{data.dept}</DeptTitleTextStyled>
-      </DeptContainerStyled>
-      <WeeksContaienrStyled>
-        <DeptImageContainerStyled>
-          <ImageHeaderStyled
-            source={CalendarIcon}
-            resizeMode={'contain'}
-            size={15}
-          />
-        </DeptImageContainerStyled>
-        <WeeksTitleTextStyled>{data.weeks} Weeks</WeeksTitleTextStyled>
-      </WeeksContaienrStyled>
-      <ShiftContainerStyled>
-        <DeptImageContainerStyled>
-          <ImageHeaderStyled
-            source={SunICon}
-            resizeMode={'contain'}
-            size={15}
-          />
-        </DeptImageContainerStyled>
-        <DeptTitleTextStyled>{data.shift}</DeptTitleTextStyled>
-      </ShiftContainerStyled>
-      <EstimatedContainerStyled>
-        <EstimatedTextStyled>Estimated</EstimatedTextStyled>
-        <EstimatedAmount>${data.salaryrange}</EstimatedAmount>
-        <EstimatedTextStyled>/wk</EstimatedTextStyled>
-      </EstimatedContainerStyled>
-      <SubmitContainerStyled>
-        <Bbutton
-          onPress={() => handlesubmit(data)}
-          padding={5}
-          border={50}
-          bcolor={'#d6f3f3'}
-          title="PLEASE SUBMIT"
-        />
-      </SubmitContainerStyled>
-    </Container>
-  );
+        </SubmitContainerStyled>
+      </Container>
+    );
+  }
+  return null;
 };
 export default SuggestedCardScreen;

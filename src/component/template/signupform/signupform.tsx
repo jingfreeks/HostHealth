@@ -11,31 +11,94 @@ import {
   SignTextStyled,
   SignInButtonStyled,
 } from './styles';
-const SignupFormScreen = props => {
+import {
+  useForm,
+  Controller,
+  useFormContext,
+  FormProvider,
+} from 'react-hook-form';
+import {FormTextController} from '@/component/molecules/formtextcontroller';
+import {yupResolver} from '@hookform/resolvers/yup';
+import {Schema} from './schema';
+import * as yup from 'yup';
+
+const SignupFormScreen = (props: {handleSignUp: () => void}) => {
   const {handleSignUp} = props;
+  type FormData = yup.InferType<typeof Schema>;
+  const formMethod = useForm<FormData>({
+    defaultValues: {
+      firstname: '',
+      lastname: '',
+      email: '',
+      password: '',
+      cpassword: '',
+    },
+    resolver: yupResolver(Schema),
+  });
   return (
     <ContainerStyled>
-      <ScrollViewContainer>
-        <TextInputContainerStyled>
-          <TextInput Label="First Name" />
-          <TextInput Label="Last Name" />
-          <TextInput Label="Email" />
-          <TextInput Label="Password" type="password" />
-          <TextInput Label="Password Confirm" type="password" />
-        </TextInputContainerStyled>
-        <Bbutton
-          onPress={handleSignUp}
-          border={10}
-          bcolor={colors.lightergreen}
-          title="SIGN UP"
-        />
-        <AccountTextContainerStyled>
-          <Text TextMode="TextNormal">Have an account?</Text>
-          <SignInButtonStyled>
-            <SignTextStyled>Sign In here</SignTextStyled>
-          </SignInButtonStyled>
-        </AccountTextContainerStyled>
-      </ScrollViewContainer>
+      <FormProvider {...formMethod}>
+        <ScrollViewContainer>
+          <TextInputContainerStyled>
+            <FormTextController
+              Label="First Name"
+              name="firstname"
+              placeholder="First Name"
+              rules={{
+                required: true,
+              }}
+            />
+            <FormTextController
+              Label="Last Name"
+              name="lastname"
+              placeholder="Last Name"
+              rules={{
+                required: true,
+              }}
+            />
+            <FormTextController
+              Label="Email"
+              name="email"
+              placeholder="Email Address"
+              rules={{
+                required: true,
+              }}
+            />
+            <FormTextController
+              Label="Password"
+              name="password"
+              placeholder="Password"
+              rules={{
+                required: true,
+              }}
+              type="password"
+            />
+            <FormTextController
+              Label="Confirm Password"
+              name="cpassword"
+              placeholder="Confirm Password"
+              rules={{
+                required: true,
+              }}
+              type="password"
+            />
+            {/* <TextInput Label="Password Confirm" type="password" /> */}
+          </TextInputContainerStyled>
+          <Bbutton
+            bcolor={colors.lightergreen}
+            border={10}
+            title="SIGN UP"
+            // onPress={handleSignUp}
+            onPress={formMethod.handleSubmit(handleSignUp)}
+          />
+          <AccountTextContainerStyled>
+            <Text TextMode="TextNormal">Have an account?</Text>
+            <SignInButtonStyled>
+              <SignTextStyled>Sign In here</SignTextStyled>
+            </SignInButtonStyled>
+          </AccountTextContainerStyled>
+        </ScrollViewContainer>
+      </FormProvider>
     </ContainerStyled>
   );
 };

@@ -1,0 +1,1413 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`My Jobs Screen Should work as expected to get snapshot 1`] = `
+<View
+  style={
+    [
+      {
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+        "marginBottom": 10,
+        "marginLeft": 10,
+        "marginRight": 10,
+        "marginTop": 10,
+      },
+    ]
+  }
+>
+  <RCTScrollView
+    data={
+      [
+        {
+          "address": "55 Fruit Street, Boston, MA 02114",
+          "city": "Boston",
+          "company": "Enlo Medical Center",
+          "dept": "Labor and Delivery",
+          "id": 1,
+          "image": "https://img.freepik.com/free-photo/modern-tokyo-street-background_23-2149394948.jpg?w=996&t=st=1691132416~exp=1691133016~hmac=ee53d564abdbe32689b1a997ac989046fba50feb0f76dd84f912d8bea1a1121b",
+          "joborderno": "179827",
+          "jobtitle": "Registered Nurse",
+          "match": "97",
+          "salaryrange": "3,656.09-4,500",
+          "shift": "Days",
+          "state": "MA",
+          "weeks": "12",
+        },
+        {
+          "address": "55 Fruit Street, Los Angeles, CA 02114",
+          "city": "Los Angeles",
+          "company": "Enlo Medical Center",
+          "dept": "Labor and Delivery",
+          "id": 2,
+          "image": "https://img.freepik.com/free-photo/los-angeles-downtown-buildings-night_649448-298.jpg?w=1060&t=st=1691142282~exp=1691142882~hmac=9a8088f4cc3274f95a936542763c9011320371fbc6b6534ee5f2d6e4108d8895",
+          "jobtitle": "Registered Nurse",
+          "match": "97",
+          "salaryrange": "3,656.09-4,500",
+          "shift": "Days",
+          "state": "CA",
+          "weeks": "12",
+        },
+      ]
+    }
+    extraData={
+      [
+        {
+          "address": "55 Fruit Street, Boston, MA 02114",
+          "city": "Boston",
+          "company": "Enlo Medical Center",
+          "dept": "Labor and Delivery",
+          "id": 1,
+          "image": "https://img.freepik.com/free-photo/modern-tokyo-street-background_23-2149394948.jpg?w=996&t=st=1691132416~exp=1691133016~hmac=ee53d564abdbe32689b1a997ac989046fba50feb0f76dd84f912d8bea1a1121b",
+          "joborderno": "179827",
+          "jobtitle": "Registered Nurse",
+          "match": "97",
+          "salaryrange": "3,656.09-4,500",
+          "shift": "Days",
+          "state": "MA",
+          "weeks": "12",
+        },
+        {
+          "address": "55 Fruit Street, Los Angeles, CA 02114",
+          "city": "Los Angeles",
+          "company": "Enlo Medical Center",
+          "dept": "Labor and Delivery",
+          "id": 2,
+          "image": "https://img.freepik.com/free-photo/los-angeles-downtown-buildings-night_649448-298.jpg?w=1060&t=st=1691142282~exp=1691142882~hmac=9a8088f4cc3274f95a936542763c9011320371fbc6b6534ee5f2d6e4108d8895",
+          "jobtitle": "Registered Nurse",
+          "match": "97",
+          "salaryrange": "3,656.09-4,500",
+          "shift": "Days",
+          "state": "CA",
+          "weeks": "12",
+        },
+      ]
+    }
+    getItem={[Function]}
+    getItemCount={[Function]}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={[]}
+    style={
+      [
+        {},
+      ]
+    }
+    viewabilityConfigCallbackPairs={[]}
+  >
+    <View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            [
+              {
+                "alignSelf": "stretch",
+                "borderColor": "#E6E6E6",
+                "borderRadius": 15,
+                "borderWidth": 1,
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "marginTop": 20,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              [
+                {
+                  "flexBasis": 0,
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "height": 215.7941176470588,
+                },
+              ]
+            }
+          >
+            <Image
+              resizeMode="stretch"
+              source={
+                {
+                  "uri": "https://img.freepik.com/free-photo/modern-tokyo-street-background_23-2149394948.jpg?w=996&t=st=1691132416~exp=1691133016~hmac=ee53d564abdbe32689b1a997ac989046fba50feb0f76dd84f912d8bea1a1121b",
+                }
+              }
+              style={
+                [
+                  {
+                    "borderTopLeftRadius": 10,
+                    "borderTopRightRadius": 10,
+                    "flexBasis": 0,
+                    "flexGrow": 1,
+                    "flexShrink": 1,
+                  },
+                ]
+              }
+            />
+            <View
+              style={
+                [
+                  {
+                    "backgroundColor": "#d6f3f3",
+                    "borderBottomLeftRadius": 10,
+                    "borderTopRightRadius": 10,
+                    "flexDirection": "row",
+                    "position": "absolute",
+                    "right": 0,
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  [
+                    {
+                      "paddingBottom": 10,
+                      "paddingLeft": 10,
+                      "paddingRight": 10,
+                      "paddingTop": 10,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  resizeMode="contain"
+                  source={
+                    {
+                      "testUri": "../../../src/assets/heart.png",
+                    }
+                  }
+                  style={
+                    [
+                      {
+                        "height": 39.23529411764706,
+                        "width": 39.23529411764706,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <View
+                style={
+                  [
+                    {
+                      "paddingBottom": 10,
+                      "paddingLeft": 10,
+                      "paddingRight": 10,
+                      "paddingTop": 10,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  resizeMode="contain"
+                  source={
+                    {
+                      "testUri": "../../../src/assets/share.png",
+                    }
+                  }
+                  style={
+                    [
+                      {
+                        "height": 39.23529411764706,
+                        "width": 39.23529411764706,
+                      },
+                    ]
+                  }
+                />
+              </View>
+            </View>
+            <View
+              style={
+                [
+                  {
+                    "bottom": 10,
+                    "flexDirection": "row",
+                    "left": 10,
+                    "position": "absolute",
+                  },
+                ]
+              }
+            >
+              <Image
+                resizeMode="contain"
+                size={15}
+                source={
+                  {
+                    "testUri": "../../../src/assets/location.png",
+                  }
+                }
+                style={
+                  [
+                    {
+                      "height": 29.426470588235293,
+                      "width": 29.426470588235293,
+                    },
+                  ]
+                }
+              />
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#0e3f6c",
+                      "fontFamily": "Avenir",
+                      "fontSize": 16,
+                      "fontWeight": "400",
+                    },
+                    {
+                      "color": "#FFFFFF",
+                      "fontSize": 12,
+                      "fontWeight": "800",
+                      "marginLeft": 10,
+                    },
+                  ]
+                }
+              >
+                Boston
+                , 
+                MA
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              [
+                {
+                  "flexDirection": "row",
+                  "marginLeft": 10,
+                  "marginRight": 10,
+                  "marginTop": 10,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "flexBasis": 0,
+                    "flexGrow": 4,
+                    "flexShrink": 1,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#03606A",
+                      "fontFamily": "Avenir",
+                      "fontSize": 16,
+                      "fontWeight": "900",
+                    },
+                  ]
+                }
+              >
+                Registered Nurse
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#0e3f6c",
+                      "fontFamily": "Avenir",
+                      "fontSize": 16,
+                      "fontWeight": "400",
+                    },
+                    {
+                      "color": "#3D3D3D",
+                      "fontSize": 12,
+                      "fontStyle": "italic",
+                      "fontWeight": "900",
+                      "marginTop": 5,
+                    },
+                  ]
+                }
+              >
+                Enlo Medical Center
+              </Text>
+            </View>
+            <View
+              style={
+                [
+                  {
+                    "alignItems": "center",
+                    "backgroundColor": "#00D1D1",
+                    "borderRadius": 15,
+                    "justifyContent": "center",
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#0e3f6c",
+                      "fontFamily": "Avenir",
+                      "fontSize": 16,
+                      "fontWeight": "400",
+                    },
+                    {
+                      "color": "#FFFFFF",
+                      "fontSize": 20,
+                      "fontWeight": "800",
+                      "marginBottom": 10,
+                      "marginLeft": 10,
+                      "marginRight": 10,
+                      "marginTop": 10,
+                    },
+                  ]
+                }
+              >
+                97
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              [
+                {
+                  "alignItems": "flex-end",
+                  "marginRight": 10,
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#0e3f6c",
+                    "fontFamily": "Avenir",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                  },
+                  {
+                    "fontSize": 12,
+                    "fontStyle": "italic",
+                    "fontWeight": "400",
+                  },
+                ]
+              }
+            >
+              % match
+            </Text>
+          </View>
+          <View
+            style={
+              [
+                {
+                  "flexDirection": "row",
+                  "marginLeft": 10,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "alignSelf": "center",
+                    "marginRight": 10,
+                  },
+                ]
+              }
+            >
+              <Image
+                resizeMode="contain"
+                size={15}
+                source={
+                  {
+                    "testUri": "../../../src/assets/stethoscope.png",
+                  }
+                }
+                style={
+                  [
+                    {
+                      "height": 29.426470588235293,
+                      "width": 29.426470588235293,
+                    },
+                  ]
+                }
+              />
+            </View>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#0e3f6c",
+                    "fontFamily": "Avenir",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                  },
+                  {
+                    "fontSize": 12,
+                    "fontWeight": "500",
+                  },
+                ]
+              }
+            >
+              Labor and Delivery
+            </Text>
+          </View>
+          <View
+            style={
+              [
+                {
+                  "flexDirection": "row",
+                  "marginLeft": 10,
+                  "marginTop": 5,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "alignSelf": "center",
+                    "marginRight": 10,
+                  },
+                ]
+              }
+            >
+              <Image
+                resizeMode="contain"
+                size={15}
+                source={
+                  {
+                    "testUri": "../../../src/assets/calendar.png",
+                  }
+                }
+                style={
+                  [
+                    {
+                      "height": 29.426470588235293,
+                      "width": 29.426470588235293,
+                    },
+                  ]
+                }
+              />
+            </View>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#0e3f6c",
+                    "fontFamily": "Avenir",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                  },
+                  {
+                    "fontSize": 12,
+                    "fontWeight": "900",
+                  },
+                ]
+              }
+            >
+              12
+               Weeks
+            </Text>
+          </View>
+          <View
+            style={
+              [
+                {
+                  "flexDirection": "row",
+                  "marginLeft": 10,
+                  "marginTop": 5,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "alignSelf": "center",
+                    "marginRight": 10,
+                  },
+                ]
+              }
+            >
+              <Image
+                resizeMode="contain"
+                size={15}
+                source={
+                  {
+                    "testUri": "../../../src/assets/sun.png",
+                  }
+                }
+                style={
+                  [
+                    {
+                      "height": 29.426470588235293,
+                      "width": 29.426470588235293,
+                    },
+                  ]
+                }
+              />
+            </View>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#0e3f6c",
+                    "fontFamily": "Avenir",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                  },
+                  {
+                    "fontSize": 12,
+                    "fontWeight": "500",
+                  },
+                ]
+              }
+            >
+              Days
+            </Text>
+          </View>
+          <View
+            style={
+              [
+                {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "marginTop": 10,
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#0e3f6c",
+                    "fontFamily": "Avenir",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                  },
+                  {
+                    "color": "#000000",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "marginRight": 10,
+                  },
+                ]
+              }
+            >
+              Estimated
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#0e3f6c",
+                    "fontFamily": "Avenir",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                  },
+                  {
+                    "color": "#000000",
+                    "fontSize": 16,
+                    "fontWeight": "900",
+                    "marginRight": 5,
+                  },
+                ]
+              }
+            >
+              $
+              3,656.09-4,500
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#0e3f6c",
+                    "fontFamily": "Avenir",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                  },
+                  {
+                    "color": "#000000",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "marginRight": 10,
+                  },
+                ]
+              }
+            >
+              /wk
+            </Text>
+          </View>
+          <View
+            style={
+              [
+                {
+                  "marginBottom": 10,
+                  "marginTop": 10,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "marginLeft": 5,
+                    "marginRight": 5,
+                    "paddingBottom": 5,
+                    "paddingLeft": 5,
+                    "paddingRight": 5,
+                    "paddingTop": 5,
+                  },
+                ]
+              }
+            >
+              <View
+                border={50}
+                borderc="#99E1E1"
+                borderw={2}
+                style={
+                  [
+                    {
+                      "borderColor": "#99E1E1",
+                      "borderRadius": 50,
+                      "borderWidth": 2,
+                    },
+                  ]
+                }
+              >
+                <View
+                  accessibilityState={
+                    {
+                      "busy": undefined,
+                      "checked": undefined,
+                      "disabled": undefined,
+                      "expanded": undefined,
+                      "selected": undefined,
+                    }
+                  }
+                  accessibilityValue={
+                    {
+                      "max": undefined,
+                      "min": undefined,
+                      "now": undefined,
+                      "text": undefined,
+                    }
+                  }
+                  accessible={true}
+                  collapsable={false}
+                  focusable={true}
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    {
+                      "alignItems": "center",
+                      "backgroundColor": "#d6f3f3",
+                      "borderRadius": 50,
+                      "opacity": 1,
+                      "paddingBottom": 5,
+                      "paddingLeft": 5,
+                      "paddingRight": 5,
+                      "paddingTop": 5,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#03606A",
+                          "fontFamily": "Avenir",
+                          "fontSize": 15,
+                          "fontWeight": "500",
+                        },
+                      ]
+                    }
+                  >
+                    PLEASE SUBMIT
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            [
+              {
+                "alignSelf": "stretch",
+                "borderColor": "#E6E6E6",
+                "borderRadius": 15,
+                "borderWidth": 1,
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "marginTop": 20,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              [
+                {
+                  "flexBasis": 0,
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "height": 215.7941176470588,
+                },
+              ]
+            }
+          >
+            <Image
+              resizeMode="stretch"
+              source={
+                {
+                  "uri": "https://img.freepik.com/free-photo/los-angeles-downtown-buildings-night_649448-298.jpg?w=1060&t=st=1691142282~exp=1691142882~hmac=9a8088f4cc3274f95a936542763c9011320371fbc6b6534ee5f2d6e4108d8895",
+                }
+              }
+              style={
+                [
+                  {
+                    "borderTopLeftRadius": 10,
+                    "borderTopRightRadius": 10,
+                    "flexBasis": 0,
+                    "flexGrow": 1,
+                    "flexShrink": 1,
+                  },
+                ]
+              }
+            />
+            <View
+              style={
+                [
+                  {
+                    "backgroundColor": "#d6f3f3",
+                    "borderBottomLeftRadius": 10,
+                    "borderTopRightRadius": 10,
+                    "flexDirection": "row",
+                    "position": "absolute",
+                    "right": 0,
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  [
+                    {
+                      "paddingBottom": 10,
+                      "paddingLeft": 10,
+                      "paddingRight": 10,
+                      "paddingTop": 10,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  resizeMode="contain"
+                  source={
+                    {
+                      "testUri": "../../../src/assets/heart.png",
+                    }
+                  }
+                  style={
+                    [
+                      {
+                        "height": 39.23529411764706,
+                        "width": 39.23529411764706,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <View
+                style={
+                  [
+                    {
+                      "paddingBottom": 10,
+                      "paddingLeft": 10,
+                      "paddingRight": 10,
+                      "paddingTop": 10,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  resizeMode="contain"
+                  source={
+                    {
+                      "testUri": "../../../src/assets/share.png",
+                    }
+                  }
+                  style={
+                    [
+                      {
+                        "height": 39.23529411764706,
+                        "width": 39.23529411764706,
+                      },
+                    ]
+                  }
+                />
+              </View>
+            </View>
+            <View
+              style={
+                [
+                  {
+                    "bottom": 10,
+                    "flexDirection": "row",
+                    "left": 10,
+                    "position": "absolute",
+                  },
+                ]
+              }
+            >
+              <Image
+                resizeMode="contain"
+                size={15}
+                source={
+                  {
+                    "testUri": "../../../src/assets/location.png",
+                  }
+                }
+                style={
+                  [
+                    {
+                      "height": 29.426470588235293,
+                      "width": 29.426470588235293,
+                    },
+                  ]
+                }
+              />
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#0e3f6c",
+                      "fontFamily": "Avenir",
+                      "fontSize": 16,
+                      "fontWeight": "400",
+                    },
+                    {
+                      "color": "#FFFFFF",
+                      "fontSize": 12,
+                      "fontWeight": "800",
+                      "marginLeft": 10,
+                    },
+                  ]
+                }
+              >
+                Los Angeles
+                , 
+                CA
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              [
+                {
+                  "flexDirection": "row",
+                  "marginLeft": 10,
+                  "marginRight": 10,
+                  "marginTop": 10,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "flexBasis": 0,
+                    "flexGrow": 4,
+                    "flexShrink": 1,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#03606A",
+                      "fontFamily": "Avenir",
+                      "fontSize": 16,
+                      "fontWeight": "900",
+                    },
+                  ]
+                }
+              >
+                Registered Nurse
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#0e3f6c",
+                      "fontFamily": "Avenir",
+                      "fontSize": 16,
+                      "fontWeight": "400",
+                    },
+                    {
+                      "color": "#3D3D3D",
+                      "fontSize": 12,
+                      "fontStyle": "italic",
+                      "fontWeight": "900",
+                      "marginTop": 5,
+                    },
+                  ]
+                }
+              >
+                Enlo Medical Center
+              </Text>
+            </View>
+            <View
+              style={
+                [
+                  {
+                    "alignItems": "center",
+                    "backgroundColor": "#00D1D1",
+                    "borderRadius": 15,
+                    "justifyContent": "center",
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#0e3f6c",
+                      "fontFamily": "Avenir",
+                      "fontSize": 16,
+                      "fontWeight": "400",
+                    },
+                    {
+                      "color": "#FFFFFF",
+                      "fontSize": 20,
+                      "fontWeight": "800",
+                      "marginBottom": 10,
+                      "marginLeft": 10,
+                      "marginRight": 10,
+                      "marginTop": 10,
+                    },
+                  ]
+                }
+              >
+                97
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              [
+                {
+                  "alignItems": "flex-end",
+                  "marginRight": 10,
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#0e3f6c",
+                    "fontFamily": "Avenir",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                  },
+                  {
+                    "fontSize": 12,
+                    "fontStyle": "italic",
+                    "fontWeight": "400",
+                  },
+                ]
+              }
+            >
+              % match
+            </Text>
+          </View>
+          <View
+            style={
+              [
+                {
+                  "flexDirection": "row",
+                  "marginLeft": 10,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "alignSelf": "center",
+                    "marginRight": 10,
+                  },
+                ]
+              }
+            >
+              <Image
+                resizeMode="contain"
+                size={15}
+                source={
+                  {
+                    "testUri": "../../../src/assets/stethoscope.png",
+                  }
+                }
+                style={
+                  [
+                    {
+                      "height": 29.426470588235293,
+                      "width": 29.426470588235293,
+                    },
+                  ]
+                }
+              />
+            </View>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#0e3f6c",
+                    "fontFamily": "Avenir",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                  },
+                  {
+                    "fontSize": 12,
+                    "fontWeight": "500",
+                  },
+                ]
+              }
+            >
+              Labor and Delivery
+            </Text>
+          </View>
+          <View
+            style={
+              [
+                {
+                  "flexDirection": "row",
+                  "marginLeft": 10,
+                  "marginTop": 5,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "alignSelf": "center",
+                    "marginRight": 10,
+                  },
+                ]
+              }
+            >
+              <Image
+                resizeMode="contain"
+                size={15}
+                source={
+                  {
+                    "testUri": "../../../src/assets/calendar.png",
+                  }
+                }
+                style={
+                  [
+                    {
+                      "height": 29.426470588235293,
+                      "width": 29.426470588235293,
+                    },
+                  ]
+                }
+              />
+            </View>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#0e3f6c",
+                    "fontFamily": "Avenir",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                  },
+                  {
+                    "fontSize": 12,
+                    "fontWeight": "900",
+                  },
+                ]
+              }
+            >
+              12
+               Weeks
+            </Text>
+          </View>
+          <View
+            style={
+              [
+                {
+                  "flexDirection": "row",
+                  "marginLeft": 10,
+                  "marginTop": 5,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "alignSelf": "center",
+                    "marginRight": 10,
+                  },
+                ]
+              }
+            >
+              <Image
+                resizeMode="contain"
+                size={15}
+                source={
+                  {
+                    "testUri": "../../../src/assets/sun.png",
+                  }
+                }
+                style={
+                  [
+                    {
+                      "height": 29.426470588235293,
+                      "width": 29.426470588235293,
+                    },
+                  ]
+                }
+              />
+            </View>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#0e3f6c",
+                    "fontFamily": "Avenir",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                  },
+                  {
+                    "fontSize": 12,
+                    "fontWeight": "500",
+                  },
+                ]
+              }
+            >
+              Days
+            </Text>
+          </View>
+          <View
+            style={
+              [
+                {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "marginTop": 10,
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#0e3f6c",
+                    "fontFamily": "Avenir",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                  },
+                  {
+                    "color": "#000000",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "marginRight": 10,
+                  },
+                ]
+              }
+            >
+              Estimated
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#0e3f6c",
+                    "fontFamily": "Avenir",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                  },
+                  {
+                    "color": "#000000",
+                    "fontSize": 16,
+                    "fontWeight": "900",
+                    "marginRight": 5,
+                  },
+                ]
+              }
+            >
+              $
+              3,656.09-4,500
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#0e3f6c",
+                    "fontFamily": "Avenir",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                  },
+                  {
+                    "color": "#000000",
+                    "fontSize": 12,
+                    "fontWeight": "400",
+                    "marginRight": 10,
+                  },
+                ]
+              }
+            >
+              /wk
+            </Text>
+          </View>
+          <View
+            style={
+              [
+                {
+                  "marginBottom": 10,
+                  "marginTop": 10,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "marginLeft": 5,
+                    "marginRight": 5,
+                    "paddingBottom": 5,
+                    "paddingLeft": 5,
+                    "paddingRight": 5,
+                    "paddingTop": 5,
+                  },
+                ]
+              }
+            >
+              <View
+                border={50}
+                borderc="#99E1E1"
+                borderw={2}
+                style={
+                  [
+                    {
+                      "borderColor": "#99E1E1",
+                      "borderRadius": 50,
+                      "borderWidth": 2,
+                    },
+                  ]
+                }
+              >
+                <View
+                  accessibilityState={
+                    {
+                      "busy": undefined,
+                      "checked": undefined,
+                      "disabled": undefined,
+                      "expanded": undefined,
+                      "selected": undefined,
+                    }
+                  }
+                  accessibilityValue={
+                    {
+                      "max": undefined,
+                      "min": undefined,
+                      "now": undefined,
+                      "text": undefined,
+                    }
+                  }
+                  accessible={true}
+                  collapsable={false}
+                  focusable={true}
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    {
+                      "alignItems": "center",
+                      "backgroundColor": "#d6f3f3",
+                      "borderRadius": 50,
+                      "opacity": 1,
+                      "paddingBottom": 5,
+                      "paddingLeft": 5,
+                      "paddingRight": 5,
+                      "paddingTop": 5,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#03606A",
+                          "fontFamily": "Avenir",
+                          "fontSize": 15,
+                          "fontWeight": "500",
+                        },
+                      ]
+                    }
+                  >
+                    PLEASE SUBMIT
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;

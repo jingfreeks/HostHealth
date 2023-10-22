@@ -5,14 +5,14 @@ import {
   ImageContainerstyled,
   ImageHeaderStyled,
 } from './styles';
-
+import type {HomecardProps} from './types';
 import {Text} from '@/component/atoms/text';
-const HomeCardScreen = props => {
+const HomeCardScreen = (props: HomecardProps) => {
   const {imgsource, title, subtitle} = props;
   return (
     <Container>
       <ImageContainerstyled>
-        <ImageHeaderStyled size={50} source={imgsource} resizeMode="stretch" />
+        <ImageHeaderStyled resizeMode="stretch" size={50} source={imgsource} />
       </ImageContainerstyled>
       <TextContainer>
         <Text TextMode="Htitle">{title}</Text>

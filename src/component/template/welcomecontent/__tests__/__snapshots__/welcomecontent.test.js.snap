@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Welcome Button group Template Component Should work as expected to get snapshot 1`] = `
+<RCTSafeAreaView
+  style={
+    [
+      {},
+    ]
+  }
+>
+  <View
+    alignType="center"
+    style={
+      [
+        {
+          "alignItems": "center",
+          "alignSelf": "center",
+          "flexDirection": "column",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        [
+          {
+            "marginBottom": 58.85294117647059,
+            "marginTop": 58.85294117647059,
+          },
+        ]
+      }
+    >
+      <RCTSafeAreaView
+        style={
+          [
+            {},
+          ]
+        }
+      >
+        <View
+          alignType="center"
+          style={
+            [
+              {
+                "alignItems": "center",
+                "alignSelf": "center",
+                "flexDirection": "column",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              [
+                {
+                  "marginBottom": 58.85294117647059,
+                  "marginTop": 98.08823529411764,
+                },
+              ]
+            }
+          >
+            <Image
+              resizeMode="contain"
+              source={
+                {
+                  "testUri": "../../../src/assets/mainlogo.png",
+                }
+              }
+              style={
+                [
+                  {
+                    "height": 196.17647058823528,
+                    "width": 451.20588235294116,
+                  },
+                ]
+              }
+            />
+          </View>
+        </View>
+      </RCTSafeAreaView>
+      <View
+        style={
+          [
+            {
+              "alignItems": "center",
+              "marginBottom": 20,
+              "marginTop": 20,
+            },
+          ]
+        }
+      >
+        <Text
+          style={
+            [
+              {
+                "color": "#0e3f6c",
+                "fontFamily": "Avenir",
+                "fontSize": 18,
+                "fontWeight": "900",
+              },
+            ]
+          }
+        />
+        <Text
+          style={
+            [
+              {
+                "color": "#0e3f6c",
+                "fontFamily": "Avenir",
+                "fontSize": 16,
+                "fontWeight": "400",
+              },
+            ]
+          }
+        />
+      </View>
+    </View>
+  </View>
+</RCTSafeAreaView>
+`;

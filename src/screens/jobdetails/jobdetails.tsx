@@ -1,3 +1,4 @@
+//@ts-check
 import React, {useState} from 'react';
 import {
   ContainerStyled,
@@ -38,10 +39,11 @@ import {colors} from '@/utils/themes';
 import {Details} from './component/details';
 import {Requirements} from './component/requirements';
 import Bbutton from '@/component/molecules/bbutton/bbutton';
-const JobDetailScreen = props => {
+import type {RoutesProps} from './types';
+const JobDetailScreen = (props: RoutesProps) => {
   const {route} = props;
   const {jobdetail} = route.params;
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
   return (
     <>
       <ScrollViewContainer>
@@ -68,7 +70,7 @@ const JobDetailScreen = props => {
               <LocationTextStyled>{jobdetail.address}</LocationTextStyled>
             </LocationContainerStyled>
             <FavoriteDropdownContainer>
-              <ImageHeaderStyled source={DropDownIcon} resizeMode={'contain'} />
+              <ImageHeaderStyled resizeMode={'contain'} source={DropDownIcon} />
             </FavoriteDropdownContainer>
           </ImageHeaderContaierStyled>
           <JobInfoHeaderContainerStyled>
@@ -105,17 +107,17 @@ const JobDetailScreen = props => {
             <ButtonContainerStyled>
               <Bbutton
                 // onPress={() => setIsVisible(!isVisible)}
-                border={30}
                 bcolor={colors.primary}
+                border={30}
                 title="TELL ME MORE"
               />
             </ButtonContainerStyled>
             <ButtonContainerStyled>
               <Bbutton
-                onPress={() => setIsVisible(!isVisible)}
-                border={30}
                 bcolor={'#d6f3f3'}
+                border={30}
                 title="PLEASE SUBMIT"
+                onPress={() => setIsVisible(!isVisible)}
               />
             </ButtonContainerStyled>
           </ButtonFooterContainerStyled>
@@ -138,10 +140,10 @@ const JobDetailScreen = props => {
                 Your recruiter will contact you shortly.
               </AlertModalTextSubtitleStyled>
               <Bbutton
-                onPress={() => setIsVisible(!isVisible)}
-                border={5}
                 bcolor={'#d6f3f3'}
+                border={5}
                 title="OK"
+                onPress={() => setIsVisible(!isVisible)}
               />
             </AlertModalTextContainerStyled>
           </AlertModalViewStyled>

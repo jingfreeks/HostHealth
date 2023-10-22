@@ -6,14 +6,18 @@ import thunk from 'redux-thunk';
 // // import {DARK_THEME} from '@/utils/constants';
 // // import {ThemeProvider} from 'styled-components/native';
 
-export const MockProvider = (props: MockProviderType): React$Node => {
+type MockProviderType = {
+  children?: React.ReactNode;
+  store?: object;
+};
+export const MockProvider = (props: MockProviderType) => {
   const {store, children} = props;
   const mockStore = configureStore([thunk]);
   const mocked = mockStore(store);
   return <Provider store={mocked}>{children}</Provider>;
 };
 
-export const testingProps = (reference: string): Object => ({
+export const testingProps = (reference: string): unknown => ({
   testID: reference,
   accessibilityLabel: reference,
 });

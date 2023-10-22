@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import {ImageURISource} from 'react-native';
 import {colors} from '@/utils/themes';
 import {verticalScale} from 'react-native-size-matters';
 
@@ -28,7 +29,11 @@ export const ImageContainerstyled = styled.View`
   flex: 1;
 `;
 
-export const ImageHeaderStyled = styled.Image`
+export const ImageHeaderStyled = styled.Image<{
+  source?: ImageURISource | string | undefined;
+  resizeMode: 'contain' | 'stretch';
+  size: number;
+}>`
   height: ${verticalScale(60)}px;
   width: ${verticalScale(50)}px;
 `;
