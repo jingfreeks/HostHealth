@@ -15,7 +15,7 @@ const Bbutton = (props: BbuttonProps) => {
     borderc,
     loaders = false,
     loaderColor,
-    loaderSize,
+    loaderSize = 'small',
   } = props;
   return (
     <ContainerStyled>

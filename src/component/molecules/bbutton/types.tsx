@@ -8,5 +8,5 @@ export type BbuttonProps = {
   borderc?: string;
   loaders?: boolean;
   loaderColor?: string;
-  loaderSize?: string;
+  loaderSize?: 'small' | 'large';
 };
