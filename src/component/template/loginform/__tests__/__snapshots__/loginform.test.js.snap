@@ -67,6 +67,7 @@ exports[`Login Form  Template Component Should work as expected to get snapshot 
           }
         >
           <TextInput
+            autoCapitalize="none"
             onChangeText={[Function]}
             placeholder="Email"
             secureTextEntry={false}
@@ -163,6 +164,7 @@ exports[`Login Form  Template Component Should work as expected to get snapshot 
           }
         >
           <TextInput
+            autoCapitalize="none"
             onChangeText={[Function]}
             placeholder="Password"
             secureTextEntry={false}

@@ -148,6 +148,7 @@ exports[`Login Screen Should work as expected to get snapshot 1`] = `
             }
           >
             <TextInput
+              autoCapitalize="none"
               onChangeText={[Function]}
               placeholder="Email"
               secureTextEntry={false}
@@ -244,6 +245,7 @@ exports[`Login Screen Should work as expected to get snapshot 1`] = `
             }
           >
             <TextInput
+              autoCapitalize="none"
               onChangeText={[Function]}
               placeholder="Password"
               secureTextEntry={false}

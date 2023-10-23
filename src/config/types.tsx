@@ -27,12 +27,24 @@ export type SuggestedCardDetailsProps = {
   id?: number;
 };
 
+export type ProfileProps = {
+  id: number;
+  username: string;
+  full_name: string;
+  avatar_url: string;
+  website: string;
+};
 export type SuggestedJobSateProps = {
   data?: SuggestedCardDetailsProps[];
   loading: boolean;
 };
 
+export type SignupStateProps = {
+  data?: ProfileProps;
+  loading: boolean;
+};
 export type State = {
   pcities: PcitiesStateProps;
   suggetedjob: SuggestedJobSateProps;
+  signup: SignupStateProps;
 };

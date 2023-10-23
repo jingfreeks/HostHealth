@@ -7,7 +7,7 @@ import {verticalScale} from 'react-native-size-matters';
 import {ContainerStyled, KeyboardContainerStyled} from './styles';
 
 const SignupScreen = () => {
-  const {handleSignUp} = UseSignUpHooks();
+  const {handleSignUp, loading} = UseSignUpHooks();
   return (
     <KeyboardContainerStyled
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
