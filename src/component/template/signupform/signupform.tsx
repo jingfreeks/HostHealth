@@ -16,31 +16,47 @@ import {
   Controller,
   useFormContext,
   FormProvider,
+  SubmitHandler,
 } from 'react-hook-form';
 import {FormTextController} from '@/component/molecules/formtextcontroller';
 import {yupResolver} from '@hookform/resolvers/yup';
 import {Schema} from './schema';
+import {UseSignUpHooks} from '@/screens/signup/hooks';
 import * as yup from 'yup';
 
-const SignupFormScreen = (props: {handleSignUp: () => void}) => {
+const SignupFormScreen = (props: {handleSignUp: (params: any) => void}) => {
   const {handleSignUp} = props;
   type FormData = yup.InferType<typeof Schema>;
   const formMethod = useForm<FormData>({
     defaultValues: {
-      firstname: '',
-      lastname: '',
+      // firstname: '',
+      // lastname: '',
       email: '',
       password: '',
       cpassword: '',
     },
     resolver: yupResolver(Schema),
   });
+  const {loading} = UseSignUpHooks();
+  const frmdata: {
+    email: string;
+    password: string;
+    cpassword: string;
+  } = {
+    email: formMethod.getValues().email,
+    password: formMethod.getValues().password,
+    cpassword: formMethod.getValues().cpassword,
+  };
+
+  const onSubmit: SubmitHandler<FormData> = data => {
+    handleSignUp({email: data.email, password: data.password});
+  };
   return (
     <ContainerStyled>
       <FormProvider {...formMethod}>
         <ScrollViewContainer>
           <TextInputContainerStyled>
-            <FormTextController
+            {/* <FormTextController
               Label="First Name"
               name="firstname"
               placeholder="First Name"
@@ -55,7 +71,7 @@ const SignupFormScreen = (props: {handleSignUp: () => void}) => {
               rules={{
                 required: true,
               }}
-            />
+            /> */}
             <FormTextController
               Label="Email"
               name="email"
@@ -82,14 +98,13 @@ const SignupFormScreen = (props: {handleSignUp: () => void}) => {
               }}
               type="password"
             />
-            {/* <TextInput Label="Password Confirm" type="password" /> */}
           </TextInputContainerStyled>
           <Bbutton
             bcolor={colors.lightergreen}
             border={10}
+            loaders={loading}
             title="SIGN UP"
-            // onPress={handleSignUp}
-            onPress={formMethod.handleSubmit(handleSignUp)}
+            onPress={formMethod.handleSubmit(onSubmit)}
           />
           <AccountTextContainerStyled>
             <Text TextMode="TextNormal">Have an account?</Text>

@@ -42,6 +42,7 @@ exports[`Text Input Component Should work as expected to get snapshot 1`] = `
       }
     >
       <TextInput
+        autoCapitalize="none"
         placeholder=""
         secureTextEntry={false}
         style={

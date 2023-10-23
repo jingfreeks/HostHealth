@@ -24,6 +24,7 @@ const TextInput = (props: TextInputProps) => {
       <Text TextMode="Title">{Label}</Text>
       <Hcontainer>
         <TextInputStyled
+          autoCapitalize="none"
           placeholder={placeholder}
           secureTextEntry={type === 'Text' ? isVisible : !isVisible}
           value={value}
