@@ -7,6 +7,7 @@ import {
   Controller,
   useFormContext,
   FormProvider,
+  SubmitHandler,
 } from 'react-hook-form';
 import {
   ContainerStyled,
@@ -21,10 +22,13 @@ import type {LoginFormProps} from './types';
 import {colors} from '@/utils/themes';
 import {yupResolver} from '@hookform/resolvers/yup';
 import {Schema} from './schema';
+import {UseLoginHooks} from '@/screens/login/hooks';
 import * as yup from 'yup';
 const LoginFormScreen = (props: LoginFormProps) => {
   const {signInPress = () => {}} = props;
   const {handleSignUp} = UseWelcomeHooks();
+  const {loading} = UseLoginHooks();
+
   type FormData = yup.InferType<typeof Schema>;
   const formMethod = useForm<FormData>({
     defaultValues: {
@@ -34,6 +38,9 @@ const LoginFormScreen = (props: LoginFormProps) => {
     resolver: yupResolver(Schema),
   });
 
+  const onSubmit: SubmitHandler<FormData> = data => {
+    signInPress({email: data.email, password: data.password});
+  };
   return (
     <ContainerStyled>
       <FormProvider {...formMethod}>
@@ -58,8 +65,9 @@ const LoginFormScreen = (props: LoginFormProps) => {
         <Bbutton
           bcolor={'#d6f3f3'}
           border={10}
+          loaders={loading}
           title="SIGN IN"
-          onPress={formMethod.handleSubmit(signInPress)}
+          onPress={formMethod.handleSubmit(onSubmit)}
         />
         <ForgotPassContainerStyled>
           <Text>Forgot Password?</Text>

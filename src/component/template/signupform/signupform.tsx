@@ -29,8 +29,6 @@ const SignupFormScreen = (props: {handleSignUp: (params: any) => void}) => {
   type FormData = yup.InferType<typeof Schema>;
   const formMethod = useForm<FormData>({
     defaultValues: {
-      // firstname: '',
-      // lastname: '',
       email: '',
       password: '',
       cpassword: '',
@@ -38,15 +36,6 @@ const SignupFormScreen = (props: {handleSignUp: (params: any) => void}) => {
     resolver: yupResolver(Schema),
   });
   const {loading} = UseSignUpHooks();
-  const frmdata: {
-    email: string;
-    password: string;
-    cpassword: string;
-  } = {
-    email: formMethod.getValues().email,
-    password: formMethod.getValues().password,
-    cpassword: formMethod.getValues().cpassword,
-  };
 
   const onSubmit: SubmitHandler<FormData> = data => {
     handleSignUp({email: data.email, password: data.password});
@@ -56,22 +45,6 @@ const SignupFormScreen = (props: {handleSignUp: (params: any) => void}) => {
       <FormProvider {...formMethod}>
         <ScrollViewContainer>
           <TextInputContainerStyled>
-            {/* <FormTextController
-              Label="First Name"
-              name="firstname"
-              placeholder="First Name"
-              rules={{
-                required: true,
-              }}
-            />
-            <FormTextController
-              Label="Last Name"
-              name="lastname"
-              placeholder="Last Name"
-              rules={{
-                required: true,
-              }}
-            /> */}
             <FormTextController
               Label="Email"
               name="email"

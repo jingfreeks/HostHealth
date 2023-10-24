@@ -34,6 +34,14 @@ export type ProfileProps = {
   avatar_url: string;
   website: string;
 };
+
+export type LoginProps = {
+  id: number;
+  username: string;
+  full_name: string;
+  avatar_url: string;
+  website: string;
+};
 export type SuggestedJobSateProps = {
   data?: SuggestedCardDetailsProps[];
   loading: boolean;
@@ -43,8 +51,14 @@ export type SignupStateProps = {
   data?: ProfileProps;
   loading: boolean;
 };
+
+export type LoginStateProps = {
+  data?: LoginProps;
+  loading: boolean;
+};
 export type State = {
   pcities: PcitiesStateProps;
   suggetedjob: SuggestedJobSateProps;
   signup: SignupStateProps;
+  login: LoginStateProps;
 };

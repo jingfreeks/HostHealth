@@ -1,4 +1,4 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+This Project is from one of the code test from the company that I apply, this compose of styled components, supabase as backend and redux toolkit
 
 # Getting Started
 
