@@ -1,14 +1,16 @@
 import {createSlice, createAsyncThunk, PayloadAction} from '@reduxjs/toolkit';
 import {supabase} from '@/utils/suppabase';
-export const SignupPost = createAsyncThunk(
-  'signup/post',
+
+export const LoginPost = createAsyncThunk(
+  'login/post',
   async ({email, password}: {email: string; password: string}) => {
     // Here you can use axios with your own api
     try {
-      const {error, data} = await supabase.auth.signUp({
+      const {error, data} = await supabase.auth.signInWithPassword({
         email: email,
         password: password,
       });
+      console.log('error', error, data);
       if (error) {
         throw error;
       }
@@ -24,25 +26,25 @@ export const initialState = {
   loading: false,
   data: [],
 };
-export const Signup = createSlice({
-  name: 'signup',
+export const Login = createSlice({
+  name: 'login',
   initialState,
   reducers: {},
   extraReducers: builder => {
-    builder.addCase(SignupPost.pending, state => {
+    builder.addCase(LoginPost.pending, state => {
       state.loading = true;
     });
     builder.addCase(
-      SignupPost.fulfilled,
+      LoginPost.fulfilled,
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (state, action: PayloadAction<any>) => {
         state.data = action.payload;
         state.loading = false;
       },
     );
-    builder.addCase(SignupPost.rejected, state => {
+    builder.addCase(LoginPost.rejected, state => {
       state.loading = false;
     });
   },
 });
-export default Signup.reducer;
+export default Login.reducer;

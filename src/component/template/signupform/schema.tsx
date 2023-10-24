@@ -1,8 +1,6 @@
 import * as yup from 'yup';
 export const Schema = yup
   .object({
-    // firstname: yup.string().required('First Name Should be Required'),
-    // lastname: yup.string().required('Last Name Should be required'),
     email: yup.string().required('Email Address Should be required'),
     password: yup
       .string()
