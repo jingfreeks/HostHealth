@@ -37,6 +37,12 @@ describe('Login Content Template Component', () => {
         ]}
       />,
     );
+
+    expect(all.toJSON()).toMatchSnapshot();
+  });
+  it('Should work as expected for empty data to get snapshot', () => {
+    const all = render(<SuggestedList data={[]} />);
+
     expect(all.toJSON()).toMatchSnapshot();
   });
 });
