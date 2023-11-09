@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import {useEffect} from 'react';
 import {Text} from '@/component/atoms/text';
 import {SuggestedList} from '@/component/template/suggestedlist';
 import {PopularList} from '@/component/template/popularlist';

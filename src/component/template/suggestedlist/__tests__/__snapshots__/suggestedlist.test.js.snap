@@ -136,11 +136,6 @@ exports[`Login Content Template Component Should work as expected to get snapsho
     renderItem={[Function]}
     scrollEventThrottle={50}
     stickyHeaderIndices={[]}
-    style={
-      [
-        {},
-      ]
-    }
     viewabilityConfigCallbackPairs={[]}
   >
     <View>
