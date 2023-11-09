@@ -1,9 +1,8 @@
+import { RouteProp } from '@react-navigation/native';
+import type {AppNavigationProps} from '@/navigation/types';
+type ProfileScreenRouteProp = RouteProp<AppNavigationProps, 'JobsDetails'>;
 export type RoutesProps = {
-  route: {
-    params: {
-      jobdetail: JobDetailsProps;
-    };
-  };
+  route: ProfileScreenRouteProp
 };
 
 export type JobDetailsProps = {
