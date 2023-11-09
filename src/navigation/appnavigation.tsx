@@ -1,10 +1,10 @@
 import React from 'react';
 import bottomtab from './bottomtabnavigation';
 import {JobsDetails} from '@/screens';
-import type {RootNavigationProps} from './types';
+import type {AppNavigationProps} from './types';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-const Stack = createNativeStackNavigator<RootNavigationProps>();
+const Stack = createNativeStackNavigator<AppNavigationProps>();
 
 export const Appnavigation = () => {
   return (
