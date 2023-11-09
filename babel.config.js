@@ -1,13 +1,3 @@
-// const alias = {
-//   '@navigation': './src/navigation/',
-//   '@screens': './src/screens/',
-//   '@/utils/themes': './src/utils/themes',
-//   '@utils': './src/utils/',
-//   '@assets': './src/assets/',
-//   '@component': './src/component/',
-//   '@config': './src/config/',
-//   '@slice': './src/slice/',
-// };
 const alias = {'^@/(.+)': './src/\\1'};
 const extensions = ['.android.js', '.ios.js', '.js', '.json', '.native', 'jsx'];
 const root = ['./'];

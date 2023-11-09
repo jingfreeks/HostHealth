@@ -328,11 +328,6 @@ check and 19. (Links to Essium)
           renderItem={[Function]}
           scrollEventThrottle={50}
           stickyHeaderIndices={[]}
-          style={
-            [
-              {},
-            ]
-          }
           viewabilityConfigCallbackPairs={[]}
         >
           <View>

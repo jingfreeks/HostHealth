@@ -1,5 +1,5 @@
 export type SuggestedCardProps = {
-  data?: SuggestedCardDetailsProps | undefined;
+  data: SuggestedCardDetailsProps;
 };
 
 export type SuggestedCardDetailsProps = {
