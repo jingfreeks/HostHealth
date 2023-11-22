@@ -15,7 +15,7 @@ jest.mock('@react-navigation/native', () => {
     useDispatch: () => ({dispatch: jest.fn()}),
   };
 });
-
+jest.mock('@supabase/supabase-js')
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 describe('Signup Screen', () => {
   it('Should work as expected to get snapshot', () => {

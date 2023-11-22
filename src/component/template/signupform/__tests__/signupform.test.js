@@ -4,6 +4,7 @@ import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/asy
 import Signupform from '../signupform';
 
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
+jest.mock('@supabase/supabase-js')
 jest.mock('react-redux', () => ({
   useDispatch: jest.fn(),
   useSelector: jest.fn(),
