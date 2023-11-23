@@ -25,7 +25,7 @@ import {
   EstimatedAmount,
   SubmitContainerStyled,
 } from './styles';
-import React from 'react';
+import React,{memo} from 'react';
 import {
   ShareIcon,
   HeartIcon,
@@ -123,6 +123,7 @@ const SuggestedCardScreen = (props: SuggestedCardProps) => {
             bcolor={'#d6f3f3'}
             border={50}
             padding={5}
+            testId="MoleculesSuggestedCardSubmitButtonTestId"
             title="PLEASE SUBMIT"
             onPress={() => handlesubmit(data)}
           />
@@ -132,4 +133,6 @@ const SuggestedCardScreen = (props: SuggestedCardProps) => {
   }
   return null;
 };
-export default SuggestedCardScreen;
+
+const SuggestedCardMemo=memo(SuggestedCardScreen)
+export default SuggestedCardMemo;
