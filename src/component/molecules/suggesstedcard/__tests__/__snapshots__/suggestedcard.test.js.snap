@@ -650,4 +650,4 @@ exports[`Suggested Card Component Should work as expected to get snapshot 1`] = 
 </View>
 `;
 
-exports[`Suggested Card Component Should work empty data to get snapshots 1`] = `null`;
+exports[`Suggested Card Component Should work null data to get snapshots 1`] = `null`;
