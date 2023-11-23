@@ -1,5 +1,5 @@
 import React from 'react';
-import {render} from '@testing-library/react-native';
+import {render,fireEvent} from '@testing-library/react-native';
 
 import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock';
 import LoginForm from '../loginform';
@@ -32,5 +32,11 @@ describe('Login Form  Template Component', () => {
   it('Should work as expected to get snapshot', () => {
     const all = render(<LoginForm />);
     expect(all.toJSON()).toMatchSnapshot();
+  });
+  it('Should work as trigger handle submit button onPress', () => {
+    const all = render(<LoginForm />);
+    const el = all.getByTestId('LoginFormSignupButtonId');
+    fireEvent(el, 'onPress');
+    expect(all.toJSON()).toBeTruthy();
   });
 });

@@ -26,6 +26,7 @@ import {Schema} from './schema';
 import {useDispatch} from 'react-redux';
 import {ThunkDispatch} from '@reduxjs/toolkit';
 import {setCredentials} from '@/slice/auth';
+import {testingProps} from '@/utils/testframework'
 import {useLoginMutation} from '@/slice/authApi';
 import * as yup from 'yup';
 const LoginFormScreen = () => {
@@ -88,7 +89,7 @@ const LoginFormScreen = () => {
         </ForgotPassContainerStyled>
         <AccountContainerStyled>
           <Text TextMode="TextNormal">Forgot Password?</Text>
-          <SignUpButtonStyled onPress={handleSignUp}>
+          <SignUpButtonStyled {...testingProps('LoginFormSignupButtonId')}onPress={handleSignUp}>
             <Text>Sign Up here</Text>
           </SignUpButtonStyled>
         </AccountContainerStyled>
