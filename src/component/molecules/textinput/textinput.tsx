@@ -1,4 +1,5 @@
 // @ts-check
+import React from 'react';
 import {useState,ReactElement} from 'react';
 import {Text} from '@/component/atoms/text';
 import {Vcontainer} from '@/component/atoms/vcontainer';

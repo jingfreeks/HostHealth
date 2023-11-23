@@ -56,9 +56,15 @@ export type LoginStateProps = {
   data?: LoginProps;
   loading: boolean;
 };
+
+export type AuthStateProps = {
+  user: string;
+  token: string;
+};
 export type State = {
   pcities: PcitiesStateProps;
   suggetedjob: SuggestedJobSateProps;
   signup: SignupStateProps;
   login: LoginStateProps;
+  auth: AuthStateProps;
 };

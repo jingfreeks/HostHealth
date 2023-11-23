@@ -4,7 +4,8 @@ export const healtHostApi = createApi({
   reducerPath: 'healtHostApi',
   baseQuery: fetchBaseQuery({baseUrl: 'https://run.mocky.io/v3/'}),
   endpoints: builder => ({
-    getPopularCities: builder.query<undfined>({
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    getPopularCities: builder.query<any>({
       query: () => '5e58bb33-dcf4-4d68-8a64-c68775955769',
     }),
     getSuggestedJobs: builder.query({

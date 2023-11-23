@@ -6,16 +6,21 @@ import signupslice from '@/slice/signup';
 import loginslice from '@/slice/login';
 import thunkMiddleware from 'redux-thunk';
 import suggestedjobs from '@/slice/suggested';
+import {apiSlice} from './apiSlice';
+import authReducer from '@/slice/auth';
 export const store = configureStore({
   reducer: {
-    [healtHostApi.reducerPath]: healtHostApi.reducer,
+    // [healtHostApi.reducerPath]: healtHostApi.reducer,
+    [apiSlice.reducerPath]: apiSlice.reducer,
+    auth: authReducer,
     pcities: pcitiesslice,
     suggetedjob: suggestedjobs,
     signup: signupslice,
     login: loginslice,
   },
   middleware: getDefaultMiddleware =>
-    getDefaultMiddleware().concat(healtHostApi.middleware),
+    getDefaultMiddleware().concat(apiSlice.middleware),
+  devTools: true,
 });
 
 export type RootState = ReturnType<typeof store.getState>;
