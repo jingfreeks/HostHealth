@@ -1,5 +1,6 @@
 //@ts-check
-import React, {useState} from 'react';
+import React, {useState,memo} from 'react';
+import {testingProps} from '@/utils/testframework'
 import {
   ContainerStyled,
   ImageHeaderContaierStyled,
@@ -116,6 +117,7 @@ const JobDetailScreen = (props: RoutesProps) => {
               <Bbutton
                 bcolor={'#d6f3f3'}
                 border={30}
+                testId='JobDetailsScreenSubmitButtonTestId'
                 title="PLEASE SUBMIT"
                 onPress={() => setIsVisible(!isVisible)}
               />
@@ -125,6 +127,7 @@ const JobDetailScreen = (props: RoutesProps) => {
       </ScrollViewContainer>
       <AlertModalStyled
         animationType="slide"
+        {...testingProps('JobDetailsAlertModalTestId')}
         transparent={true}
         visible={isVisible}
         onRequestClose={() => {
@@ -142,6 +145,7 @@ const JobDetailScreen = (props: RoutesProps) => {
               <Bbutton
                 bcolor={'#d6f3f3'}
                 border={5}
+                testId='JobDetailsScreenAlertModalSubmitOkButtonTestId'
                 title="OK"
                 onPress={() => setIsVisible(!isVisible)}
               />
@@ -152,4 +156,6 @@ const JobDetailScreen = (props: RoutesProps) => {
     </>
   );
 };
-export default JobDetailScreen;
+
+const MemoJobDetails=memo(JobDetailScreen)
+export default MemoJobDetails;
