@@ -587,7 +587,7 @@ exports[`Suggested Card Component Should work as expected to get snapshot 1`] = 
         }
       >
         <View
-          accessibilityLabel="AtomsButtonTestId"
+          accessibilityLabel="MoleculesSuggestedCardSubmitButtonTestId"
           accessibilityState={
             {
               "busy": undefined,
@@ -627,7 +627,7 @@ exports[`Suggested Card Component Should work as expected to get snapshot 1`] = 
               "paddingTop": 5,
             }
           }
-          testID="AtomsButtonTestId"
+          testID="MoleculesSuggestedCardSubmitButtonTestId"
         >
           <Text
             style={
@@ -649,3 +649,5 @@ exports[`Suggested Card Component Should work as expected to get snapshot 1`] = 
   </View>
 </View>
 `;
+
+exports[`Suggested Card Component Should work empty data to get snapshots 1`] = `null`;

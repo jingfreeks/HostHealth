@@ -939,7 +939,7 @@ check and 19. (Links to Essium)
                         }
                       >
                         <View
-                          accessibilityLabel="AtomsButtonTestId"
+                          accessibilityLabel="MoleculesSuggestedCardSubmitButtonTestId"
                           accessibilityState={
                             {
                               "busy": undefined,
@@ -979,7 +979,7 @@ check and 19. (Links to Essium)
                               "paddingTop": 5,
                             }
                           }
-                          testID="AtomsButtonTestId"
+                          testID="MoleculesSuggestedCardSubmitButtonTestId"
                         >
                           <Text
                             style={
@@ -1610,7 +1610,7 @@ check and 19. (Links to Essium)
                         }
                       >
                         <View
-                          accessibilityLabel="AtomsButtonTestId"
+                          accessibilityLabel="MoleculesSuggestedCardSubmitButtonTestId"
                           accessibilityState={
                             {
                               "busy": undefined,
@@ -1650,7 +1650,7 @@ check and 19. (Links to Essium)
                               "paddingTop": 5,
                             }
                           }
-                          testID="AtomsButtonTestId"
+                          testID="MoleculesSuggestedCardSubmitButtonTestId"
                         >
                           <Text
                             style={
