@@ -9,6 +9,14 @@ jest.mock('react-redux', () => ({
   useDispatch: jest.fn(),
   useSelector: jest.fn(),
 }));
+const signup=()=>jest.fn()
+const isLoading={loading:false}
+jest.mock('@/slice/authApi',()=>{
+  return{
+    useSignupMutation:()=>[signup,isLoading],
+  }
+})
+
 jest.mock('@react-navigation/native', () => {
   return {
     ...jest.requireActual('@react-navigation/native'),
