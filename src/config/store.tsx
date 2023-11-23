@@ -2,7 +2,6 @@ import {configureStore} from '@reduxjs/toolkit';
 import {setupListeners} from '@reduxjs/toolkit/query';
 import {healtHostApi} from './api';
 import pcitiesslice from '@/slice/pcities';
-import signupslice from '@/slice/signup';
 import loginslice from '@/slice/login';
 import thunkMiddleware from 'redux-thunk';
 import suggestedjobs from '@/slice/suggested';
@@ -15,7 +14,6 @@ export const store = configureStore({
     auth: authReducer,
     pcities: pcitiesslice,
     suggetedjob: suggestedjobs,
-    signup: signupslice,
     login: loginslice,
   },
   middleware: getDefaultMiddleware =>

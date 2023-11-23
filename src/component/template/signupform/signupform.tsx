@@ -20,12 +20,15 @@ import {
 } from 'react-hook-form';
 import {FormTextController} from '@/component/molecules/formtextcontroller';
 import {yupResolver} from '@hookform/resolvers/yup';
+import {useSignupMutation} from '@/slice/authApi';
+import {StackNavigationProp} from '@react-navigation/stack'
+import type {RootNavigationProps} from '@/navigation/types';
+import {useNavigation} from '@react-navigation/native';
 import {Schema} from './schema';
-import {UseSignUpHooks} from '@/screens/signup/hooks';
 import * as yup from 'yup';
 
-const SignupFormScreen = (props: {handleSignUp: (params: {username:string,password:string}) => void}) => {
-  const {handleSignUp} = props;
+const SignupFormScreen = ()  => {
+  const navigation = useNavigation<StackNavigationProp<RootNavigationProps>>();
   type FormData = yup.InferType<typeof Schema>;
   const formMethod = useForm<FormData>({
     defaultValues: {
@@ -35,10 +38,12 @@ const SignupFormScreen = (props: {handleSignUp: (params: {username:string,passwo
     },
     resolver: yupResolver(Schema),
   });
-  const {loading} = UseSignUpHooks();
+  const [signup, {isLoading}] = useSignupMutation();
 
-  const onSubmit: SubmitHandler<FormData> = data => {
-    handleSignUp({username: data.username, password: data.password});
+  const onSubmit: SubmitHandler<FormData> = async(data) => {
+   await signup({username:data.username,password:data.password}).unwrap()
+   navigation.navigate('Welcome');
+    // handleSignUp({username: data.username, password: data.password});
   };
   return (
     <ContainerStyled>
@@ -75,7 +80,7 @@ const SignupFormScreen = (props: {handleSignUp: (params: {username:string,passwo
           <Bbutton
             bcolor={colors.lightergreen}
             border={10}
-            loaders={loading}
+            loaders={isLoading}
             title="SIGN UP"
             onPress={formMethod.handleSubmit(onSubmit)}
           />

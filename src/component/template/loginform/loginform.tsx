@@ -53,7 +53,14 @@ const LoginFormScreen = () => {
       dispatch(setCredentials({...userData, user: data.email}));
       navigation.navigate('app');
     } catch (error) {
-      console.log('error', error);
+      switch(error.status){
+        case 401:
+          alert(error.data.message)
+          break;
+        default:
+          alert('error')
+      }
+      console.log('error', error.status);
     }
   };
   return (

@@ -2,12 +2,10 @@ import React from 'react';
 import {Platform, TouchableWithoutFeedback, Keyboard} from 'react-native';
 import {LoginContent} from '@/component/template/logincontent';
 import {SignupForm} from '@/component/template/signupform';
-import {UseSignUpHooks} from './hooks';
 import {verticalScale} from 'react-native-size-matters';
 import {ContainerStyled, KeyboardContainerStyled} from './styles';
 
 const SignupScreen = () => {
-  const {handleSignUp, loading} = UseSignUpHooks();
   return (
     <KeyboardContainerStyled
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -15,7 +13,7 @@ const SignupScreen = () => {
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <ContainerStyled>
           <LoginContent />
-          <SignupForm handleSignUp={handleSignUp} />
+          <SignupForm />
         </ContainerStyled>
       </TouchableWithoutFeedback>
     </KeyboardContainerStyled>
