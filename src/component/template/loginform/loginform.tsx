@@ -1,5 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
-import {TextInput} from '@/component/molecules/textinput';
 import {FormTextController} from '@/component/molecules/formtextcontroller';
 import {Text} from '@/component/atoms/text';
 import {
@@ -18,16 +18,21 @@ import {
 } from './styled';
 import {Bbutton} from '@/component/molecules/bbutton';
 import {UseWelcomeHooks} from '@/screens/welcome/hooks';
-import type {LoginFormProps} from './types';
-import {colors} from '@/utils/themes';
 import {yupResolver} from '@hookform/resolvers/yup';
+import {StackNavigationProp} from '@react-navigation/stack';
+import type {RootNavigationProps} from '@/navigation/types';
+import {useNavigation} from '@react-navigation/native';
 import {Schema} from './schema';
-import {UseLoginHooks} from '@/screens/login/hooks';
+import {useDispatch} from 'react-redux';
+import {ThunkDispatch} from '@reduxjs/toolkit';
+import {setCredentials} from '@/slice/auth';
+import {useLoginMutation} from '@/slice/authApi';
 import * as yup from 'yup';
-const LoginFormScreen = (props: LoginFormProps) => {
-  const {signInPress = () => {}} = props;
+const LoginFormScreen = () => {
+  const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
+  const navigation = useNavigation<StackNavigationProp<RootNavigationProps>>();
   const {handleSignUp} = UseWelcomeHooks();
-  const {loading} = UseLoginHooks();
+  const [login, {isLoading}] = useLoginMutation();
 
   type FormData = yup.InferType<typeof Schema>;
   const formMethod = useForm<FormData>({
@@ -38,8 +43,17 @@ const LoginFormScreen = (props: LoginFormProps) => {
     resolver: yupResolver(Schema),
   });
 
-  const onSubmit: SubmitHandler<FormData> = data => {
-    signInPress({email: data.email, password: data.password});
+  const onSubmit: SubmitHandler<FormData> = async data => {
+    try {
+      const userData: any = await login({
+        username: data.email,
+        password: data.password,
+      }).unwrap();
+      dispatch(setCredentials({...userData, user: data.email}));
+      navigation.navigate('app');
+    } catch (error) {
+      console.log('error', error);
+    }
   };
   return (
     <ContainerStyled>
@@ -65,7 +79,7 @@ const LoginFormScreen = (props: LoginFormProps) => {
         <Bbutton
           bcolor={'#d6f3f3'}
           border={10}
-          loaders={loading}
+          loaders={isLoading}
           title="SIGN IN"
           onPress={formMethod.handleSubmit(onSubmit)}
         />

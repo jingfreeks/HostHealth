@@ -25,6 +25,7 @@ import {
   EstimatedAmount,
   SubmitContainerStyled,
 } from './styles';
+import React from 'react';
 import {
   ShareIcon,
   HeartIcon,
