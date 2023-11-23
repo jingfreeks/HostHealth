@@ -95,3 +95,102 @@ exports[`Text Input Component Should work as expected to get snapshot 1`] = `
   </View>
 </RCTSafeAreaView>
 `;
+
+exports[`Text Input Component Should work as expected to set text type to password to get snapshot 1`] = `
+<RCTSafeAreaView
+  style={
+    [
+      {},
+    ]
+  }
+>
+  <View
+    alignType="flex-start"
+    style={
+      [
+        {
+          "alignItems": "flex-start",
+          "alignSelf": "flex-start",
+          "flexDirection": "column",
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#0e3f6c",
+            "fontFamily": "Avenir",
+            "fontSize": 18,
+            "fontWeight": "900",
+          },
+        ]
+      }
+    />
+    <View
+      style={
+        [
+          {
+            "flexDirection": "row",
+          },
+        ]
+      }
+    >
+      <TextInput
+        autoCapitalize="none"
+        placeholder=""
+        secureTextEntry={true}
+        style={
+          [
+            {
+              "flexBasis": 0,
+              "flexGrow": 1,
+              "flexShrink": 1,
+              "height": 30,
+              "marginBottom": 5,
+            },
+          ]
+        }
+      />
+      <Text
+        accessibilityLabel="MaterialsIconShowPasswordTestId"
+        allowFontScaling={false}
+        onPress={[Function]}
+        selectable={false}
+        style={
+          [
+            {
+              "color": "#C2D6DC",
+              "fontSize": 25,
+            },
+            undefined,
+            {
+              "fontFamily": "Material Icons",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            {},
+          ]
+        }
+        testID="MaterialsIconShowPasswordTestId"
+      >
+        
+      </Text>
+    </View>
+    <View
+      style={
+        [
+          {
+            "alignSelf": "stretch",
+            "borderColor": "#C2D6DC",
+            "borderWidth": 0.5,
+            "flexDirection": "row",
+            "marginBottom": 15,
+          },
+        ]
+      }
+    />
+  </View>
+</RCTSafeAreaView>
+`;
