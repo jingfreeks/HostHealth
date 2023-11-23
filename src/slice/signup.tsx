@@ -2,11 +2,11 @@ import {createSlice, createAsyncThunk, PayloadAction} from '@reduxjs/toolkit';
 import {supabase} from '@/utils/suppabase';
 export const SignupPost = createAsyncThunk(
   'signup/post',
-  async ({email, password}: {email: string; password: string}) => {
+  async ({username, password}: {username: string; password: string}) => {
     // Here you can use axios with your own api
     try {
       const {error, data} = await supabase.auth.signUp({
-        email: email,
+        email: username,
         password: password,
       });
       if (error) {

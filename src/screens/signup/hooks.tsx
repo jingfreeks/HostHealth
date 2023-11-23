@@ -11,13 +11,13 @@ export const UseSignUpHooks = () => {
   const loading = useSelector((state: State) => state.signup.loading);
   const navigation = useNavigation<StackNavigationProp<RootNavigationProps>>();
   const handleSignUp = ({
-    email,
+    username,
     password,
   }: {
-    email: string;
+    username: string;
     password: string;
   }) => {
-    dispatch(SignupPost({email, password})).then(() => {
+    dispatch(SignupPost({username, password})).then(() => {
       navigation.navigate('Welcome');
     });
   };

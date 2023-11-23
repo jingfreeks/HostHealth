@@ -24,12 +24,12 @@ import {Schema} from './schema';
 import {UseSignUpHooks} from '@/screens/signup/hooks';
 import * as yup from 'yup';
 
-const SignupFormScreen = (props: {handleSignUp: (params: any) => void}) => {
+const SignupFormScreen = (props: {handleSignUp: (params: {username:string,password:string}) => void}) => {
   const {handleSignUp} = props;
   type FormData = yup.InferType<typeof Schema>;
   const formMethod = useForm<FormData>({
     defaultValues: {
-      email: '',
+      username: '',
       password: '',
       cpassword: '',
     },
@@ -38,7 +38,7 @@ const SignupFormScreen = (props: {handleSignUp: (params: any) => void}) => {
   const {loading} = UseSignUpHooks();
 
   const onSubmit: SubmitHandler<FormData> = data => {
-    handleSignUp({email: data.email, password: data.password});
+    handleSignUp({username: data.username, password: data.password});
   };
   return (
     <ContainerStyled>
@@ -46,9 +46,9 @@ const SignupFormScreen = (props: {handleSignUp: (params: any) => void}) => {
         <ScrollViewContainer>
           <TextInputContainerStyled>
             <FormTextController
-              Label="Email"
-              name="email"
-              placeholder="Email Address"
+              Label="Username"
+              name="username"
+              placeholder="Username"
               rules={{
                 required: true,
               }}
