@@ -696,6 +696,7 @@ exports[`My Jobs Screen Should work as expected to get snapshot 1`] = `
                 }
               >
                 <View
+                  accessibilityLabel="MoleculesSuggestedCardSubmitButtonTestId"
                   accessibilityState={
                     {
                       "busy": undefined,
@@ -735,6 +736,7 @@ exports[`My Jobs Screen Should work as expected to get snapshot 1`] = `
                       "paddingTop": 5,
                     }
                   }
+                  testID="MoleculesSuggestedCardSubmitButtonTestId"
                 >
                   <Text
                     style={
@@ -1347,6 +1349,7 @@ exports[`My Jobs Screen Should work as expected to get snapshot 1`] = `
                 }
               >
                 <View
+                  accessibilityLabel="MoleculesSuggestedCardSubmitButtonTestId"
                   accessibilityState={
                     {
                       "busy": undefined,
@@ -1386,6 +1389,7 @@ exports[`My Jobs Screen Should work as expected to get snapshot 1`] = `
                       "paddingTop": 5,
                     }
                   }
+                  testID="MoleculesSuggestedCardSubmitButtonTestId"
                 >
                   <Text
                     style={

@@ -1,4 +1,6 @@
-import React, {useState} from 'react';
+// @ts-check
+import React from 'react';
+import {useState,ReactElement} from 'react';
 import {Text} from '@/component/atoms/text';
 import {Vcontainer} from '@/component/atoms/vcontainer';
 import {Hcontainer} from '@/component/atoms/hcontainer';
@@ -7,7 +9,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {colors} from '@/utils/themes';
 import type {TextInputProps} from './types';
 import {TextInputStyled, LineTextStyled} from './styles';
-const TextInput = (props: TextInputProps) => {
+const TextInput = (props: TextInputProps):ReactElement => {
   const {
     Label,
     onChangeText,
@@ -24,6 +26,7 @@ const TextInput = (props: TextInputProps) => {
       <Text TextMode="Title">{Label}</Text>
       <Hcontainer>
         <TextInputStyled
+          autoCapitalize="none"
           placeholder={placeholder}
           secureTextEntry={type === 'Text' ? isVisible : !isVisible}
           value={value}

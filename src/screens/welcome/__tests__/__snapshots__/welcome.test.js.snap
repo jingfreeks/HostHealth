@@ -173,6 +173,7 @@ exports[`Welcome Screen Should work as expected to get snapshot 1`] = `
         }
       >
         <View
+          accessibilityLabel="AtomsButtonTestId"
           accessibilityState={
             {
               "busy": undefined,
@@ -212,6 +213,7 @@ exports[`Welcome Screen Should work as expected to get snapshot 1`] = `
               "paddingTop": 15,
             }
           }
+          testID="AtomsButtonTestId"
         >
           <Text
             style={
@@ -259,6 +261,7 @@ exports[`Welcome Screen Should work as expected to get snapshot 1`] = `
         }
       >
         <View
+          accessibilityLabel="AtomsButtonTestId"
           accessibilityState={
             {
               "busy": undefined,
@@ -298,6 +301,7 @@ exports[`Welcome Screen Should work as expected to get snapshot 1`] = `
               "paddingTop": 15,
             }
           }
+          testID="AtomsButtonTestId"
         >
           <Text
             style={

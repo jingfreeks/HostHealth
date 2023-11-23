@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export type ButtonProps = {
   children?: ReactNode;
   bcolor: string;
@@ -6,4 +8,5 @@ export type ButtonProps = {
   borderc?: string;
   onPress: () => void;
   padding?: number;
+  testId?:string;
 };

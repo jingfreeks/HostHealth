@@ -184,198 +184,6 @@ exports[`Signup Screen Should work as expected to get snapshot 1`] = `
                     ]
                   }
                 >
-                  First Name
-                </Text>
-                <View
-                  style={
-                    [
-                      {
-                        "flexDirection": "row",
-                      },
-                    ]
-                  }
-                >
-                  <TextInput
-                    onChangeText={[Function]}
-                    placeholder="First Name"
-                    secureTextEntry={false}
-                    style={
-                      [
-                        {
-                          "flexBasis": 0,
-                          "flexGrow": 1,
-                          "flexShrink": 1,
-                          "height": 30,
-                          "marginBottom": 5,
-                        },
-                      ]
-                    }
-                    value=""
-                  />
-                  <Text
-                    allowFontScaling={false}
-                    selectable={false}
-                    style={
-                      [
-                        {
-                          "color": "#C2D6DC",
-                          "fontSize": 25,
-                        },
-                        undefined,
-                        {
-                          "fontFamily": "Ionicons",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                        {},
-                      ]
-                    }
-                  >
-                    
-                  </Text>
-                </View>
-                <View
-                  style={
-                    [
-                      {
-                        "alignSelf": "stretch",
-                        "borderColor": "#C2D6DC",
-                        "borderWidth": 0.5,
-                        "flexDirection": "row",
-                        "marginBottom": 15,
-                      },
-                    ]
-                  }
-                />
-              </View>
-            </RCTSafeAreaView>
-            <RCTSafeAreaView
-              style={
-                [
-                  {},
-                ]
-              }
-            >
-              <View
-                alignType="flex-start"
-                style={
-                  [
-                    {
-                      "alignItems": "flex-start",
-                      "alignSelf": "flex-start",
-                      "flexDirection": "column",
-                    },
-                  ]
-                }
-              >
-                <Text
-                  style={
-                    [
-                      {
-                        "color": "#0e3f6c",
-                        "fontFamily": "Avenir",
-                        "fontSize": 18,
-                        "fontWeight": "900",
-                      },
-                    ]
-                  }
-                >
-                  Last Name
-                </Text>
-                <View
-                  style={
-                    [
-                      {
-                        "flexDirection": "row",
-                      },
-                    ]
-                  }
-                >
-                  <TextInput
-                    onChangeText={[Function]}
-                    placeholder="Last Name"
-                    secureTextEntry={false}
-                    style={
-                      [
-                        {
-                          "flexBasis": 0,
-                          "flexGrow": 1,
-                          "flexShrink": 1,
-                          "height": 30,
-                          "marginBottom": 5,
-                        },
-                      ]
-                    }
-                    value=""
-                  />
-                  <Text
-                    allowFontScaling={false}
-                    selectable={false}
-                    style={
-                      [
-                        {
-                          "color": "#C2D6DC",
-                          "fontSize": 25,
-                        },
-                        undefined,
-                        {
-                          "fontFamily": "Ionicons",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                        {},
-                      ]
-                    }
-                  >
-                    
-                  </Text>
-                </View>
-                <View
-                  style={
-                    [
-                      {
-                        "alignSelf": "stretch",
-                        "borderColor": "#C2D6DC",
-                        "borderWidth": 0.5,
-                        "flexDirection": "row",
-                        "marginBottom": 15,
-                      },
-                    ]
-                  }
-                />
-              </View>
-            </RCTSafeAreaView>
-            <RCTSafeAreaView
-              style={
-                [
-                  {},
-                ]
-              }
-            >
-              <View
-                alignType="flex-start"
-                style={
-                  [
-                    {
-                      "alignItems": "flex-start",
-                      "alignSelf": "flex-start",
-                      "flexDirection": "column",
-                    },
-                  ]
-                }
-              >
-                <Text
-                  style={
-                    [
-                      {
-                        "color": "#0e3f6c",
-                        "fontFamily": "Avenir",
-                        "fontSize": 18,
-                        "fontWeight": "900",
-                      },
-                    ]
-                  }
-                >
                   Email
                 </Text>
                 <View
@@ -388,6 +196,7 @@ exports[`Signup Screen Should work as expected to get snapshot 1`] = `
                   }
                 >
                   <TextInput
+                    autoCapitalize="none"
                     onChangeText={[Function]}
                     placeholder="Email Address"
                     secureTextEntry={false}
@@ -484,6 +293,7 @@ exports[`Signup Screen Should work as expected to get snapshot 1`] = `
                   }
                 >
                   <TextInput
+                    autoCapitalize="none"
                     onChangeText={[Function]}
                     placeholder="Password"
                     secureTextEntry={true}
@@ -581,6 +391,7 @@ exports[`Signup Screen Should work as expected to get snapshot 1`] = `
                   }
                 >
                   <TextInput
+                    autoCapitalize="none"
                     onChangeText={[Function]}
                     placeholder="Confirm Password"
                     secureTextEntry={true}
@@ -665,6 +476,7 @@ exports[`Signup Screen Should work as expected to get snapshot 1`] = `
               }
             >
               <View
+                accessibilityLabel="AtomsButtonTestId"
                 accessibilityState={
                   {
                     "busy": undefined,
@@ -704,6 +516,7 @@ exports[`Signup Screen Should work as expected to get snapshot 1`] = `
                     "paddingTop": 15,
                   }
                 }
+                testID="AtomsButtonTestId"
               >
                 <Text
                   style={

@@ -328,11 +328,6 @@ check and 19. (Links to Essium)
           renderItem={[Function]}
           scrollEventThrottle={50}
           stickyHeaderIndices={[]}
-          style={
-            [
-              {},
-            ]
-          }
           viewabilityConfigCallbackPairs={[]}
         >
           <View>
@@ -944,6 +939,7 @@ check and 19. (Links to Essium)
                         }
                       >
                         <View
+                          accessibilityLabel="MoleculesSuggestedCardSubmitButtonTestId"
                           accessibilityState={
                             {
                               "busy": undefined,
@@ -983,6 +979,7 @@ check and 19. (Links to Essium)
                               "paddingTop": 5,
                             }
                           }
+                          testID="MoleculesSuggestedCardSubmitButtonTestId"
                         >
                           <Text
                             style={
@@ -1613,6 +1610,7 @@ check and 19. (Links to Essium)
                         }
                       >
                         <View
+                          accessibilityLabel="MoleculesSuggestedCardSubmitButtonTestId"
                           accessibilityState={
                             {
                               "busy": undefined,
@@ -1652,6 +1650,7 @@ check and 19. (Links to Essium)
                               "paddingTop": 5,
                             }
                           }
+                          testID="MoleculesSuggestedCardSubmitButtonTestId"
                         >
                           <Text
                             style={

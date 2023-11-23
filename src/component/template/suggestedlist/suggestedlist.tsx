@@ -1,5 +1,5 @@
 import React, {useCallback} from 'react';
-import {ListRenderItem} from 'react-native';
+import {ListRenderItem, ListRenderItemInfo, FlatList} from 'react-native';
 import HomeEmptyCard from '@/component/molecules/homeemptycard/homeemptycard';
 import SuggestedCard from '@/component/molecules/suggesstedcard/suggestedcard';
 import {SuggestedEmptyIcon} from '@/assets';
@@ -13,9 +13,8 @@ import {
 const SuggestedList = (props: SuggestedListProps) => {
   const {data = []} = props;
 
-  const renderItem = useCallback(
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    ({item}: {item: any}) => (
+  const renderItem: ListRenderItem<SuggestedCardDetailsProps> = useCallback(
+    ({item}: ListRenderItemInfo<SuggestedCardDetailsProps>) => (
       <RenderItemStyled>
         <SuggestedCard data={item} />
       </RenderItemStyled>
@@ -25,12 +24,11 @@ const SuggestedList = (props: SuggestedListProps) => {
   if (data?.length > 0) {
     return (
       <SuggestedListContainerStyled>
-        <FlatlistStyled
+        <FlatList
           horizontal
           data={data}
           extraData={data}
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          keyExtractor={(item: any) => item.id}
+          keyExtractor={(item, index) => index.toString()}
           renderItem={renderItem}
         />
       </SuggestedListContainerStyled>

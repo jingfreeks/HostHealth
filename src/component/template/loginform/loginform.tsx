@@ -1,5 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
-import {TextInput} from '@/component/molecules/textinput';
 import {FormTextController} from '@/component/molecules/formtextcontroller';
 import {Text} from '@/component/atoms/text';
 import {
@@ -7,6 +7,7 @@ import {
   Controller,
   useFormContext,
   FormProvider,
+  SubmitHandler,
 } from 'react-hook-form';
 import {
   ContainerStyled,
@@ -17,14 +18,23 @@ import {
 } from './styled';
 import {Bbutton} from '@/component/molecules/bbutton';
 import {UseWelcomeHooks} from '@/screens/welcome/hooks';
-import type {LoginFormProps} from './types';
-import {colors} from '@/utils/themes';
 import {yupResolver} from '@hookform/resolvers/yup';
+import {StackNavigationProp} from '@react-navigation/stack';
+import type {RootNavigationProps} from '@/navigation/types';
+import {useNavigation} from '@react-navigation/native';
 import {Schema} from './schema';
+import {useDispatch} from 'react-redux';
+import {ThunkDispatch} from '@reduxjs/toolkit';
+import {setCredentials} from '@/slice/auth';
+import {testingProps} from '@/utils/testframework'
+import {useLoginMutation} from '@/slice/authApi';
 import * as yup from 'yup';
-const LoginFormScreen = (props: LoginFormProps) => {
-  const {signInPress = () => {}} = props;
+const LoginFormScreen = () => {
+  const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
+  const navigation = useNavigation<StackNavigationProp<RootNavigationProps>>();
   const {handleSignUp} = UseWelcomeHooks();
+  const [login, {isLoading}] = useLoginMutation();
+
   type FormData = yup.InferType<typeof Schema>;
   const formMethod = useForm<FormData>({
     defaultValues: {
@@ -34,6 +44,18 @@ const LoginFormScreen = (props: LoginFormProps) => {
     resolver: yupResolver(Schema),
   });
 
+  const onSubmit: SubmitHandler<FormData> = async data => {
+    try {
+      const userData: any = await login({
+        username: data.email,
+        password: data.password,
+      }).unwrap();
+      dispatch(setCredentials({...userData, user: data.email}));
+      navigation.navigate('app');
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
   return (
     <ContainerStyled>
       <FormProvider {...formMethod}>
@@ -58,15 +80,17 @@ const LoginFormScreen = (props: LoginFormProps) => {
         <Bbutton
           bcolor={'#d6f3f3'}
           border={10}
+          loaders={isLoading}
+          testId='LoginFormSignInpButtonId'
           title="SIGN IN"
-          onPress={formMethod.handleSubmit(signInPress)}
+          onPress={formMethod.handleSubmit(onSubmit)}
         />
         <ForgotPassContainerStyled>
           <Text>Forgot Password?</Text>
         </ForgotPassContainerStyled>
         <AccountContainerStyled>
           <Text TextMode="TextNormal">Forgot Password?</Text>
-          <SignUpButtonStyled onPress={handleSignUp}>
+          <SignUpButtonStyled {...testingProps('LoginFormSignupButtonId')}onPress={handleSignUp}>
             <Text>Sign Up here</Text>
           </SignUpButtonStyled>
         </AccountContainerStyled>

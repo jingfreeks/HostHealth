@@ -1,4 +1,12 @@
 export type RootNavigationProps = {
+  BottomTab:undefined;
+  app: undefined;
+  Login: undefined;
+  Signup: undefined;
+  Welcome: undefined;
+};
+
+export type AppNavigationProps={
   JobsDetails: {
     jobdetail: {
       image?: string;
@@ -15,8 +23,6 @@ export type RootNavigationProps = {
       joborderno?: string;
       id?: number;
     };
-  };
-  app: undefined;
-  Login: undefined;
-  Signup: undefined;
-};
+  },
+  BottomTab:undefined;
+}
