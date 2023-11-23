@@ -33,9 +33,16 @@ describe('Login Form  Template Component', () => {
     const all = render(<LoginForm />);
     expect(all.toJSON()).toMatchSnapshot();
   });
-  it('Should work as trigger handle submit button onPress', () => {
+  it('Should work as trigger signup handle submit button onPress', () => {
     const all = render(<LoginForm />);
     const el = all.getByTestId('LoginFormSignupButtonId');
+    fireEvent(el, 'onPress');
+    expect(all.toJSON()).toBeTruthy();
+  });
+
+  it('Should work as trigger signin handle submit button onPress', () => {
+    const all = render(<LoginForm />);
+    const el = all.getByTestId('LoginFormSignInpButtonId');
     fireEvent(el, 'onPress');
     expect(all.toJSON()).toBeTruthy();
   });

@@ -81,6 +81,7 @@ const LoginFormScreen = () => {
           bcolor={'#d6f3f3'}
           border={10}
           loaders={isLoading}
+          testId='LoginFormSignInpButtonId'
           title="SIGN IN"
           onPress={formMethod.handleSubmit(onSubmit)}
         />

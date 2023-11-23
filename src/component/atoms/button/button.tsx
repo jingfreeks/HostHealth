@@ -1,5 +1,6 @@
 import React from 'react';
 import {ButtonContainer, ContainerStyled} from './styles';
+import {testingProps} from '@/utils/testframework'
 import type {ButtonProps} from './types';
 // import {colors} from '@/utils/themes';
 const Button = (props: ButtonProps) => {
@@ -11,6 +12,7 @@ const Button = (props: ButtonProps) => {
     borderc = '#99E1E1',
     onPress,
     padding = 15,
+    testId='AtomsButtonTestId',
   } = props;
   return (
     <ContainerStyled border={border} borderc={borderc} borderw={borderw}>
@@ -18,6 +20,7 @@ const Button = (props: ButtonProps) => {
         bcolor={bcolor}
         border={border}
         padding={padding}
+        {...testingProps(testId)}
         onPress={onPress}>
         {children}
       </ButtonContainer>

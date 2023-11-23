@@ -248,6 +248,7 @@ exports[`Login Form  Template Component Should work as expected to get snapshot 
       }
     >
       <View
+        accessibilityLabel="LoginFormSignInpButtonId"
         accessibilityState={
           {
             "busy": undefined,
@@ -287,6 +288,7 @@ exports[`Login Form  Template Component Should work as expected to get snapshot 
             "paddingTop": 15,
           }
         }
+        testID="LoginFormSignInpButtonId"
       >
         <Text
           style={
