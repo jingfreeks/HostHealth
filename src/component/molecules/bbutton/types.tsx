@@ -9,4 +9,5 @@ export type BbuttonProps = {
   loaders?: boolean;
   loaderColor?: string;
   loaderSize?: 'small' | 'large';
+  testId?:string;
 };

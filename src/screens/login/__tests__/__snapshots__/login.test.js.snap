@@ -364,6 +364,7 @@ exports[`Login Screen Should work as expected to get snapshot 1`] = `
           }
         >
           <View
+            accessibilityLabel="LoginFormSignInpButtonId"
             accessibilityState={
               {
                 "busy": undefined,
@@ -403,6 +404,7 @@ exports[`Login Screen Should work as expected to get snapshot 1`] = `
                 "paddingTop": 15,
               }
             }
+            testID="LoginFormSignInpButtonId"
           >
             <Text
               style={
@@ -499,6 +501,7 @@ exports[`Login Screen Should work as expected to get snapshot 1`] = `
           Forgot Password?
         </Text>
         <View
+          accessibilityLabel="LoginFormSignupButtonId"
           accessibilityState={
             {
               "busy": undefined,
@@ -532,6 +535,7 @@ exports[`Login Screen Should work as expected to get snapshot 1`] = `
               "opacity": 1,
             }
           }
+          testID="LoginFormSignupButtonId"
         >
           <Text
             style={

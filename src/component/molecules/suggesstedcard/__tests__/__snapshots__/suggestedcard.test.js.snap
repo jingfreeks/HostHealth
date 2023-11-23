@@ -587,6 +587,7 @@ exports[`Suggested Card Component Should work as expected to get snapshot 1`] = 
         }
       >
         <View
+          accessibilityLabel="AtomsButtonTestId"
           accessibilityState={
             {
               "busy": undefined,
@@ -626,6 +627,7 @@ exports[`Suggested Card Component Should work as expected to get snapshot 1`] = 
               "paddingTop": 5,
             }
           }
+          testID="AtomsButtonTestId"
         >
           <Text
             style={

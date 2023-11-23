@@ -747,6 +747,7 @@ exports[`Login Content Template Component Should work as expected to get snapsho
                   }
                 >
                   <View
+                    accessibilityLabel="AtomsButtonTestId"
                     accessibilityState={
                       {
                         "busy": undefined,
@@ -786,6 +787,7 @@ exports[`Login Content Template Component Should work as expected to get snapsho
                         "paddingTop": 5,
                       }
                     }
+                    testID="AtomsButtonTestId"
                   >
                     <Text
                       style={

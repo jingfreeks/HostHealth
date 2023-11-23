@@ -15,6 +15,7 @@ exports[`Buton Component Should work as expected to get snapshot 1`] = `
   }
 >
   <View
+    accessibilityLabel="AtomsButtonTestId"
     accessibilityState={
       {
         "busy": undefined,
@@ -54,6 +55,7 @@ exports[`Buton Component Should work as expected to get snapshot 1`] = `
         "paddingTop": 15,
       }
     }
+    testID="AtomsButtonTestId"
   />
 </View>
 `;
