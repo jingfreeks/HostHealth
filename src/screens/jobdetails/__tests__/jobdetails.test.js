@@ -1,5 +1,5 @@
 import React from 'react';
-import {render} from '@testing-library/react-native';
+import {render,fireEvent} from '@testing-library/react-native';
 import {MockProvider} from '@/utils/testframework';
 import JobDetails from '../jobdetails';
 
@@ -41,5 +41,63 @@ describe('Job Details Screen', () => {
       </MockProvider>,
     );
     expect(all.toJSON()).toMatchSnapshot();
+  });
+
+  it('Should work as expected to get snapshot', () => {
+    const all = render(
+      <MockProvider
+        store={{
+          pcities: {loading: false, data: []},
+          suggetedjob: {loading: false, data: []},
+        }}>
+        <JobDetails {...props} />
+      </MockProvider>,
+    );
+    expect(all.toJSON()).toMatchSnapshot();
+  });
+  it('Should work to trigger submit button', () => {
+    const all = render(
+      <MockProvider
+        store={{
+          pcities: {loading: false, data: []},
+          suggetedjob: {loading: false, data: []},
+        }}>
+        <JobDetails {...props} />
+      </MockProvider>,
+    );
+    const el = all.getByTestId('JobDetailsScreenSubmitButtonTestId');
+    fireEvent(el, 'onPress');
+    expect(all.toJSON()).toBeTruthy();
+  });
+
+  it('Should work to trigger alert modal ok submit button', () => {
+    const all = render(
+      <MockProvider
+        store={{
+          pcities: {loading: false, data: []},
+          suggetedjob: {loading: false, data: []},
+        }}>
+        <JobDetails {...props} />
+      </MockProvider>,
+    );
+    const el = all.getByTestId('JobDetailsScreenSubmitButtonTestId');
+    fireEvent(el, 'onPress');
+    const el1 = all.getByTestId('JobDetailsScreenAlertModalSubmitOkButtonTestId');
+    fireEvent(el1, 'onPress');
+    expect(all.toJSON()).toBeTruthy();
+  });
+  it('Should work to trigger to close Alert modal button', () => {
+    const all = render(
+      <MockProvider
+        store={{
+          pcities: {loading: false, data: []},
+          suggetedjob: {loading: false, data: []},
+        }}>
+        <JobDetails {...props} />
+      </MockProvider>,
+    );
+    const el = all.getByTestId('JobDetailsAlertModalTestId');
+    fireEvent(el, 'onRequestClose');
+    expect(all.toJSON()).toBeTruthy();
   });
 });
