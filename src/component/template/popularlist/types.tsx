@@ -9,3 +9,7 @@ export type PopularListDetails = {
   matches: string;
   salary: string;
 };
+
+export type listingType={
+  cityId:string
+}

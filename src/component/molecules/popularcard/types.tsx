@@ -1,7 +1,8 @@
 export type PopularCardProps = {
   item: {
     image: string | undefined;
-    city: string;
+    name: string;
+    statename:string;
     matches: string;
     salary: string;
   };
