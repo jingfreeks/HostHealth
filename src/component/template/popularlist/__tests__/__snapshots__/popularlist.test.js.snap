@@ -5,212 +5,67 @@ exports[`Popular List Template Component Should work as expected to get snapshot
   style={
     [
       {
+        "alignItems": "center",
+        "alignSelf": "center",
         "flexBasis": 0,
         "flexGrow": 1,
         "flexShrink": 1,
+        "justifyContent": "center",
       },
     ]
   }
 >
-  <View
+  <RCTSafeAreaView
     style={
       [
-        {
-          "alignSelf": "stretch",
-          "borderColor": "#E6E6E6",
-          "borderRadius": 10,
-          "borderWidth": 1,
-          "flexBasis": 0,
-          "flexDirection": "row",
-          "flexGrow": 1,
-          "flexShrink": 1,
-          "marginTop": 20,
-        },
+        {},
       ]
     }
   >
     <View
+      alignType="center"
       style={
         [
           {
-            "flexBasis": 0,
-            "flexGrow": 1,
-            "flexShrink": 1,
+            "alignItems": "center",
+            "alignSelf": "center",
+            "flexDirection": "column",
           },
         ]
       }
     >
       <Image
-        resizeMode="stretch"
+        resizeMode="contain"
+        size={150}
         source={
           {
-            "uri": "https://img.freepik.com/free-photo/modern-tokyo-street-background_23-2149394948.jpg?w=996&t=st=1691132416~exp=1691133016~hmac=ee53d564abdbe32689b1a997ac989046fba50feb0f76dd84f912d8bea1a1121b",
+            "testUri": "../../../src/assets/pcitiesempty.png",
           }
         }
         style={
           [
             {
-              "borderBottomLeftRadius": 10,
-              "borderTopLeftRadius": 10,
-              "flexBasis": 0,
-              "flexGrow": 1,
-              "flexShrink": 1,
+              "height": 294.2647058823529,
+              "width": 294.2647058823529,
             },
           ]
         }
       />
-    </View>
-    <View
-      style={
-        [
-          {
-            "flexBasis": 0,
-            "flexGrow": 3,
-            "flexShrink": 1,
-            "marginBottom": 5,
-            "marginTop": 5,
-          },
-        ]
-      }
-    >
-      <View
+      <Text
         style={
           [
             {
-              "flexDirection": "row",
-              "paddingBottom": 5,
-              "paddingLeft": 5,
-              "paddingRight": 5,
-              "paddingTop": 5,
+              "color": "#000000",
+              "fontFamily": "Avenir",
+              "fontSize": 16,
+              "fontWeight": "400",
             },
           ]
         }
       >
-        <Text
-          style={
-            [
-              {
-                "color": "#03606A",
-                "fontFamily": "Avenir",
-                "fontSize": 16,
-                "fontWeight": "900",
-              },
-            ]
-          }
-        >
-          San Francisco
-           
-          <Text
-            style={
-              [
-                {
-                  "color": "#0e3f6c",
-                  "fontFamily": "Avenir",
-                  "fontSize": 12,
-                  "fontWeight": "500",
-                },
-              ]
-            }
-          >
-            San Francisco
-          </Text>
-        </Text>
-      </View>
-      <View
-        style={
-          [
-            {
-              "flexDirection": "row",
-              "paddingBottom": 5,
-              "paddingLeft": 5,
-              "paddingRight": 5,
-              "paddingTop": 5,
-            },
-          ]
-        }
-      >
-        <View
-          style={
-            [
-              {
-                "flexBasis": 0,
-                "flexGrow": 1,
-                "flexShrink": 1,
-              },
-            ]
-          }
-        >
-          <Text
-            style={
-              [
-                {
-                  "color": "#0e3f6c",
-                  "fontFamily": "Avenir",
-                  "fontSize": 14,
-                  "fontWeight": "900",
-                },
-              ]
-            }
-          >
-            15
-             
-            <Text
-              style={
-                [
-                  {
-                    "color": "#0e3f6c",
-                    "fontFamily": "Avenir",
-                    "fontSize": 12,
-                    "fontWeight": "500",
-                  },
-                ]
-              }
-            >
-              Matches
-            </Text>
-          </Text>
-        </View>
-        <Text
-          style={
-            [
-              {
-                "color": "#000000",
-                "fontFamily": "Avenir",
-                "fontSize": 16,
-                "fontWeight": "900",
-              },
-            ]
-          }
-        >
-          $2,659
-        </Text>
-        <View
-          style={
-            [
-              {
-                "alignSelf": "flex-end",
-                "flexDirection": "row",
-              },
-            ]
-          }
-        >
-          <Text
-            style={
-              [
-                {
-                  "color": "#000000",
-                  "fontFamily": "Avenir",
-                  "fontSize": 12,
-                  "fontWeight": "400",
-                },
-              ]
-            }
-          >
-             /wk
-          </Text>
-        </View>
-      </View>
+        No cities matches your preferred locations
+      </Text>
     </View>
-  </View>
+  </RCTSafeAreaView>
 </View>
 `;

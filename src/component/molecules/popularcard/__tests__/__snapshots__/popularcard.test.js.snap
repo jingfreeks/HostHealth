@@ -87,7 +87,6 @@ exports[`Popular Card Component Should work as expected to get snapshot 1`] = `
           ]
         }
       >
-        test city
          
         <Text
           style={
@@ -100,9 +99,7 @@ exports[`Popular Card Component Should work as expected to get snapshot 1`] = `
               },
             ]
           }
-        >
-          test city
-        </Text>
+        />
       </Text>
     </View>
     <View

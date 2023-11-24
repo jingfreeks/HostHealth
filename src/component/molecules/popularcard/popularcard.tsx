@@ -26,7 +26,7 @@ const PopularCardScreen = (props: PopularCardProps) => {
       <InfoContainerStyled>
         <TitleContainterStyled>
           <Text TextMode="Ptitle">
-            {item.city} <Text TextMode="Pstitle">{item.city}</Text>
+            {item.name} <Text TextMode="Pstitle">{item.statename}</Text>
           </Text>
         </TitleContainterStyled>
         <SubtitleContainerStyled>

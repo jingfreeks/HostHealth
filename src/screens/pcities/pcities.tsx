@@ -7,7 +7,7 @@ const PopularCitiesScreen = () => {
   return (
     <ScrollViewContainer>
       <ContainerStyled>
-        <PopularList data={PopularListData} />
+        <PopularList />
       </ContainerStyled>
     </ScrollViewContainer>
   );
