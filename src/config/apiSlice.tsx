@@ -2,7 +2,6 @@
 import { setCredentials,logout } from '@/slice/auth';
 import Config from 'react-native-config';
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
-
 const baseQuery = fetchBaseQuery({
   baseUrl: Config.DEV_BASE_URL,
   credentials: 'include',
