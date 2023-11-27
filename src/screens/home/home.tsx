@@ -6,7 +6,7 @@ import {PopularList} from '@/component/template/popularlist';
 import {HomeHeaderList} from '@/component/template/homeheaderlist';
 import {Jobslist} from '@/screens/home/constant';
 import {useDispatch} from 'react-redux';
-import {fetchSuggested} from '@/slice/suggested';
+// import {fetchSuggested} from '@/slice/suggested';
 import {ThunkDispatch} from '@reduxjs/toolkit';
 import {
   ScrollViewContainer,
@@ -20,7 +20,7 @@ const HomeScreen = () => {
 
   useEffect(() => {
     // dispatch(fetchPCities());
-    dispatch(fetchSuggested());
+    // dispatch(fetchSuggested());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
@@ -31,7 +31,7 @@ const HomeScreen = () => {
         <SuggestedTextContainerStyled>
           <Text TextMode="Htitlenormal">SUGGESTED</Text>
         </SuggestedTextContainerStyled>
-        <SuggestedList data={Jobslist} />
+        <SuggestedList />
         <SuggestedTextContainerStyled>
           <Text TextMode="Htitlenormal">POPULAR CITIES</Text>
           <PopularList />

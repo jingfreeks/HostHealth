@@ -4,7 +4,7 @@ import {setupListeners} from '@reduxjs/toolkit/query';
 import {healtHostApi} from './api';
 // import pcitiesslice from '@/slice/pcities';
 import loginslice from '@/slice/login';
-import suggestedjobs from '@/slice/suggested';
+// import suggestedjobs from '@/slice/suggested';
 import {apiSlice} from './apiSlice';
 import authReducer from '@/slice/auth';
 
@@ -13,7 +13,7 @@ const rootReducer = combineReducers({
   [apiSlice.reducerPath]: apiSlice.reducer,
   auth: authReducer,
   // pcities: pcitiesslice,
-  suggetedjob: suggestedjobs,
+  // suggetedjob: suggestedjobs,
   login: loginslice,
 });
 
