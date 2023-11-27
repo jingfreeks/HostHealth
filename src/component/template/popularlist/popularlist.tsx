@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import HomeEmptyCard from '@/component/molecules/homeemptycard/homeemptycard';
-import {PopularEmptyContainerStyled, PopularContainerStyled} from './styles';
+import {PopularEmptyContainerStyled} from './styles';
 import {PcitiesEmptyIcon} from '@/assets';
 import {useGetCityQuery} from '@/slice/city';
 import Lists from './list'
@@ -15,7 +15,6 @@ const PopularListScreen = () => {
     isError,
     error,
   } = useGetCityQuery<any>('getcity');
-  console.log('cities', cities);
   if (isLoading) {
     content = (
       <PopularEmptyContainerStyled>
@@ -28,23 +27,6 @@ const PopularListScreen = () => {
   }else if(isSuccess){
     content = cities.ids.map((cityid:string) => <Lists key={cityid} cityId={cityid} />)
   }
-  // if (data?.length > 0) {
-  //   return data?.map((item, idx) => {
-  //     return (
-  //       <PopularContainerStyled key={idx}>
-  //         <PopularCard item={item} />
-  //       </PopularContainerStyled>
-  //     );
-  //   });
-  // }
-  // return (
-  //   <PopularEmptyContainerStyled>
-  //     <HomeEmptyCard
-  //       imgsource={PcitiesEmptyIcon}
-  //       message="No cities matches your preferred locations"
-  //     />
-  //   </PopularEmptyContainerStyled>
-  // );
   return content;
 };
 export default PopularListScreen;

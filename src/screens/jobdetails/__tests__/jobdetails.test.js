@@ -1,6 +1,8 @@
 import React from 'react';
 import {render,fireEvent} from '@testing-library/react-native';
+import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock';
 import {MockProvider} from '@/utils/testframework';
+import {renderWithProviders} from '@/utils/testframeworknew';
 import JobDetails from '../jobdetails';
 
 jest.mock('@react-navigation/native', () => {
@@ -14,6 +16,8 @@ jest.mock('@react-navigation/native', () => {
     useDispatch: () => ({dispatch: jest.fn()}),
   };
 });
+jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
+jest.mock('@supabase/supabase-js');
 describe('Job Details Screen', () => {
   const props = {
     route: {
@@ -31,15 +35,7 @@ describe('Job Details Screen', () => {
     },
   };
   it('Should work as expected to get snapshot', () => {
-    const all = render(
-      <MockProvider
-        store={{
-          pcities: {loading: false, data: []},
-          suggetedjob: {loading: false, data: []},
-        }}>
-        <JobDetails {...props} />
-      </MockProvider>,
-    );
+    const all = renderWithProviders(<JobDetails {...props} />);
     expect(all.toJSON()).toMatchSnapshot();
   });
 
@@ -56,15 +52,7 @@ describe('Job Details Screen', () => {
     expect(all.toJSON()).toMatchSnapshot();
   });
   it('Should work to trigger submit button', () => {
-    const all = render(
-      <MockProvider
-        store={{
-          pcities: {loading: false, data: []},
-          suggetedjob: {loading: false, data: []},
-        }}>
-        <JobDetails {...props} />
-      </MockProvider>,
-    );
+    const all = renderWithProviders(<JobDetails {...props} />);
     const el = all.getByTestId('JobDetailsScreenSubmitButtonTestId');
     fireEvent(el, 'onPress');
     expect(all.toJSON()).toBeTruthy();
