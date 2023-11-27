@@ -22,3 +22,7 @@ export type RenderItemProps = {
   item?: SuggestedCardDetailsProps;
   index?: number;
 };
+
+export type JobIdList={
+  jobId:string;
+}

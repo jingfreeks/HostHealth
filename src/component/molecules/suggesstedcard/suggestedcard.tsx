@@ -41,6 +41,7 @@ import type {SuggestedCardProps} from './types';
 import {Text} from '@/component/atoms/text';
 const SuggestedCardScreen = (props: SuggestedCardProps) => {
   const {data} = props;
+  console.log('jobs',data)
   const {handlesubmit} = UseSuggestedCardHooks();
   if (data) {
     return (
@@ -67,14 +68,14 @@ const SuggestedCardScreen = (props: SuggestedCardProps) => {
               source={LocationIcon}
             />
             <LocationTextStyled>
-              {data?.city}, {data?.state}
+              {data?.cityname}, {data?.statename}
             </LocationTextStyled>
           </LocationContainerStyled>
         </ImageHeaderContainer>
         <JobInfoContainerStyled>
           <JobInfoTextContainerStyled>
             <Text TextMode="Ptitle">{data?.jobtitle}</Text>
-            <JobTextSubTitleStyled>{data?.company}</JobTextSubTitleStyled>
+            <JobTextSubTitleStyled>{data?.compname}</JobTextSubTitleStyled>
           </JobInfoTextContainerStyled>
           <MatchContainersStyled>
             <MatchTextStyled>{data?.match}</MatchTextStyled>
@@ -91,7 +92,7 @@ const SuggestedCardScreen = (props: SuggestedCardProps) => {
               source={StethoscopeIcon}
             />
           </DeptImageContainerStyled>
-          <DeptTitleTextStyled>{data?.dept}</DeptTitleTextStyled>
+          <DeptTitleTextStyled>{data?.deptname}</DeptTitleTextStyled>
         </DeptContainerStyled>
         <WeeksContaienrStyled>
           <DeptImageContainerStyled>
@@ -111,7 +112,7 @@ const SuggestedCardScreen = (props: SuggestedCardProps) => {
               source={SunICon}
             />
           </DeptImageContainerStyled>
-          <DeptTitleTextStyled>{data?.shift}</DeptTitleTextStyled>
+          <DeptTitleTextStyled>{data?.shiftname}</DeptTitleTextStyled>
         </ShiftContainerStyled>
         <EstimatedContainerStyled>
           <EstimatedTextStyled>Estimated</EstimatedTextStyled>

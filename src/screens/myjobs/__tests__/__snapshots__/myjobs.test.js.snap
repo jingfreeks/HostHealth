@@ -277,9 +277,7 @@ exports[`My Jobs Screen Should work as expected to get snapshot 1`] = `
                   ]
                 }
               >
-                Boston
                 , 
-                MA
               </Text>
             </View>
           </View>
@@ -338,9 +336,7 @@ exports[`My Jobs Screen Should work as expected to get snapshot 1`] = `
                     },
                   ]
                 }
-              >
-                Enlo Medical Center
-              </Text>
+              />
             </View>
             <View
               style={
@@ -462,9 +458,7 @@ exports[`My Jobs Screen Should work as expected to get snapshot 1`] = `
                   },
                 ]
               }
-            >
-              Labor and Delivery
-            </Text>
+            />
           </View>
           <View
             style={
@@ -579,9 +573,7 @@ exports[`My Jobs Screen Should work as expected to get snapshot 1`] = `
                   },
                 ]
               }
-            >
-              Days
-            </Text>
+            />
           </View>
           <View
             style={
@@ -930,9 +922,7 @@ exports[`My Jobs Screen Should work as expected to get snapshot 1`] = `
                   ]
                 }
               >
-                Los Angeles
                 , 
-                CA
               </Text>
             </View>
           </View>
@@ -991,9 +981,7 @@ exports[`My Jobs Screen Should work as expected to get snapshot 1`] = `
                     },
                   ]
                 }
-              >
-                Enlo Medical Center
-              </Text>
+              />
             </View>
             <View
               style={
@@ -1115,9 +1103,7 @@ exports[`My Jobs Screen Should work as expected to get snapshot 1`] = `
                   },
                 ]
               }
-            >
-              Labor and Delivery
-            </Text>
+            />
           </View>
           <View
             style={
@@ -1232,9 +1218,7 @@ exports[`My Jobs Screen Should work as expected to get snapshot 1`] = `
                   },
                 ]
               }
-            >
-              Days
-            </Text>
+            />
           </View>
           <View
             style={
