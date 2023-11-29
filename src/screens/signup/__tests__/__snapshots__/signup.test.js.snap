@@ -184,7 +184,7 @@ exports[`Signup Screen Should work as expected to get snapshot 1`] = `
                     ]
                   }
                 >
-                  Email
+                  Username
                 </Text>
                 <View
                   style={
@@ -198,7 +198,7 @@ exports[`Signup Screen Should work as expected to get snapshot 1`] = `
                   <TextInput
                     autoCapitalize="none"
                     onChangeText={[Function]}
-                    placeholder="Email Address"
+                    placeholder="Username"
                     secureTextEntry={false}
                     style={
                       [
@@ -311,6 +311,7 @@ exports[`Signup Screen Should work as expected to get snapshot 1`] = `
                     value=""
                   />
                   <Text
+                    accessibilityLabel="MaterialsIconShowPasswordTestId"
                     allowFontScaling={false}
                     onPress={[Function]}
                     selectable={false}
@@ -329,6 +330,7 @@ exports[`Signup Screen Should work as expected to get snapshot 1`] = `
                         {},
                       ]
                     }
+                    testID="MaterialsIconShowPasswordTestId"
                   >
                     
                   </Text>
@@ -409,6 +411,7 @@ exports[`Signup Screen Should work as expected to get snapshot 1`] = `
                     value=""
                   />
                   <Text
+                    accessibilityLabel="MaterialsIconShowPasswordTestId"
                     allowFontScaling={false}
                     onPress={[Function]}
                     selectable={false}
@@ -427,6 +430,7 @@ exports[`Signup Screen Should work as expected to get snapshot 1`] = `
                         {},
                       ]
                     }
+                    testID="MaterialsIconShowPasswordTestId"
                   >
                     
                   </Text>

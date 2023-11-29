@@ -55,7 +55,7 @@ exports[`Login Form  Template Component Should work as expected to get snapshot 
             ]
           }
         >
-          Email
+          Username
         </Text>
         <View
           style={
@@ -69,7 +69,7 @@ exports[`Login Form  Template Component Should work as expected to get snapshot 
           <TextInput
             autoCapitalize="none"
             onChangeText={[Function]}
-            placeholder="Email"
+            placeholder="Username"
             secureTextEntry={false}
             style={
               [
@@ -167,7 +167,7 @@ exports[`Login Form  Template Component Should work as expected to get snapshot 
             autoCapitalize="none"
             onChangeText={[Function]}
             placeholder="Password"
-            secureTextEntry={false}
+            secureTextEntry={true}
             style={
               [
                 {
@@ -182,7 +182,9 @@ exports[`Login Form  Template Component Should work as expected to get snapshot 
             value=""
           />
           <Text
+            accessibilityLabel="MaterialsIconShowPasswordTestId"
             allowFontScaling={false}
+            onPress={[Function]}
             selectable={false}
             style={
               [
@@ -192,15 +194,16 @@ exports[`Login Form  Template Component Should work as expected to get snapshot 
                 },
                 undefined,
                 {
-                  "fontFamily": "Ionicons",
+                  "fontFamily": "Material Icons",
                   "fontStyle": "normal",
                   "fontWeight": "normal",
                 },
                 {},
               ]
             }
+            testID="MaterialsIconShowPasswordTestId"
           >
-            
+            
           </Text>
         </View>
         <View

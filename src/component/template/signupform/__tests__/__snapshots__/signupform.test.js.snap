@@ -68,7 +68,7 @@ exports[`Login Content Template Component Should work as expected to get snapsho
                 ]
               }
             >
-              Email
+              Username
             </Text>
             <View
               style={
@@ -82,7 +82,7 @@ exports[`Login Content Template Component Should work as expected to get snapsho
               <TextInput
                 autoCapitalize="none"
                 onChangeText={[Function]}
-                placeholder="Email Address"
+                placeholder="Username"
                 secureTextEntry={false}
                 style={
                   [
@@ -195,6 +195,7 @@ exports[`Login Content Template Component Should work as expected to get snapsho
                 value=""
               />
               <Text
+                accessibilityLabel="MaterialsIconShowPasswordTestId"
                 allowFontScaling={false}
                 onPress={[Function]}
                 selectable={false}
@@ -213,6 +214,7 @@ exports[`Login Content Template Component Should work as expected to get snapsho
                     {},
                   ]
                 }
+                testID="MaterialsIconShowPasswordTestId"
               >
                 
               </Text>
@@ -293,6 +295,7 @@ exports[`Login Content Template Component Should work as expected to get snapsho
                 value=""
               />
               <Text
+                accessibilityLabel="MaterialsIconShowPasswordTestId"
                 allowFontScaling={false}
                 onPress={[Function]}
                 selectable={false}
@@ -311,6 +314,7 @@ exports[`Login Content Template Component Should work as expected to get snapsho
                     {},
                   ]
                 }
+                testID="MaterialsIconShowPasswordTestId"
               >
                 
               </Text>

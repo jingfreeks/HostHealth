@@ -4,13 +4,13 @@ export type SuggestedCardProps = {
 
 export type SuggestedCardDetailsProps = {
   image?: string;
-  city?: string;
-  state?: string;
+  cityname?: string;
+  statename?: string;
   jobtitle?: string;
-  company?: string;
-  dept?: string;
+  compname?: string;
+  deptname?: string;
   weeks?: string;
-  shift?: string;
+  shiftname?: string;
   match?: string;
   salaryrange?: string;
   address?: string;

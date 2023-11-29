@@ -38,7 +38,7 @@ const LoginFormScreen = () => {
   type FormData = yup.InferType<typeof Schema>;
   const formMethod = useForm<FormData>({
     defaultValues: {
-      email: '',
+      username: '',
       password: '',
     },
     resolver: yupResolver(Schema),
@@ -47,13 +47,20 @@ const LoginFormScreen = () => {
   const onSubmit: SubmitHandler<FormData> = async data => {
     try {
       const userData: any = await login({
-        username: data.email,
+        username: data.username,
         password: data.password,
       }).unwrap();
-      dispatch(setCredentials({...userData, user: data.email}));
+      dispatch(setCredentials({...userData, user: data.username}));
       navigation.navigate('app');
     } catch (error) {
-      console.log('error', error);
+      switch(error.status){
+        case 401:
+          alert(error.data.message)
+          break;
+        default:
+          alert('error')
+      }
+      console.log('error', error.status);
     }
   };
   return (
@@ -61,9 +68,9 @@ const LoginFormScreen = () => {
       <FormProvider {...formMethod}>
         <TextInputContainerStyled>
           <FormTextController
-            Label="Email"
-            name="email"
-            placeholder="Email"
+            Label="Username"
+            name="username"
+            placeholder="Username"
             rules={{
               required: true,
             }}
@@ -75,6 +82,7 @@ const LoginFormScreen = () => {
             rules={{
               required: true,
             }}
+            type="password"
           />
         </TextInputContainerStyled>
         <Bbutton

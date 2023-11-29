@@ -1,42 +1,28 @@
-import {createSlice, createAsyncThunk, PayloadAction} from '@reduxjs/toolkit';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { createEntityAdapter } from '@reduxjs/toolkit';
+import {apiSlice} from '@/config/apiSlice';
 
-import {Jobslist} from '@/screens/home/constant';
-export const fetchSuggested = createAsyncThunk('pcities/get', async () => {
-  // Here you can use axios with your own api
-  try {
-    const response = await fetch(
-      'https://run.mocky.io/v3/cfcd5f2e-97c4-4394-bc20-44db3d53c979',
-    );
-    return Jobslist;
-    // return response.data;
-  } catch (error) {
-    console.log('errors', error);
-  }
+type jobsTypes = { _id: string; jobtitle: string }
+
+const jobsAdapter=createEntityAdapter<jobsTypes>({
+    selectId:(city)=>city._id,
+    sortComparer:(a,b)=>a.jobtitle.localeCompare(b.jobtitle)
+})
+const initialState = jobsAdapter.getInitialState()
+export const jobsApiSlice = apiSlice.injectEndpoints({
+  endpoints: builder => ({
+    getJobs: builder.query({  
+        query: () => '/jobs',
+        transformResponse: responseData => {
+            return jobsAdapter.setAll(initialState, responseData)
+        },
+        providesTags: (result:any, error, arg):any => [
+            { type: 'Jobs', id: 'LIST' },
+            ...result.ids.map((id:string| number) => ({ type: 'Jobs', id }))
+        ]
+    }),
+  }),
+  overrideExisting: false,
 });
 
-export const initialState = {
-  loading: false,
-  data: [],
-};
-export const suggestedjobs = createSlice({
-  name: 'suggestedjobs',
-  initialState,
-  reducers: {},
-  extraReducers: builder => {
-    builder.addCase(fetchSuggested.pending, state => {
-      state.loading = true;
-    });
-    builder.addCase(
-      fetchSuggested.fulfilled,
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (state, action: PayloadAction<any>) => {
-        state.data = action.payload;
-        state.loading = false;
-      },
-    );
-    builder.addCase(fetchSuggested.rejected, state => {
-      state.loading = false;
-    });
-  },
-});
-export default suggestedjobs.reducer;
+export const {useGetJobsQuery} = jobsApiSlice;
