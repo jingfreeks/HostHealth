@@ -1,4 +1,4 @@
-This Project is from one of the code test from the company that I apply, this compose of styled components, supabase as backend and redux toolkit
+This Project is from one of the code test from the company that I apply, this compose of styled components, express node js as backend and redux toolkit
 
 # Getting Started
 
