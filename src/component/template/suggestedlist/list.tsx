@@ -4,10 +4,7 @@ import {useGetJobsQuery} from '@/slice/suggested';
 import type {JobIdList} from './types'
 import SuggestedCard from '@/component/molecules/suggesstedcard/suggestedcard';
 import {
-    SuggestedListContainerStyled,
-    FlatlistStyled,
     RenderItemStyled,
-    SuggestedListEmptyContainerStyled,
   } from './styles';
 const ListScreen=(props:JobIdList)=>{
     const {jobId} = props;

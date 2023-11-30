@@ -44,5 +44,5 @@ export const apiSlice=createApi<any,any>({
     baseQuery:baseQueryWithAuth,
     reducerPath: 'api',
     endpoints:builder=>({}),
-    tagTypes: ['City','Jobs'] as any,
+    tagTypes: ['City','Jobs','MyJobs'] as any,
 })

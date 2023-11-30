@@ -1,8 +1,12 @@
 import React from 'react';
 import {render} from '@testing-library/react-native';
+import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock';
+import {renderWithProviders} from '@/utils/testframeworknew';
 import {MockProvider} from '@/utils/testframework';
 import Myjobs from '../myjobs';
 
+jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
+jest.mock('@supabase/supabase-js')
 jest.mock('@react-navigation/native', () => {
   return {
     ...jest.requireActual('@react-navigation/native'),
@@ -16,15 +20,7 @@ jest.mock('@react-navigation/native', () => {
 });
 describe('My Jobs Screen', () => {
   it('Should work as expected to get snapshot', () => {
-    const all = render(
-      <MockProvider
-        store={{
-          pcities: {loading: false, data: []},
-          suggetedjob: {loading: false, data: []},
-        }}>
-        <Myjobs />
-      </MockProvider>,
-    );
+    const all = renderWithProviders(<Myjobs />);
     expect(all.toJSON()).toMatchSnapshot();
   });
 });

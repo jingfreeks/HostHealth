@@ -5,7 +5,7 @@ import {apiSlice} from '@/config/apiSlice';
 type jobsTypes = { _id: string; jobtitle: string }
 
 const jobsAdapter=createEntityAdapter<jobsTypes>({
-    selectId:(city)=>city._id,
+    selectId:(job)=>job._id,
     sortComparer:(a,b)=>a.jobtitle.localeCompare(b.jobtitle)
 })
 const initialState = jobsAdapter.getInitialState()

@@ -60,6 +60,7 @@ export type LoginStateProps = {
 export type AuthStateProps = {
   user: string;
   token: string;
+  userId:string;
 };
 export type State = {
   pcities: PcitiesStateProps;
