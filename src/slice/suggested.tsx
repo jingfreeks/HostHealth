@@ -14,15 +14,22 @@ export const jobsApiSlice = apiSlice.injectEndpoints({
     getJobs: builder.query({  
         query: () => '/jobs',
         transformResponse: responseData => {
+          console.log('response',responseData)
             return jobsAdapter.setAll(initialState, responseData)
         },
-        providesTags: (result:any, error, arg):any => [
+        // providesTags: (result:any, error, arg):any => [
+        //     { type: 'Jobs', id: 'LIST' },
+        //     ...result.ids.map((id:string| number) => ({ type: 'Jobs', id }))
+        // ]
+        providesTags: (result:any, error, arg):any => 
+        result ?
+        [
             { type: 'Jobs', id: 'LIST' },
-            ...result.ids.map((id:string| number) => ({ type: 'Jobs', id }))
-        ]
+            ...result.ids.map((id:string | number) => ({ type: 'Jobs', id }))
+        ]: ['Jobs']
     }),
   }),
-  overrideExisting: false,
+  overrideExisting: true,
 });
 
 export const {useGetJobsQuery} = jobsApiSlice;

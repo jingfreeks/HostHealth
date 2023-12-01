@@ -1,4 +1,8 @@
 import {configureStore, combineReducers} from '@reduxjs/toolkit';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+import { persistReducer, persistStore } from 'redux-persist';
+// import storage from 'redux-persist/lib/storage'
 import type { PreloadedState } from '@reduxjs/toolkit'
 import {setupListeners} from '@reduxjs/toolkit/query';
 import {healtHostApi} from './api';
@@ -7,6 +11,13 @@ import loginslice from '@/slice/login';
 // import suggestedjobs from '@/slice/suggested';
 import {apiSlice} from './apiSlice';
 import authReducer from '@/slice/auth';
+
+const persistConfig = {
+  key: 'root',
+  storage:AsyncStorage,
+}
+
+
 
 const rootReducer = combineReducers({
   // [healtHostApi.reducerPath]: healtHostApi.reducer,
@@ -17,11 +28,12 @@ const rootReducer = combineReducers({
   login: loginslice,
 });
 
+const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 export const setupstore = (preloadedState?:PreloadedState<RootState>)=>configureStore({
-  reducer: rootReducer,
+  reducer: persistedReducer,
   middleware: getDefaultMiddleware =>
-    getDefaultMiddleware().concat(apiSlice.middleware),
+    getDefaultMiddleware({ serializableCheck: false}).concat(apiSlice.middleware),
   devTools: true,
   preloadedState
 });
@@ -31,4 +43,6 @@ export type AppStore = ReturnType<typeof setupstore>;
 export type AppDispatch = AppStore['dispatch'];
 
 export const store =setupstore({});
+export const persiststore = persistStore(store)
+
 setupListeners(store.dispatch);
