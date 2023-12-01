@@ -23,7 +23,7 @@ const baseQueryWithAuth = async (
   extraOptions: string,
 ) => {
   let result: any = await baseQuery(args, api, extraOptions);
-
+  console.log('refereshResult',result)
   if (result?.error?.originalStatus === 403) {
     console.log('Sending refresh token');
 

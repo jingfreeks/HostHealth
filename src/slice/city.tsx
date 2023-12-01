@@ -26,15 +26,22 @@ export const cityApiSlice = apiSlice.injectEndpoints({
             //     }}
             //     return post;
             // });
+            console.log('response',responseData)
             return cityAdapter.setAll(initialState, responseData)
         },
-        providesTags: (result:any, error, arg):any => [
+        // providesTags: (result:any, error, arg):any => [
+        //     { type: 'City', id: 'LIST' },
+        //     ...result.ids.map((id:string| number) => ({ type: 'City', id }))
+        // ]
+        providesTags: (result:any, error, arg):any => 
+        result ?
+        [
             { type: 'City', id: 'LIST' },
-            ...result.ids.map((id:string| number) => ({ type: 'City', id }))
-        ]
+            ...result.ids.map((id:string | number) => ({ type: 'City', id }))
+        ]: ['City']
     }),
   }),
-  overrideExisting: false,
+  overrideExisting: true,
 });
 
 export const {useGetCityQuery} = cityApiSlice;
