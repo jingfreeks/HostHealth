@@ -21,7 +21,7 @@ export const myJobsApiSlice = apiSlice.injectEndpoints({
         [
             { type: 'MyJobs', id: 'LIST' },
             ...result.ids.map((id:string | number) => ({ type: 'MyJobs', id }))
-        ]: ['Myjobs']
+        ]: ['MyJobs']
     }),
   }),
   overrideExisting: false,

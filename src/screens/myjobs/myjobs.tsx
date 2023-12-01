@@ -20,7 +20,7 @@ const MyJobs = () => {
     isError,
     error,
   } = useGetMyJobsQuery<any>({userId});
-  
+  console.log('Errors',error)
   if (isSuccess) {
     return (
       <ContainerStyled>
@@ -30,7 +30,7 @@ const MyJobs = () => {
           // eslint-disable-next-line react/jsx-sort-props
           extraData={myjobs?.ids}
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          keyExtractor={(item: any) => item.id}
+          keyExtractor={(item,index) => index.toString()}
           onRefresh={refetch}
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           renderItem={({item}: {item: any}) => {
