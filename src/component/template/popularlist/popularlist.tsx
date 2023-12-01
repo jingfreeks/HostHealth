@@ -15,12 +15,19 @@ const PopularListScreen = () => {
     isError,
     error,
   } = useGetCityQuery<any>('getcity');
-  if (isLoading) {
+  console.log('isError',isError)
+  if (isLoading || isError) {
+    let messages;
+    if(error?.status===403){
+      messages='Token Expired you must logout and login it again'
+    }else{
+      messages='No cities matches your preferred locations'
+    }
     content = (
       <PopularEmptyContainerStyled>
         <HomeEmptyCard
           imgsource={PcitiesEmptyIcon}
-          message="No cities matches your preferred locations"
+          message={messages}
         />
       </PopularEmptyContainerStyled>
     );

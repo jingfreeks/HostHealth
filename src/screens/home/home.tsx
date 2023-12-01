@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import {useEffect} from 'react';
 import {RefreshControl} from 'react-native'
@@ -6,6 +7,7 @@ import {SuggestedList} from '@/component/template/suggestedlist';
 import {PopularList} from '@/component/template/popularlist';
 import {HomeHeaderList} from '@/component/template/homeheaderlist';
 import {useGetJobsQuery} from '@/slice/suggested';
+import {useGetCityQuery} from '@/slice/city';
 import {Jobslist} from '@/screens/home/constant';
 import {useDispatch} from 'react-redux';
 // import {fetchSuggested} from '@/slice/suggested';
@@ -17,21 +19,20 @@ import {
 } from './styles';
 const HomeScreen = () => {
   const {
-    isFetching:refetchjob,
     refetch:suggestedrefresh,
-    data: jobs,
-    isSuccess,
-    isError,
-    error,
   } = useGetJobsQuery<any>('getJobs');
-
-  console.log('errors',error)
-  const onRefresh=()=>{
-    suggestedrefresh()
+  const {
+    refetch:pcitiesFetch,
+    isLoading,
+    isSuccess,
+  } = useGetCityQuery<any>('getcity');
+  const onRefresh=async()=>{
+    await suggestedrefresh()
+    await pcitiesFetch()
   }
   return (
     <ScrollViewContainer refreshControl={
-      <RefreshControl refreshing={refetchjob} onRefresh={onRefresh} />
+      <RefreshControl refreshing={false} onRefresh={onRefresh} />
     }>
       <HomeHeaderList />
 
