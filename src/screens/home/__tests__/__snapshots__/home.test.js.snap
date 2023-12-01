@@ -2,6 +2,12 @@
 
 exports[`Home Screen Should work as expected to get snapshot 1`] = `
 <RCTScrollView
+  refreshControl={
+    <RefreshControlMock
+      onRefresh={[Function]}
+      refreshing={false}
+    />
+  }
   style={
     [
       {
@@ -10,6 +16,7 @@ exports[`Home Screen Should work as expected to get snapshot 1`] = `
     ]
   }
 >
+  <RCTRefreshControl />
   <View>
     <View
       style={
