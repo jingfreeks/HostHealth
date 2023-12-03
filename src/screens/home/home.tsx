@@ -1,9 +1,13 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import {useEffect} from 'react';
+import {RefreshControl} from 'react-native'
 import {Text} from '@/component/atoms/text';
 import {SuggestedList} from '@/component/template/suggestedlist';
 import {PopularList} from '@/component/template/popularlist';
 import {HomeHeaderList} from '@/component/template/homeheaderlist';
+import {useGetJobsQuery} from '@/slice/suggested';
+import {useGetCityQuery} from '@/slice/city';
 import {Jobslist} from '@/screens/home/constant';
 import {useDispatch} from 'react-redux';
 // import {fetchSuggested} from '@/slice/suggested';
@@ -14,17 +18,22 @@ import {
   SuggestedTextContainerStyled,
 } from './styles';
 const HomeScreen = () => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
-
-
-  useEffect(() => {
-    // dispatch(fetchPCities());
-    // dispatch(fetchSuggested());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const {
+    refetch:suggestedrefresh,
+  } = useGetJobsQuery<any>('getJobs');
+  const {
+    refetch:pcitiesFetch,
+    isLoading,
+    isSuccess,
+  } = useGetCityQuery<any>('getcity');
+  const onRefresh=async()=>{
+    await suggestedrefresh()
+    await pcitiesFetch()
+  }
   return (
-    <ScrollViewContainer>
+    <ScrollViewContainer refreshControl={
+      <RefreshControl refreshing={false} onRefresh={onRefresh} />
+    }>
       <HomeHeaderList />
 
       <ListsContainerStyled>

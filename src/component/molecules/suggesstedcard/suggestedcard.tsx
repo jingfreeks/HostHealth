@@ -116,7 +116,7 @@ const SuggestedCardScreen = (props: SuggestedCardProps) => {
         </ShiftContainerStyled>
         <EstimatedContainerStyled>
           <EstimatedTextStyled>Estimated</EstimatedTextStyled>
-          <EstimatedAmount>${data?.salaryrange}</EstimatedAmount>
+          <EstimatedAmount>{data?.salaryrange}</EstimatedAmount>
           <EstimatedTextStyled>/wk</EstimatedTextStyled>
         </EstimatedContainerStyled>
         <SubmitContainerStyled>

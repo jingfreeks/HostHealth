@@ -31,12 +31,18 @@ const SuggestedList = () => {
     [],
   );
 
-  if (isLoading) {
+  if (isLoading || isError) {
+    let messages;
+    if(error?.status===403){
+      messages='Token Expired you must logout and login it again'
+    }else{
+      messages='No suggested jobs matches with your profile'
+    }
     return (
       <SuggestedListEmptyContainerStyled>
         <HomeEmptyCard
           imgsource={SuggestedEmptyIcon}
-          message="No suggested jobs matches with your profile"
+          message={messages}
         />
       </SuggestedListEmptyContainerStyled>
     );

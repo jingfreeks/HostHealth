@@ -2,6 +2,8 @@
 import { setCredentials,logout } from '@/slice/auth';
 import Config from 'react-native-config';
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
+
+console.log('config',Config)
 const baseQuery = fetchBaseQuery({
   baseUrl: Config.DEV_BASE_URL,
   credentials: 'include',
@@ -21,7 +23,7 @@ const baseQueryWithAuth = async (
   extraOptions: string,
 ) => {
   let result: any = await baseQuery(args, api, extraOptions);
-
+  console.log('refereshResult',result)
   if (result?.error?.originalStatus === 403) {
     console.log('Sending refresh token');
 
@@ -44,5 +46,5 @@ export const apiSlice=createApi<any,any>({
     baseQuery:baseQueryWithAuth,
     reducerPath: 'api',
     endpoints:builder=>({}),
-    tagTypes: ['City','Jobs'] as any,
+    tagTypes: ['City','Jobs','MyJobs'] as any,
 })
