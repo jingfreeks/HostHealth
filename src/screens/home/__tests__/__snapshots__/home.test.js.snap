@@ -2,6 +2,7 @@
 
 exports[`Home Screen Should work as expected to get snapshot 1`] = `
 <RCTScrollView
+  accessibilityLabel="HomeScreenOnRefreshTestId"
   refreshControl={
     <RefreshControlMock
       onRefresh={[Function]}
@@ -15,6 +16,7 @@ exports[`Home Screen Should work as expected to get snapshot 1`] = `
       },
     ]
   }
+  testID="HomeScreenOnRefreshTestId"
 >
   <RCTRefreshControl />
   <View>

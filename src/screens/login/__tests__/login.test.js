@@ -4,6 +4,7 @@ import {renderWithProviders} from '@/utils/testframeworknew';
 
 import Login from '../login';
 
+jest.useFakeTimers();
 jest.mock('@react-navigation/native', () => {
   return {
     ...jest.requireActual('@react-navigation/native'),

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
-import {useEffect} from 'react';
+import {testingProps} from '@/utils/testframework'
 import {RefreshControl} from 'react-native'
 import {Text} from '@/component/atoms/text';
 import {SuggestedList} from '@/component/template/suggestedlist';
@@ -8,8 +8,6 @@ import {PopularList} from '@/component/template/popularlist';
 import {HomeHeaderList} from '@/component/template/homeheaderlist';
 import {useGetJobsQuery} from '@/slice/suggested';
 import {useGetCityQuery} from '@/slice/city';
-import {Jobslist} from '@/screens/home/constant';
-import {useDispatch} from 'react-redux';
 // import {fetchSuggested} from '@/slice/suggested';
 import {ThunkDispatch} from '@reduxjs/toolkit';
 import {
@@ -31,7 +29,7 @@ const HomeScreen = () => {
     await pcitiesFetch()
   }
   return (
-    <ScrollViewContainer refreshControl={
+    <ScrollViewContainer {...testingProps('HomeScreenOnRefreshTestId')} refreshControl={
       <RefreshControl refreshing={false} onRefresh={onRefresh} />
     }>
       <HomeHeaderList />
