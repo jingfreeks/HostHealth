@@ -5,6 +5,7 @@
 import React from 'react';
 import {ContainerStyled, FlatlistStyled,MyJobsEmptyContainerStyled} from './styles';
 import HomeEmptyCard from '@/component/molecules/homeemptycard/homeemptycard';
+import {testingProps} from '@/utils/testframework'
 import {SuggestedEmptyIcon} from '@/assets';
 import {useSelector} from 'react-redux';
 import type {State} from '@/config/types';
@@ -20,7 +21,6 @@ const MyJobs = () => {
     isError,
     error,
   } = useGetMyJobsQuery<any>({userId});
-  console.log('Errors', isLoading,isSuccess);
 
   if (isLoading || isError) {
     let messages;
@@ -42,6 +42,7 @@ const MyJobs = () => {
           data={myjobs?.ids}
           refreshing={isLoading}
           // eslint-disable-next-line react/jsx-sort-props
+          {...testingProps('MyJobsListingTestId')}
           extraData={myjobs?.ids}
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           keyExtractor={(item, index) => index.toString()}
