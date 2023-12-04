@@ -2,6 +2,7 @@
 
 exports[`Welcome Screen Should work as expected to get snapshot 1`] = `
 <View
+  accessibilityLabel="WelcomeButtonGroupTestID"
   style={
     [
       {
@@ -12,6 +13,7 @@ exports[`Welcome Screen Should work as expected to get snapshot 1`] = `
       },
     ]
   }
+  testID="WelcomeButtonGroupTestID"
 >
   <RCTSafeAreaView
     style={
@@ -173,7 +175,7 @@ exports[`Welcome Screen Should work as expected to get snapshot 1`] = `
         }
       >
         <View
-          accessibilityLabel="AtomsButtonTestId"
+          accessibilityLabel="WelcomeButtonGroupSignUnPressTestId"
           accessibilityState={
             {
               "busy": undefined,
@@ -213,7 +215,7 @@ exports[`Welcome Screen Should work as expected to get snapshot 1`] = `
               "paddingTop": 15,
             }
           }
-          testID="AtomsButtonTestId"
+          testID="WelcomeButtonGroupSignUnPressTestId"
         >
           <Text
             style={
@@ -261,7 +263,7 @@ exports[`Welcome Screen Should work as expected to get snapshot 1`] = `
         }
       >
         <View
-          accessibilityLabel="AtomsButtonTestId"
+          accessibilityLabel="WelcomeButtonGroupSignInPressTestId"
           accessibilityState={
             {
               "busy": undefined,
@@ -301,7 +303,7 @@ exports[`Welcome Screen Should work as expected to get snapshot 1`] = `
               "paddingTop": 15,
             }
           }
-          testID="AtomsButtonTestId"
+          testID="WelcomeButtonGroupSignInPressTestId"
         >
           <Text
             style={

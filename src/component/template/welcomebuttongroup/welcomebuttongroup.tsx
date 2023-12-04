@@ -11,12 +11,14 @@ const WelcomeButtonGroup = (props: WelcomeButtonGroupProps) => {
       <Bbutton
         bcolor={'#d6f3f3'}
         border={10}
+        testId="WelcomeButtonGroupSignUnPressTestId"
         title="SIGN UP"
         onPress={signUpPress}
       />
       <Bbutton
         bcolor={colors.primary}
         border={10}
+        testId="WelcomeButtonGroupSignInPressTestId"
         title="SIGN IN"
         onPress={signInPress}
       />
