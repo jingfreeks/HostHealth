@@ -6,6 +6,7 @@ import SuggestedList from '../suggestedlist';
 
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 jest.mock('@supabase/supabase-js')
+jest.useFakeTimers();
 jest.mock('@react-navigation/native', () => {
   return {
     ...jest.requireActual('@react-navigation/native'),
