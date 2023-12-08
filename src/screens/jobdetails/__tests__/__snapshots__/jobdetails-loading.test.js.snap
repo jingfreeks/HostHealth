@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Job Details Screen Should work as expected to get snapshot 1`] = `
+exports[`Job Details loading actions Screen Should work as expected to get snapshot 1`] = `
 <ActivityIndicator
   color="#0000ff"
   size="small"
@@ -21,7 +21,7 @@ exports[`Job Details Screen Should work as expected to get snapshot 1`] = `
 />
 `;
 
-exports[`Job Details Screen Should work as expected to get snapshot 2`] = `
+exports[`Job Details loading actions Screen Should work as expected to get snapshot 2`] = `
 <ActivityIndicator
   color="#0000ff"
   size="small"
