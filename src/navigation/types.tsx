@@ -22,6 +22,8 @@ export type AppNavigationProps={
       address?: string;
       joborderno?: string;
       id?: number;
+      jobId?:string;
+      _id?:string;
     };
   },
   BottomTab:undefined;

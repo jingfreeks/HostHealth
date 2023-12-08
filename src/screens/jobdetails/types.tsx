@@ -13,4 +13,6 @@ export type JobDetailsProps = {
   company: string;
   salaryrange: string;
   shift: string;
+  jobId:string;
+  _id:string;
 };

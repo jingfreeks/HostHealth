@@ -19,7 +19,12 @@ jest.mock('@react-navigation/native', () => {
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 jest.mock('@supabase/supabase-js');
 jest.useFakeTimers();
-describe('Job Details Screen', () => {
+jest.mock('@/slice/jobdetails',()=>({
+  useGetJobDetailsQuery:()=>({
+    isLoading:true,
+  })
+}))
+describe('Job Details loading actions Screen', () => {
   const props = {
     route: {
       params: {
@@ -54,6 +59,8 @@ describe('Job Details Screen', () => {
   });
   it('Should work to trigger submit button', () => {
     const all = renderWithProviders(<JobDetails {...props} />);
+    // const el = all.getByTestId('JobDetailsScreenSubmitButtonTestId');
+    // fireEvent(el, 'onPress');
     expect(all.toJSON()).toBeTruthy();
   });
 

@@ -16,6 +16,7 @@ export type SuggestedCardDetailsProps = {
   address?: string;
   joborderno?: string;
   id?: number;
+  jobId:string;
 };
 
 export type RenderItemProps = {

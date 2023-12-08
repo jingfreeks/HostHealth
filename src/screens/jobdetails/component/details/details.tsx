@@ -48,7 +48,7 @@ const DetailScreen = (props: DetailsTypes) => {
             <DetailsTitleTextStyled>Shift</DetailsTitleTextStyled>
           </SubDetailsTitleContainerStyled>
           <SubDetailsDetailsContainerStyled>
-            <DetailsSubTitleTextStyled>{data.shift}</DetailsSubTitleTextStyled>
+            <DetailsSubTitleTextStyled>{data.shiftname}</DetailsSubTitleTextStyled>
           </SubDetailsDetailsContainerStyled>
         </SubDetailsContainerStyled>
       </DetailsContainerStyled>
