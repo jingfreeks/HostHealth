@@ -19,6 +19,8 @@ jest.mock('@react-navigation/native', () => {
 jest.mock('@supabase/supabase-js');
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
+
+
 describe('Popular Cities Screen', () => {
   it('Should work as expected to get snapshot', () => {
     const all = renderWithProviders(<Pcities />);

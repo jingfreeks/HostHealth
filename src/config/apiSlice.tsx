@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { setCredentials,logout } from '@/slice/auth';
+import  { setCredentials,setLogout } from '@/slice/auth';
 import Config from 'react-native-config';
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 
+console.log('Config',Config)
 const baseQuery = fetchBaseQuery({
   baseUrl: Config.DEV_BASE_URL,
   credentials: 'include',
@@ -35,7 +36,7 @@ const baseQueryWithAuth = async (
         //retry the original query with new access token
         result= await baseQuery(args,api,extraOptions)
     }else{
-        api.dispatch(logout())
+        api.dispatch(setLogout())
     }
   }
   return result;

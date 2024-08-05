@@ -4,6 +4,7 @@ export type RootNavigationProps = {
   Login: undefined;
   Signup: undefined;
   Welcome: undefined;
+  auth:undefined;
 };
 
 export type AppNavigationProps={

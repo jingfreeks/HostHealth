@@ -10,7 +10,7 @@ const authSlice = createSlice({
       state.token = accessToken;
       state.userId = userId
     },
-    logout: (state) => {
+    setLogout: (state) => {
       state.user = null;
       state.token = null;
       state.userId = null;
@@ -19,11 +19,12 @@ const authSlice = createSlice({
 });
 
 
-export const {setCredentials,logout}=authSlice.actions
+export const {setCredentials,setLogout}=authSlice.actions
 
 export default authSlice.reducer
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const selectCurrentUser = (state:any)=>state.auth.user
+export const selectCurrentUserId=(state:any)=>state.auth.userId
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const selectCurrentToken = (state:any)=>state.auth.token

@@ -5,3 +5,4 @@ export {HomeScreen} from '@/screens/home';
 export {Pcities} from '@/screens/pcities';
 export {MyJobs} from '@/screens/myjobs';
 export {JobsDetails} from '@/screens/jobdetails';
+export {Profile} from '@/screens/profile'

@@ -15,6 +15,8 @@ const Stack = createNativeStackNavigator();
 const RootNavigationScreen = () => {
   const navigationRef = useNavigationContainerRef();
   const token = useSelector((state: State) => state.auth.token);
+
+  console.log('token', token);
   // const token = '1212121212'
   return (
     <NavigationContainer ref={navigationRef}>
@@ -23,16 +25,19 @@ const RootNavigationScreen = () => {
         screenOptions={{
           headerBackTitleVisible: false,
         }}>
-        <Stack.Screen
-          component={AuthNavigation}
-          name={Navigation.auth}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          component={Appnavigation}
-          name={Navigation.app}
-          options={{headerShown: false}}
-        />
+        {token ? (
+          <Stack.Screen
+            component={Appnavigation}
+            name={Navigation.app}
+            options={{headerShown: false}}
+          />
+        ) : (
+          <Stack.Screen
+            component={AuthNavigation}
+            name={Navigation.auth}
+            options={{headerShown: false}}
+          />
+        )}
       </Stack.Navigator>
     </NavigationContainer>
   );
