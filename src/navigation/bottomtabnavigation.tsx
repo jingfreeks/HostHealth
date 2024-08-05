@@ -10,8 +10,9 @@ import {
 } from '@/assets';
 import {HomeScreen, Pcities, MyJobs,Profile} from '@/screens';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import type {AppNavigationProps,RootNavigationProps} from './types';
 import {colors} from '@/utils/themes';
-const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator<RootNavigationProps>();
 
 const BottomTabScreen = () => {
   return (
