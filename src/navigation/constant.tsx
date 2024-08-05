@@ -4,4 +4,6 @@ export const Navigation = {
   signup: 'signup',
   auth: 'auth',
   app: 'app',
+  jobdetails:'JobsDetails',
+  bottomtab:'BottomTab',
 };

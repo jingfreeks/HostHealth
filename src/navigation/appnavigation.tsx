@@ -1,17 +1,18 @@
 import React from 'react';
 import bottomtab from './bottomtabnavigation';
-import {JobsDetails} from '@/screens';
-import type {AppNavigationProps} from './types';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {Navigation} from './constant'
+import {JobsDetails,OnBoardingProfile} from '@/screens';
+import type {AppNavigationProps,RootNavigationProps} from './types';
+import {createNativeStackNavigator,NativeStackScreenProps} from '@react-navigation/native-stack';
 
-const Stack = createNativeStackNavigator<AppNavigationProps>();
+const Stack = createNativeStackNavigator<RootNavigationProps&AppNavigationProps>();
 
 export const Appnavigation = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
         component={bottomtab}
-        name="BottomTab"
+        name={Navigation.bottomtab}
         options={{headerShown: false}}
       />
       <Stack.Screen
