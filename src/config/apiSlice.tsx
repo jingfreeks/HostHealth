@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import  { setCredentials } from '@/slice/auth';
-import {useLogoutMutation} from '@/slice/authApi'
+import  { setCredentials,setLogout } from '@/slice/auth';
 import Config from 'react-native-config';
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 
@@ -37,7 +36,7 @@ const baseQueryWithAuth = async (
         //retry the original query with new access token
         result= await baseQuery(args,api,extraOptions)
     }else{
-        api.dispatch(useLogoutMutation())
+        api.dispatch(setLogout())
     }
   }
   return result;
