@@ -13,6 +13,7 @@ import {useGetMyJobsQuery} from '@/slice/myjobs';
 import RenderList from './renderlist';
 const MyJobs = () => {
   const userId = useSelector((state: State) => state.auth.userId);
+  console.log('userId',userId)
   const {
     refetch,
     data: myjobs,
