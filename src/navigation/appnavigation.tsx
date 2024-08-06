@@ -1,11 +1,16 @@
 import React from 'react';
 import bottomtab from './bottomtabnavigation';
-import {Navigation} from './constant'
-import {JobsDetails,OnBoardingProfile} from '@/screens';
-import type {AppNavigationProps,RootNavigationProps} from './types';
-import {createNativeStackNavigator,NativeStackScreenProps} from '@react-navigation/native-stack';
+import {Navigation} from './constant';
+import {JobsDetails, OnBoardingProfile} from '@/screens';
+import type {AppNavigationProps, RootNavigationProps} from './types';
+import {
+  createNativeStackNavigator,
+  NativeStackScreenProps,
+} from '@react-navigation/native-stack';
 
-const Stack = createNativeStackNavigator<RootNavigationProps&AppNavigationProps>();
+const Stack = createNativeStackNavigator<
+  RootNavigationProps & AppNavigationProps
+>();
 
 export const Appnavigation = () => {
   return (
@@ -20,6 +25,7 @@ export const Appnavigation = () => {
         name="JobsDetails"
         options={{headerShown: true, title: 'JOB DETAILS'}}
       />
+
     </Stack.Navigator>
   );
 };

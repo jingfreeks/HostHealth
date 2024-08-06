@@ -52,6 +52,7 @@ const LoginFormScreen = () => {
       }).unwrap();
       dispatch(setCredentials({...userData, user: data.username}));
       navigation.navigate('app');
+      // navigation.navigate('OnBoardingProfile');
     } catch (error) {
       switch(error.status){
         case 401:

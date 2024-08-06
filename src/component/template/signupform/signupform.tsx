@@ -21,13 +21,13 @@ import {
 import {FormTextController} from '@/component/molecules/formtextcontroller';
 import {yupResolver} from '@hookform/resolvers/yup';
 import {useSignupMutation} from '@/slice/authApi';
-import {StackNavigationProp} from '@react-navigation/stack'
+import {StackNavigationProp} from '@react-navigation/stack';
 import type {RootNavigationProps} from '@/navigation/types';
 import {useNavigation} from '@react-navigation/native';
 import {Schema} from './schema';
 import * as yup from 'yup';
 
-const SignupFormScreen = ()  => {
+const SignupFormScreen = () => {
   const navigation = useNavigation<StackNavigationProp<RootNavigationProps>>();
   type FormData = yup.InferType<typeof Schema>;
   const formMethod = useForm<FormData>({
@@ -40,10 +40,9 @@ const SignupFormScreen = ()  => {
   });
   const [signup, {isLoading}] = useSignupMutation();
 
-  const onSubmit: SubmitHandler<FormData> = async(data) => {
-   await signup({username:data.username,password:data.password}).unwrap()
-   navigation.navigate('Welcome');
-    // handleSignUp({username: data.username, password: data.password});
+  const onSubmit: SubmitHandler<FormData> = async data => {
+    await signup({username: data.username, password: data.password}).unwrap();
+    navigation.navigate('Welcome');
   };
   return (
     <ContainerStyled>
