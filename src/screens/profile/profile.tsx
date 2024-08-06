@@ -1,6 +1,7 @@
 
 import React from 'react'
-import {Avatar} from 'react-native-elements';
+// import {Avatar} from 'react-native-elements';
+import {Avatar} from '@/component/molecules'
 import {Text} from '@/component/atoms/text';
 import {useGetProfileQuery} from '@/slice/profile';
 import {setLogout,selectCurrentUserId} from '@/slice/auth';
@@ -9,7 +10,6 @@ import {ThunkDispatch} from '@reduxjs/toolkit';
 import {
   ContainerStyled,
   NameInfoStyled,
-  AvatarStyled,
   HeaderStyled,
   ContentStyled,
   ScrollViewContainer,
@@ -45,17 +45,7 @@ const ProfileScreen = () => {
       <ScrollViewContainer>
         <ContainerStyled>
           <HeaderStyled>
-            <AvatarStyled>
-              <Avatar
-                size={130}
-                rounded
-                title="LW"
-                source={{
-                  uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
-                }}
-              />
-            </AvatarStyled>
-
+            <Avatar />
             <NameInfoStyled>
               <Text>{`${profiles?.firstName}`}</Text>
               <Text>{`${profiles?.lastName}`}</Text>

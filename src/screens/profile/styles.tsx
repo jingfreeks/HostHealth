@@ -13,9 +13,6 @@ export const ContainerStyled = styled(BackgroundContainer)`
   flex: 1;
 `;
 
-export const AvatarStyled = styled.View`
-  margin-left: 20px;
-`;
 export const NameInfoStyled = styled.View`
   margin-right: 20px;
   margin-left: 20px;
