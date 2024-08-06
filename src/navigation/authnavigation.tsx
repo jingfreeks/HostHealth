@@ -1,5 +1,5 @@
 import React from 'react';
-import {Login, Welcome, Signup} from '@/screens';
+import {Login, Welcome, Signup,OnBoardingProfile} from '@/screens';
 import {colors} from '@/utils/themes';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 // import {AuthStackParamList} from './types';
@@ -39,6 +39,11 @@ export const AuthNavigation = () => {
             fontWeight: 'bold',
           },
         }}
+      />
+      <Stack.Screen
+        component={OnBoardingProfile}
+        name="OnBoardingProfile"
+        options={{headerShown: true, title: 'PROFILE'}}
       />
     </Stack.Navigator>
   );
