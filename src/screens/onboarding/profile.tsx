@@ -1,14 +1,10 @@
 import React from 'react';
-import {Text} from '@/component/atoms/text';
 import {Avatar, FormTextController} from '@/component/molecules';
+import {Prevnextfooter} from '@/component/template'
 import {
   ContainerStyled,
   ProfileAvatarContainerStyled,
-  TextInputContainerStyled,
-  NextButtonStyled,
-  PreviousButtonStyled,
-  FooterContainerStyled,
-  FooterButtonTextStyled
+  TextInputContainerStyled, 
 } from './styles';
 import {yupResolver} from '@hookform/resolvers/yup';
 import {useForm, FormProvider} from 'react-hook-form';
@@ -24,6 +20,13 @@ const ProfileScreen = () => {
     },
     resolver: yupResolver(Schema),
   });
+
+  const handleOnPrevious=()=>{
+
+  }
+  const handleOnNext=()=>{
+
+  }
   return (
     <ContainerStyled>
       <FormProvider {...formMethod}>
@@ -60,14 +63,7 @@ const ProfileScreen = () => {
             }}
           />
         </TextInputContainerStyled>
-        <FooterContainerStyled>
-          <PreviousButtonStyled>
-            <FooterButtonTextStyled>Previous</FooterButtonTextStyled>
-          </PreviousButtonStyled>
-          <NextButtonStyled>
-            <FooterButtonTextStyled>Next</FooterButtonTextStyled>
-          </NextButtonStyled>
-        </FooterContainerStyled>
+        <Prevnextfooter nextOnPress={handleOnNext} prevOnPress={handleOnPrevious}/>
       </FormProvider>
     </ContainerStyled>
   );
