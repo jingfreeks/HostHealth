@@ -24,14 +24,3 @@ export const NextButtonStyled = styled.TouchableOpacity`
   border-radius:5px;
 `;
 
-export const PreviousButtonStyled = styled(NextButtonStyled)`
-  margin-right: 5px;
-  margin-left: 0px;
-`;
-export const FooterContainerStyled = styled.View`
-  flex-direction: row;
-`;
-
-export const FooterButtonTextStyled = styled(Text)`
-  padding: 10px;
-`;
