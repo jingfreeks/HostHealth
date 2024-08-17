@@ -17,6 +17,8 @@ import {
   ListButtonStyled,
   FooterStyled,
 } from './styles';
+import {testingProps} from '@/utils/testframework'
+
 
 const ProfileScreen = () => {
   const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
@@ -71,7 +73,7 @@ const ProfileScreen = () => {
         </ContainerStyled>
       </ScrollViewContainer>
       <FooterStyled>
-        <ListButtonStyled onPress={() => handleLogout()}>
+        <ListButtonStyled {...testingProps('ProfileLogoutButton')} onPress={() => handleLogout()}>
           <Text TextMode="Title">Log-out</Text>
         </ListButtonStyled>
       </FooterStyled>
