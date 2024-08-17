@@ -11,6 +11,7 @@ export type RootNavigationProps = {
   MyJob:undefined;
   TimeCard:undefined;
   TimeCard1:undefined;
+  OnBoardingProfile:undefined;
 };
 
 

@@ -1,32 +1,61 @@
 import React from 'react';
 import {Avatar, FormTextController} from '@/component/molecules';
-import {Prevnextfooter} from '@/component/template'
+import {Prevnextfooter} from '@/component/template';
 import {
   ContainerStyled,
   ProfileAvatarContainerStyled,
-  TextInputContainerStyled, 
+  TextInputContainerStyled,
 } from './styles';
 import {yupResolver} from '@hookform/resolvers/yup';
-import {useForm, FormProvider} from 'react-hook-form';
+import {useSelector} from 'react-redux';
+import {useForm, FormProvider, SubmitHandler} from 'react-hook-form';
+import {useUpdateProfileMutation} from '@/slice/profile';
+import {selectCurrentUserId} from '@/slice/auth';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
+import type {RootNavigationProps} from '@/navigation/types';
+
 import * as yup from 'yup';
 import {Schema} from './schema';
 const ProfileScreen = () => {
   type FormData = yup.InferType<typeof Schema>;
+  const navigation = useNavigation<StackNavigationProp<RootNavigationProps>>();
   const formMethod = useForm<FormData>({
     defaultValues: {
-      firstname: '',
-      lastname: '',
-      address: '',
+      firstName: '',
+      lastName: '',
+      middleName: '',
     },
     resolver: yupResolver(Schema),
   });
-
-  const handleOnPrevious=()=>{
-
-  }
-  const handleOnNext=()=>{
-
-  }
+  const usrId=useSelector(selectCurrentUserId)
+  const [updateProfile, {isLoading}] = useUpdateProfileMutation({fixedCacheKey: "Profile"});
+  const handleOnPrevious = () => {};
+  console.log('isLoading',isLoading)
+  const handleOnNext: SubmitHandler<FormData> = async (data) => {
+    console.log('data',data,usrId)
+    try {
+      const userData: any = await updateProfile({
+        firstName: data.firstName,
+        lastName: data.lastName,
+        middleName: data.middleName,
+        userId:usrId
+      }).unwrap();
+      if(userData){
+        console.log('userData',userData)
+        navigation.goBack()
+      }
+    } catch (error) {
+      console.log('error',error)
+      switch (error.status) {
+        case 401:
+          alert(error.data.message);
+          break;
+        default:
+          alert('error');
+      }
+    }
+  };
   return (
     <ContainerStyled>
       <FormProvider {...formMethod}>
@@ -36,7 +65,7 @@ const ProfileScreen = () => {
         <TextInputContainerStyled>
           <FormTextController
             Label="First Name"
-            name="firstname"
+            name="firstName"
             placeholder="First Name"
             rules={{
               required: true,
@@ -46,7 +75,7 @@ const ProfileScreen = () => {
         <TextInputContainerStyled>
           <FormTextController
             Label="Last Name"
-            name="lastname"
+            name="lastName"
             placeholder="Last Name"
             rules={{
               required: true,
@@ -55,15 +84,19 @@ const ProfileScreen = () => {
         </TextInputContainerStyled>
         <TextInputContainerStyled>
           <FormTextController
-            Label="Address"
-            name="address"
+            Label="Middle Name"
+            name="middleName"
             placeholder="Address"
             rules={{
               required: true,
             }}
           />
         </TextInputContainerStyled>
-        <Prevnextfooter nextOnPress={handleOnNext} prevOnPress={handleOnPrevious}/>
+        <Prevnextfooter
+          nextOnPress={formMethod.handleSubmit(handleOnNext)}
+          prevOnPress={handleOnPrevious}
+          loadernext={isLoading}
+        />
       </FormProvider>
     </ContainerStyled>
   );

@@ -22,7 +22,6 @@ const baseQueryWithAuth = async (
   extraOptions: string,
 ) => {
   let result: any = await baseQuery(args, api, extraOptions);
-  console.log('refereshResult',result)
   if (result?.error?.originalStatus === 403) {
     console.log('Sending refresh token');
 
@@ -45,5 +44,5 @@ export const apiSlice=createApi<any,any>({
     baseQuery:baseQueryWithAuth,
     reducerPath: 'api',
     endpoints:builder=>({}),
-    tagTypes: ['City','Jobs','MyJobs','JobDetails'] as any,
+    tagTypes: ['City','Jobs','MyJobs','JobDetails','Profile'] as any,
 })
