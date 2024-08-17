@@ -3,7 +3,7 @@ import {SeparatorStyled, FooterContainerStyled} from './styles';
 import {Sbutton} from '@/component/molecules';
 import type {PrevNextTypes} from './types';
 const PrevNextFooter = (props: PrevNextTypes) => {
-  const {isPrevView=false, nextOnPress, prevOnPress} = props;
+  const {isPrevView=false,loadernext=false, nextOnPress, prevOnPress} = props;
   return (
     <FooterContainerStyled>
       {isPrevView && (
@@ -18,6 +18,7 @@ const PrevNextFooter = (props: PrevNextTypes) => {
       <SeparatorStyled />
       <Sbutton
         title={'Next'}
+        loaders={loadernext}
         bcolor={'#d6f3f3'}
         borderw={2}
         border={10}

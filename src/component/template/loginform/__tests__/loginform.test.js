@@ -12,11 +12,21 @@ jest.mock('react-redux', () => ({
 jest.mock('@supabase/supabase-js')
 const login=()=>jest.fn()
 const isLoading={loading:false}
+const isError={isError:false}
+const error={}
+const pData={}
 jest.mock('@/slice/authApi',()=>{
   return{
     useLoginMutation:()=>[login,isLoading],
   }
 })
+
+jest.mock('@/slice/profile',()=>{
+  return{
+    useGetProfileQuery:()=>[data=pData,isLoading,isError,error],
+  }
+})
+
 jest.mock('@react-navigation/native', () => {
   return {
     ...jest.requireActual('@react-navigation/native'),

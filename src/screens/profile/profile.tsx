@@ -7,6 +7,7 @@ import {useGetProfileQuery} from '@/slice/profile';
 import {setLogout,selectCurrentUserId} from '@/slice/auth';
 import {useDispatch,useSelector} from 'react-redux';
 import {ThunkDispatch} from '@reduxjs/toolkit';
+import {apiSlice} from '@/config/apiSlice';
 import {
   ContainerStyled,
   NameInfoStyled,
@@ -19,7 +20,9 @@ import {
 
 const ProfileScreen = () => {
   const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
+
   const usrId=useSelector(selectCurrentUserId)
+
   const {
     data: profiles,
   } = useGetProfileQuery<{
@@ -30,6 +33,7 @@ const ProfileScreen = () => {
   const handleLogout = async () => {
     try {
       await dispatch(setLogout());
+      await dispatch(apiSlice.util.resetApiState())
     } catch (error) {
       switch (error.status) {
         case 401:

@@ -25,7 +25,11 @@ export const Appnavigation = () => {
         name="JobsDetails"
         options={{headerShown: true, title: 'JOB DETAILS'}}
       />
-
+      <Stack.Screen
+        component={OnBoardingProfile}
+        name="OnBoardingProfile"
+        options={{headerShown: true, title: 'Personal Information', headerLeft: ()=> null,headerBackVisible:false}}
+      />
     </Stack.Navigator>
   );
 };

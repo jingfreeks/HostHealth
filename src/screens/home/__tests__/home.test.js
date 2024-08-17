@@ -13,6 +13,7 @@ jest.mock('@react-navigation/native', () => {
     useNavigation: () => ({
       // eslint-disable-next-line @typescript-eslint/no-empty-function
       navigate: () => {},
+      addListener:()=>jest.fn()
     }),
     useIsFocused: () => true,
     useDispatch: () => ({dispatch: jest.fn()}),
