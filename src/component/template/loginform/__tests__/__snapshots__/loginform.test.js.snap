@@ -67,7 +67,9 @@ exports[`Login Form  Template Component Should work as expected to get snapshot 
           }
         >
           <TextInput
+            accessibilityLabel="UserNameTextInput"
             autoCapitalize="none"
+            onBlur={[Function]}
             onChangeText={[Function]}
             placeholder="Username"
             secureTextEntry={false}
@@ -82,6 +84,7 @@ exports[`Login Form  Template Component Should work as expected to get snapshot 
                 },
               ]
             }
+            testID="UserNameTextInput"
             value=""
           />
           <Text
@@ -164,7 +167,9 @@ exports[`Login Form  Template Component Should work as expected to get snapshot 
           }
         >
           <TextInput
+            accessibilityLabel="PasswordTextInput"
             autoCapitalize="none"
+            onBlur={[Function]}
             onChangeText={[Function]}
             placeholder="Password"
             secureTextEntry={true}
@@ -179,6 +184,7 @@ exports[`Login Form  Template Component Should work as expected to get snapshot 
                 },
               ]
             }
+            testID="PasswordTextInput"
             value=""
           />
           <Text

@@ -183,7 +183,9 @@ exports[`Login Screen Should work as expected to get snapshot 1`] = `
               }
             >
               <TextInput
+                accessibilityLabel="UserNameTextInput"
                 autoCapitalize="none"
+                onBlur={[Function]}
                 onChangeText={[Function]}
                 placeholder="Username"
                 secureTextEntry={false}
@@ -198,6 +200,7 @@ exports[`Login Screen Should work as expected to get snapshot 1`] = `
                     },
                   ]
                 }
+                testID="UserNameTextInput"
                 value=""
               />
               <Text
@@ -280,7 +283,9 @@ exports[`Login Screen Should work as expected to get snapshot 1`] = `
               }
             >
               <TextInput
+                accessibilityLabel="PasswordTextInput"
                 autoCapitalize="none"
+                onBlur={[Function]}
                 onChangeText={[Function]}
                 placeholder="Password"
                 secureTextEntry={true}
@@ -295,6 +300,7 @@ exports[`Login Screen Should work as expected to get snapshot 1`] = `
                     },
                   ]
                 }
+                testID="PasswordTextInput"
                 value=""
               />
               <Text

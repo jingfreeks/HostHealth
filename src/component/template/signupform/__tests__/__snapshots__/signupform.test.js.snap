@@ -81,6 +81,7 @@ exports[`Login Content Template Component Should work as expected to get snapsho
             >
               <TextInput
                 autoCapitalize="none"
+                onBlur={[Function]}
                 onChangeText={[Function]}
                 placeholder="Username"
                 secureTextEntry={false}
@@ -178,6 +179,7 @@ exports[`Login Content Template Component Should work as expected to get snapsho
             >
               <TextInput
                 autoCapitalize="none"
+                onBlur={[Function]}
                 onChangeText={[Function]}
                 placeholder="Password"
                 secureTextEntry={true}
@@ -278,6 +280,7 @@ exports[`Login Content Template Component Should work as expected to get snapsho
             >
               <TextInput
                 autoCapitalize="none"
+                onBlur={[Function]}
                 onChangeText={[Function]}
                 placeholder="Confirm Password"
                 secureTextEntry={true}

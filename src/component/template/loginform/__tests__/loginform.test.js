@@ -1,5 +1,5 @@
 import React from 'react';
-import {render,fireEvent} from '@testing-library/react-native';
+import {render,fireEvent,act} from '@testing-library/react-native';
 
 import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock';
 import LoginForm from '../loginform';
@@ -15,18 +15,22 @@ const isLoading={loading:false}
 const isError={isError:false}
 const error={}
 const pData={}
+const jData = {};
 jest.mock('@/slice/authApi',()=>{
   return{
     useLoginMutation:()=>[login,isLoading],
   }
 })
-
+jest.mock('@/slice/suggested', () => {
+  return {
+    useGetJobsQuery: () => [(data = jData), isLoading, isError, error],
+  };
+});
 jest.mock('@/slice/profile',()=>{
   return{
     useGetProfileQuery:()=>[data=pData,isLoading,isError,error],
   }
 })
-
 jest.mock('@react-navigation/native', () => {
   return {
     ...jest.requireActual('@react-navigation/native'),
@@ -56,4 +60,15 @@ describe('Login Form  Template Component', () => {
     fireEvent(el, 'onPress');
     expect(all.toJSON()).toBeTruthy();
   });
+  it('Should not trigger error for correct values', async() => {
+    const all = render(<LoginForm />);
+    const el = all.getByTestId('LoginFormSignInpButtonId');
+    fireEvent.changeText(all.getByTestId('UserNameTextInput'),'testing');
+    fireEvent.changeText(all.getByTestId('PasswordTextInput'),'testing');
+    await act(async () => {
+      fireEvent(el, 'press');
+    });
+    expect(all.toJSON()).toBeTruthy();
+  });
+
 });

@@ -10,6 +10,7 @@ import {testingProps} from '@/utils/testframework';
 import {colors} from '@/utils/themes';
 import type {TextInputProps} from './types';
 import {TextInputStyled, LineTextStyled} from './styles';
+
 const TextInput = (props: TextInputProps): ReactElement => {
   const {
     Label,
@@ -19,6 +20,7 @@ const TextInput = (props: TextInputProps): ReactElement => {
     isError = false,
     errmessage = '',
     placeholder = '',
+    ...rest
   } = props;
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
@@ -27,6 +29,7 @@ const TextInput = (props: TextInputProps): ReactElement => {
       <Text TextMode="Title">{Label}</Text>
       <Hcontainer>
         <TextInputStyled
+          {...rest}
           autoCapitalize="none"
           placeholder={placeholder}
           secureTextEntry={type === 'Text' ? isVisible : !isVisible}

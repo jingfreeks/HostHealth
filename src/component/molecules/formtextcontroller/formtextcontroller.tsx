@@ -2,6 +2,7 @@ import React from 'react';
 import {TextInput} from '@/component/molecules/textinput';
 import {Controller, useFormContext} from 'react-hook-form';
 import type {FormTextControllerTypes} from './types';
+import {testingProps} from '@/utils/testframework';
 const FormTextController = (props: FormTextControllerTypes) => {
   const {name = '', rules, onBlur = () => {}, ...rest} = props;
 
