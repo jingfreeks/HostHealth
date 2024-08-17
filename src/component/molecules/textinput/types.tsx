@@ -7,4 +7,5 @@ export type TextInputProps = {
   isError?: boolean;
   errmessage?: string;
   placeholder?: string;
+  testId?:string;
 };

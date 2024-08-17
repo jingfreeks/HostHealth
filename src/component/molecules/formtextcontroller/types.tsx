@@ -4,6 +4,7 @@ export type FormTextControllerTypes = {
   name?: string;
   type?: string;
   rules: {required: boolean};
-  onBlur?: (params) => void;
+  onBlur?: (params:any) => void;
   onChangeText?: () => void;
+  testId?:string;
 };

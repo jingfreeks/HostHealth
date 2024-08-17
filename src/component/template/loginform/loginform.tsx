@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
+import {Alert} from 'react-native';
 import {FormTextController} from '@/component/molecules/formtextcontroller';
 import {Text} from '@/component/atoms/text';
 import {useForm, FormProvider, SubmitHandler} from 'react-hook-form';
@@ -59,10 +60,10 @@ const LoginFormScreen = () => {
     } catch (error) {
       switch (error.status) {
         case 401:
-          alert(error.data.message);
+          Alert.alert(error.data.message);
           break;
         default:
-          alert('error');
+          Alert.alert('error');
       }
     }
   };
@@ -72,6 +73,7 @@ const LoginFormScreen = () => {
         <TextInputContainerStyled>
           <FormTextController
             Label="Username"
+            {...testingProps('UserNameTextInput')}
             name="username"
             placeholder="Username"
             rules={{
@@ -81,6 +83,7 @@ const LoginFormScreen = () => {
           <FormTextController
             Label="Password"
             name="password"
+            {...testingProps('PasswordTextInput')}
             placeholder="Password"
             rules={{
               required: true,
