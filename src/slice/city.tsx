@@ -4,11 +4,11 @@ import {apiSlice} from '@/config/apiSlice';
 
 type cityTypes = { _id: string; name: string }
 
-const cityAdapter=createEntityAdapter<cityTypes>({
+export const cityAdapter=createEntityAdapter<cityTypes>({
     selectId:(city)=>city._id,
     sortComparer:(a,b)=>a.name.localeCompare(b.name)
 })
-const initialState = cityAdapter.getInitialState()
+export const initialState = cityAdapter.getInitialState()
 export const cityApiSlice = apiSlice.injectEndpoints({
   endpoints: builder => ({
     getCity: builder.query({  
