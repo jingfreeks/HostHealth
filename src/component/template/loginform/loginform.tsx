@@ -33,10 +33,10 @@ const LoginFormScreen = () => {
   const [login, {isLoading}] = useLoginMutation();
 
   const usrId = useSelector(selectCurrentUserId);
-  const {data: profiles} = useGetProfileQuery<{
-    refetch: () => void;
-    data: any;
-  }>({userId: usrId});
+  // const {data: profiles} = useGetProfileQuery<{
+  //   refetch: () => void;
+  //   data: any;
+  // }>({userId: usrId});
 
   type FormData = yup.InferType<typeof Schema>;
   const formMethod = useForm<FormData>({

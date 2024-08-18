@@ -30,3 +30,12 @@ jest.mock('@react-navigation/bottom-tabs', () => {
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 jest.mock('@supabase/supabase-js');
 jest.useFakeTimers();
+
+jest.mock('@react-navigation/bottom-tabs',()=>{
+  return {
+    ...jest.requireActual('@react-navigation/native'),
+    createBottomTabNavigator: () => ({
+      Navigator: jest.fn(),
+    }),
+  }
+})

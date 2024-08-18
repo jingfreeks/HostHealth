@@ -1,8 +1,10 @@
 import React from 'react';
-import {render,fireEvent,act} from '@testing-library/react-native';
+import {render,fireEvent,act,screen} from '@testing-library/react-native';
 
 import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock';
 import LoginForm from '../loginform';
+import { http, HttpResponse, delay } from 'msw'
+import { setupServer } from 'msw/node'
 
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 jest.mock('react-redux', () => ({
@@ -10,6 +12,16 @@ jest.mock('react-redux', () => ({
   useSelector: jest.fn(),
 }));
 jest.mock('@supabase/supabase-js')
+
+export const handlers = [
+  http.get('http://localhost:3500/login', async () => {
+    await delay(150)
+    return HttpResponse.json({accessToken:'121212',userId:'tesdterer'})
+  })
+]
+
+const server = setupServer(...handlers)
+
 const login=()=>jest.fn()
 const isLoading={loading:false}
 const isError={isError:false}
@@ -18,7 +30,7 @@ const pData={}
 const jData = {};
 jest.mock('@/slice/authApi',()=>{
   return{
-    useLoginMutation:()=>[login,isLoading],
+    useLoginMutation:()=>[login,{isLoading:false,isError:false,data:{accessToken:'121212',userId:'tesdterer'}}],
   }
 })
 jest.mock('@/slice/suggested', () => {
@@ -42,6 +54,16 @@ jest.mock('@react-navigation/native', () => {
     useDispatch: () => ({dispatch: jest.fn()}),
   };
 });
+
+beforeAll(() => server.listen())
+
+// Reset any runtime request handlers we may add during the tests.
+afterEach(() => server.resetHandlers())
+
+// Disable API mocking after the tests are done.
+afterAll(() => server.close())
+
+
 describe('Login Form  Template Component', () => {
   it('Should work as expected to get snapshot', () => {
     const all = render(<LoginForm />);
@@ -66,7 +88,8 @@ describe('Login Form  Template Component', () => {
     fireEvent.changeText(all.getByTestId('UserNameTextInput'),'testing');
     fireEvent.changeText(all.getByTestId('PasswordTextInput'),'testing');
     await act(async () => {
-      fireEvent(el, 'press');
+      // fireEvent(el, 'press');
+      fireEvent(el, 'onPress');
     });
     expect(all.toJSON()).toBeTruthy();
   });
