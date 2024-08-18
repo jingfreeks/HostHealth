@@ -75,8 +75,10 @@ describe('Job Details loading actions Screen', () => {
   });
   it('Should work to trigger to close Alert modal button', () => {
     const all = renderWithProviders(<JobDetails {...props} />);
-    const el = all.getByTestId('JobDetailsAlertModalTestId');
-    fireEvent(el, 'onRequestClose');
+    const el = all.getByTestId('JobDetailsScreenSubmitButtonTestId');
+    fireEvent(el, 'onPress');
+    const el1 = all.getByTestId('JobDetailsAlertModalTestId');
+    fireEvent(el1, 'onRequestClose');
     expect(all.toJSON()).toBeTruthy();
   });
 });
