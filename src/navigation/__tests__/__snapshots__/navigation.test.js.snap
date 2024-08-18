@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shows profile screen when View Profile is pressed 1`] = `null`;
