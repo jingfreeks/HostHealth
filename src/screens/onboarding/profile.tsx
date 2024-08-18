@@ -31,9 +31,7 @@ const ProfileScreen = () => {
   const usrId=useSelector(selectCurrentUserId)
   const [updateProfile, {isLoading}] = useUpdateProfileMutation({fixedCacheKey: "Profile"});
   const handleOnPrevious = () => {};
-  console.log('isLoading',isLoading)
   const handleOnNext: SubmitHandler<FormData> = async (data) => {
-    console.log('data',data,usrId)
     try {
       const userData: any = await updateProfile({
         firstName: data.firstName,

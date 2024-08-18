@@ -1,5 +1,6 @@
 module.exports = {
   preset: 'react-native',
+  "setupFiles": ["<rootDir>/jest/setup.js"],
   transformIgnorePatterns: [
     'node_modules/(?!react-native|react-navigation)/|@react-navigation/.*|jsencrypt|react-navigation-.*|@react-navigation',
   ],

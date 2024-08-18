@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import  { setCredentials,setLogout } from '@/slice/auth';
+import {setCredentials, setLogout} from '@/slice/auth';
 import Config from 'react-native-config';
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 
@@ -23,26 +23,24 @@ const baseQueryWithAuth = async (
 ) => {
   let result: any = await baseQuery(args, api, extraOptions);
   if (result?.error?.originalStatus === 403) {
-    console.log('Sending refresh token');
-
     const refereshResult = await baseQuery('/refresh', api, extraOptions);
 
-    if(refereshResult?.data){
-        const user = api.getState().auth.user;
-        //store the new token
-        api.dispatch(setCredentials({...refereshResult.data,user}))
-        //retry the original query with new access token
-        result= await baseQuery(args,api,extraOptions)
-    }else{
-        api.dispatch(setLogout())
+    if (refereshResult?.data) {
+      const user = api.getState().auth.user;
+      //store the new token
+      api.dispatch(setCredentials({...refereshResult.data, user}));
+      //retry the original query with new access token
+      result = await baseQuery(args, api, extraOptions);
+    } else {
+      api.dispatch(setLogout());
     }
   }
   return result;
 };
 
-export const apiSlice=createApi<any,any>({
-    baseQuery:baseQueryWithAuth,
-    reducerPath: 'api',
-    endpoints:builder=>({}),
-    tagTypes: ['City','Jobs','MyJobs','JobDetails','Profile'] as any,
-})
+export const apiSlice = createApi<any, any>({
+  baseQuery: baseQueryWithAuth,
+  reducerPath: 'api',
+  endpoints: builder => ({}),
+  tagTypes: ['City', 'Jobs', 'MyJobs', 'JobDetails', 'Profile'] as any,
+});
