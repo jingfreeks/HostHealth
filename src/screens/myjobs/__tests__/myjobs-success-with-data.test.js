@@ -34,7 +34,9 @@ describe('My Jobs Screen', () => {
   
   it('Should work as expected to get snapshot', () => {
 
-    const all = renderWithProviders(<Myjobs />);
+    const all = renderWithProviders(<Myjobs />,{
+      preLoadedState:{auth:{userId:'2331222222'}}
+    });
     waitFor(() => {
       expect(all.toJSON()).toMatchSnapshot();
     });
