@@ -19,8 +19,20 @@ jest.mock('@react-navigation/native', () => {
     useDispatch: () => ({dispatch: jest.fn()}),
   };
 });
+
+//set mock to loading true
+jest.mock('@/slice/myjobs',()=>({
+  useGetMyJobsQuery:()=>{
+    return{
+      isSuccess:false,
+      refetch:jest.fn(),
+      isLoading:true,
+    }
+  }
+}))
 describe('My Jobs Screen', () => {
   it('Should work as expected to get snapshot', () => {
+
     const all = renderWithProviders(<Myjobs />);
     waitFor(() => {
       expect(all.toJSON()).toMatchSnapshot();

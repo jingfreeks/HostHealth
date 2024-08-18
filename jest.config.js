@@ -1,5 +1,6 @@
 module.exports = {
   preset: 'react-native',
+  "setupFiles": ["<rootDir>/jest/setup.js"],
   transformIgnorePatterns: [
     'node_modules/(?!react-native|react-navigation)/|@react-navigation/.*|jsencrypt|react-navigation-.*|@react-navigation',
   ],
@@ -7,7 +8,7 @@ module.exports = {
   moduleDirectories: ['node_modules', 'src', __dirname],
   setupFilesAfterEnv: [],
   collectCoverage: true,
-  // collectCoverageFrom: ['<rootDir>/src/**/*.{ts,tsx,js,jsx}'],
+  collectCoverageFrom: ['<rootDir>/src/**/*.{ts,tsx,js,jsx}'],
   coverageThreshold: {
     global: {
       lines: 90,

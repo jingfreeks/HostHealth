@@ -1,6 +1,6 @@
 export type PopularCardProps = {
   item: {
-    image: string | undefined;
+    image?:string;
     name: string;
     statename:string;
     matches: string;

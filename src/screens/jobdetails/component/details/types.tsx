@@ -1,5 +1,5 @@
 export type DetailsTypes = {
   data: {
-    shift?: string;
+    shiftname?: string;
   };
 };

@@ -1,8 +1,8 @@
 import { RouteProp } from '@react-navigation/native';
 import type {AppNavigationProps} from '@/navigation/types';
-type ProfileScreenRouteProp = RouteProp<AppNavigationProps, 'JobsDetails'>;
+type JobsDetailsScreenRouteProp = RouteProp<AppNavigationProps, 'JobsDetails'>;
 export type RoutesProps = {
-  route: ProfileScreenRouteProp
+  route: JobsDetailsScreenRouteProp
 };
 
 export type JobDetailsProps = {
@@ -13,4 +13,6 @@ export type JobDetailsProps = {
   company: string;
   salaryrange: string;
   shift: string;
+  jobId:string;
+  _id:string;
 };

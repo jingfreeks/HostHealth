@@ -197,6 +197,7 @@ exports[`Signup Screen Should work as expected to get snapshot 1`] = `
                 >
                   <TextInput
                     autoCapitalize="none"
+                    onBlur={[Function]}
                     onChangeText={[Function]}
                     placeholder="Username"
                     secureTextEntry={false}
@@ -294,6 +295,7 @@ exports[`Signup Screen Should work as expected to get snapshot 1`] = `
                 >
                   <TextInput
                     autoCapitalize="none"
+                    onBlur={[Function]}
                     onChangeText={[Function]}
                     placeholder="Password"
                     secureTextEntry={true}
@@ -394,6 +396,7 @@ exports[`Signup Screen Should work as expected to get snapshot 1`] = `
                 >
                   <TextInput
                     autoCapitalize="none"
+                    onBlur={[Function]}
                     onChangeText={[Function]}
                     placeholder="Confirm Password"
                     secureTextEntry={true}

@@ -15,7 +15,6 @@ const PopularListScreen = () => {
     isError,
     error,
   } = useGetCityQuery<any>('getcity');
-  console.log('isError',isError)
   if (isLoading || isError) {
     let messages;
     if(error?.status===403){

@@ -21,3 +21,4 @@ export const ContainerStyled = styled.View<{
   border-radius: ${({border}) => border}px;
   border-color: ${({borderc}) => borderc};
 `;
+

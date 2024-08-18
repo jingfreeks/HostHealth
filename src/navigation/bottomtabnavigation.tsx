@@ -8,9 +8,11 @@ import {
   TimecardIcon,
   HamburgerIcon,
 } from '@/assets';
-import {HomeScreen, Pcities, MyJobs} from '@/screens';
+import {HomeScreen, Pcities, MyJobs,Profile} from '@/screens';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import type {AppNavigationProps,RootNavigationProps} from './types';
 import {colors} from '@/utils/themes';
-const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator<RootNavigationProps>();
 
 const BottomTabScreen = () => {
   return (
@@ -74,6 +76,18 @@ const BottomTabScreen = () => {
           // eslint-disable-next-line react/no-unstable-nested-components
           tabBarIcon: () => (
             <ImageHeaderStyled resizeMode={'contain'} source={TimecardIcon} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        component={Profile}
+        name="TimeCard1"
+        options={{
+          tabBarLabel: 'Profile',
+          title: 'Profile',
+          // eslint-disable-next-line react/no-unstable-nested-components
+          tabBarIcon: () => (
+            <FontAwesome color={colors.gray} name={'user-o'} size={25} />
           ),
         }}
       />

@@ -41,7 +41,7 @@ exports[`Welcome Button group Template Component Should work as expected to get 
       }
     >
       <View
-        accessibilityLabel="AtomsButtonTestId"
+        accessibilityLabel="WelcomeButtonGroupSignUnPressTestId"
         accessibilityState={
           {
             "busy": undefined,
@@ -81,7 +81,7 @@ exports[`Welcome Button group Template Component Should work as expected to get 
             "paddingTop": 15,
           }
         }
-        testID="AtomsButtonTestId"
+        testID="WelcomeButtonGroupSignUnPressTestId"
       >
         <Text
           style={
@@ -129,7 +129,7 @@ exports[`Welcome Button group Template Component Should work as expected to get 
       }
     >
       <View
-        accessibilityLabel="AtomsButtonTestId"
+        accessibilityLabel="WelcomeButtonGroupSignInPressTestId"
         accessibilityState={
           {
             "busy": undefined,
@@ -169,7 +169,7 @@ exports[`Welcome Button group Template Component Should work as expected to get 
             "paddingTop": 15,
           }
         }
-        testID="AtomsButtonTestId"
+        testID="WelcomeButtonGroupSignInPressTestId"
       >
         <Text
           style={
