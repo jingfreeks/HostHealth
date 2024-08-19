@@ -1,7 +1,7 @@
 import React from 'react';
 import bottomtab from './bottomtabnavigation';
 import {Navigation} from './constant';
-import {JobsDetails, OnBoardingProfile} from '@/screens';
+import {JobsDetails, OnBoardingProfile, OnBoardingBankInfo} from '@/screens';
 import type {AppNavigationProps, RootNavigationProps} from './types';
 import {
   createNativeStackNavigator,
@@ -28,7 +28,22 @@ export const Appnavigation = () => {
       <Stack.Screen
         component={OnBoardingProfile}
         name="OnBoardingProfile"
-        options={{headerShown: true, title: 'Personal Information', headerLeft: ()=> null,headerBackVisible:false}}
+        options={{
+          headerShown: true,
+          title: 'Personal Information',
+          headerLeft: () => null,
+          headerBackVisible: false,
+        }}
+      />
+      <Stack.Screen
+        component={OnBoardingBankInfo}
+        name="OnBoardingBankInfo"
+        options={{
+          headerShown: true,
+          title: 'Bank Information',
+          headerLeft: () => null,
+          headerBackVisible: false,
+        }}
       />
     </Stack.Navigator>
   );

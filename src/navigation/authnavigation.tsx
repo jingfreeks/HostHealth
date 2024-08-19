@@ -40,11 +40,6 @@ export const AuthNavigation = () => {
           },
         }}
       />
-      <Stack.Screen
-        component={OnBoardingProfile}
-        name="OnBoardingProfile"
-        options={{headerShown: true, title: 'Personal Information'}}
-      />
     </Stack.Navigator>
   );
 };

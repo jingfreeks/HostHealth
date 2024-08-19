@@ -1,1 +1,2 @@
-export {default as OnBoardingProfile} from './profile'
+export {OnBoardingProfile} from './profile'
+export {BankInfo as OnBoardingBankInfo} from './bankInfo'
