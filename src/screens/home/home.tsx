@@ -10,7 +10,7 @@ import {useSelector,useDispatch} from 'react-redux';
 import {useGetJobsQuery} from '@/slice/suggested';
 import {useGetCityQuery} from '@/slice/city';
 import {useGetProfileQuery} from '@/slice/profile';
-import {selectCurrentUserId} from '@/slice/auth';
+import {selectCurrentUserId,selectUserRoles} from '@/slice/auth';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import type {RootNavigationProps} from '@/navigation/types';
@@ -32,6 +32,7 @@ const HomeScreen = () => {
     isSuccess,
   } = useGetCityQuery<any>('getcity');
   const usrId = useSelector(selectCurrentUserId);
+  const usrRoles =useSelector(selectUserRoles)
   const navigation = useNavigation<StackNavigationProp<RootNavigationProps>>();
   const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
   const {data: profiles,isLoading:profileLoading,isError,error,refetch:profileRefetch} = useGetProfileQuery<{
@@ -52,8 +53,7 @@ const HomeScreen = () => {
     return unsubscribe;
   },[navigation,usrId])
   useEffect(()=>{
-    if(!profileLoading && isError && error?.status===400){
-    
+    if(!profileLoading && isError && error?.status===400 && !usrRoles.find((item:string)=>item==='Admin')){
       navigation.navigate('OnBoardingProfile')
     }else if(!profileLoading && isError && error?.status===403){
        dispatch(setLogout());
