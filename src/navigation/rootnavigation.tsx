@@ -7,6 +7,7 @@ import {AuthNavigation} from '@/navigation/authnavigation';
 import {Appnavigation} from '@/navigation/appnavigation';
 import {DrawerNavigation} from '@/navigation/drawernavigation';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {StateForm} from '@/screens';
 import type {State} from '@/config/types';
 import type {RootNavigationProps, AppNavigationProps} from './types';
 import {useSelector} from 'react-redux';
@@ -26,11 +27,18 @@ const RootNavigationScreen = () => {
   const getStatScreen = () => {
     if (token && usrRoles.find(item => item?.toLowerCase() === 'admin')) {
       return (
-        <Stack.Screen
-          component={DrawerNavigation}
-          name={"DrawerNav"}
-          options={{headerShown: false}}
-        />
+        <>
+          <Stack.Screen
+            component={DrawerNavigation}
+            name={'DrawerNav'}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            component={StateForm}
+            name={'StateForm'}
+            options={{headerShown: true, title: 'State Form'}}
+          />
+        </>
       );
     } else if (
       token &&
@@ -61,19 +69,6 @@ const RootNavigationScreen = () => {
           headerBackTitleVisible: false,
         }}>
         {getStatScreen()}
-        {/* {token && usrRoles.find((item)=>item?.toLowerCase()==='admin') ? ():(
-          <Stack.Screen
-            component={Appnavigation}
-            name={Navigation.app}
-            options={{headerShown: false}}
-          />
-        ) : (
-          <Stack.Screen
-            component={AuthNavigation}
-            name={Navigation.auth}
-            options={{headerShown: false}}
-          />
-        )} */}
       </Stack.Navigator>
     </NavigationContainer>
   );
