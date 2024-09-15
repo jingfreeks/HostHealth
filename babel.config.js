@@ -19,6 +19,7 @@ module.exports = {
         moduleName: 'react-native-dotenv',
       },
     ],
+    ['react-native-reanimated/plugin'],
     '@babel/plugin-transform-flow-strip-types',
     '@babel/plugin-transform-private-methods',
     '@babel/plugin-transform-private-property-in-object',

@@ -12,7 +12,11 @@ jest.mock('@react-navigation/native', () => {
     useDispatch: () => ({dispatch: jest.fn()}),
   };
 });
-
+jest.mock('@react-navigation/drawer',()=>{
+  return {
+    createDrawerNavigator:jest.fn()
+  }
+})
 jest.mock('@react-navigation/native-stack', () => {
   return {
     createNativeStackNavigator: () => ({
