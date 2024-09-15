@@ -12,6 +12,8 @@ export type RootNavigationProps = {
   TimeCard:undefined;
   TimeCard1:undefined;
   OnBoardingProfile:undefined;
+  OnBoardingBankInfo:undefined;
+  StateForm:undefined
 };
 
 

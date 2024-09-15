@@ -1,11 +1,11 @@
 import React from 'react';
 import {renderWithProviders} from '@/utils/testframeworknew';
 import {waitFor} from '@testing-library/react-native';
-import {OnBoardingProfile} from '../index';
+import {OnBoardingBankInfo} from '../index';
 
-describe('On boarding profile Screen', () => {
+describe('On boarding bankInfo Screen', () => {
   it('Should work as expected to get snapshot', () => {
-    const all = renderWithProviders(<OnBoardingProfile />);
+    const all = renderWithProviders(<OnBoardingBankInfo />);
     waitFor(() => {
       expect(all.toJSON()).toMatchSnapshot();
     });

@@ -20,7 +20,7 @@ import {useNavigation} from '@react-navigation/native';
 import {Schema} from './schema';
 import {useDispatch, useSelector} from 'react-redux';
 import {setLogout, selectCurrentUserId} from '@/slice/auth';
-import {ThunkDispatch} from '@reduxjs/toolkit';
+import {compose, ThunkDispatch} from '@reduxjs/toolkit';
 import {setCredentials} from '@/slice/auth';
 import {testingProps} from '@/utils/testframework';
 import {useLoginMutation} from '@/slice/authApi';
@@ -58,6 +58,7 @@ const LoginFormScreen = () => {
       // navigation.navigate('app');
       // navigation.navigate('OnBoardingProfile');
     } catch (error) {
+      console.log('error',error)
       switch (error.status) {
         case 401:
           Alert.alert(error.data.message);

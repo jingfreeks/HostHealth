@@ -61,6 +61,7 @@ export type AuthStateProps = {
   user: string;
   token: string;
   userId:string;
+  roles:string[];
 };
 export type State = {
   pcities: PcitiesStateProps;
