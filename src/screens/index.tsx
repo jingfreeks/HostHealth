@@ -7,3 +7,4 @@ export {MyJobs} from '@/screens/myjobs';
 export {JobsDetails} from '@/screens/jobdetails';
 export {Profile} from '@/screens/profile'
 export {OnBoardingProfile,OnBoardingBankInfo} from '@/screens/onboarding'
+export {Banks,City,State} from '@/screens/admin'
