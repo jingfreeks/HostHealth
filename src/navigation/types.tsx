@@ -13,7 +13,8 @@ export type RootNavigationProps = {
   TimeCard1:undefined;
   OnBoardingProfile:undefined;
   OnBoardingBankInfo:undefined;
-  StateForm:undefined
+  StateForm:undefined;
+  Cityform:undefined;
 };
 
 
@@ -41,6 +42,11 @@ export type AppNavigationProps = {
     name:string;
     _id:string;
   };
+  Cityform:{
+    name:string;
+    state:string;
+    _id:string;
+  }
   Home:undefined;
   Search:undefined;
   MyJob:undefined;

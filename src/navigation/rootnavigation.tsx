@@ -7,7 +7,7 @@ import {AuthNavigation} from '@/navigation/authnavigation';
 import {Appnavigation} from '@/navigation/appnavigation';
 import {DrawerNavigation} from '@/navigation/drawernavigation';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {StateForm} from '@/screens';
+import {StateForm, Cityform} from '@/screens';
 import type {State} from '@/config/types';
 import type {RootNavigationProps, AppNavigationProps} from './types';
 import {useSelector} from 'react-redux';
@@ -37,6 +37,11 @@ const RootNavigationScreen = () => {
             component={StateForm}
             name={'StateForm'}
             options={{headerShown: true, title: 'State Form'}}
+          />
+          <Stack.Screen
+            component={Cityform}
+            name={'Cityform'}
+            options={{headerShown: true, title: 'City Form'}}
           />
         </>
       );

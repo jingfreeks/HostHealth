@@ -1,14 +1,12 @@
 import React, {useCallback} from 'react';
 import {
-  View,
-  Text,
   FlatList,
   ListRenderItem,
   ListRenderItemInfo,
 } from 'react-native';
 import {FAB} from 'react-native-elements';
 import {ContainerStyled,StateEmptyContainerStyled} from './styles';
-import {ListItem, List} from './component';
+import {List} from './component';
 import {HomeEmptyCard} from '@/component';
 import {PcitiesEmptyIcon} from '@/assets';
 import {useStateHooks} from './hooks';
@@ -17,7 +15,6 @@ const State = () => {
   let content;
   const {navigation, states, isLoading, isSuccess, error, isError} =
     useStateHooks();
-
   const renderItem: ListRenderItem<any> = useCallback(
     ({item}: ListRenderItemInfo<any>) => {
       return <List stateId={item} />;
@@ -30,7 +27,7 @@ const State = () => {
     if (error?.status === 403) {
       messages = 'Token Expired you must logout and login it again';
     } else {
-      messages = 'No cities matches your preferred locations';
+      messages = 'No state matches your preferred locations';
     }
     content = (
       <StateEmptyContainerStyled>

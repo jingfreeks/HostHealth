@@ -23,8 +23,32 @@ export const cityApiSlice = apiSlice.injectEndpoints({
             ...result.ids.map((id:string | number) => ({ type: 'City', id }))
         ]: ['City']
     }),
+    addCity: builder.mutation({
+      query: credentials => ({
+        url: '/city',
+        method: 'POST',
+        body: {...credentials},
+      }),
+      invalidatesTags: ['City'] as any,
+    }),
+    updateCity: builder.mutation({
+      query: credentials => ({
+        url: '/city',
+        method: 'PATCH',
+        body: {...credentials},
+      }),
+      invalidatesTags: ['City'] as string[]&never& undefined,
+    }),
+    deleteCity: builder.mutation({
+      query: credentials => ({
+        url: '/city',
+        method: 'DELETE',
+        body: {...credentials},
+      }),
+      invalidatesTags: ['City'] as any,
+    }),
   }),
   overrideExisting: true,
 });
 
-export const {useGetCityQuery} = cityApiSlice;
+export const {useGetCityQuery,useAddCityMutation,useUpdateCityMutation,useDeleteCityMutation} = cityApiSlice;
