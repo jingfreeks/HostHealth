@@ -62,7 +62,7 @@ exports[`State admin screen Should work as expected to get snapshot 1`] = `
           ]
         }
       >
-        No cities matches your preferred locations
+        No state matches your preferred locations
       </Text>
     </View>
   </RCTSafeAreaView>
