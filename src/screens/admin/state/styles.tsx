@@ -31,3 +31,9 @@ export const FormHeaderTextStyled = styled(Text)`
   font-size: 30px;
   font-weight: 900;
 `;
+
+export const StateEmptyContainerStyled=styled.View`
+  flex:1;
+  align-items:center;
+  justify-content:center;
+`
