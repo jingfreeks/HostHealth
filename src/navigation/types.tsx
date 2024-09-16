@@ -37,6 +37,10 @@ export type AppNavigationProps = {
       _id?: string;
     };
   };
+  StateForm:{
+    name:string;
+    _id:string;
+  };
   Home:undefined;
   Search:undefined;
   MyJob:undefined;
