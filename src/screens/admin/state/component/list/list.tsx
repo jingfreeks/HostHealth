@@ -9,7 +9,6 @@ const List = (props: {stateId: string}) => {
       states: data?.entities[stateId],
     }),
   });
-  console.log('State',states)
   return (
     <ListItemContainerStyled>
       <ListItem item={states} />
