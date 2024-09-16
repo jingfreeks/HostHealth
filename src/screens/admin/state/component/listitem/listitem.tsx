@@ -13,8 +13,8 @@ const ListItem = (props: {item: any}) => {
   return (
     <ContainerStyled>
       <InfoContainerStyled>
-        <Text TextMode="Htitle">{item.name}</Text>
-        <Text>{item.country}</Text>
+        <Text TextMode="Htitle">{item?.name}</Text>
+        <Text>United State Of America</Text>
       </InfoContainerStyled>
       <ActionButtonContainerStyled>
         <Button1 bcolor="transparent" onPress={() => {}} border={0}>
