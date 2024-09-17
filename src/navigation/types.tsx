@@ -15,7 +15,8 @@ export type RootNavigationProps = {
   OnBoardingBankInfo:undefined;
   StateForm:undefined;
   Cityform:undefined;
-  DepartmentForm:undefined
+  DepartmentForm:undefined;
+  ShiftForm:undefined;
 };
 
 
@@ -50,6 +51,10 @@ export type AppNavigationProps = {
   }
   DepartmentForm:{
     name:string;
+    _id:string;
+  };
+  ShiftForm:{
+    title:string;
     _id:string;
   };
   Home:undefined;

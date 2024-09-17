@@ -1,6 +1,6 @@
 import React from 'react';
 import {Navigation} from './constant';
-import {StateForm, Cityform, DepartmentForm} from '@/screens';
+import {StateForm, Cityform, DepartmentForm, ShiftForm} from '@/screens';
 import {DrawerNavigation} from '@/navigation/drawernavigation';
 import type {AppNavigationProps, RootNavigationProps} from './types';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -31,6 +31,11 @@ export const Adminappnavigation = () => {
         component={DepartmentForm}
         name={'DepartmentForm'}
         options={{headerShown: true, title: 'City Form'}}
+      />
+      <Stack.Screen
+        component={ShiftForm}
+        name={'ShiftForm'}
+        options={{headerShown: true, title: 'Shift Form'}}
       />
     </Stack.Navigator>
   );
