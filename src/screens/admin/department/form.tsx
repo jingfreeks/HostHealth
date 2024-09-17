@@ -10,7 +10,7 @@ import {useStateHooks} from './hooks';
 import {colors} from '@/utils/themes';
 import {useForm, FormProvider, SubmitHandler} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
-import {useAddStatesMutation, useUpdateStatesMutation} from '@/slice/state';
+import {useAddDeptMutation, useUpdateDeptMutation} from '@/slice/department';
 import {Schema} from './schema';
 import * as yup from 'yup';
 import type {RoutesProps} from './types';
@@ -27,21 +27,21 @@ const Form = (props: RoutesProps) => {
     resolver: yupResolver(Schema),
   });
 
-  const [addStates, {isLoading: addStateLoading}] = useAddStatesMutation();
-  const [updateStates, {isLoading: updateStateLoading}] =
-    useUpdateStatesMutation();
+  const [addDept, {isLoading: addDeptLoading}] = useAddDeptMutation();
+  const [updateDept, {isLoading: updateStateLoading}] =
+  useUpdateDeptMutation();
   const onSubmit: SubmitHandler<FormData> = async data => {
     try {
       let response: any;
       if (_id) {
         //update
-        response = await updateStates({
+        response = await updateDept({
           name: data?.name,
           id: _id,
         }).unwrap();
       } else {
         //insert
-        response = await addStates({
+        response = await addDept({
           name: data?.name,
         });
       }
@@ -59,7 +59,7 @@ const Form = (props: RoutesProps) => {
       <FormProvider {...formMethod}>
         <FormHeaderContainerStyled>
           <FormHeaderTextStyled TextMode="Htitlenormal">
-            State Form Information
+            Department Form Information
           </FormHeaderTextStyled>
         </FormHeaderContainerStyled>
         <FormTextInputContainerStyled>
@@ -75,7 +75,7 @@ const Form = (props: RoutesProps) => {
         <Bbutton
           bcolor={colors.lightergreen}
           border={10}
-          loaders={addStateLoading || updateStateLoading}
+          loaders={addDeptLoading || updateStateLoading}
           title="Save"
           onPress={formMethod.handleSubmit(onSubmit)}
         />

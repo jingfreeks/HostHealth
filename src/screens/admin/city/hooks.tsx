@@ -2,30 +2,30 @@ import React from 'react';
 import {StackNavigationProp} from '@react-navigation/stack';
 import type {RootNavigationProps} from '@/navigation/types';
 import {useNavigation} from '@react-navigation/native';
-import {useGetStateQuery, useDeleteStatesMutation} from '@/slice/state';
+import {useGetCityQuery, useDeleteCityMutation} from '@/slice/city';
 
-export const useStateHooks = () => {
+export const useCityHooks = () => {
   const navigation = useNavigation<StackNavigationProp<RootNavigationProps>>();
 
   const {
-    data: states,
+    data: city,
     isLoading,
     isSuccess,
     isError,
     error,
-  } = useGetStateQuery<{
+  } = useGetCityQuery<{
     refetch: () => void;
     data: any;
     isLoading: boolean;
     isSuccess: string;
     isError: boolean;
     error: any;
-  }>('getNotes');
+  }>('getCity');
 
-  const [deleteStates, {isLoading: deleteLoading}] = useDeleteStatesMutation();
-  const handleDeleteState = async (id: string) => {
+  const [deleteCity, {isLoading: deleteLoading}] = useDeleteCityMutation();
+  const handleDeleteCity = async (id: string) => {
     try {
-      await deleteStates({
+      await deleteCity({
         id,
       }).unwrap();
     
@@ -35,12 +35,12 @@ export const useStateHooks = () => {
   };
   return {
     navigation,
-    states,
+    city,
     isLoading,
     isSuccess,
     isError,
     error,
-    handleDeleteState,
+    handleDeleteCity,
     deleteLoading,
   };
 };
