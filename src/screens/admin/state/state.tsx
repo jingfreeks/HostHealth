@@ -9,6 +9,7 @@ import {ContainerStyled,StateEmptyContainerStyled} from './styles';
 import {List} from './component';
 import {HomeEmptyCard} from '@/component';
 import {PcitiesEmptyIcon} from '@/assets';
+import {message} from '@/config/constant'
 import {useStateHooks} from './hooks';
 
 const State = () => {
@@ -25,9 +26,9 @@ const State = () => {
   if (isLoading || isError) {
     let messages;
     if (error?.status === 403) {
-      messages = 'Token Expired you must logout and login it again';
+      messages = message[100001];
     } else {
-      messages = 'No state matches your preferred locations';
+      messages = message[100002];
     }
     content = (
       <StateEmptyContainerStyled>

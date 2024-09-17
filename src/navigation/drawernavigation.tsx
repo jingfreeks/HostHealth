@@ -3,8 +3,8 @@ import type {AppNavigationProps, RootNavigationProps} from './types';
 import {setCredentials} from '@/slice/auth';
 import {useDispatch} from 'react-redux';
 import {compose, ThunkDispatch} from '@reduxjs/toolkit';
-import {Banks,City,State,HomeScreen} from '@/screens'
-import {apiSlice} from '@/config/apiSlice'
+import {Banks, City, State, Department} from '@/screens';
+import {apiSlice} from '@/config/apiSlice';
 import {
   createDrawerNavigator,
   DrawerContentScrollView,
@@ -16,15 +16,17 @@ const Drawer = createDrawerNavigator<
   RootNavigationProps & AppNavigationProps
 >();
 export const DrawerNavigation = () => {
-    const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
+  const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
 
-  const handleSignout = async() => {
-    await dispatch(setCredentials({user: null, accessToken: null, userId: null}));
-    await dispatch(apiSlice.util.resetApiState())
+  const handleSignout = async () => {
+    await dispatch(
+      setCredentials({user: null, accessToken: null, userId: null}),
+    );
+    await dispatch(apiSlice.util.resetApiState());
   };
   return (
     <Drawer.Navigator
-      initialRouteName="Banks"
+      initialRouteName="City"
       drawerContent={props => {
         return (
           <DrawerContentScrollView {...props}>
@@ -33,9 +35,10 @@ export const DrawerNavigation = () => {
           </DrawerContentScrollView>
         );
       }}>
-      <Drawer.Screen name="Banks" component={Banks} />
       <Drawer.Screen name="City" component={City} />
       <Drawer.Screen name="State" component={State} />
+      <Drawer.Screen name="Banks" component={Banks} />
+      <Drawer.Screen name="Department" component={Department} />
     </Drawer.Navigator>
   );
 };

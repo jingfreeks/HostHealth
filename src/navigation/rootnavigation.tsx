@@ -6,6 +6,7 @@ import {
 import {AuthNavigation} from '@/navigation/authnavigation';
 import {Appnavigation} from '@/navigation/appnavigation';
 import {DrawerNavigation} from '@/navigation/drawernavigation';
+import {Adminappnavigation} from '@/navigation/adminnavigation';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {StateForm, Cityform} from '@/screens';
 import type {State} from '@/config/types';
@@ -27,23 +28,11 @@ const RootNavigationScreen = () => {
   const getStatScreen = () => {
     if (token && usrRoles.find(item => item?.toLowerCase() === 'admin')) {
       return (
-        <>
-          <Stack.Screen
-            component={DrawerNavigation}
-            name={'DrawerNav'}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            component={StateForm}
-            name={'StateForm'}
-            options={{headerShown: true, title: 'State Form'}}
-          />
-          <Stack.Screen
-            component={Cityform}
-            name={'Cityform'}
-            options={{headerShown: true, title: 'City Form'}}
-          />
-        </>
+        <Stack.Screen
+          component={Adminappnavigation}
+          name={'DrawerNav'}
+          options={{headerShown: false}}
+        />
       );
     } else if (
       token &&
