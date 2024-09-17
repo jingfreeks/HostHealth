@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, Button1} from '@/component';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import {useDepartmentHooks} from '../../hooks';
+import {useShiftHooks} from '../../hooks';
 import {
   ContainerStyled,
   InfoContainerStyled,
@@ -10,15 +10,15 @@ import {
 
 const ListItem = (props: {item: any}) => {
   const {item} = props;
-  const {handleDeleteDept, deleteLoading,navigation} = useDepartmentHooks();
+  const {handleDeleteDept, deleteLoading,navigation} = useShiftHooks();
   
   return (
     <ContainerStyled>
       <InfoContainerStyled>
-        <Text TextMode="Htitle">{item?.name}</Text>
+        <Text TextMode="Htitle">{item?.title}</Text>
       </InfoContainerStyled>
       <ActionButtonContainerStyled>
-        <Button1 bcolor="transparent" onPress={() => navigation.navigate('DepartmentForm',item)} border={0}>
+        <Button1 bcolor="transparent" onPress={() => navigation.navigate('ShiftForm',item)} border={0}>
           <FontAwesome name={'pencil'} size={25} />
         </Button1>
         <Button1 bcolor="transparent" onPress={() => handleDeleteDept(item._id)} border={0}>

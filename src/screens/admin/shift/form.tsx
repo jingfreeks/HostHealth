@@ -6,19 +6,19 @@ import {
   FormHeaderTextStyled,
 } from './styles';
 import {FormTextController, Bbutton} from '@/component';
-import {useDepartmentHooks} from './hooks';
+import {useShiftHooks} from './hooks';
 import {colors} from '@/utils/themes';
 import {useForm, FormProvider, SubmitHandler} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
-import {useAddDeptMutation, useUpdateDeptMutation} from '@/slice/department';
+import {useAddShiftMutation, useUpdateShiftMutation} from '@/slice';
 import {Schema} from './schema';
 import * as yup from 'yup';
 import type {RoutesProps} from './types';
 
 const Form = (props: RoutesProps) => {
-  const {navigation} = useDepartmentHooks();
+  const {navigation} = useShiftHooks();
   const {route} = props;
-  const {name, _id} = route?.params || {};
+  const {title:name, _id} = route?.params || {};
   type FormData = yup.InferType<typeof Schema>;
   const formMethod = useForm<FormData>({
     defaultValues: {
@@ -27,21 +27,21 @@ const Form = (props: RoutesProps) => {
     resolver: yupResolver(Schema),
   });
 
-  const [addDept, {isLoading: addDeptLoading}] = useAddDeptMutation();
-  const [updateDept, {isLoading: updateStateLoading}] = useUpdateDeptMutation();
+  const [addShift, {isLoading: addShiftLoading}] = useAddShiftMutation();
+  const [updateShift, {isLoading: updateShiftLoading}] = useUpdateShiftMutation();
   const onSubmit: SubmitHandler<FormData> = async data => {
     try {
       let response: any;
       if (_id) {
         //update
-        response = await updateDept({
-          name: data?.name,
+        response = await updateShift({
+          title: data?.name,
           id: _id,
         }).unwrap();
       } else {
         //insert
-        response = await addDept({
-          name: data?.name,
+        response = await addShift({
+          title: data?.name,
         });
       }
       if (response?.error) {
@@ -58,7 +58,7 @@ const Form = (props: RoutesProps) => {
       <FormProvider {...formMethod}>
         <FormHeaderContainerStyled>
           <FormHeaderTextStyled TextMode="Htitlenormal">
-            Department Form Information
+            Shift Form Information
           </FormHeaderTextStyled>
         </FormHeaderContainerStyled>
         <FormTextInputContainerStyled>
@@ -74,7 +74,7 @@ const Form = (props: RoutesProps) => {
         <Bbutton
           bcolor={colors.lightergreen}
           border={10}
-          loaders={addDeptLoading || updateStateLoading}
+          loaders={addShiftLoading || updateShiftLoading}
           title="Save"
           onPress={formMethod.handleSubmit(onSubmit)}
         />

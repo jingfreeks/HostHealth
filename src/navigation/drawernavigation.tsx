@@ -3,7 +3,7 @@ import type {AppNavigationProps, RootNavigationProps} from './types';
 import {setCredentials} from '@/slice/auth';
 import {useDispatch} from 'react-redux';
 import {compose, ThunkDispatch} from '@reduxjs/toolkit';
-import {Banks, City, State, Department} from '@/screens';
+import {Banks, City, State, Department,Shift} from '@/screens';
 import {apiSlice} from '@/config/apiSlice';
 import {
   createDrawerNavigator,
@@ -39,6 +39,7 @@ export const DrawerNavigation = () => {
       <Drawer.Screen name="State" component={State} />
       <Drawer.Screen name="Banks" component={Banks} />
       <Drawer.Screen name="Department" component={Department} />
+      <Drawer.Screen name="Shift" component={Shift} />
     </Drawer.Navigator>
   );
 };

@@ -9,17 +9,18 @@ import {ContainerStyled,StateEmptyContainerStyled} from './styles';
 import {List} from './component';
 import {HomeEmptyCard} from '@/component';
 import {PcitiesEmptyIcon} from '@/assets';
-import {useDepartmentHooks} from './hooks';
+import {useShiftHooks} from './hooks';
 import {message} from '@/config/constant';
 
 
-const Department = () => {
+const Shift = () => {
   let content;
-  const {navigation, dept, isLoading, isSuccess, error, isError} =
-  useDepartmentHooks();
+  const {navigation, shift, isLoading, isSuccess, error, isError} =
+  useShiftHooks();
+  console.log('shift',shift)
   const renderItem: ListRenderItem<any> = useCallback(
     ({item}: ListRenderItemInfo<any>) => {
-      return <List deptId={item} />;
+      return <List shiftId={item} />;
     },
     [],
   );
@@ -29,7 +30,7 @@ const Department = () => {
     if (error?.status === 403) {
       messages = message[100001];
     } else {
-      messages = message[100004];
+      messages = message[100007];
     }
     content = (
       <StateEmptyContainerStyled>
@@ -40,8 +41,8 @@ const Department = () => {
     content = (
       <ContainerStyled>
         <FlatList
-          data={dept.ids}
-          extraData={dept.ids}
+          data={shift.ids}
+          extraData={shift.ids}
           renderItem={renderItem}
           keyExtractor={(item: any, index) => index.toString()}
         />
@@ -49,7 +50,7 @@ const Department = () => {
           title="Create"
           placement="right"
           size="large"
-          onPress={() => navigation.navigate('DepartmentForm')}
+          onPress={() => navigation.navigate('ShiftForm')}
         />
       </ContainerStyled>
     );
@@ -57,4 +58,4 @@ const Department = () => {
   return content;
 };
 
-export default Department;
+export default Shift;

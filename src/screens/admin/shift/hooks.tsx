@@ -2,27 +2,27 @@ import React from 'react';
 import {StackNavigationProp} from '@react-navigation/stack';
 import type {RootNavigationProps} from '@/navigation/types';
 import {useNavigation} from '@react-navigation/native';
-import {useGetDeptQuery, useDeleteDeptMutation} from '@/slice';
+import {useGetShiftQuery, useDeleteShiftMutation} from '@/slice';
 
-export const useDepartmentHooks = () => {
+export const useShiftHooks = () => {
   const navigation = useNavigation<StackNavigationProp<RootNavigationProps>>();
 
   const {
-    data: dept,
+    data: shift,
     isLoading,
     isSuccess,
     isError,
     error,
-  } = useGetDeptQuery<{
+  } = useGetShiftQuery<{
     refetch: () => void;
     data: any;
     isLoading: boolean;
     isSuccess: string;
     isError: boolean;
     error: any;
-  }>('getDept');
+  }>('getShift');
 
-  const [deleteDept, {isLoading: deleteLoading}] = useDeleteDeptMutation();
+  const [deleteDept, {isLoading: deleteLoading}] = useDeleteShiftMutation();
   const handleDeleteDept = async (id: string) => {
     try {
       await deleteDept({
@@ -35,7 +35,7 @@ export const useDepartmentHooks = () => {
   };
   return {
     navigation,
-    dept,
+    shift,
     isLoading,
     isSuccess,
     isError,

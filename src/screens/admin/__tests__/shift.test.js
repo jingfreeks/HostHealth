@@ -1,9 +1,10 @@
 import React from 'react'
 import {renderWithProviders} from '@/utils/testframeworknew';
-import {State} from '../state';
-describe('State admin screen', () => {
+import {Shift} from '../shift';
+
+describe('Shift admin screen', () => {
   it('Should work as expected to get snapshot', () => {
-    const all = renderWithProviders(<State />);
+    const all = renderWithProviders(<Shift />);
     expect(all.toJSON()).toMatchSnapshot();
   });
 });
