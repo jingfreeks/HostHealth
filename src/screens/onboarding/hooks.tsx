@@ -40,16 +40,16 @@ export const useOnBoardingHooks = () => {
   const handleProfilePrevious = () => {};
   const handleProfilenext: SubmitHandler<FormProfileData> = async data => {
     try {
-      // const userData: any = await updateProfile({
-      //   firstName: data.firstName,
-      //   lastName: data.lastName,
-      //   middleName: data.middleName,
-      //   userId: usrId,
-      // }).unwrap();
-      // if (userData) {
-      //   navigation.navigate('OnBoardingBankInfo')
-      // }
-      navigation.navigate('OnBoardingBankInfo')
+      const userData: any = await updateProfile({
+        firstName: data.firstName,
+        lastName: data.lastName,
+        middleName: data.middleName,
+        userId: usrId,
+      }).unwrap();
+      if (userData) {
+        navigation.navigate('OnBoardingBankInfo')
+      }
+      // navigation.navigate('OnBoardingBankInfo')
     } catch (error) {
       console.log('error', error);
       switch (error.status) {

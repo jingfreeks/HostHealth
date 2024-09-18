@@ -8,7 +8,7 @@ import {useOnBoardingHooks} from '../hooks';
 const BankInfoScreens = () => {
   const {navigation,formBankInfo} = useOnBoardingHooks();
   const handleBankInfoNext=()=>{
-
+    navigation.navigate('Home')
   }
   return (
     <ContainerStyled>

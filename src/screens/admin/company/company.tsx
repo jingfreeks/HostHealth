@@ -13,9 +13,9 @@ import {useCityHooks} from './hooks';
 import {message} from '@/config/constant';
 
 
-const City = () => {
+const Company = () => {
   let content;
-  const {navigation, city, isLoading, isSuccess, error, isError} =
+  const {navigation, company, isLoading, isSuccess, error, isError} =
   useCityHooks();
 
   const renderItem: ListRenderItem<any> = useCallback(
@@ -24,12 +24,13 @@ const City = () => {
     },
     [],
   );
+
   if (isLoading || isError) {
     let messages;
     if (error?.status === 403) {
       messages = message[100001];
     } else {
-      messages = message[100003];
+      messages = message[100008];
     }
     content = (
       <StateEmptyContainerStyled>
@@ -40,8 +41,8 @@ const City = () => {
     content = (
       <ContainerStyled>
         <FlatList
-          data={city.ids}
-          extraData={city.ids}
+          data={company.ids}
+          extraData={company.ids}
           renderItem={renderItem}
           keyExtractor={(item: any, index) => index.toString()}
         />
@@ -57,4 +58,4 @@ const City = () => {
   return content;
 };
 
-export default City;
+export default Company;

@@ -36,7 +36,7 @@ const RootNavigationScreen = () => {
       );
     } else if (
       token &&
-      usrRoles.find(item => item?.toLowerCase() === 'applicant')
+      usrRoles.find(item => item?.toLowerCase() === 'applicant' || 'Employee')
     ) {
       return (
         <Stack.Screen

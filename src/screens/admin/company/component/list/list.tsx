@@ -1,17 +1,17 @@
 import React from 'react';
-import {useGetDeptQuery} from '@/slice';
+import {useGetCityQuery} from '@/slice/city';
 import {ListItem} from '../index';
 import {ListItemContainerStyled} from '../../styles';
-const List = (props: {deptId: string}) => {
-  const {deptId} = props;
-  const {dept} = useGetDeptQuery('getDept', {
+const List = (props: {cityId: string}) => {
+  const {cityId} = props;
+  const {city} = useGetCityQuery('getState', {
     selectFromResult: ({data}: any) => ({
-      dept: data?.entities[deptId],
+      city: data?.entities[cityId],
     }),
   });
   return (
     <ListItemContainerStyled>
-      <ListItem item={dept} />
+      <ListItem item={city} />
     </ListItemContainerStyled>
   );
 };
