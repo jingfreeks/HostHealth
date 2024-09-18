@@ -1,10 +1,10 @@
 import React from 'react';
 import {render} from '@testing-library/react-native';
-import Formtextcontroller from '../formtextcontroller';
+import FormDropdowncontroller from '../formdropdowncontroller';
 
-describe('Form Text Controller Component', () => {
+describe('Form Dropdown Controller Component', () => {
   it('Should work as expected to get snapshot', () => {
-    const all = render(<Formtextcontroller />);
+    const all = render(<FormDropdowncontroller />);
     expect(all.toJSON()).toMatchSnapshot();
   });
 });

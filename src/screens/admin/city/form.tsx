@@ -6,18 +6,19 @@ import {
   FormHeaderTextStyled,
 } from './styles';
 import {StyleSheet} from 'react-native';
-import {FormTextController, Bbutton, Text} from '@/component';
+import {
+  FormTextController,
+  Formdropdowncontroller,
+  Bbutton,
+} from '@/component';
 import {useCityHooks} from './hooks';
 import {colors} from '@/utils/themes';
-import {useForm, FormProvider, SubmitHandler} from 'react-hook-form';
+import {useForm, FormProvider, SubmitHandler,} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
 import {useAddCityMutation, useUpdateCityMutation} from '@/slice/city';
-import {Dropdown} from 'react-native-element-dropdown';
 import {Schema} from './schema';
 import * as yup from 'yup';
 import type {RoutesProps} from './types';
-import {statedata} from './constant';
-import FontAwesome from 'react-native-vector-icons/MaterialIcons';
 import {useStateHooks} from '@/screens/admin/state/hooks';
 
 const Form = (props: RoutesProps) => {
@@ -25,12 +26,13 @@ const Form = (props: RoutesProps) => {
 
   const [isFocus, setIsFocus] = useState(false);
   const {route} = props;
-  const {name,state, _id} = route?.params || {};
-  const [value, setValue] = useState<any>(state);
+  const {name, state, _id} = route?.params || {};
+  // const [value, setValue] = useState<any>(state);
   type FormData = yup.InferType<typeof Schema>;
   const formMethod = useForm<FormData>({
     defaultValues: {
       name: name || '',
+      state:state || '',
     },
     resolver: yupResolver(Schema),
   });
@@ -49,7 +51,7 @@ const Form = (props: RoutesProps) => {
       };
     });
   }, [states]);
-  console.log('statesdata', statesdata);
+
   const onSubmit: SubmitHandler<FormData> = async data => {
     try {
       let response: any;
@@ -57,16 +59,16 @@ const Form = (props: RoutesProps) => {
         //update
         response = await updateCity({
           name: data?.name,
-          stateId: value,
+          stateId: data?.state,
           image:
-          'https://img.freepik.com/premium-photo/city-skyline-with-city-background_1249034-36162.jpg?w=826',
+            'https://img.freepik.com/premium-photo/city-skyline-with-city-background_1249034-36162.jpg?w=826',
           id: _id,
         }).unwrap();
       } else {
         //insert
         response = await addCity({
           name: data?.name,
-          stateId: value,
+          stateId: data?.state,
           image:
             'https://img.freepik.com/premium-photo/city-skyline-with-city-background_1249034-36162.jpg?w=826',
         });
@@ -98,36 +100,17 @@ const Form = (props: RoutesProps) => {
             }}
           />
         </FormTextInputContainerStyled>
-        <Dropdown
-          style={[styles.dropdown, isFocus && {borderColor: 'blue'}]}
-          placeholderStyle={styles.placeholderStyle}
-          selectedTextStyle={styles.selectedTextStyle}
-          inputSearchStyle={styles.inputSearchStyle}
-          iconStyle={styles.iconStyle}
-          data={!stateloading ? statesdata : []}
-          search
-          maxHeight={300}
-          labelField="label"
-          valueField="value"
-          placeholder={!isFocus ? 'Select item' : '...'}
-          searchPlaceholder="Search..."
-          value={value}
-          onFocus={() => setIsFocus(true)}
-          onBlur={() => setIsFocus(false)}
-          onChange={(item: any) => {
-            setValue(item.value);
-            setIsFocus(false);
+
+        <Formdropdowncontroller
+          Label="State"
+          name="state"
+          placeholder="State"
+          rules={{
+            required: true,
           }}
-          renderLeftIcon={() => (
-            <FontAwesome
-              style={styles.icon}
-              color={isFocus ? 'blue' : 'black'}
-              name="safety-check"
-              size={20}
-            />
-          )}
+          loading={stateloading}
+          data={statesdata}
         />
-        {!value && <Text TextMode="ErrorText">{'State must be required'}</Text>}
         <Bbutton
           bcolor={colors.lightergreen}
           border={10}
