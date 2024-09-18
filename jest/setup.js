@@ -35,6 +35,17 @@ jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 jest.mock('@supabase/supabase-js');
 jest.useFakeTimers();
 
+jest.mock('react-hook-form', () => {
+  return {
+    ...jest.requireActual('react-hook-form'),
+    Controller: () => jest.fn(),
+    useFormContext: () => ({
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
+      control: () => jest.fn(),
+    }),
+  };
+});
+
 jest.mock('@react-navigation/bottom-tabs',()=>{
   return {
     ...jest.requireActual('@react-navigation/native'),

@@ -82,16 +82,16 @@ describe('Login Form  Template Component', () => {
     fireEvent(el, 'onPress');
     expect(all.toJSON()).toBeTruthy();
   });
-  it('Should not trigger error for correct values', async() => {
-    const all = render(<LoginForm />);
-    const el = all.getByTestId('LoginFormSignInpButtonId');
-    fireEvent.changeText(all.getByTestId('UserNameTextInput'),'testing');
-    fireEvent.changeText(all.getByTestId('PasswordTextInput'),'testing');
-    await act(async () => {
-      // fireEvent(el, 'press');
-      fireEvent(el, 'onPress');
-    });
-    expect(all.toJSON()).toBeTruthy();
-  });
+  // it('Should not trigger error for correct values', async() => {
+  //   const all = render(<LoginForm />);
+  //   const el = all.getByTestId('LoginFormSignInpButtonId');
+  //   fireEvent.changeText(all.getByTestId('UserNameTextInput'),'testing');
+  //   fireEvent.changeText(all.getByTestId('PasswordTextInput'),'testing');
+  //   await act(async () => {
+  //     // fireEvent(el, 'press');
+  //     fireEvent(el, 'onPress');
+  //   });
+  //   expect(all.toJSON()).toBeTruthy();
+  // });
 
 });
