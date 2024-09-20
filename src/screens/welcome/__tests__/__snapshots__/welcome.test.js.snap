@@ -109,7 +109,7 @@ exports[`Welcome Screen Should work as expected to get snapshot 1`] = `
                 {
                   "color": "#0e3f6c",
                   "fontFamily": "Avenir",
-                  "fontSize": 18,
+                  "fontSize": 35.311764705882354,
                   "fontWeight": "900",
                 },
               ]

@@ -5,20 +5,20 @@ export type RootNavigationProps = {
   Signup: undefined;
   Welcome: undefined;
   auth: undefined;
-  JobsDetails:undefined;
-  Home:undefined;
-  Search:undefined;
-  MyJob:undefined;
-  TimeCard:undefined;
-  TimeCard1:undefined;
-  OnBoardingProfile:undefined;
-  OnBoardingBankInfo:undefined;
-  StateForm:undefined;
-  Cityform:undefined;
-  DepartmentForm:undefined;
-  ShiftForm:undefined;
+  JobsDetails: undefined;
+  Home: undefined;
+  Search: undefined;
+  MyJob: undefined;
+  TimeCard: undefined;
+  TimeCard1: undefined;
+  OnBoardingProfile: undefined;
+  OnBoardingBankInfo: undefined;
+  StateForm: undefined;
+  Cityform: undefined;
+  DepartmentForm: undefined;
+  ShiftForm: undefined;
+  CompanyForm: undefined;
 };
-
 
 export type AppNavigationProps = {
   JobsDetails: {
@@ -40,26 +40,34 @@ export type AppNavigationProps = {
       _id?: string;
     };
   };
-  StateForm:{
-    name:string;
-    _id:string;
+  StateForm: {
+    name: string;
+    _id: string;
   };
-  Cityform:{
-    name:string;
-    state:string;
-    _id:string;
-  }
-  DepartmentForm:{
-    name:string;
-    _id:string;
+  Cityform: {
+    name: string;
+    state: string;
+    _id: string;
   };
-  ShiftForm:{
-    title:string;
-    _id:string;
+  DepartmentForm: {
+    name: string;
+    _id: string;
   };
-  Home:undefined;
-  Search:undefined;
-  MyJob:undefined;
-  TimeCard:undefined;
-  TimeCard1:undefined;
+  ShiftForm: {
+    title: string;
+    _id: string;
+  };
+  CompanyForm: {
+    address: string;
+    name: string;
+    city: string;
+    stateid: string;
+    cityId: string;
+    _id: string;
+  };
+  Home: undefined;
+  Search: undefined;
+  MyJob: undefined;
+  TimeCard: undefined;
+  TimeCard1: undefined;
 };

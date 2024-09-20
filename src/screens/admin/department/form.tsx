@@ -10,7 +10,7 @@ import {useDepartmentHooks} from './hooks';
 import {colors} from '@/utils/themes';
 import {useForm, FormProvider, SubmitHandler} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
-import {useAddDeptMutation, useUpdateDeptMutation} from '@/slice/department';
+import {useAddDeptMutation, useUpdateDeptMutation} from '@/slice';
 import {Schema} from './schema';
 import * as yup from 'yup';
 import type {RoutesProps} from './types';

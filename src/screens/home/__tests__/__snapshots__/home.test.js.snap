@@ -89,7 +89,7 @@ exports[`Home Screen Should work as expected to get snapshot 1`] = `
               {
                 "color": "#0e3f6c",
                 "fontFamily": "Avenir",
-                "fontSize": 20,
+                "fontSize": 39.23529411764706,
                 "fontWeight": "900",
               },
             ]
@@ -183,7 +183,7 @@ your timecards for quick processing.
               {
                 "color": "#0e3f6c",
                 "fontFamily": "Avenir",
-                "fontSize": 20,
+                "fontSize": 39.23529411764706,
                 "fontWeight": "900",
               },
             ]
@@ -235,7 +235,7 @@ check and 19. (Links to Essium)
               {
                 "color": "#0e3f6c",
                 "fontFamily": "Avenir",
-                "fontSize": 18,
+                "fontSize": 35.311764705882354,
                 "fontWeight": "500",
               },
             ]
@@ -326,7 +326,7 @@ check and 19. (Links to Essium)
               {
                 "color": "#0e3f6c",
                 "fontFamily": "Avenir",
-                "fontSize": 18,
+                "fontSize": 35.311764705882354,
                 "fontWeight": "500",
               },
             ]

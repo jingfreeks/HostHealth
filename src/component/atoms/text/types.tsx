@@ -18,5 +18,6 @@ export type textmode =
 export type TextTypes = {
   TextMode?: textmode;
   nativeProps?: object;
+  numberOfLines?:number;
   children?: ReactNode;
 };

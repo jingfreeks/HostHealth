@@ -9,26 +9,28 @@ import {ContainerStyled,StateEmptyContainerStyled} from './styles';
 import {List} from './component';
 import {HomeEmptyCard} from '@/component';
 import {PcitiesEmptyIcon} from '@/assets';
-import {useCityHooks} from './hooks';
+import {useCompanyHooks} from './hooks';
 import {message} from '@/config/constant';
 
 
-const City = () => {
+const Company = () => {
   let content;
-  const {navigation, city, isLoading, isSuccess, error, isError} =
-  useCityHooks();
+  const {navigation, company, isLoading, isSuccess, error, isError} =
+  useCompanyHooks();
+
   const renderItem: ListRenderItem<any> = useCallback(
     ({item}: ListRenderItemInfo<any>) => {
-      return <List cityId={item} />;
+      return <List companyId={item} />;
     },
     [],
   );
+
   if (isLoading || isError) {
     let messages;
     if (error?.status === 403) {
       messages = message[100001];
     } else {
-      messages = message[100003];
+      messages = message[100008];
     }
     content = (
       <StateEmptyContainerStyled>
@@ -39,8 +41,8 @@ const City = () => {
     content = (
       <ContainerStyled>
         <FlatList
-          data={city.ids}
-          extraData={city.ids}
+          data={company.ids}
+          extraData={company.ids}
           renderItem={renderItem}
           keyExtractor={(item: any, index) => index.toString()}
         />
@@ -48,7 +50,7 @@ const City = () => {
           title="Create"
           placement="right"
           size="large"
-          onPress={() => navigation.navigate('Cityform')}
+          onPress={() => navigation.navigate('CompanyForm')}
         />
       </ContainerStyled>
     );
@@ -56,4 +58,4 @@ const City = () => {
   return content;
 };
 
-export default City;
+export default Company;
