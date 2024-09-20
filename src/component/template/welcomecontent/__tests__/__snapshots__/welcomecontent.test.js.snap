@@ -95,7 +95,7 @@ exports[`Welcome Button group Template Component Should work as expected to get 
               {
                 "color": "#0e3f6c",
                 "fontFamily": "Avenir",
-                "fontSize": 18,
+                "fontSize": 35.311764705882354,
                 "fontWeight": "900",
               },
             ]

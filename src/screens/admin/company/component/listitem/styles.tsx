@@ -3,7 +3,7 @@ import {verticalScale} from 'react-native-size-matters';
 
 export const ContainerStyled = styled.View`
   width: ${verticalScale(300)}px;
-  height: ${verticalScale(70)}px;
+  height: ${verticalScale(100)}px;
   padding: 10px;
   border-width: 1px;
   border-radius: 10px;
@@ -12,7 +12,6 @@ export const ContainerStyled = styled.View`
 `;
 
 export const InfoContainerStyled = styled.View`
-  padding: 5px;
   flex:1;
 `;
 
@@ -27,5 +26,5 @@ export const ImageContainerStyled = styled.View`
 export const ImageStyled = styled.Image`
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  flex: 1;
+  height:100%;
 `;

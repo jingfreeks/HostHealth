@@ -1,14 +1,15 @@
 import { RouteProp } from '@react-navigation/native';
 import type {AppNavigationProps} from '@/navigation/types';
-type StateFormScreenRouteProp = RouteProp<AppNavigationProps, 'Cityform'>;
+type CompanyFormScreenRouteProp = RouteProp<AppNavigationProps, 'CompanyForm'>;
 export type RoutesProps = {
-  route: StateFormScreenRouteProp
+  route:CompanyFormScreenRouteProp
 };
 
 export type StateFormProps = {
   name:string;
   address:string;
   city:string;
-  state:string;
+  cityId:string;
+  stateid:string;
   _id:string;
 };

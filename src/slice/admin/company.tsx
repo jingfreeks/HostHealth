@@ -32,7 +32,7 @@ export const companyApiSlice = apiSlice.injectEndpoints({
         method: 'POST',
         body: {...credentials},
       }),
-      invalidatesTags: ['Company'] as string[] & undefined,
+      invalidatesTags: ['Company','City'] as string[] & undefined,
     }),
     updateCompany: builder.mutation({
       query: credentials => ({
@@ -40,7 +40,7 @@ export const companyApiSlice = apiSlice.injectEndpoints({
         method: 'PATCH',
         body: {...credentials},
       }),
-      invalidatesTags: ['Company'] as string[] & never & undefined,
+      invalidatesTags: ['Company','City'] as string[] & never & undefined,
     }),
     deleteCompany: builder.mutation({
       query: credentials => ({
@@ -48,7 +48,7 @@ export const companyApiSlice = apiSlice.injectEndpoints({
         method: 'DELETE',
         body: {...credentials},
       }),
-      invalidatesTags: ['Company'] as string[] & undefined,
+      invalidatesTags: ['Company','City'] as string[] & undefined,
     }),
   }),
   overrideExisting: true,

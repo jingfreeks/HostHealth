@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import {verticalScale,scale} from 'react-native-size-matters';
 import {colors} from '@/utils/themes';
 
 const Text = styled.Text`
@@ -28,7 +29,7 @@ const Stext = styled(Text)`
 `;
 
 const Title = styled(Text)`
-  font-size: 18px;
+  font-size: ${verticalScale(18)}px;
   font-weight: 900;
 `;
 
@@ -43,7 +44,7 @@ const Pstitle = styled(Text)`
   font-weight: 500;
 `;
 const Htitle = styled(Title)`
-  font-size: 20px;
+  font-size: ${verticalScale(20)}px;
 `;
 
 const Htitlenormal = styled(Title)`

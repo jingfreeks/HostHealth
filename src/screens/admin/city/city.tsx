@@ -17,7 +17,6 @@ const City = () => {
   let content;
   const {navigation, city, isLoading, isSuccess, error, isError} =
   useCityHooks();
-
   const renderItem: ListRenderItem<any> = useCallback(
     ({item}: ListRenderItemInfo<any>) => {
       return <List cityId={item} />;

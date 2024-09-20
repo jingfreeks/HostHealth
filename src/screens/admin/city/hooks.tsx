@@ -37,6 +37,7 @@ export const useCityHooks = () => {
     navigation,
     city,
     isLoading,
+    cityLoading:isLoading,
     isSuccess,
     isError,
     error,

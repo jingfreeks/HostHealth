@@ -3,7 +3,7 @@ import type {AppNavigationProps, RootNavigationProps} from './types';
 import {setCredentials} from '@/slice/auth';
 import {useDispatch} from 'react-redux';
 import {compose, ThunkDispatch} from '@reduxjs/toolkit';
-import {Banks, City, State, Department,Shift} from '@/screens';
+import {Banks, City, State, Department, Shift, Company} from '@/screens';
 import {apiSlice} from '@/config/apiSlice';
 import {
   createDrawerNavigator,
@@ -26,7 +26,7 @@ export const DrawerNavigation = () => {
   };
   return (
     <Drawer.Navigator
-      initialRouteName="City"
+      initialRouteName="Company"
       drawerContent={props => {
         return (
           <DrawerContentScrollView {...props}>
@@ -35,6 +35,7 @@ export const DrawerNavigation = () => {
           </DrawerContentScrollView>
         );
       }}>
+      <Drawer.Screen name="Company" component={Company} />
       <Drawer.Screen name="City" component={City} />
       <Drawer.Screen name="State" component={State} />
       <Drawer.Screen name="Banks" component={Banks} />

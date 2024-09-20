@@ -2,9 +2,9 @@ import React from 'react';
 import {StackNavigationProp} from '@react-navigation/stack';
 import type {RootNavigationProps} from '@/navigation/types';
 import {useNavigation} from '@react-navigation/native';
-import {useGetCompanyQuery, useDeleteCompanyMutation} from '@/slice';
+import {useGetCompanyQuery, useDeleteCompanyMutation,useGetCityQuery} from '@/slice';
 
-export const useCityHooks = () => {
+export const useCompanyHooks = () => {
   const navigation = useNavigation<StackNavigationProp<RootNavigationProps>>();
 
   const {

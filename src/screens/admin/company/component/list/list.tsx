@@ -1,17 +1,17 @@
 import React from 'react';
-import {useGetCityQuery} from '@/slice/city';
+import {useGetCompanyQuery} from '@/slice';
 import {ListItem} from '../index';
 import {ListItemContainerStyled} from '../../styles';
-const List = (props: {cityId: string}) => {
-  const {cityId} = props;
-  const {city} = useGetCityQuery('getState', {
+const List = (props: {companyId: string}) => {
+  const {companyId} = props;
+  const {company} = useGetCompanyQuery('getCompany', {
     selectFromResult: ({data}: any) => ({
-      city: data?.entities[cityId],
+      company: data?.entities[companyId],
     }),
   });
   return (
     <ListItemContainerStyled>
-      <ListItem item={city} />
+      <ListItem item={company} />
     </ListItemContainerStyled>
   );
 };

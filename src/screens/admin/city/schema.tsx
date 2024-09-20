@@ -2,7 +2,7 @@ import * as yup from 'yup';
 import {message} from '@/config/constant'
 export const Schema = yup
   .object({
-    name: yup.string().required('City Name Should be required'),
-    state: yup.string().required('State Name Should be required')
+    name: yup.string().required(message[100009]),
+    state: yup.string().required(message[100012])
   })
   .required();

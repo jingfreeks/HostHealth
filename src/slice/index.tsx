@@ -13,3 +13,6 @@ export {
   useDeleteCompanyMutation,
 } from './admin';
 
+export {
+  useGetCityQuery,useAddCityMutation,useUpdateCityMutation,useDeleteCityMutation
+} from './city'

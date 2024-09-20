@@ -25,8 +25,8 @@ const ListItem = (props: {item: any}) => {
         />
       </ImageContainerStyled>
       <InfoContainerStyled>
-        <Text TextMode="Htitle">{item?.name}</Text>
-        <Text TextMode="Htitle">{item?.statename}</Text>
+        <Text numberOfLines={1} TextMode="Htitle">{item?.name}</Text>
+        <Text numberOfLines={1} TextMode="Htitle">{item?.statename}</Text>
         <Text>United State Of America</Text>
       </InfoContainerStyled>
       <ActionButtonContainerStyled>

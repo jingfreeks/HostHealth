@@ -9,18 +9,18 @@ import {ContainerStyled,StateEmptyContainerStyled} from './styles';
 import {List} from './component';
 import {HomeEmptyCard} from '@/component';
 import {PcitiesEmptyIcon} from '@/assets';
-import {useCityHooks} from './hooks';
+import {useCompanyHooks} from './hooks';
 import {message} from '@/config/constant';
 
 
 const Company = () => {
   let content;
   const {navigation, company, isLoading, isSuccess, error, isError} =
-  useCityHooks();
+  useCompanyHooks();
 
   const renderItem: ListRenderItem<any> = useCallback(
     ({item}: ListRenderItemInfo<any>) => {
-      return <List cityId={item} />;
+      return <List companyId={item} />;
     },
     [],
   );
@@ -50,7 +50,7 @@ const Company = () => {
           title="Create"
           placement="right"
           size="large"
-          onPress={() => navigation.navigate('Cityform')}
+          onPress={() => navigation.navigate('CompanyForm')}
         />
       </ContainerStyled>
     );

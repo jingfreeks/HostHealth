@@ -65,7 +65,7 @@ exports[`HomeCard Component Should work as expected to get snapshot 1`] = `
           {
             "color": "#0e3f6c",
             "fontFamily": "Avenir",
-            "fontSize": 20,
+            "fontSize": 39.23529411764706,
             "fontWeight": "900",
           },
         ]

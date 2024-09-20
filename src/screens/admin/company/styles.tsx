@@ -37,3 +37,8 @@ export const StateEmptyContainerStyled=styled.View`
   align-items:center;
   justify-content:center;
 `
+
+export const StateContainerStyled=styled.View`
+  margin-top:20px;
+  margin-bottom:20px;
+`
