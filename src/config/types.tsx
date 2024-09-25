@@ -61,6 +61,7 @@ export type AuthStateProps = {
   user: string;
   token: string;
   userId:string;
+  onBoarding:boolean;
   roles:string[];
 };
 export type State = {

@@ -16,3 +16,9 @@ export {
 export {
   useGetCityQuery,useAddCityMutation,useUpdateCityMutation,useDeleteCityMutation
 } from './city'
+
+export{
+  useGetProfileQuery,
+  useUpdateProfileMutation,
+  useUploadProfileMutation,
+} from './profile'

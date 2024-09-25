@@ -24,6 +24,7 @@ export const useOnBoardingHooks = () => {
       firstName: '',
       lastName: '',
       middleName: '',
+      profileImage:'',
     },
     resolver: yupResolver(ProfileSchema),
   });
@@ -44,6 +45,7 @@ export const useOnBoardingHooks = () => {
         firstName: data.firstName,
         lastName: data.lastName,
         middleName: data.middleName,
+        image:data.profileImage,
         userId: usrId,
       }).unwrap();
       if (userData) {

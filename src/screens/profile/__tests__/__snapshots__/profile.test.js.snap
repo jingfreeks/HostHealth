@@ -255,20 +255,7 @@ exports[`Profile Screen Should work as expected to get snapshot 1`] = `
                       }
                     }
                     testID="RNE__Image__placeholder"
-                  >
-                    <Text
-                      style={
-                        {
-                          "backgroundColor": "transparent",
-                          "color": "#ffffff",
-                          "fontSize": 65,
-                          "textAlign": "center",
-                        }
-                      }
-                    >
-                      LW
-                    </Text>
-                  </View>
+                  />
                 </View>
                 <View
                   style={
@@ -281,6 +268,64 @@ exports[`Profile Screen Should work as expected to get snapshot 1`] = `
                   testID="RNE__Image__children__container"
                 />
               </View>
+            </View>
+            <View
+              accessibilityState={
+                {
+                  "busy": undefined,
+                  "checked": undefined,
+                  "disabled": undefined,
+                  "expanded": undefined,
+                  "selected": undefined,
+                }
+              }
+              accessibilityValue={
+                {
+                  "max": undefined,
+                  "min": undefined,
+                  "now": undefined,
+                  "text": undefined,
+                }
+              }
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                {
+                  "alignItems": "flex-end",
+                  "justifyContent": "flex-end",
+                  "opacity": 1,
+                }
+              }
+            >
+              <Text
+                allowFontScaling={false}
+                selectable={false}
+                style={
+                  [
+                    {
+                      "color": "#C2D6DC",
+                      "fontSize": 25,
+                    },
+                    undefined,
+                    {
+                      "fontFamily": "Ionicons",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    {},
+                  ]
+                }
+              >
+                
+              </Text>
             </View>
           </View>
           <View

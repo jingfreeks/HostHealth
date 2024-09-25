@@ -1,11 +1,10 @@
-
-import React from 'react'
+import React, {useCallback, useState} from 'react';
 // import {Avatar} from 'react-native-elements';
-import {Avatar} from '@/component/molecules'
+import {Avatar} from '@/component/molecules';
 import {Text} from '@/component/atoms/text';
 import {useGetProfileQuery} from '@/slice/profile';
-import {setLogout,selectCurrentUserId} from '@/slice/auth';
-import {useDispatch,useSelector} from 'react-redux';
+import {setLogout, selectCurrentUserId} from '@/slice/auth';
+import {useDispatch, useSelector} from 'react-redux';
 import {ThunkDispatch} from '@reduxjs/toolkit';
 import {apiSlice} from '@/config/apiSlice';
 import {
@@ -17,25 +16,27 @@ import {
   ListButtonStyled,
   FooterStyled,
 } from './styles';
-import {testingProps} from '@/utils/testframework'
-
+import {testingProps} from '@/utils/testframework';
+import {launchImageLibrary} from 'react-native-image-picker';
 
 const ProfileScreen = () => {
   const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
-
-  const usrId=useSelector(selectCurrentUserId)
-
-  const {
-    data: profiles,
-  } = useGetProfileQuery<{
+  const usrId = useSelector(selectCurrentUserId);
+  const options:any = {
+    saveToPhotos: true,
+    mediaType: 'photo',
+    includeBase64: false,
+    // includeExtra,
+  };
+  const {data: profiles} = useGetProfileQuery<{
     refetch: () => void;
     data: any;
   }>({userId: usrId});
-  
+
   const handleLogout = async () => {
     try {
       await dispatch(setLogout());
-      await dispatch(apiSlice.util.resetApiState())
+      await dispatch(apiSlice.util.resetApiState());
     } catch (error) {
       switch (error.status) {
         case 401:
@@ -46,12 +47,16 @@ const ProfileScreen = () => {
       }
     }
   };
+  const handleViewImage = useCallback(async() => {
+    const result=await launchImageLibrary(options)
+    console.log('Result',result)
+  }, []);
   return (
     <ContainerStyled>
       <ScrollViewContainer>
         <ContainerStyled>
           <HeaderStyled>
-            <Avatar />
+            <Avatar onPress={handleViewImage} />
             <NameInfoStyled>
               <Text>{`${profiles?.firstName}`}</Text>
               <Text>{`${profiles?.lastName}`}</Text>
@@ -73,7 +78,9 @@ const ProfileScreen = () => {
         </ContainerStyled>
       </ScrollViewContainer>
       <FooterStyled>
-        <ListButtonStyled {...testingProps('ProfileLogoutButton')} onPress={() => handleLogout()}>
+        <ListButtonStyled
+          {...testingProps('ProfileLogoutButton')}
+          onPress={() => handleLogout()}>
           <Text TextMode="Title">Log-out</Text>
         </ListButtonStyled>
       </FooterStyled>
