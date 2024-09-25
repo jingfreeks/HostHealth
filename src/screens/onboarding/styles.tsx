@@ -21,6 +21,6 @@ export const NextButtonStyled = styled.TouchableOpacity`
   background-color: red;
   align-items: center;
   margin-left: 10px;
-  border-radius:5px;
+  border-radius: 5px;
 `;
 

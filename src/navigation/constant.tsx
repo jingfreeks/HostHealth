@@ -6,4 +6,5 @@ export const Navigation = {
   app: 'app',
   jobdetails:'JobsDetails',
   bottomtab:'BottomTab',
+  onboarding:"OnBoarding",
 };

@@ -2,20 +2,22 @@ import {createSlice} from '@reduxjs/toolkit';
 
 const authSlice = createSlice({
   name: 'auth',
-  initialState: {user: null, token: null,userId:null,roles:[]},
+  initialState: {user: null, token: null,userId:null,roles:[],onBoarding:false},
   reducers: {
     setCredentials: (state, action) => {
-      const {user, accessToken,userId,roles} = action.payload;
+      const {user, accessToken,userId,roles,onBoarding} = action.payload;
       state.user = user;
       state.token = accessToken;
-      state.userId = userId
-      state.roles=roles
+      state.userId = userId;
+      state.roles=roles;
+      state.onBoarding=onBoarding;
     },
     setLogout: (state) => {
       state.user = null;
       state.token = null;
       state.userId = null;
       state.roles=[]
+      state.onBoarding=false;
     },
   },
 });

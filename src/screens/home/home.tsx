@@ -42,29 +42,28 @@ const HomeScreen = () => {
     isError:boolean;
     error:any;
   }>(useMemo(()=>({userId: usrId}),[usrId,navigation]));
-  useEffect(()=>{
-    const unsubscribe = navigation.addListener('focus', () => {
-      // The screen is focused
-      // Call any action
-      profileRefetch()
-    });
+  // useEffect(()=>{
+  //   const unsubscribe = navigation.addListener('focus', () => {
+  //     // The screen is focused
+  //     // Call any action
+  //     profileRefetch()
+  //   });
 
-    // Return the function to unsubscribe from the event so it gets removed on unmount
-    return unsubscribe;
-  },[navigation,usrId])
-  useEffect(()=>{
-    if(!profileLoading && isError && error?.status===400 && !usrRoles.find((item:string)=>item==='Admin')){
-      navigation.navigate('OnBoardingProfile')
-    }else if(!profileLoading && isError && error?.status===403){
-       dispatch(setLogout());
-    }
-  },[profiles,navigation,error,isError,profileLoading])
+  //   // Return the function to unsubscribe from the event so it gets removed on unmount
+  //   return unsubscribe;
+  // },[navigation,usrId])
+  // useEffect(()=>{
+  //   if(!profileLoading && isError && error?.status===400 && !usrRoles.find((item:string)=>item==='Admin')){
+  //     navigation.navigate('OnBoardingProfile')
+  //   }else if(!profileLoading && isError && error?.status===403){
+  //      dispatch(setLogout());
+  //   }
+  // },[profiles,navigation,error,isError,profileLoading])
 
   const onRefresh=async()=>{
     await suggestedrefresh()
     await pcitiesFetch()
   }
-  console.log('test',isError,error,profileLoading,profiles)
 
   return (
     <ScrollViewContainer {...testingProps('HomeScreenOnRefreshTestId')} refreshControl={

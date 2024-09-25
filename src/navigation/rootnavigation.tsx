@@ -6,6 +6,7 @@ import {
 import {AuthNavigation} from '@/navigation/authnavigation';
 import {Appnavigation} from '@/navigation/appnavigation';
 import {DrawerNavigation} from '@/navigation/drawernavigation';
+import {OnBoardinNavigation} from '@/navigation/onboardingnavigation';
 import {Adminappnavigation} from '@/navigation/adminnavigation';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {StateForm, Cityform} from '@/screens';
@@ -23,6 +24,7 @@ const RootNavigationScreen = () => {
     AppNavigationProps & RootNavigationProps
   >();
   const token = useSelector((state: State) => state.auth.token);
+  const onBoarding = useSelector((state: State) => state.auth.onBoarding);
   const usrRoles = useSelector((state: State) => state.auth.roles);
 
   const getStatScreen = () => {
@@ -36,12 +38,29 @@ const RootNavigationScreen = () => {
       );
     } else if (
       token &&
-      usrRoles.find(item => item?.toLowerCase() === 'applicant' || 'Employee')
+      usrRoles.find(
+        item => item?.toLowerCase() === 'applicant' || 'Employee',
+      ) &&
+      onBoarding
     ) {
       return (
         <Stack.Screen
           component={Appnavigation}
           name={Navigation.app}
+          options={{headerShown: false}}
+        />
+      );
+    } else if (
+      token &&
+      usrRoles.find(
+        item => item?.toLowerCase() === 'applicant' || 'Employee',
+      ) &&
+      !onBoarding
+    ) {
+      return (
+        <Stack.Screen
+          component={OnBoardinNavigation}
+          name={Navigation.onboarding}
           options={{headerShown: false}}
         />
       );
