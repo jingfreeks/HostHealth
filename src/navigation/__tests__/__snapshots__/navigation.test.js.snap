@@ -1,3 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`shows profile screen when View Profile is pressed 1`] = `null`;
+exports[`Root Navigation screen testing on navigating to admin screen 1`] = `null`;
+
+exports[`Root Navigation screen testing on navigating to applicant screen with on boarding is false 1`] = `null`;
+
+exports[`Root Navigation screen testing on navigating to applicant screen with on boarding is true 1`] = `null`;
