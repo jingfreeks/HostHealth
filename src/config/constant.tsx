@@ -13,7 +13,7 @@ export const message={
     100012:'State should be required',
     100013:'Bank Name should be required',
     100014:'Bank Address shoud be required',
-    100015:''
+    100015:'No Banks matches your preferred locations'
 }
 
 export const TagTypes=['City', 'Jobs', 'MyJobs', 'JobDetails', 'Profile','States','Department','Shift','Company','Banks']

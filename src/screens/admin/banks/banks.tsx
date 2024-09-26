@@ -1,22 +1,20 @@
 import React, {useCallback} from 'react';
-import {
-  FlatList,
-  ListRenderItem,
-  ListRenderItemInfo,
-} from 'react-native';
+import {FlatList, ListRenderItem, ListRenderItemInfo} from 'react-native';
 import {FAB} from 'react-native-elements';
-import {ContainerStyled,StateEmptyContainerStyled} from './styles';
+import {ContainerStyled, StateEmptyContainerStyled} from './styles';
 import {List} from './component';
 import {HomeEmptyCard} from '@/component';
 import {PcitiesEmptyIcon} from '@/assets';
 import {useBankHooks} from './hooks';
 import {message} from '@/config/constant';
-
+import {testingProps} from '@/utils/testframework';
 
 const Banks = () => {
   let content;
   const {navigation, bank, isLoading, isSuccess, error, isError} =
-  useBankHooks();
+    useBankHooks();
+
+    console.log('bank',bank)
   const renderItem: ListRenderItem<any> = useCallback(
     ({item}: ListRenderItemInfo<any>) => {
       return <List bankId={item} />;
@@ -29,11 +27,18 @@ const Banks = () => {
     if (error?.status === 403) {
       messages = message[100001];
     } else {
-      messages = message[100007];
+      messages = message[100015];
     }
     content = (
       <StateEmptyContainerStyled>
         <HomeEmptyCard imgsource={PcitiesEmptyIcon} message={messages} />
+        <FAB
+          {...testingProps('BanksCreateButtonTestId')}
+          title="Create"
+          placement="right"
+          size="large"
+          onPress={() => navigation.navigate('BankForm')}
+        />
       </StateEmptyContainerStyled>
     );
   } else if (isSuccess) {
@@ -46,6 +51,7 @@ const Banks = () => {
           keyExtractor={(item: any, index) => index.toString()}
         />
         <FAB
+          {...testingProps('BanksCreateButtonTestId')}
           title="Create"
           placement="right"
           size="large"
