@@ -25,18 +25,24 @@ const ListItem = (props: {item: any}) => {
         />
       </ImageContainerStyled>
       <InfoContainerStyled>
-        <Text numberOfLines={1} TextMode="Htitle">{item?.name}</Text>
-        <Text numberOfLines={1} TextMode="Htitle">{item?.statename}</Text>
+        <Text numberOfLines={1} TextMode="Htitle">
+          {item?.name}
+        </Text>
+        <Text numberOfLines={1} TextMode="Htitle">
+          {item?.statename}
+        </Text>
         <Text>United State Of America</Text>
       </InfoContainerStyled>
       <ActionButtonContainerStyled>
         <Button1
+          testId={'CityEditFormTestId'}
           bcolor="transparent"
           onPress={() => navigation.navigate('Cityform', item)}
           border={0}>
           <FontAwesome name={'pencil'} size={25} />
         </Button1>
         <Button1
+          testId={'CityDeleteFormTestId'}
           bcolor="transparent"
           onPress={() => handleDeleteCity(item._id)}
           border={0}>

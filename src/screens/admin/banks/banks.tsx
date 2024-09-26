@@ -13,8 +13,7 @@ const Banks = () => {
   let content;
   const {navigation, bank, isLoading, isSuccess, error, isError} =
     useBankHooks();
-
-  console.log('bank', bank);
+    
   const renderItem: ListRenderItem<any> = useCallback(
     ({item}: ListRenderItemInfo<any>) => {
       return <List bankId={item} />;
