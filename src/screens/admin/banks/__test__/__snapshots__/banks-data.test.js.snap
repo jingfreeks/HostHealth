@@ -102,7 +102,9 @@ exports[`Banks admin with data screen Should work as expected to get snapshot 1`
                     },
                   ]
                 }
-              />
+              >
+                Bank of Philippine Island
+              </Text>
               <Text
                 style={
                   [
@@ -114,7 +116,9 @@ exports[`Banks admin with data screen Should work as expected to get snapshot 1`
                     },
                   ]
                 }
-              />
+              >
+                Metro Manila
+              </Text>
             </View>
             <View
               style={
@@ -126,7 +130,7 @@ exports[`Banks admin with data screen Should work as expected to get snapshot 1`
               }
             >
               <View
-                accessibilityLabel="AtomsButtonTestId"
+                accessibilityLabel="BankEditFormTestId"
                 accessibilityState={
                   {
                     "busy": undefined,
@@ -166,7 +170,7 @@ exports[`Banks admin with data screen Should work as expected to get snapshot 1`
                     "paddingTop": 15,
                   }
                 }
-                testID="AtomsButtonTestId"
+                testID="BankEditFormTestId"
               >
                 <Text
                   allowFontScaling={false}
@@ -191,7 +195,7 @@ exports[`Banks admin with data screen Should work as expected to get snapshot 1`
                 </Text>
               </View>
               <View
-                accessibilityLabel="AtomsButtonTestId"
+                accessibilityLabel="BankDeleteItemTestId"
                 accessibilityState={
                   {
                     "busy": undefined,
@@ -231,7 +235,7 @@ exports[`Banks admin with data screen Should work as expected to get snapshot 1`
                     "paddingTop": 15,
                   }
                 }
-                testID="AtomsButtonTestId"
+                testID="BankDeleteItemTestId"
               >
                 <Text
                   allowFontScaling={false}

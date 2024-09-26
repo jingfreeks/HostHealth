@@ -14,7 +14,7 @@ const Banks = () => {
   const {navigation, bank, isLoading, isSuccess, error, isError} =
     useBankHooks();
 
-    console.log('bank',bank)
+  console.log('bank', bank);
   const renderItem: ListRenderItem<any> = useCallback(
     ({item}: ListRenderItemInfo<any>) => {
       return <List bankId={item} />;
@@ -32,13 +32,15 @@ const Banks = () => {
     content = (
       <StateEmptyContainerStyled>
         <HomeEmptyCard imgsource={PcitiesEmptyIcon} message={messages} />
-        <FAB
-          {...testingProps('BanksCreateButtonTestId')}
-          title="Create"
-          placement="right"
-          size="large"
-          onPress={() => navigation.navigate('BankForm')}
-        />
+        {error?.status !== 403 && (
+          <FAB
+            {...testingProps('BanksCreateButtonTestId')}
+            title="Create"
+            placement="right"
+            size="large"
+            onPress={() => navigation.navigate('BankForm')}
+          />
+        )}
       </StateEmptyContainerStyled>
     );
   } else if (isSuccess) {
