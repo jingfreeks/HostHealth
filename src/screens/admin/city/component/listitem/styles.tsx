@@ -2,7 +2,6 @@ import styled from 'styled-components/native';
 import {verticalScale,scale} from 'react-native-size-matters';
 
 export const ContainerStyled = styled.View`
-  width: ${scale(300)}px;
   height: ${verticalScale(120)}px;
   border-width: 1px;
   border-radius: 10px;
