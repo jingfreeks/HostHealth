@@ -6,6 +6,7 @@ import {
   DepartmentForm,
   ShiftForm,
   CompanyForm,
+  BankForm,
 } from '@/screens';
 import {DrawerNavigation} from '@/navigation/drawernavigation';
 import type {AppNavigationProps, RootNavigationProps} from './types';
@@ -47,6 +48,11 @@ export const Adminappnavigation = () => {
         component={CompanyForm}
         name={'CompanyForm'}
         options={{headerShown: true, title: 'Company Form'}}
+      />
+      <Stack.Screen
+        component={BankForm}
+        name={'BankForm'}
+        options={{headerShown: true, title: 'Bank Form'}}
       />
     </Stack.Navigator>
   );

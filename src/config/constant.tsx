@@ -11,7 +11,9 @@ export const message={
     100010:'Company Name Should be required',
     100011:'Address Should be required',
     100012:'State should be required',
-    100013:'',
-    100014:'',
+    100013:'Bank Name should be required',
+    100014:'Bank Address shoud be required',
     100015:''
 }
+
+export const TagTypes=['City', 'Jobs', 'MyJobs', 'JobDetails', 'Profile','States','Department','Shift','Company','Banks']
