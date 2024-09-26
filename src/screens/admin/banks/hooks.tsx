@@ -1,4 +1,5 @@
 import React from 'react';
+import { Alert } from 'react-native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import type {RootNavigationProps} from '@/navigation/types';
 import {useNavigation} from '@react-navigation/native';
@@ -30,7 +31,7 @@ export const useBankHooks = () => {
       }).unwrap();
     
     } catch (error) {
-      alert(error?.data?.message);
+      Alert.alert(error?.data?.message);
     }
   };
   return {

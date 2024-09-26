@@ -7,12 +7,12 @@ import {
   InfoContainerStyled,
   ActionButtonContainerStyled,
 } from './styles';
-import type {bankListItem} from './types'
+import type {bankListItem} from './types';
+import {testingProps} from '@/utils/testframework';
 
 const ListItem = (props: {item: bankListItem}) => {
   const {item} = props;
-  const {handleDeleteBanks, deleteLoading,navigation} = useBankHooks();
-   console.log('iteems',item)
+  const {handleDeleteBanks, deleteLoading, navigation} = useBankHooks();
   return (
     <ContainerStyled>
       <InfoContainerStyled>
@@ -20,10 +20,18 @@ const ListItem = (props: {item: bankListItem}) => {
         <Text TextMode="Text">{item?.address}</Text>
       </InfoContainerStyled>
       <ActionButtonContainerStyled>
-        <Button1 bcolor="transparent" onPress={() => navigation.navigate('BankForm',item)} border={0}>
+        <Button1
+          testId={'BankEditFormTestId'}
+          bcolor="transparent"
+          onPress={() => navigation.navigate('BankForm', item)}
+          border={0}>
           <FontAwesome name={'pencil'} size={25} />
         </Button1>
-        <Button1 bcolor="transparent" onPress={() => handleDeleteBanks(item._id)} border={0}>
+        <Button1
+          testId={'BankDeleteItemTestId'}
+          bcolor="transparent"
+          onPress={() => handleDeleteBanks(item._id)}
+          border={0}>
           <FontAwesome name={'trash-o'} size={25} />
         </Button1>
       </ActionButtonContainerStyled>
