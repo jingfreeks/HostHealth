@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import React from 'react';
 import {Alert} from 'react-native';
 import {FormTextController} from '@/component/molecules/formtextcontroller';
@@ -14,29 +14,18 @@ import {
 import {Bbutton} from '@/component/molecules/bbutton';
 import {UseWelcomeHooks} from '@/screens/welcome/hooks';
 import {yupResolver} from '@hookform/resolvers/yup';
-import {StackNavigationProp} from '@react-navigation/stack';
-import type {RootNavigationProps} from '@/navigation/types';
-import {useNavigation} from '@react-navigation/native';
 import {Schema} from './schema';
-import {useDispatch, useSelector} from 'react-redux';
-import {setLogout, selectCurrentUserId} from '@/slice/auth';
-import {compose, ThunkDispatch} from '@reduxjs/toolkit';
+import {useDispatch} from 'react-redux';
+import { ThunkDispatch} from '@reduxjs/toolkit';
 import {setCredentials} from '@/slice/auth';
 import {testingProps} from '@/utils/testframework';
 import {useLoginMutation} from '@/slice/authApi';
-import {useGetProfileQuery} from '@/slice/profile';
+
 import * as yup from 'yup';
 const LoginFormScreen = () => {
   const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
-  const navigation = useNavigation<StackNavigationProp<RootNavigationProps>>();
   const {handleSignUp} = UseWelcomeHooks();
   const [login, {isLoading}] = useLoginMutation();
-
-  const usrId = useSelector(selectCurrentUserId);
-  // const {data: profiles} = useGetProfileQuery<{
-  //   refetch: () => void;
-  //   data: any;
-  // }>({userId: usrId});
 
   type FormData = yup.InferType<typeof Schema>;
   const formMethod = useForm<FormData>({
@@ -54,11 +43,7 @@ const LoginFormScreen = () => {
         password: data.password,
       }).unwrap();
       dispatch(setCredentials({...userData, user: data.username}));
-
-      // navigation.navigate('app');
-      // navigation.navigate('OnBoardingProfile');
     } catch (error) {
-      console.log('error',error)
       switch (error.status) {
         case 401:
           Alert.alert(error.data.message);
