@@ -11,6 +11,10 @@ export {
   useAddCompanyMutation,
   useUpdateCompanyMutation,
   useDeleteCompanyMutation,
+  useGetBanksQuery,
+  useAddBanksMutation,
+  useUpdateBanksMutation,
+  useDeleteBanksMutation,
 } from './admin';
 
 export {

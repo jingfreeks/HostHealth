@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {setCredentials, setLogout} from '@/slice/auth';
 import Config from 'react-native-config';
+import {TagTypes} from './constant'
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 
 const baseQuery = fetchBaseQuery({
@@ -42,5 +43,5 @@ export const apiSlice = createApi<any, any>({
   baseQuery: baseQueryWithAuth,
   reducerPath: 'api',
   endpoints: builder => ({}),
-  tagTypes: ['City', 'Jobs', 'MyJobs', 'JobDetails', 'Profile','States','Department','Shift','Company'] as string[]&undefined,
+  tagTypes: TagTypes as string[]&undefined,
 });

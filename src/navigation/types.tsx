@@ -1,3 +1,7 @@
+type BankForm={
+  name?: string; address?: string; _id: string
+}
+
 export type RootNavigationProps = {
   BottomTab: undefined;
   app: undefined;
@@ -18,6 +22,7 @@ export type RootNavigationProps = {
   DepartmentForm: undefined;
   ShiftForm: undefined;
   CompanyForm: undefined;
+  BankForm?: BankForm;
 };
 
 export type AppNavigationProps = {
@@ -65,6 +70,7 @@ export type AppNavigationProps = {
     cityId: string;
     _id: string;
   };
+  BankForm: BankForm;
   Home: undefined;
   Search: undefined;
   MyJob: undefined;

@@ -25,7 +25,6 @@ export const profileApiSlice = apiSlice.injectEndpoints({
     }),
     uploadProfile: builder.mutation({
       query: credentials => {
-        console.log('credentials',credentials.assets[0].type)
         const formData:any = new FormData()
         formData.append('avatar', {
           name: credentials.assets[0].fileName,
