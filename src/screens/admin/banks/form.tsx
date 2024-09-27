@@ -15,6 +15,7 @@ import {  useAddBanksMutation,
 import {Schema} from './schema';
 import * as yup from 'yup';
 import type {RoutesProps} from './types';
+import {testingProps} from '@/utils/testframework';
 
 const Form = (props: RoutesProps) => {
   const {navigation} = useBankHooks();
