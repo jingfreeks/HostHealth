@@ -20,6 +20,7 @@ const TextInput = (props: TextInputProps): ReactElement => {
     isError = false,
     errmessage = '',
     placeholder = '',
+    testId,
     ...rest
   } = props;
   const [isVisible, setIsVisible] = useState<boolean>(false);
@@ -30,6 +31,7 @@ const TextInput = (props: TextInputProps): ReactElement => {
       <Hcontainer>
         <TextInputStyled
           {...rest}
+          testID={testId}
           autoCapitalize="none"
           placeholder={placeholder}
           secureTextEntry={type === 'Text' ? isVisible : !isVisible}
@@ -49,7 +51,11 @@ const TextInput = (props: TextInputProps): ReactElement => {
         )}
       </Hcontainer>
       <LineTextStyled />
-      {isError && <Text TextMode="ErrorText">{errmessage}</Text>}
+      {isError && (
+        <Text {...testingProps('TestInputErrorText')} TextMode="ErrorText">
+          {errmessage}
+        </Text>
+      )}
     </Vcontainer>
   );
 };

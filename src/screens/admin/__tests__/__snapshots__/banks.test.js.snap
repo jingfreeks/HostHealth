@@ -1,5 +1,160 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Banks Form admin screen Should work as expected to get snapshot 1`] = `
+<View
+  style={
+    [
+      {
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+        "justifyContent": "center",
+        "marginLeft": 39.23529411764706,
+        "marginRight": 39.23529411764706,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      [
+        {
+          "alignItems": "center",
+          "marginBottom": 39.23529411764706,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#0e3f6c",
+            "fontFamily": "Avenir",
+            "fontSize": 35.311764705882354,
+            "fontWeight": "500",
+          },
+          {
+            "fontSize": 30,
+            "fontWeight": "900",
+          },
+        ]
+      }
+    >
+      Bank Form Information
+    </Text>
+  </View>
+  <View
+    style={
+      [
+        {
+          "marginBottom": 9.808823529411764,
+          "marginTop": 39.23529411764706,
+        },
+      ]
+    }
+  />
+  <View
+    style={
+      [
+        {
+          "marginBottom": 9.808823529411764,
+          "marginTop": 39.23529411764706,
+        },
+      ]
+    }
+  />
+  <View
+    style={
+      [
+        {
+          "marginLeft": 5,
+          "marginRight": 5,
+          "paddingBottom": 5,
+          "paddingLeft": 5,
+          "paddingRight": 5,
+          "paddingTop": 5,
+        },
+      ]
+    }
+  >
+    <View
+      border={10}
+      borderc="#99E1E1"
+      borderw={2}
+      style={
+        [
+          {
+            "borderColor": "#99E1E1",
+            "borderRadius": 10,
+            "borderWidth": 2,
+          },
+        ]
+      }
+    >
+      <View
+        accessibilityLabel="AtomsButtonTestId"
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          {
+            "alignItems": "center",
+            "backgroundColor": "#d6f3f3",
+            "borderRadius": 10,
+            "opacity": 1,
+            "paddingBottom": 15,
+            "paddingLeft": 15,
+            "paddingRight": 15,
+            "paddingTop": 15,
+          }
+        }
+        testID="AtomsButtonTestId"
+      >
+        <Text
+          style={
+            [
+              {
+                "color": "#03606A",
+                "fontFamily": "Avenir",
+                "fontSize": 15,
+                "fontWeight": "500",
+              },
+            ]
+          }
+        >
+          Save
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
 exports[`Banks admin screen Should work as expected to get snapshot 1`] = `
 <View
   style={
