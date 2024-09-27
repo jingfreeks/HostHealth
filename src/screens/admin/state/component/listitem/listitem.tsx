@@ -11,8 +11,8 @@ import {
 
 const ListItem = (props: {item: any}) => {
   const {item} = props;
-  const {handleDeleteState, deleteLoading,navigation} = useStateHooks();
-  
+  const {handleDeleteState, deleteLoading, navigation} = useStateHooks();
+
   return (
     <ContainerStyled>
       <InfoContainerStyled>
@@ -20,10 +20,18 @@ const ListItem = (props: {item: any}) => {
         <Text>United State Of America</Text>
       </InfoContainerStyled>
       <ActionButtonContainerStyled>
-        <Button1 bcolor="transparent" onPress={() => navigation.navigate('StateForm',item)} border={0}>
+        <Button1
+          testId={'StateEditFormTestId'}
+          bcolor="transparent"
+          onPress={() => navigation.navigate('StateForm', item)}
+          border={0}>
           <FontAwesome name={'pencil'} size={25} />
         </Button1>
-        <Button1 bcolor="transparent" onPress={() => handleDeleteState(item._id)} border={0}>
+        <Button1
+          testId={'StateDeleteFormTestId'}
+          bcolor="transparent"
+          onPress={() => handleDeleteState(item._id)}
+          border={0}>
           <FontAwesome name={'trash-o'} size={25} />
         </Button1>
       </ActionButtonContainerStyled>

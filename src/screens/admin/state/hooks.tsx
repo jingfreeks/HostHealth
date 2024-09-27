@@ -1,8 +1,9 @@
 import React from 'react';
+import {Alert} from 'react-native'
 import {StackNavigationProp} from '@react-navigation/stack';
 import type {RootNavigationProps} from '@/navigation/types';
 import {useNavigation} from '@react-navigation/native';
-import {useGetStateQuery, useDeleteStatesMutation} from '@/slice/state';
+import {useGetStateQuery, useDeleteStatesMutation} from '@/slice';
 
 export const useStateHooks = () => {
   const navigation = useNavigation<StackNavigationProp<RootNavigationProps>>();
@@ -30,7 +31,7 @@ export const useStateHooks = () => {
       }).unwrap();
     
     } catch (error) {
-      alert(error?.data?.message);
+      Alert.alert(error?.data?.message);
     }
   };
   return {

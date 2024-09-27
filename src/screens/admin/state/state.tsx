@@ -1,16 +1,13 @@
 import React, {useCallback} from 'react';
-import {
-  FlatList,
-  ListRenderItem,
-  ListRenderItemInfo,
-} from 'react-native';
+import {FlatList, ListRenderItem, ListRenderItemInfo} from 'react-native';
 import {FAB} from 'react-native-elements';
-import {ContainerStyled,StateEmptyContainerStyled} from './styles';
+import {ContainerStyled, StateEmptyContainerStyled} from './styles';
 import {List} from './component';
 import {HomeEmptyCard} from '@/component';
 import {PcitiesEmptyIcon} from '@/assets';
-import {message} from '@/config/constant'
+import {message} from '@/config/constant';
 import {useStateHooks} from './hooks';
+import {testingProps} from '@/utils/testframework';
 
 const State = () => {
   let content;
@@ -33,6 +30,15 @@ const State = () => {
     content = (
       <StateEmptyContainerStyled>
         <HomeEmptyCard imgsource={PcitiesEmptyIcon} message={messages} />
+        {error?.status !== 403 && (
+          <FAB
+            {...testingProps('StateCreateButtonTestId')}
+            title="Create"
+            placement="right"
+            size="large"
+            onPress={() => navigation.navigate('StateForm')}
+          />
+        )}
       </StateEmptyContainerStyled>
     );
   } else if (isSuccess) {
@@ -45,6 +51,7 @@ const State = () => {
           keyExtractor={(item: any, index) => index.toString()}
         />
         <FAB
+          {...testingProps('StateCreateButtonTestId')}
           title="Create"
           placement="right"
           size="large"

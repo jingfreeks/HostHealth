@@ -1,5 +1,5 @@
 import React from 'react';
-import {useGetStateQuery} from '@/slice/state';
+import {useGetStateQuery} from '@/slice';
 import {ListItem} from '../index';
 import {ListItemContainerStyled} from '../../styles';
 const List = (props: {stateId: string}) => {
