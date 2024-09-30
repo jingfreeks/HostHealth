@@ -1,0 +1,179 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`State admin Error screen Should work as expected to get snapshot 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": "center",
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+        "justifyContent": "center",
+      },
+    ]
+  }
+>
+  <RCTSafeAreaView
+    style={
+      [
+        {},
+      ]
+    }
+  >
+    <View
+      alignType="center"
+      style={
+        [
+          {
+            "alignItems": "center",
+            "alignSelf": "center",
+            "flexDirection": "column",
+          },
+        ]
+      }
+    >
+      <Image
+        resizeMode="contain"
+        size={150}
+        source={
+          {
+            "testUri": "../../../src/assets/pcitiesempty.png",
+          }
+        }
+        style={
+          [
+            {
+              "height": 294.2647058823529,
+              "width": 294.2647058823529,
+            },
+          ]
+        }
+      />
+      <Text
+        style={
+          [
+            {
+              "color": "#000000",
+              "fontFamily": "Avenir",
+              "fontSize": 16,
+              "fontWeight": "400",
+            },
+          ]
+        }
+      >
+        No state matches your preferred locations
+      </Text>
+    </View>
+  </RCTSafeAreaView>
+  <View
+    collapsable={false}
+    style={
+      {
+        "alignItems": "center",
+        "borderRadius": 28,
+        "bottom": 0,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "margin": 16,
+        "opacity": 1,
+        "position": "absolute",
+        "right": 0,
+        "transform": [
+          {
+            "scale": 1,
+          },
+        ],
+      }
+    }
+  >
+    <View
+      style={
+        [
+          {
+            "borderRadius": 3,
+            "overflow": "hidden",
+          },
+          {
+            "borderRadius": 3,
+          },
+          {
+            "borderRadius": 28,
+            "elevation": 4,
+          },
+          false,
+        ]
+      }
+    >
+      <View
+        accessibilityLabel="StateCreateButtonTestId"
+        accessibilityRole="button"
+        accessibilityState={
+          {
+            "busy": false,
+            "checked": undefined,
+            "disabled": false,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          {
+            "opacity": 1,
+          }
+        }
+        testID="StateCreateButtonTestId"
+      >
+        <View
+          style={
+            {
+              "alignItems": "center",
+              "backgroundColor": "#ca71eb",
+              "borderColor": "#2089dc",
+              "borderRadius": 3,
+              "borderWidth": 0,
+              "flexDirection": "row",
+              "height": 48,
+              "justifyContent": "center",
+              "padding": 8,
+              "paddingHorizontal": 16,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "#ffffff",
+                "fontSize": 18,
+                "marginHorizontal": 8,
+                "paddingVertical": 1,
+                "textAlign": "center",
+              }
+            }
+          >
+            Create
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;

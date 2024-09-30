@@ -68,6 +68,7 @@ describe('Banks admin screen', () => {
   });
 });
 
+
 describe('Banks Form admin screen', () => {
   it('Should work as expected to get snapshot', () => {
     const all = renderWithProviders(<BankForm />);

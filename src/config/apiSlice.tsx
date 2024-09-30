@@ -23,7 +23,7 @@ const baseQueryWithAuth = async (
   extraOptions: string,
 ) => {
   let result: any = await baseQuery(args, api, extraOptions);
-  if (result?.error?.originalStatus === 403) {
+  if (result?.error?.status === 403) {
     const refereshResult = await baseQuery('/refresh', api, extraOptions);
 
     if (refereshResult?.data) {

@@ -3,15 +3,12 @@
 import React from 'react'
 import { fireEvent } from '@testing-library/react-native';
 import {renderWithProviders} from '@/utils/testframeworknew';
-import {Banks} from '../index';
-import fetchMock from 'jest-fetch-mock';
+import {State} from '../index';
 
-fetchMock.enableMocks();
-
-const deleteBanks=()=>jest.fn()
+const deleteState=()=>jest.fn()
 jest.mock('@/slice',()=>{
   return{
-    useGetBanksQuery:()=>({
+    useGetStateQuery:()=>({
       isLoading:false,
       isSuccess:false,
       isError:true,
@@ -20,13 +17,12 @@ jest.mock('@/slice',()=>{
       },
       data:[]
     }),
-    useDeleteBanksMutation:()=>[deleteBanks,{isLoading:false,isError:false}],
+    useDeleteStatesMutation:()=>[deleteState,{isLoading:false,isError:false}],
   }
 })
-describe('Banks admin Error screen', () => {
+describe('State admin Error screen', () => {
   it('Should work as expected to get snapshot', () => {
-    const all = renderWithProviders(<Banks />);
+    const all = renderWithProviders(<State />);
     expect(all.toJSON()).toMatchSnapshot();
   });
-
 });
