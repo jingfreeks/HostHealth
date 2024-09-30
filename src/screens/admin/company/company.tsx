@@ -11,7 +11,7 @@ import {HomeEmptyCard} from '@/component';
 import {PcitiesEmptyIcon} from '@/assets';
 import {useCompanyHooks} from './hooks';
 import {message} from '@/config/constant';
-
+import {testingProps} from '@/utils/testframework';
 
 const Company = () => {
   let content;
@@ -47,6 +47,7 @@ const Company = () => {
           keyExtractor={(item: any, index) => index.toString()}
         />
         <FAB
+          {...testingProps('CompanyCreateButtonTestId')}
           title="Create"
           placement="right"
           size="large"

@@ -17,18 +17,28 @@ const ListItem = (props: {item: any}) => {
   return (
     <ContainerStyled>
       <InfoContainerStyled>
-        <Text numberOfLines={1} TextMode="Htitle">{item?.name}</Text>
-        <Text numberOfLines={1} TextMode="Text">{item?.address}</Text>
-        <Text numberOfLines={1} TextMode="Htitle">{item?.state}</Text>
+        <Text numberOfLines={1} TextMode="Htitle">
+          {item?.name}
+        </Text>
+        <Text numberOfLines={1} TextMode="Text">
+          {item?.address}
+        </Text>
+        <Text numberOfLines={1} TextMode="Htitle">
+          {item?.state}
+        </Text>
       </InfoContainerStyled>
       <ActionButtonContainerStyled>
         <Button1
+          testId={'CompanyEditFormTestId'}
           bcolor="transparent"
-          onPress={() => navigation.navigate('CompanyForm', {...item,cityId:item.city})}
+          onPress={() =>
+            navigation.navigate('CompanyForm', {...item, cityId: item.city})
+          }
           border={0}>
           <FontAwesome name={'pencil'} size={25} />
         </Button1>
         <Button1
+          testId={'CompanyDeleteFormTestId'}
           bcolor="transparent"
           onPress={() => handleDeleteCompany(item._id)}
           border={0}>
