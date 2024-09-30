@@ -1,5 +1,6 @@
 import React from 'react';
 import {StackNavigationProp} from '@react-navigation/stack';
+import {Alert} from 'react-native'
 import type {RootNavigationProps} from '@/navigation/types';
 import {useNavigation} from '@react-navigation/native';
 import {useGetCompanyQuery, useDeleteCompanyMutation,useGetCityQuery} from '@/slice';
@@ -30,7 +31,7 @@ export const useCompanyHooks = () => {
       }).unwrap();
     
     } catch (error) {
-      alert(error?.data?.message);
+      Alert.alert(error?.data?.message);
     }
   };
   return {
