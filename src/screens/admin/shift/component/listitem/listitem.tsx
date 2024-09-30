@@ -18,10 +18,10 @@ const ListItem = (props: {item: any}) => {
         <Text TextMode="Htitle">{item?.title}</Text>
       </InfoContainerStyled>
       <ActionButtonContainerStyled>
-        <Button1 bcolor="transparent" onPress={() => navigation.navigate('ShiftForm',item)} border={0}>
+        <Button1   testId={'ShiftEditFormTestId'} bcolor="transparent" onPress={() => navigation.navigate('ShiftForm',item)} border={0}>
           <FontAwesome name={'pencil'} size={25} />
         </Button1>
-        <Button1 bcolor="transparent" onPress={() => handleDeleteDept(item._id)} border={0}>
+        <Button1   testId={'ShiftDeleteItemTestId'} bcolor="transparent" onPress={() => handleDeleteDept(item._id)} border={0}>
           <FontAwesome name={'trash-o'} size={25} />
         </Button1>
       </ActionButtonContainerStyled>

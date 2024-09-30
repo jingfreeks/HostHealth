@@ -1,23 +1,19 @@
 import React, {useCallback} from 'react';
-import {
-  FlatList,
-  ListRenderItem,
-  ListRenderItemInfo,
-} from 'react-native';
+import {FlatList, ListRenderItem, ListRenderItemInfo} from 'react-native';
 import {FAB} from 'react-native-elements';
-import {ContainerStyled,StateEmptyContainerStyled} from './styles';
+import {ContainerStyled, StateEmptyContainerStyled} from './styles';
 import {List} from './component';
 import {HomeEmptyCard} from '@/component';
 import {PcitiesEmptyIcon} from '@/assets';
 import {useShiftHooks} from './hooks';
 import {message} from '@/config/constant';
-
+import {testingProps} from '@/utils/testframework';
 
 const Shift = () => {
   let content;
   const {navigation, shift, isLoading, isSuccess, error, isError} =
-  useShiftHooks();
-  console.log('shift',shift)
+    useShiftHooks();
+  console.log('shift', shift);
   const renderItem: ListRenderItem<any> = useCallback(
     ({item}: ListRenderItemInfo<any>) => {
       return <List shiftId={item} />;
@@ -47,6 +43,7 @@ const Shift = () => {
           keyExtractor={(item: any, index) => index.toString()}
         />
         <FAB
+          {...testingProps('ShiftCreateButtonTestId')}
           title="Create"
           placement="right"
           size="large"

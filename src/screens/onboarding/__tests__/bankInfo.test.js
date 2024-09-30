@@ -10,4 +10,5 @@ describe('On boarding bankInfo Screen', () => {
       expect(all.toJSON()).toMatchSnapshot();
     });
   });
+
 });
