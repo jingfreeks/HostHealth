@@ -1,0 +1,364 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Department admin with data screen Should work as expected to get snapshot 1`] = `
+<RCTSafeAreaView
+  style={
+    [
+      {
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+        "marginBottom": 10,
+      },
+    ]
+  }
+>
+  <RCTScrollView
+    data={
+      [
+        "66f54f826d56c57bb6ccf641",
+      ]
+    }
+    extraData={
+      [
+        "66f54f826d56c57bb6ccf641",
+      ]
+    }
+    getItem={[Function]}
+    getItemCount={[Function]}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={0.0001}
+    stickyHeaderIndices={[]}
+    viewabilityConfigCallbackPairs={[]}
+  >
+    <View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "paddingBottom": 10,
+                "paddingLeft": 10,
+                "paddingRight": 10,
+                "paddingTop": 10,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              [
+                {
+                  "alignItems": "center",
+                  "borderRadius": 10,
+                  "borderWidth": 1,
+                  "flexDirection": "row",
+                  "height": 196.17647058823528,
+                  "paddingBottom": 10,
+                  "paddingLeft": 10,
+                  "paddingRight": 10,
+                  "paddingTop": 10,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "flexBasis": 0,
+                    "flexGrow": 1,
+                    "flexShrink": 1,
+                    "paddingBottom": 5,
+                    "paddingLeft": 5,
+                    "paddingRight": 5,
+                    "paddingTop": 5,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#0e3f6c",
+                      "fontFamily": "Avenir",
+                      "fontSize": 39.23529411764706,
+                      "fontWeight": "900",
+                    },
+                  ]
+                }
+              >
+                Test Department
+              </Text>
+            </View>
+            <View
+              style={
+                [
+                  {
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                accessibilityLabel="DepartmentEditFormTestId"
+                accessibilityState={
+                  {
+                    "busy": undefined,
+                    "checked": undefined,
+                    "disabled": undefined,
+                    "expanded": undefined,
+                    "selected": undefined,
+                  }
+                }
+                accessibilityValue={
+                  {
+                    "max": undefined,
+                    "min": undefined,
+                    "now": undefined,
+                    "text": undefined,
+                  }
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  {
+                    "alignItems": "center",
+                    "backgroundColor": "transparent",
+                    "borderRadius": 0,
+                    "opacity": 1,
+                    "paddingBottom": 15,
+                    "paddingLeft": 15,
+                    "paddingRight": 15,
+                    "paddingTop": 15,
+                  }
+                }
+                testID="DepartmentEditFormTestId"
+              >
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    [
+                      {
+                        "color": undefined,
+                        "fontSize": 25,
+                      },
+                      undefined,
+                      {
+                        "fontFamily": "FontAwesome",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      {},
+                    ]
+                  }
+                >
+                  
+                </Text>
+              </View>
+              <View
+                accessibilityLabel="DepartmentDeleteItemTestId"
+                accessibilityState={
+                  {
+                    "busy": undefined,
+                    "checked": undefined,
+                    "disabled": undefined,
+                    "expanded": undefined,
+                    "selected": undefined,
+                  }
+                }
+                accessibilityValue={
+                  {
+                    "max": undefined,
+                    "min": undefined,
+                    "now": undefined,
+                    "text": undefined,
+                  }
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  {
+                    "alignItems": "center",
+                    "backgroundColor": "transparent",
+                    "borderRadius": 0,
+                    "opacity": 1,
+                    "paddingBottom": 15,
+                    "paddingLeft": 15,
+                    "paddingRight": 15,
+                    "paddingTop": 15,
+                  }
+                }
+                testID="DepartmentDeleteItemTestId"
+              >
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    [
+                      {
+                        "color": undefined,
+                        "fontSize": 25,
+                      },
+                      undefined,
+                      {
+                        "fontFamily": "FontAwesome",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      {},
+                    ]
+                  }
+                >
+                  
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+  <View
+    collapsable={false}
+    style={
+      {
+        "alignItems": "center",
+        "borderRadius": 28,
+        "bottom": 0,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "margin": 16,
+        "opacity": 1,
+        "position": "absolute",
+        "right": 0,
+        "transform": [
+          {
+            "scale": 1,
+          },
+        ],
+      }
+    }
+  >
+    <View
+      style={
+        [
+          {
+            "borderRadius": 3,
+            "overflow": "hidden",
+          },
+          {
+            "borderRadius": 3,
+          },
+          {
+            "borderRadius": 28,
+            "elevation": 4,
+          },
+          false,
+        ]
+      }
+    >
+      <View
+        accessibilityLabel="DepartmentCreateButtonTestId"
+        accessibilityRole="button"
+        accessibilityState={
+          {
+            "busy": false,
+            "checked": undefined,
+            "disabled": false,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          {
+            "opacity": 1,
+          }
+        }
+        testID="DepartmentCreateButtonTestId"
+      >
+        <View
+          style={
+            {
+              "alignItems": "center",
+              "backgroundColor": "#ca71eb",
+              "borderColor": "#2089dc",
+              "borderRadius": 3,
+              "borderWidth": 0,
+              "flexDirection": "row",
+              "height": 48,
+              "justifyContent": "center",
+              "padding": 8,
+              "paddingHorizontal": 16,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "#ffffff",
+                "fontSize": 18,
+                "marginHorizontal": 8,
+                "paddingVertical": 1,
+                "textAlign": "center",
+              }
+            }
+          >
+            Create
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTSafeAreaView>
+`;

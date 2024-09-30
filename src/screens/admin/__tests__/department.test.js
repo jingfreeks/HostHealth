@@ -1,6 +1,6 @@
 import React from 'react'
 import {renderWithProviders} from '@/utils/testframeworknew';
-import {Department} from '../department';
+import {Department,DepartmentForm} from '../department';
 import fetchMock from 'jest-fetch-mock';
 
 fetchMock.enableMocks();
@@ -19,6 +19,11 @@ describe('Department admin screen', () => {
   );
   it('Should work as expected to get snapshot', () => {
     const all = renderWithProviders(<Department />);
+    expect(all.toJSON()).toMatchSnapshot();
+  });
+
+  it('Should work as expected to get snapshot', () => {
+    const all = renderWithProviders(<DepartmentForm />);
     expect(all.toJSON()).toMatchSnapshot();
   });
 });

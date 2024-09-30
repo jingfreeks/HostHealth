@@ -1,22 +1,18 @@
 import React, {useCallback} from 'react';
-import {
-  FlatList,
-  ListRenderItem,
-  ListRenderItemInfo,
-} from 'react-native';
+import {FlatList, ListRenderItem, ListRenderItemInfo} from 'react-native';
 import {FAB} from 'react-native-elements';
-import {ContainerStyled,StateEmptyContainerStyled} from './styles';
+import {ContainerStyled, StateEmptyContainerStyled} from './styles';
 import {List} from './component';
 import {HomeEmptyCard} from '@/component';
 import {PcitiesEmptyIcon} from '@/assets';
 import {useDepartmentHooks} from './hooks';
+import {testingProps} from '@/utils/testframework';
 import {message} from '@/config/constant';
-
 
 const Department = () => {
   let content;
   const {navigation, dept, isLoading, isSuccess, error, isError} =
-  useDepartmentHooks();
+    useDepartmentHooks();
   const renderItem: ListRenderItem<any> = useCallback(
     ({item}: ListRenderItemInfo<any>) => {
       return <List deptId={item} />;
@@ -46,6 +42,7 @@ const Department = () => {
           keyExtractor={(item: any, index) => index.toString()}
         />
         <FAB
+          {...testingProps('DepartmentCreateButtonTestId')}
           title="Create"
           placement="right"
           size="large"
