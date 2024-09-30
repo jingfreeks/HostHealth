@@ -1,15 +1,17 @@
 import React from 'react';
+import {View} from 'react-native';
 import {ContainerStyled, TextInputContainerStyled} from '../styles';
 import {Prevnextfooter} from '@/component/template';
 import {FormProvider} from 'react-hook-form';
 import {FormTextController} from '@/component/molecules';
 import {useOnBoardingHooks} from '../hooks';
+import {testingProps} from '@/utils/testframework';
 
 const BankInfoScreens = () => {
-  const {navigation,formBankInfo} = useOnBoardingHooks();
-  const handleBankInfoNext=()=>{
-    navigation.navigate('Home')
-  }
+  const {navigation, formBankInfo} = useOnBoardingHooks();
+  const handleBankInfoNext = () => {
+    navigation.navigate('Home');
+  };
   return (
     <ContainerStyled>
       <FormProvider {...formBankInfo}>
@@ -43,12 +45,12 @@ const BankInfoScreens = () => {
             }}
           />
         </TextInputContainerStyled>
-        <Prevnextfooter
-          nextOnPress={formBankInfo.handleSubmit(handleBankInfoNext)}
-          prevOnPress={()=>navigation.goBack()}
-          isPrevView
-          loadernext={false}
-        />
+          <Prevnextfooter
+            nextOnPress={formBankInfo.handleSubmit(handleBankInfoNext)}
+            prevOnPress={() => navigation.goBack()}
+            isPrevView
+            loadernext={false}
+          />
       </FormProvider>
     </ContainerStyled>
   );

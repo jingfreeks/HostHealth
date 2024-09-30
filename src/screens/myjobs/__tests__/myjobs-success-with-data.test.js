@@ -26,7 +26,13 @@ jest.mock('@/slice/myjobs',()=>({
       isSuccess:true,
       refetch:jest.fn(),
       isLoading:false,
-      data:{ids:['1233323333','23444232323']}
+      data:{ids:['1233323333','23444232323']},
+      myjobs: {
+        __v: 0,
+        _id: '1233323333',
+        address: 'Metro Manila',
+        name: 'Bank of Philippine Island',
+      }
     }
   }
 }))

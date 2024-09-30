@@ -1,24 +1,11 @@
 import React from 'react';
-import {render} from '@testing-library/react-native';
-import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock';
 import {renderWithProviders} from '@/utils/testframeworknew';
 import {waitFor} from '@testing-library/react-native';
 import Myjobs from '../myjobs';
 
-jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
-jest.mock('@supabase/supabase-js');
-jest.useFakeTimers();
-jest.mock('@react-navigation/native', () => {
-  return {
-    ...jest.requireActual('@react-navigation/native'),
-    useNavigation: () => ({
-      // eslint-disable-next-line @typescript-eslint/no-empty-function
-      navigate: () => {},
-    }),
-    useIsFocused: () => true,
-    useDispatch: () => ({dispatch: jest.fn()}),
-  };
-});
+import fetchMock from 'jest-fetch-mock';
+
+fetchMock.enableMocks();
 jest.mock('@/slice/myjobs',()=>({
   useGetMyJobsQuery:()=>{
     return{
@@ -30,8 +17,15 @@ jest.mock('@/slice/myjobs',()=>({
   }
 }))
 describe('My Jobs Screen', () => {
-
-  
+  fetch.mockResponse(
+    JSON.stringify([
+      {
+        __v: 0,
+        _id: '655f656dbed03fb0a5baddf0',
+        title: 'Morning',
+      },
+    ]),
+  );
   it('Should work as expected to get snapshot', () => {
 
     const all = renderWithProviders(<Myjobs />);
