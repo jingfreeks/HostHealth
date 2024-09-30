@@ -1,8 +1,10 @@
-import React from 'react'
-import { fireEvent } from '@testing-library/react-native';
+import React from 'react';
+import {fireEvent} from '@testing-library/react-native';
 import {renderWithProviders} from '@/utils/testframeworknew';
-import {Banks,BankForm} from '../banks';
+import {Banks, BankForm} from '../banks';
+import fetchMock from 'jest-fetch-mock';
 
+fetchMock.enableMocks();
 
 jest.mock('react-hook-form', () => ({
   ...jest.requireActual('react-hook-form'),
@@ -26,8 +28,8 @@ jest.mock('react-hook-form', () => ({
         state: jest.fn(),
       },
       _getWatch: jest.fn(),
-      _formValues: ['test','test'],
-      _defaultValues: ['name','address'],
+      _formValues: ['test', 'test'],
+      _defaultValues: ['name', 'address'],
     },
     getValues: () => {
       return [];
@@ -42,6 +44,16 @@ jest.mock('react-hook-form', () => ({
   }),
 }));
 describe('Banks admin screen', () => {
+  fetch.mockResponse(
+    JSON.stringify([
+      {
+        __v: 0,
+        _id: '66f54f826d56c57bb6ccf641',
+        address: 'Metro Manila',
+        name: 'Bank of Philippine Island',
+      },
+    ]),
+  );
   it('Should work as expected to get snapshot', () => {
     const all = renderWithProviders(<Banks />);
     expect(all.toJSON()).toMatchSnapshot();
@@ -49,8 +61,9 @@ describe('Banks admin screen', () => {
 
   it('Should to trigger Create Button', () => {
     const all = renderWithProviders(<Banks />);
-    const el=all.getByTestId('BanksCreateButtonTestId')
-    fireEvent(el,'onPress')
+    const el = all.getByTestId('BanksCreateButtonTestId');
+    // const el1 = all.getByTestId('BankEditFormTestId');
+    fireEvent(el, 'onPress');
     expect(all.toJSON()).toBeTruthy();
   });
 });
