@@ -74,4 +74,15 @@ describe('Banks Form admin screen', () => {
     const all = renderWithProviders(<BankForm />);
     expect(all.toJSON()).toMatchSnapshot();
   });
+
+  it('Should work to trigger submitbutton', () => {
+
+    fetch.mockResponseOnce(
+      JSON.stringify('saved'),
+    );
+    const all = renderWithProviders(<BankForm />);
+    const el = all.getByTestId('bankFormButtonSubmitTestId');
+    fireEvent(el, 'onPress');
+    expect(all.toJSON()).toBeTruthy();
+  });
 });

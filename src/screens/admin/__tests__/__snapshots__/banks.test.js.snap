@@ -93,7 +93,7 @@ exports[`Banks Form admin screen Should work as expected to get snapshot 1`] = `
       }
     >
       <View
-        accessibilityLabel="AtomsButtonTestId"
+        accessibilityLabel="bankFormButtonSubmitTestId"
         accessibilityState={
           {
             "busy": undefined,
@@ -133,7 +133,7 @@ exports[`Banks Form admin screen Should work as expected to get snapshot 1`] = `
             "paddingTop": 15,
           }
         }
-        testID="AtomsButtonTestId"
+        testID="bankFormButtonSubmitTestId"
       >
         <Text
           style={

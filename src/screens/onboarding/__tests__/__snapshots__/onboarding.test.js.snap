@@ -247,6 +247,7 @@ exports[`On boarding profile Screen Should work as expected to get snapshot 1`] 
         </View>
       </View>
       <View
+        accessibilityLabel="ProfileAvatarUploadImageTestId"
         accessibilityState={
           {
             "busy": undefined,
@@ -281,6 +282,7 @@ exports[`On boarding profile Screen Should work as expected to get snapshot 1`] 
             "opacity": 1,
           }
         }
+        testID="ProfileAvatarUploadImageTestId"
       >
         <Text
           allowFontScaling={false}
@@ -378,7 +380,7 @@ exports[`On boarding profile Screen Should work as expected to get snapshot 1`] 
       }
     >
       <View
-        accessibilityLabel="AtomsButtonTestId"
+        accessibilityLabel="ProfileNextButtonTestId"
         accessibilityState={
           {
             "busy": undefined,
@@ -418,7 +420,7 @@ exports[`On boarding profile Screen Should work as expected to get snapshot 1`] 
             "paddingTop": 15,
           }
         }
-        testID="AtomsButtonTestId"
+        testID="ProfileNextButtonTestId"
       >
         <Text
           style={

@@ -10,8 +10,7 @@ import {useBankHooks} from './hooks';
 import {colors} from '@/utils/themes';
 import {useForm, FormProvider, SubmitHandler} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
-import {  useAddBanksMutation,
-  useUpdateBanksMutation,} from '@/slice';
+import {useAddBanksMutation, useUpdateBanksMutation} from '@/slice';
 import {Schema} from './schema';
 import * as yup from 'yup';
 import type {RoutesProps} from './types';
@@ -20,7 +19,7 @@ import {testingProps} from '@/utils/testframework';
 const Form = (props: RoutesProps) => {
   const {navigation} = useBankHooks();
   const {route} = props;
-  const {name,address, _id} = route?.params || {};
+  const {name, address, _id} = route?.params || {};
   type FormData = yup.InferType<typeof Schema>;
   const formMethod = useForm<FormData>({
     defaultValues: {
@@ -30,7 +29,8 @@ const Form = (props: RoutesProps) => {
   });
 
   const [addBanks, {isLoading: addBanksLoading}] = useAddBanksMutation();
-  const [updateBanks, {isLoading: updateBanksLoading}] = useUpdateBanksMutation();
+  const [updateBanks, {isLoading: updateBanksLoading}] =
+    useUpdateBanksMutation();
   const onSubmit: SubmitHandler<FormData> = async data => {
     try {
       let response: any;
@@ -38,14 +38,14 @@ const Form = (props: RoutesProps) => {
         //update
         response = await updateBanks({
           name: data?.name,
-          address:data?.address,
+          address: data?.address,
           id: _id,
         }).unwrap();
       } else {
         //insert
         response = await addBanks({
           name: data?.name,
-          address:data?.address,
+          address: data?.address,
         });
       }
       if (response?.error) {
@@ -86,6 +86,7 @@ const Form = (props: RoutesProps) => {
           />
         </FormTextInputContainerStyled>
         <Bbutton
+          testId="bankFormButtonSubmitTestId"
           bcolor={colors.lightergreen}
           border={10}
           loaders={addBanksLoading || updateBanksLoading}

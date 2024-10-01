@@ -1,5 +1,4 @@
-import React,{useCallback,useState} from 'react';
-import {Platform} from 'react-native'
+import React, {useCallback, useState} from 'react';
 import {Avatar, FormTextController} from '@/component/molecules';
 import {Prevnextfooter} from '@/component/template';
 import {
@@ -8,13 +7,11 @@ import {
   TextInputContainerStyled,
 } from '../styles';
 import {FormProvider} from 'react-hook-form';
-import {useUploadProfileMutation} from '@/slice'
+import {useUploadProfileMutation} from '@/slice';
 import {useOnBoardingHooks} from '../hooks';
 import {launchImageLibrary} from 'react-native-image-picker';
-import {useSelector,useDispatch} from 'react-redux';
-import {ThunkDispatch} from '@reduxjs/toolkit';
-import {setLogout,selectCurrentToken} from '@/slice/auth'
 import Config from 'react-native-config';
+
 const ProfileScreen = () => {
   const {
     handleProfilenext,
@@ -22,64 +19,67 @@ const ProfileScreen = () => {
     handleProfilePrevious,
     profileLoading,
   } = useOnBoardingHooks();
-  const [uri,setUri]=useState<string>('')
-  const [uploadProfile, {isLoading}] =
-  useUploadProfileMutation();
-  const options:{
-    saveToPhotos:boolean;
-    mediaType:'photo' | 'video';
-    includeBase64:boolean;
+  const [uri, setUri] = useState<string>('');
+  const [uploadProfile, {isLoading}] = useUploadProfileMutation();
+  const options: {
+    saveToPhotos: boolean;
+    mediaType: 'photo' | 'video';
+    includeBase64: boolean;
   } = {
     saveToPhotos: true,
     mediaType: 'photo',
     includeBase64: false,
     // includeExtra,
   };
-  const handleViewImage = useCallback(async() => {
-    const result:any=await launchImageLibrary(options)
-    const response = await uploadProfile(result)
-    const {data}:any=await response || {}
-    formProfileMethod.setValue('profileImage',Config.DEV_BASE_URL+data.url)
-    setUri(Config.DEV_BASE_URL+data.url)
+  const handleViewImage = useCallback(async () => {
+    const result: any = await launchImageLibrary(options);
+    const response = await uploadProfile(result);
+    const {data}: any = (await response) || {};
+    formProfileMethod.setValue('profileImage', Config.DEV_BASE_URL + data?.url);
+    setUri(Config.DEV_BASE_URL + data?.url);
   }, [uri]);
 
   return (
     <ContainerStyled>
       <FormProvider {...formProfileMethod}>
         <ProfileAvatarContainerStyled>
-          <Avatar uri={uri} size={250} onPress={handleViewImage} />
+          <Avatar testIds={{uploadImage:'ProfileAvatarUploadImageTestId'}} uri={uri} size={250} onPress={handleViewImage} />
         </ProfileAvatarContainerStyled>
-          <TextInputContainerStyled>
-            <FormTextController
-              Label="First Name"
-              name="firstName"
-              placeholder="First Name"
-              rules={{
-                required: true,
-              }}
-            />
-          </TextInputContainerStyled>
-          <TextInputContainerStyled>
-            <FormTextController
-              Label="Last Name"
-              name="lastName"
-              placeholder="Last Name"
-              rules={{
-                required: true,
-              }}
-            />
-          </TextInputContainerStyled>
-          <TextInputContainerStyled>
-            <FormTextController
-              Label="Middle Name"
-              name="middleName"
-              placeholder="Address"
-              rules={{
-                required: true,
-              }}
-            />
-          </TextInputContainerStyled>
+        <TextInputContainerStyled>
+          <FormTextController
+            Label="First Name"
+            name="firstName"
+            placeholder="First Name"
+            rules={{
+              required: true,
+            }}
+          />
+        </TextInputContainerStyled>
+        <TextInputContainerStyled>
+          <FormTextController
+            Label="Last Name"
+            name="lastName"
+            placeholder="Last Name"
+            rules={{
+              required: true,
+            }}
+          />
+        </TextInputContainerStyled>
+        <TextInputContainerStyled>
+          <FormTextController
+            Label="Middle Name"
+            name="middleName"
+            placeholder="Address"
+            rules={{
+              required: true,
+            }}
+          />
+        </TextInputContainerStyled>
         <Prevnextfooter
+          testIds={{
+            prevOnPress: 'ProfilePreviousButtonTestId',
+            nextOnPress: 'ProfileNextButtonTestId',
+          }}
           nextOnPress={formProfileMethod.handleSubmit(handleProfilenext)}
           loadernext={profileLoading}
         />
