@@ -45,12 +45,16 @@ const BankInfoScreens = () => {
             }}
           />
         </TextInputContainerStyled>
-          <Prevnextfooter
-            nextOnPress={formBankInfo.handleSubmit(handleBankInfoNext)}
-            prevOnPress={() => navigation.goBack()}
-            isPrevView
-            loadernext={false}
-          />
+        <Prevnextfooter
+          testIds={{
+            prevOnPress: 'BankInfoPreviousButtonTestId',
+            nextOnPress: 'BankInfoNextButtonTestId',
+          }}
+          nextOnPress={formBankInfo.handleSubmit(handleBankInfoNext)}
+          prevOnPress={() => navigation.goBack()}
+          isPrevView
+          loadernext={false}
+        />
       </FormProvider>
     </ContainerStyled>
   );

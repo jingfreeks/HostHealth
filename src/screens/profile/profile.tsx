@@ -48,8 +48,7 @@ const ProfileScreen = () => {
     }
   };
   const handleViewImage = useCallback(async() => {
-    const result=await launchImageLibrary(options)
-    console.log('Result',result)
+      await launchImageLibrary(options)
   }, []);
   return (
     <ContainerStyled>
