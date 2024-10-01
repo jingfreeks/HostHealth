@@ -55,7 +55,7 @@ const ProfileScreen = () => {
       <ScrollViewContainer>
         <ContainerStyled>
           <HeaderStyled>
-            <Avatar onPress={handleViewImage} />
+            <Avatar testIds={{uploadImage:'ProfileTabAvatarUploadImageTestId'}}  onPress={handleViewImage} />
             <NameInfoStyled>
               <Text>{`${profiles?.firstName}`}</Text>
               <Text>{`${profiles?.lastName}`}</Text>

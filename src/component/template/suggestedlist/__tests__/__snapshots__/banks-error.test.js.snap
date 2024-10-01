@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Suggested List Template Component Should work as expected to get snapshot 1`] = `
+exports[`Suggested list Error screen Should work as expected to get snapshot 1`] = `
 <View
   style={
     [
@@ -63,7 +63,7 @@ exports[`Suggested List Template Component Should work as expected to get snapsh
           ]
         }
       >
-        No suggested jobs matches with your profile
+        Token Expired you must logout and login it again
       </Text>
     </View>
   </RCTSafeAreaView>
