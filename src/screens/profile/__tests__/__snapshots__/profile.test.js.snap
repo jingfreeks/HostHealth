@@ -270,6 +270,7 @@ exports[`Profile Screen Should work as expected to get snapshot 1`] = `
               </View>
             </View>
             <View
+              accessibilityLabel="ProfileTabAvatarUploadImageTestId"
               accessibilityState={
                 {
                   "busy": undefined,
@@ -304,6 +305,7 @@ exports[`Profile Screen Should work as expected to get snapshot 1`] = `
                   "opacity": 1,
                 }
               }
+              testID="ProfileTabAvatarUploadImageTestId"
             >
               <Text
                 allowFontScaling={false}
