@@ -1,5 +1,5 @@
-import React, {useCallback, useState} from 'react';
-// import {Avatar} from 'react-native-elements';
+import React, {useCallback} from 'react';
+import {Alert} from 'react-native'
 import {Avatar} from '@/component/molecules';
 import {Text} from '@/component/atoms/text';
 import {useGetProfileQuery} from '@/slice/profile';
@@ -16,6 +16,7 @@ import {
   ListButtonStyled,
   FooterStyled,
 } from './styles';
+import {useLogoutMutation} from '@/slice/authApi'
 import {testingProps} from '@/utils/testframework';
 import {launchImageLibrary} from 'react-native-image-picker';
 
@@ -32,18 +33,19 @@ const ProfileScreen = () => {
     refetch: () => void;
     data: any;
   }>({userId: usrId});
-
+  const [logout, {isLoading}] = useLogoutMutation();
   const handleLogout = async () => {
     try {
+      await logout({}).unwrap()
       await dispatch(setLogout());
       await dispatch(apiSlice.util.resetApiState());
     } catch (error) {
       switch (error.status) {
         case 401:
-          alert(error.data.message);
+          Alert.alert(error.data.message);
           break;
         default:
-          alert('error');
+          Alert.alert('error');
       }
     }
   };

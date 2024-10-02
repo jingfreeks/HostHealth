@@ -11,18 +11,27 @@ import {
   DrawerItemList,
   DrawerItem,
 } from '@react-navigation/drawer';
+import {useLogoutMutation} from '@/slice/authApi'
 
 const Drawer = createDrawerNavigator<
   RootNavigationProps & AppNavigationProps
 >();
 export const DrawerNavigation = () => {
   const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
-
+  const [logout, {isLoading}] = useLogoutMutation();
+  
   const handleSignout = async () => {
-    await dispatch(
-      setCredentials({user: null, accessToken: null, userId: null}),
-    );
-    await dispatch(apiSlice.util.resetApiState());
+    try{
+      const response = await logout({}).unwrap()
+      console.log('responsess',response)
+      await dispatch(
+        setCredentials({user: null, accessToken: null, userId: null}),
+      );
+      await dispatch(apiSlice.util.resetApiState());
+    }catch(error){
+      console.log('errorss',error)
+    }
+
   };
   return (
     <Drawer.Navigator

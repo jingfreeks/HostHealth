@@ -10,6 +10,7 @@ export const useCityHooks = () => {
 
   const {
     data: city,
+    refetch:cityRefresh,
     isLoading,
     isSuccess,
     isError,
@@ -34,6 +35,9 @@ export const useCityHooks = () => {
       Alert.alert(error?.data?.message);
     }
   };
+  const onRefresh=async()=>{
+    await cityRefresh()
+  }
   return {
     navigation,
     city,
@@ -44,5 +48,6 @@ export const useCityHooks = () => {
     error,
     handleDeleteCity,
     deleteLoading,
+    onRefresh
   };
 };

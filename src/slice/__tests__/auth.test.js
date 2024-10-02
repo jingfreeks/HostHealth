@@ -7,6 +7,7 @@ test('should return the initial state', () => {
     userId: null,
     roles: [],
     onBoarding: false,
+    refreshToken: null,
   });
 });
 
@@ -17,6 +18,7 @@ test('should handle a set Credentials being added to an empty list', () => {
     userId: null,
     roles: [],
     onBoarding: false,
+    refreshToken: null,
   };
 
   expect(
@@ -25,6 +27,7 @@ test('should handle a set Credentials being added to an empty list', () => {
       setCredentials({
         user: 'testing',
         accessToken: 'testAccesstoken',
+        refreshToken: 'testsRefreshToken',
         userId: '123344',
         roles: ['Admin'],
         onBoarding: true,
@@ -33,6 +36,7 @@ test('should handle a set Credentials being added to an empty list', () => {
   ).toEqual({
     user: 'testing',
     token: 'testAccesstoken',
+    refreshToken: 'testsRefreshToken',
     userId: '123344',
     roles: ['Admin'],
     onBoarding: true,
