@@ -146,179 +146,197 @@ exports[`City Form admin screen Should work as expected to get snapshot 1`] = `
 `;
 
 exports[`City admin screen Should work as expected to get snapshot 1`] = `
-<View
-  style={
-    [
-      {
-        "alignItems": "center",
-        "flexBasis": 0,
-        "flexGrow": 1,
-        "flexShrink": 1,
-        "justifyContent": "center",
-      },
-    ]
+<RCTScrollView
+  contentContainerStyle={
+    {
+      "alignItems": "center",
+      "flex": 1,
+    }
+  }
+  refreshControl={
+    <RefreshControlMock
+      onRefresh={[Function]}
+      refreshing={false}
+    />
   }
 >
-  <RCTSafeAreaView
-    style={
-      [
-        {},
-      ]
-    }
-  >
+  <RCTRefreshControl />
+  <View>
     <View
-      alignType="center"
       style={
         [
           {
             "alignItems": "center",
-            "alignSelf": "center",
-            "flexDirection": "column",
+            "flexBasis": 0,
+            "flexGrow": 1,
+            "flexShrink": 1,
+            "justifyContent": "center",
           },
         ]
       }
     >
-      <Image
-        resizeMode="contain"
-        size={150}
-        source={
-          {
-            "testUri": "../../../src/assets/pcitiesempty.png",
-          }
-        }
+      <RCTSafeAreaView
         style={
           [
-            {
-              "height": 294.2647058823529,
-              "width": 294.2647058823529,
-            },
-          ]
-        }
-      />
-      <Text
-        style={
-          [
-            {
-              "color": "#000000",
-              "fontFamily": "Avenir",
-              "fontSize": 16,
-              "fontWeight": "400",
-            },
+            {},
           ]
         }
       >
-        No cities matches your preferred locations
-      </Text>
-    </View>
-  </RCTSafeAreaView>
-  <View
-    collapsable={false}
-    style={
-      {
-        "alignItems": "center",
-        "borderRadius": 28,
-        "bottom": 0,
-        "flexDirection": "row",
-        "justifyContent": "center",
-        "margin": 16,
-        "opacity": 1,
-        "position": "absolute",
-        "right": 0,
-        "transform": [
-          {
-            "scale": 1,
-          },
-        ],
-      }
-    }
-  >
-    <View
-      style={
-        [
-          {
-            "borderRadius": 3,
-            "overflow": "hidden",
-          },
-          {
-            "borderRadius": 3,
-          },
-          {
-            "borderRadius": 28,
-            "elevation": 4,
-          },
-          false,
-        ]
-      }
-    >
+        <View
+          alignType="center"
+          style={
+            [
+              {
+                "alignItems": "center",
+                "alignSelf": "center",
+                "flexDirection": "column",
+              },
+            ]
+          }
+        >
+          <Image
+            resizeMode="contain"
+            size={150}
+            source={
+              {
+                "testUri": "../../../src/assets/pcitiesempty.png",
+              }
+            }
+            style={
+              [
+                {
+                  "height": 294.2647058823529,
+                  "width": 294.2647058823529,
+                },
+              ]
+            }
+          />
+          <Text
+            style={
+              [
+                {
+                  "color": "#000000",
+                  "fontFamily": "Avenir",
+                  "fontSize": 16,
+                  "fontWeight": "400",
+                },
+              ]
+            }
+          >
+            No cities matches your preferred locations
+          </Text>
+        </View>
+      </RCTSafeAreaView>
       <View
-        accessibilityLabel="CityCreateButtonTestId"
-        accessibilityRole="button"
-        accessibilityState={
-          {
-            "busy": false,
-            "checked": undefined,
-            "disabled": false,
-            "expanded": undefined,
-            "selected": undefined,
-          }
-        }
-        accessibilityValue={
-          {
-            "max": undefined,
-            "min": undefined,
-            "now": undefined,
-            "text": undefined,
-          }
-        }
-        accessible={true}
         collapsable={false}
-        focusable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
         style={
           {
+            "alignItems": "center",
+            "borderRadius": 28,
+            "bottom": 0,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "margin": 16,
             "opacity": 1,
+            "position": "absolute",
+            "right": 0,
+            "transform": [
+              {
+                "scale": 1,
+              },
+            ],
           }
         }
-        testID="CityCreateButtonTestId"
       >
         <View
           style={
-            {
-              "alignItems": "center",
-              "backgroundColor": "#ca71eb",
-              "borderColor": "#2089dc",
-              "borderRadius": 3,
-              "borderWidth": 0,
-              "flexDirection": "row",
-              "height": 48,
-              "justifyContent": "center",
-              "padding": 8,
-              "paddingHorizontal": 16,
-            }
+            [
+              {
+                "borderRadius": 3,
+                "overflow": "hidden",
+              },
+              {
+                "borderRadius": 3,
+              },
+              {
+                "borderRadius": 28,
+                "elevation": 4,
+              },
+              false,
+            ]
           }
         >
-          <Text
-            style={
+          <View
+            accessibilityLabel="CityCreateButtonTestId"
+            accessibilityRole="button"
+            accessibilityState={
               {
-                "color": "#ffffff",
-                "fontSize": 18,
-                "marginHorizontal": 8,
-                "paddingVertical": 1,
-                "textAlign": "center",
+                "busy": false,
+                "checked": undefined,
+                "disabled": false,
+                "expanded": undefined,
+                "selected": undefined,
               }
             }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "opacity": 1,
+              }
+            }
+            testID="CityCreateButtonTestId"
           >
-            Create
-          </Text>
+            <View
+              style={
+                {
+                  "alignItems": "center",
+                  "backgroundColor": "#ca71eb",
+                  "borderColor": "#2089dc",
+                  "borderRadius": 3,
+                  "borderWidth": 0,
+                  "flexDirection": "row",
+                  "height": 48,
+                  "justifyContent": "center",
+                  "padding": 8,
+                  "paddingHorizontal": 16,
+                }
+              }
+            >
+              <Text
+                style={
+                  {
+                    "color": "#ffffff",
+                    "fontSize": 18,
+                    "marginHorizontal": 8,
+                    "paddingVertical": 1,
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Create
+              </Text>
+            </View>
+          </View>
         </View>
       </View>
     </View>
   </View>
-</View>
+</RCTScrollView>
 `;

@@ -21,15 +21,24 @@ exports[`City admin empty screen Should work as expected to get snapshot 1`] = `
     onLayout={[Function]}
     onMomentumScrollBegin={[Function]}
     onMomentumScrollEnd={[Function]}
+    onRefresh={[Function]}
     onScroll={[Function]}
     onScrollBeginDrag={[Function]}
     onScrollEndDrag={[Function]}
+    refreshControl={
+      <RefreshControlMock
+        onRefresh={[Function]}
+        refreshing={false}
+      />
+    }
+    refreshing={false}
     removeClippedSubviews={false}
     renderItem={[Function]}
     scrollEventThrottle={0.0001}
     stickyHeaderIndices={[]}
     viewabilityConfigCallbackPairs={[]}
   >
+    <RCTRefreshControl />
     <View />
   </RCTScrollView>
   <View
