@@ -17,6 +17,7 @@ export const NameInfoStyled = styled.View`
   margin-right: 20px;
   margin-left: 20px;
   flex: 1;
+  
 `;
 
 export const HeaderStyled = styled.View`

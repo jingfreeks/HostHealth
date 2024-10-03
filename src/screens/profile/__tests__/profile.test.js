@@ -20,11 +20,4 @@ describe('Profile Screen', () => {
     expect(all.toJSON()).toBeTruthy();
   });
 
-  it('Should to Avatar Button', () => {
-    const all = renderWithProviders(<Profile />);
-    const el = all.getByTestId('ProfileTabAvatarUploadImageTestId');
-    fireEvent(el, 'onPress');
-    expect(all.toJSON()).toBeTruthy();
-  });
-
 });

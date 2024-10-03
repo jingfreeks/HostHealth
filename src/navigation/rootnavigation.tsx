@@ -5,11 +5,9 @@ import {
 } from '@react-navigation/native';
 import {AuthNavigation} from '@/navigation/authnavigation';
 import {Appnavigation} from '@/navigation/appnavigation';
-import {DrawerNavigation} from '@/navigation/drawernavigation';
 import {OnBoardinNavigation} from '@/navigation/onboardingnavigation';
 import {Adminappnavigation} from '@/navigation/adminnavigation';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {StateForm, Cityform} from '@/screens';
 import type {State} from '@/config/types';
 import type {RootNavigationProps, AppNavigationProps} from './types';
 import {useSelector} from 'react-redux';

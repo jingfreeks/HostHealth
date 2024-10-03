@@ -34,13 +34,15 @@ const ProfileScreen = () => {
   };
   const handleViewImage = useCallback(async () => {
     const result: any = await launchImageLibrary(options);
-    const response = await uploadProfile(result);
-    const {data}: any = (await response) || {};
-    formProfileMethod.setValue(
-      'profileImage',
-      `${Config.DEV_BASE_URL}${data?.url}`,
-    );
-    setUri(`${Config.DEV_BASE_URL}/${data?.url}`);
+    if (result?.assets) {
+      const response = await uploadProfile(result);
+      const {data}: any = (await response) || {};
+      formProfileMethod.setValue(
+        'profileImage',
+        `${Config.DEV_BASE_URL}${data?.url}`,
+      );
+      setUri(`${Config.DEV_BASE_URL}/${data?.url}`);
+    }
   }, [uri]);
 
   return (
@@ -48,6 +50,7 @@ const ProfileScreen = () => {
       <FormProvider {...formProfileMethod}>
         <ProfileAvatarContainerStyled>
           <Avatar
+            isView
             testIds={{uploadImage: 'ProfileAvatarUploadImageTestId'}}
             uri={uri}
             size={250}

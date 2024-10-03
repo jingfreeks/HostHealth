@@ -46,9 +46,9 @@ const baseQueryWithAuth = async (args: any, api: any, extraOptions: string) => {
       const roles = api.getState().auth.roles;
       const userId = api.getState().auth.userId;
       const refreshToken = api.getState().auth.refreshToken;
-
+      const isOnBoarding = api.getState().auth.onBoarding
       api.dispatch(
-        setCredentials({...refereshResult.data, user, roles, refreshToken,userId}),
+        setCredentials({...refereshResult.data, user, roles, refreshToken,userId,isOnBoarding}),
       );
 
       result = await baseQuery(args, api, extraOptions);

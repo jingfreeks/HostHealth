@@ -2,6 +2,7 @@ export type AvatarProps = {
   size?: number;
   title?: string;
   uri?: string;
-  onPress:()=>void;
+  onPress?:()=>void;
   testIds:{uploadImage:string;}
+  isView:boolean;
 };
