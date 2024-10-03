@@ -23,6 +23,7 @@ export type RootNavigationProps = {
   ShiftForm: undefined;
   CompanyForm: undefined;
   BankForm?: BankForm;
+  ProfileDetails:undefined;
 };
 
 export type AppNavigationProps = {
@@ -76,4 +77,5 @@ export type AppNavigationProps = {
   MyJob: undefined;
   TimeCard: undefined;
   TimeCard1: undefined;
+  ProfileDetails:undefined;
 };

@@ -19,10 +19,13 @@ import {
 import {useLogoutMutation} from '@/slice/authApi'
 import {testingProps} from '@/utils/testframework';
 import {launchImageLibrary} from 'react-native-image-picker';
+import {useProfileHooks} from './hooks'
+
 
 const ProfileScreen = () => {
   const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
   const usrId = useSelector(selectCurrentUserId);
+  const {navigation}=useProfileHooks()
   const options:any = {
     saveToPhotos: true,
     mediaType: 'photo',
@@ -49,24 +52,20 @@ const ProfileScreen = () => {
       }
     }
   };
-  const handleViewImage = useCallback(async() => {
-      await launchImageLibrary(options)
-  }, []);
+
   return (
     <ContainerStyled>
       <ScrollViewContainer>
         <ContainerStyled>
           <HeaderStyled>
-            <Avatar testIds={{uploadImage:'ProfileTabAvatarUploadImageTestId'}}  onPress={handleViewImage} />
+            <Avatar isView={false} uri={profiles?.picture} testIds={{uploadImage:''}} onPress={()=>{}}/>
             <NameInfoStyled>
-              <Text>{`${profiles?.firstName}`}</Text>
-              <Text>{`${profiles?.lastName}`}</Text>
-              <Text>{`${profiles?.middlename}`}</Text>
-              <Text>Position</Text>
+              <Text TextMode='Title'>{`${profiles?.firstName} ${profiles?.lastName} ${profiles?.middlename}`}</Text>
+              <Text TextMode='Title'>Employee</Text>
             </NameInfoStyled>
           </HeaderStyled>
           <ContentStyled>
-            <ListButtonStyled>
+            <ListButtonStyled onPress={()=>navigation.navigate('ProfileDetails')}>
               <Text TextMode="Title">Details</Text>
             </ListButtonStyled>
             <ListButtonStyled>
