@@ -44,10 +44,11 @@ const baseQueryWithAuth = async (args: any, api: any, extraOptions: string) => {
     if (refereshResult?.data) {
       const user = api.getState().auth.user;
       const roles = api.getState().auth.roles;
+      const userId = api.getState().auth.userId;
       const refreshToken = api.getState().auth.refreshToken;
 
       api.dispatch(
-        setCredentials({...refereshResult.data, user, roles, refreshToken}),
+        setCredentials({...refereshResult.data, user, roles, refreshToken,userId}),
       );
 
       result = await baseQuery(args, api, extraOptions);

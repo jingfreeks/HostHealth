@@ -18,8 +18,9 @@ const ProfileScreen = () => {
     formProfileMethod,
     handleProfilePrevious,
     profileLoading,
+    uri,
+    setUri,
   } = useOnBoardingHooks();
-  const [uri, setUri] = useState<string>('');
   const [uploadProfile, {isLoading}] = useUploadProfileMutation();
   const options: {
     saveToPhotos: boolean;
@@ -35,15 +36,23 @@ const ProfileScreen = () => {
     const result: any = await launchImageLibrary(options);
     const response = await uploadProfile(result);
     const {data}: any = (await response) || {};
-    formProfileMethod.setValue('profileImage', Config.DEV_BASE_URL + data?.url);
-    setUri(Config.DEV_BASE_URL + data?.url);
+    formProfileMethod.setValue(
+      'profileImage',
+      `${Config.DEV_BASE_URL}${data?.url}`,
+    );
+    setUri(`${Config.DEV_BASE_URL}/${data?.url}`);
   }, [uri]);
 
   return (
     <ContainerStyled>
       <FormProvider {...formProfileMethod}>
         <ProfileAvatarContainerStyled>
-          <Avatar testIds={{uploadImage:'ProfileAvatarUploadImageTestId'}} uri={uri} size={250} onPress={handleViewImage} />
+          <Avatar
+            testIds={{uploadImage: 'ProfileAvatarUploadImageTestId'}}
+            uri={uri}
+            size={250}
+            onPress={handleViewImage}
+          />
         </ProfileAvatarContainerStyled>
         <TextInputContainerStyled>
           <FormTextController

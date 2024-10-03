@@ -26,7 +26,7 @@ const RootNavigationScreen = () => {
   const token = useSelector((state: State) => state.auth.token);
   const onBoarding = useSelector((state: State) => state.auth.onBoarding);
   const usrRoles = useSelector((state: State) => state.auth.roles);
-
+  console.log('token',token,onBoarding,usrRoles)
   const getStatScreen = () => {
     if (token && usrRoles.find(item => item?.toLowerCase() === 'admin')) {
       return (

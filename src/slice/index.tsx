@@ -18,13 +18,28 @@ export {
 } from './admin';
 
 export {
-  useGetCityQuery,useAddCityMutation,useUpdateCityMutation,useDeleteCityMutation
-} from './city'
+  useGetCityQuery,
+  useAddCityMutation,
+  useUpdateCityMutation,
+  useDeleteCityMutation,
+} from './city';
 
-export{
+export {
   useGetProfileQuery,
   useUpdateProfileMutation,
   useUploadProfileMutation,
-} from './profile'
+} from './profile';
 
-export {useGetStateQuery,useAddStatesMutation,useUpdateStatesMutation,useDeleteStatesMutation} from './state'
+export {
+  useGetStateQuery,
+  useAddStatesMutation,
+  useUpdateStatesMutation,
+  useDeleteStatesMutation,
+} from './state';
+
+export {
+  useGetOnBoardingProfileQuery,
+  useUpdateOnBoardingProfileMutation,
+  useGetOnBoardingBankInfoQuery,
+  useUpdateOnBoardingBankInfoMutation,
+} from './onboarding';
