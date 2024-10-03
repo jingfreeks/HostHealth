@@ -30,7 +30,7 @@ test('should handle a set Credentials being added to an empty list', () => {
         refreshToken: 'testsRefreshToken',
         userId: '123344',
         roles: ['Admin'],
-        onBoarding: true,
+        isOnBoarding: true,
       }),
     ),
   ).toEqual({

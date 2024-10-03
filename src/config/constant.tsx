@@ -13,7 +13,25 @@ export const message={
     100012:'State should be required',
     100013:'Bank Name should be required',
     100014:'Bank Address shoud be required',
-    100015:'No Banks matches your preferred locations'
+    100015:'No Banks matches your preferred locations',
+    100016:'First Name Should be required',
+    100017:'Last Name Should be required',
+    100018:'Middle Name Should be required',
+    100019:'Profile Picture Should be required',
+    100020:'Account Name Should be required',
+    100021:'Account Number Should be required',
+    100022:'Bank Name Should be required',
+    100023:'',
+    100024:'',
+    100025:'',
+    100026:'',
+    100027:'',
+    100028:'',
+    100029:'',
+    100030:'',
+    100031:'',
+    100032:'',
+
 }
 
-export const TagTypes=['City', 'Jobs', 'MyJobs', 'JobDetails', 'Profile','States','Department','Shift','Company','Banks']
+export const TagTypes=['City', 'Jobs', 'MyJobs', 'JobDetails', 'Profile','States','Department','Shift','Company','Banks','BankInfo']

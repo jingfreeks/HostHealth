@@ -24,3 +24,11 @@ export const NextButtonStyled = styled.TouchableOpacity`
   border-radius: 5px;
 `;
 
+export const BankListContainerStyled=styled.View`
+  margin-top:10px;
+  margin-bottom:20px;
+`
+
+export const FormContainerStyled=styled.View`
+  margin-bottom:30px;
+`

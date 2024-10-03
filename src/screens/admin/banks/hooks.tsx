@@ -37,6 +37,7 @@ export const useBankHooks = () => {
   return {
     navigation,
     bank,
+    bankLoading:isLoading,
     isLoading,
     isSuccess,
     isError,

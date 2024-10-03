@@ -13,7 +13,7 @@ export const profileApiSlice = apiSlice.injectEndpoints({
       },
     }),
     updateProfile: builder.mutation({
-      query: ({userId, ...patch}) => ({
+      query: ({userId, ...patch}:{userId: string}) => ({
         url: `/profile/${userId}`,
         method: 'PATCH',
         body: patch,

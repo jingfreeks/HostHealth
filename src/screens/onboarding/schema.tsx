@@ -1,18 +1,18 @@
 import * as yup from 'yup';
-
+import {message} from '@/config/constant'
 export const ProfileSchema = yup
   .object({
-    firstName: yup.string().required('First Name Should be required'),
-    lastName: yup.string().required('Last Name Should be required'),
-    middleName: yup.string().required('Middle Name Should be required'),
-    profileImage:yup.string().required('Profile Picture Should be required'),
+    firstName: yup.string().required(message[100016]),
+    lastName: yup.string().required(message[100017]),
+    middleName: yup.string().required(message[100018]),
+    profileImage:yup.string().required(message[100019]),
   })
   .required();
 
 export const BankInfoSchema = yup
   .object({
-    accountName: yup.string().required('Account Name Should be required'),
-    accountNumber: yup.string().required('Account Name Should be required'),
-    bankName: yup.string().required('Bank Name Should be required'),
+    accountName: yup.string().required(message[100020]),
+    accountNumber: yup.string().required(message[100021]),
+    bankName: yup.string().required(message[100021]),
   })
   .required();
