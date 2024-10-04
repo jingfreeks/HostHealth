@@ -24,6 +24,7 @@ export type RootNavigationProps = {
   CompanyForm: undefined;
   BankForm?: BankForm;
   ProfileDetails:undefined;
+  ProfileBankInfo:undefined;
 };
 
 export type AppNavigationProps = {

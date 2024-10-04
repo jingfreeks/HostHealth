@@ -1,12 +1,13 @@
 import React, {useMemo, useEffect,useState,useCallback} from 'react';
+import {Alert} from 'react-native'
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import type {RootNavigationProps} from '@/navigation/types';
 import {useForm, SubmitHandler} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
 import {
-  useGetOnBoardingProfileQuery,
-  useUpdateOnBoardingProfileMutation,
+  useGetProfileQuery,
+  useUpdateProfileMutation,
   useUploadProfileMutation
 } from '@/slice';
 import {useSelector} from 'react-redux';
@@ -33,10 +34,10 @@ export const useProfileDetails = () => {
     // includeExtra,
   };
   
-  const [updateOnBoardingProfile, {isLoading: profileLoading}] = useUpdateOnBoardingProfileMutation(
+  const [updateProfile, {isLoading: profileLoading}] = useUpdateProfileMutation(
     {fixedCacheKey: 'Profile'},
   );
-  const {data: profiles} = useGetOnBoardingProfileQuery<{
+  const {data: profiles} = useGetProfileQuery<{
     refetch: () => void;
     data: any;
   }>(
@@ -67,31 +68,28 @@ export const useProfileDetails = () => {
   }, [usrId, profiles]);
 
 
-  const handleProfilesave: SubmitHandler<FormProfileData> = async data => {
+  const handleProfilesave: SubmitHandler<FormProfileData> = useCallback(async data => {
     try {
-      const userData: any = await updateOnBoardingProfile({
+      const userData: any = await updateProfile({
         firstName: data.firstName,
         lastName: data.lastName,
         middleName: data.middleName,
         image: data.profileImage,
         userId: usrId,
       }).unwrap();
-      console.log('userData', userData);
       if (userData) {
         navigation.goBack();
       }
-      // navigation.navigate('OnBoardingBankInfo')
     } catch (error) {
-      console.log('error', error);
       switch (error.status) {
         case 401:
-          alert(error.data.message);
+          Alert.alert(error.data.message);
           break;
         default:
-          alert('error');
+          Alert.alert('error');
       }
     }
-  };
+  },[]);
 
 
   const handleViewImage = useCallback(async () => {
@@ -107,6 +105,7 @@ export const useProfileDetails = () => {
     }
 
   }, [uri]);
+
   return {
     navigation,
     handleProfilesave,
