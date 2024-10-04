@@ -1,4 +1,4 @@
-import React, {useCallback} from 'react';
+import React from 'react';
 import {Alert} from 'react-native'
 import {Avatar} from '@/component/molecules';
 import {Text} from '@/component/atoms/text';
@@ -18,7 +18,6 @@ import {
 } from './styles';
 import {useLogoutMutation} from '@/slice/authApi'
 import {testingProps} from '@/utils/testframework';
-import {launchImageLibrary} from 'react-native-image-picker';
 import {useProfileHooks} from './hooks'
 
 
@@ -68,7 +67,7 @@ const ProfileScreen = () => {
             <ListButtonStyled onPress={()=>navigation.navigate('ProfileDetails')}>
               <Text TextMode="Title">Details</Text>
             </ListButtonStyled>
-            <ListButtonStyled>
+            <ListButtonStyled onPress={()=>navigation.navigate('ProfileBankInfo')}>
               <Text TextMode="Title">Bank info</Text>
             </ListButtonStyled>
             <ListButtonStyled>
