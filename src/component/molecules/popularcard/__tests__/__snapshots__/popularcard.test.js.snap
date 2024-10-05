@@ -44,6 +44,7 @@ exports[`Popular Card Component Should work as expected to get snapshot 1`] = `
             "flexBasis": 0,
             "flexGrow": 1,
             "flexShrink": 1,
+            "height": 100,
           },
         ]
       }

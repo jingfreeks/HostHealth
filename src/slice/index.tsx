@@ -43,3 +43,5 @@ export {
   useGetOnBoardingBankInfoQuery,
   useUpdateOnBoardingBankInfoMutation,
 } from './onboarding';
+
+export {useGetJobsQuery,useGetCityJobsQuery} from './suggested'

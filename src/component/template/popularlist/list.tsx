@@ -1,11 +1,15 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
+import {TouchableOpacity} from 'react-native';
 import {PopularContainerStyled} from './styles';
 import {useGetCityQuery} from '@/slice/city';
 import {listingType} from './types';
+import {StackNavigationProp} from '@react-navigation/stack';
+import type {RootNavigationProps} from '@/navigation/types';
+import {useNavigation} from '@react-navigation/native';
 import {PopularCard} from '@/component/molecules/popularcard';
 
 const ListScreen = (props: listingType) => {
+  const navigation = useNavigation<StackNavigationProp<RootNavigationProps>>();
   const {cityId} = props;
 
   const {city} = useGetCityQuery('getcity', {
@@ -15,7 +19,9 @@ const ListScreen = (props: listingType) => {
   });
   return (
     <PopularContainerStyled>
-      <PopularCard item={city} />
+      <TouchableOpacity onPress={()=>navigation.navigate('CityJobsList',{cityId})}>
+        <PopularCard item={city} />
+      </TouchableOpacity>
     </PopularContainerStyled>
   );
 };

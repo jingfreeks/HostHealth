@@ -31,6 +31,7 @@ const baseQueryWithAuth = async (args: any, api: any, extraOptions: string) => {
         )
       : await baseQuery(args, api, extraOptions);
   if (result?.error?.status === 403) {
+
     const refereshResult = await baseQuery(
       {
         url: '/auth/refresh',
@@ -54,6 +55,7 @@ const baseQueryWithAuth = async (args: any, api: any, extraOptions: string) => {
       result = await baseQuery(args, api, extraOptions);
     }
   }
+  
   return result;
 };
 
