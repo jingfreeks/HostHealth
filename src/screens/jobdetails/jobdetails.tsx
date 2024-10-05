@@ -72,7 +72,7 @@ const JobDetailScreen = (props: RoutesProps) => {
         <ScrollViewContainer>
           <ContainerStyled>
             <ImageHeaderContaierStyled>
-              <ImageStyled source={{uri: jobDetails.image}} />
+              <ImageStyled source={{uri: jobDetails.image}}    resizeMode={'stretch'}/>
               <FavoriteContainerStyled>
                 <FavoriteImageContainer>
                   <ImageHeaderStyled
@@ -135,20 +135,20 @@ const JobDetailScreen = (props: RoutesProps) => {
             <LineContainerStyled />
             <Requirements />
             <ButtonFooterContainerStyled>
-              <ButtonContainerStyled>
+              {/* <ButtonContainerStyled>
                 <Bbutton
                   // onPress={() => setIsVisible(!isVisible)}
                   bcolor={colors.primary}
                   border={30}
                   title="TELL ME MORE"
                 />
-              </ButtonContainerStyled>
+              </ButtonContainerStyled> */}
               <ButtonContainerStyled>
                 <Bbutton
                   bcolor={'#d6f3f3'}
                   border={30}
                   testId="JobDetailsScreenSubmitButtonTestId"
-                  title="PLEASE SUBMIT"
+                  title="INTERESTED"
                   onPress={() => setIsVisible(!isVisible)}
                 />
               </ButtonContainerStyled>

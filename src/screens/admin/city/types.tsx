@@ -8,5 +8,6 @@ export type RoutesProps = {
 export type StateFormProps = {
   name:string;
   state:string;
+  image:string;
   _id:string;
 };

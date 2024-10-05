@@ -5,6 +5,9 @@ import {City} from '../index';
 
 
 const deleteCity=()=>jest.fn()
+const addCity=()=>jest.fn()
+const updateCity=()=>jest.fn()
+const uploadProfile=()=>jest.fn()
 jest.mock('@/slice',()=>{
   return{
     useGetCityQuery:()=>({
@@ -13,6 +16,9 @@ jest.mock('@/slice',()=>{
       isError:false,
       data:[]
     }),
+    useUploadProfileMutation:()=>[uploadProfile,{isLoading:false,isError:false}],
+    useAddCityMutation:()=>[addCity,{isLoading:false,isError:false}],
+    useUpdateCityMutation:()=>[updateCity,{isLoading:false,isError:false}],
     useDeleteCityMutation:()=>[deleteCity,{isLoading:false,isError:false}],
   }
 })

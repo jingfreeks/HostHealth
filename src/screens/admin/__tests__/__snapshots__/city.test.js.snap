@@ -48,6 +48,298 @@ exports[`City Form admin screen Should work as expected to get snapshot 1`] = `
     style={
       [
         {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "marginTop": 20,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        [
+          {
+            "marginLeft": 20,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          {
+            "backgroundColor": "transparent",
+            "borderRadius": 125,
+            "height": 250,
+            "width": 250,
+          }
+        }
+        theme={
+          {
+            "colors": {
+              "black": "#242424",
+              "disabled": "hsl(208, 8%, 90%)",
+              "divider": "#bcbbc1",
+              "error": "#ff190c",
+              "grey0": "#393e42",
+              "grey1": "#43484d",
+              "grey2": "#5e6977",
+              "grey3": "#86939e",
+              "grey4": "#bdc6cf",
+              "grey5": "#e1e8ee",
+              "greyOutline": "#bbb",
+              "platform": {
+                "android": {
+                  "error": "#f44336",
+                  "grey": "rgba(0, 0, 0, 0.54)",
+                  "primary": "#2196f3",
+                  "searchBg": "#dcdce1",
+                  "secondary": "#9C27B0",
+                  "success": "#4caf50",
+                  "warning": "#ffeb3b",
+                },
+                "default": {
+                  "error": "#ff3b30",
+                  "grey": "#7d7d7d",
+                  "primary": "#007aff",
+                  "searchBg": "#dcdce1",
+                  "secondary": "#5856d6",
+                  "success": "#4cd964",
+                  "warning": "#ffcc00",
+                },
+                "ios": {
+                  "error": "#ff3b30",
+                  "grey": "#7d7d7d",
+                  "primary": "#007aff",
+                  "searchBg": "#dcdce1",
+                  "secondary": "#5856d6",
+                  "success": "#4cd964",
+                  "warning": "#ffcc00",
+                },
+                "web": {
+                  "error": "#ff190c",
+                  "grey": "#393e42",
+                  "primary": "#2089dc",
+                  "searchBg": "#303337",
+                  "secondary": "#ca71eb",
+                  "success": "#52c41a",
+                  "warning": "#faad14",
+                },
+              },
+              "primary": "#2089dc",
+              "searchBg": "#303337",
+              "secondary": "#ca71eb",
+              "success": "#52c41a",
+              "warning": "#faad14",
+              "white": "#ffffff",
+            },
+          }
+        }
+      >
+        <View
+          accessibilityIgnoresInvertColors={true}
+          style={
+            {
+              "backgroundColor": "transparent",
+              "borderRadius": 125,
+              "flex": 1,
+              "overflow": "hidden",
+              "position": "relative",
+            }
+          }
+        >
+          <Image
+            borderRadius={125}
+            onLoad={[Function]}
+            source={
+              {
+                "uri": "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg",
+              }
+            }
+            style={
+              {
+                "bottom": 0,
+                "flex": 1,
+                "height": undefined,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": undefined,
+              }
+            }
+            testID="RNE__Image"
+            theme={
+              {
+                "colors": {
+                  "black": "#242424",
+                  "disabled": "hsl(208, 8%, 90%)",
+                  "divider": "#bcbbc1",
+                  "error": "#ff190c",
+                  "grey0": "#393e42",
+                  "grey1": "#43484d",
+                  "grey2": "#5e6977",
+                  "grey3": "#86939e",
+                  "grey4": "#bdc6cf",
+                  "grey5": "#e1e8ee",
+                  "greyOutline": "#bbb",
+                  "platform": {
+                    "android": {
+                      "error": "#f44336",
+                      "grey": "rgba(0, 0, 0, 0.54)",
+                      "primary": "#2196f3",
+                      "searchBg": "#dcdce1",
+                      "secondary": "#9C27B0",
+                      "success": "#4caf50",
+                      "warning": "#ffeb3b",
+                    },
+                    "default": {
+                      "error": "#ff3b30",
+                      "grey": "#7d7d7d",
+                      "primary": "#007aff",
+                      "searchBg": "#dcdce1",
+                      "secondary": "#5856d6",
+                      "success": "#4cd964",
+                      "warning": "#ffcc00",
+                    },
+                    "ios": {
+                      "error": "#ff3b30",
+                      "grey": "#7d7d7d",
+                      "primary": "#007aff",
+                      "searchBg": "#dcdce1",
+                      "secondary": "#5856d6",
+                      "success": "#4cd964",
+                      "warning": "#ffcc00",
+                    },
+                    "web": {
+                      "error": "#ff190c",
+                      "grey": "#393e42",
+                      "primary": "#2089dc",
+                      "searchBg": "#303337",
+                      "secondary": "#ca71eb",
+                      "success": "#52c41a",
+                      "warning": "#faad14",
+                    },
+                  },
+                  "primary": "#2089dc",
+                  "searchBg": "#303337",
+                  "secondary": "#ca71eb",
+                  "success": "#52c41a",
+                  "warning": "#faad14",
+                  "white": "#ffffff",
+                },
+              }
+            }
+            transition={true}
+            transitionDuration={360}
+          />
+          <View
+            accessibilityElementsHidden={true}
+            collapsable={false}
+            importantForAccessibility="no-hide-descendants"
+            pointerEvents="none"
+            style={
+              {
+                "bottom": 0,
+                "left": 0,
+                "opacity": 1,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "alignItems": "center",
+                  "backgroundColor": "#bdbdbd",
+                  "flex": 1,
+                  "height": undefined,
+                  "justifyContent": "center",
+                  "width": undefined,
+                }
+              }
+              testID="RNE__Image__placeholder"
+            />
+          </View>
+          <View
+            style={
+              {
+                "flex": 1,
+                "height": undefined,
+                "width": undefined,
+              }
+            }
+            testID="RNE__Image__children__container"
+          />
+        </View>
+      </View>
+      <View
+        accessibilityLabel="ProfileAvatarUploadImageTestId"
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          {
+            "alignItems": "flex-end",
+            "justifyContent": "flex-end",
+            "opacity": 1,
+          }
+        }
+        testID="ProfileAvatarUploadImageTestId"
+      >
+        <Text
+          allowFontScaling={false}
+          selectable={false}
+          style={
+            [
+              {
+                "color": "#C2D6DC",
+                "fontSize": 25,
+              },
+              undefined,
+              {
+                "fontFamily": "Ionicons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              {},
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      [
+        {
           "marginBottom": 9.808823529411764,
           "marginTop": 39.23529411764706,
         },

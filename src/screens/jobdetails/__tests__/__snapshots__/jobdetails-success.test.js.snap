@@ -32,6 +32,7 @@ exports[`Job Details loading actions Screen Should work as expected to get snaps
         }
       >
         <Image
+          resizeMode="stretch"
           source={
             {
               "uri": "https://img.freepik.com/free-photo/doctor-with-stethoscope-hands-hospital-background_1423-1.jpg?w=1800&t=st=1701065844~exp=1701066444~hmac=c3febfb337e464bfef544f73469ab9e90ca1c5a01a059870f3fe9f4e2181243a",
@@ -124,10 +125,17 @@ exports[`Job Details loading actions Screen Should work as expected to get snaps
           style={
             [
               {
+                "alignItems": "center",
                 "backgroundColor": "#00000066",
+                "borderRadius": 3,
                 "bottom": 10,
                 "flexDirection": "row",
+                "justifyContent": "center",
                 "left": 20,
+                "paddingBottom": 3,
+                "paddingLeft": 3,
+                "paddingRight": 3,
+                "paddingTop": 3,
                 "position": "absolute",
               },
             ]
@@ -164,6 +172,7 @@ exports[`Job Details loading actions Screen Should work as expected to get snaps
                   "fontSize": 14,
                   "fontWeight": "800",
                   "marginLeft": 10,
+                  "marginRight": 10,
                 },
               ]
             }
@@ -1056,106 +1065,6 @@ exports[`Job Details loading actions Screen Should work as expected to get snaps
               }
             >
               <View
-                accessibilityLabel="AtomsButtonTestId"
-                accessibilityState={
-                  {
-                    "busy": undefined,
-                    "checked": undefined,
-                    "disabled": undefined,
-                    "expanded": undefined,
-                    "selected": undefined,
-                  }
-                }
-                accessibilityValue={
-                  {
-                    "max": undefined,
-                    "min": undefined,
-                    "now": undefined,
-                    "text": undefined,
-                  }
-                }
-                accessible={true}
-                collapsable={false}
-                focusable={true}
-                onClick={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  {
-                    "alignItems": "center",
-                    "backgroundColor": "#FFFFFF",
-                    "borderRadius": 30,
-                    "opacity": 1,
-                    "paddingBottom": 15,
-                    "paddingLeft": 15,
-                    "paddingRight": 15,
-                    "paddingTop": 15,
-                  }
-                }
-                testID="AtomsButtonTestId"
-              >
-                <Text
-                  style={
-                    [
-                      {
-                        "color": "#03606A",
-                        "fontFamily": "Avenir",
-                        "fontSize": 15,
-                        "fontWeight": "500",
-                      },
-                    ]
-                  }
-                >
-                  TELL ME MORE
-                </Text>
-              </View>
-            </View>
-          </View>
-        </View>
-        <View
-          style={
-            [
-              {
-                "flexBasis": 0,
-                "flexGrow": 1,
-                "flexShrink": 1,
-              },
-            ]
-          }
-        >
-          <View
-            style={
-              [
-                {
-                  "marginLeft": 5,
-                  "marginRight": 5,
-                  "paddingBottom": 5,
-                  "paddingLeft": 5,
-                  "paddingRight": 5,
-                  "paddingTop": 5,
-                },
-              ]
-            }
-          >
-            <View
-              border={30}
-              borderc="#99E1E1"
-              borderw={2}
-              style={
-                [
-                  {
-                    "borderColor": "#99E1E1",
-                    "borderRadius": 30,
-                    "borderWidth": 2,
-                  },
-                ]
-              }
-            >
-              <View
                 accessibilityLabel="JobDetailsScreenSubmitButtonTestId"
                 accessibilityState={
                   {
@@ -1210,7 +1119,7 @@ exports[`Job Details loading actions Screen Should work as expected to get snaps
                     ]
                   }
                 >
-                  PLEASE SUBMIT
+                  INTERESTED
                 </Text>
               </View>
             </View>
@@ -1254,6 +1163,7 @@ exports[`Job Details loading actions Screen Should work as expected to get snaps
         }
       >
         <Image
+          resizeMode="stretch"
           source={
             {
               "uri": "https://img.freepik.com/free-photo/doctor-with-stethoscope-hands-hospital-background_1423-1.jpg?w=1800&t=st=1701065844~exp=1701066444~hmac=c3febfb337e464bfef544f73469ab9e90ca1c5a01a059870f3fe9f4e2181243a",
@@ -1346,10 +1256,17 @@ exports[`Job Details loading actions Screen Should work as expected to get snaps
           style={
             [
               {
+                "alignItems": "center",
                 "backgroundColor": "#00000066",
+                "borderRadius": 3,
                 "bottom": 10,
                 "flexDirection": "row",
+                "justifyContent": "center",
                 "left": 20,
+                "paddingBottom": 3,
+                "paddingLeft": 3,
+                "paddingRight": 3,
+                "paddingTop": 3,
                 "position": "absolute",
               },
             ]
@@ -1386,6 +1303,7 @@ exports[`Job Details loading actions Screen Should work as expected to get snaps
                   "fontSize": 14,
                   "fontWeight": "800",
                   "marginLeft": 10,
+                  "marginRight": 10,
                 },
               ]
             }
@@ -2278,106 +2196,6 @@ exports[`Job Details loading actions Screen Should work as expected to get snaps
               }
             >
               <View
-                accessibilityLabel="AtomsButtonTestId"
-                accessibilityState={
-                  {
-                    "busy": undefined,
-                    "checked": undefined,
-                    "disabled": undefined,
-                    "expanded": undefined,
-                    "selected": undefined,
-                  }
-                }
-                accessibilityValue={
-                  {
-                    "max": undefined,
-                    "min": undefined,
-                    "now": undefined,
-                    "text": undefined,
-                  }
-                }
-                accessible={true}
-                collapsable={false}
-                focusable={true}
-                onClick={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  {
-                    "alignItems": "center",
-                    "backgroundColor": "#FFFFFF",
-                    "borderRadius": 30,
-                    "opacity": 1,
-                    "paddingBottom": 15,
-                    "paddingLeft": 15,
-                    "paddingRight": 15,
-                    "paddingTop": 15,
-                  }
-                }
-                testID="AtomsButtonTestId"
-              >
-                <Text
-                  style={
-                    [
-                      {
-                        "color": "#03606A",
-                        "fontFamily": "Avenir",
-                        "fontSize": 15,
-                        "fontWeight": "500",
-                      },
-                    ]
-                  }
-                >
-                  TELL ME MORE
-                </Text>
-              </View>
-            </View>
-          </View>
-        </View>
-        <View
-          style={
-            [
-              {
-                "flexBasis": 0,
-                "flexGrow": 1,
-                "flexShrink": 1,
-              },
-            ]
-          }
-        >
-          <View
-            style={
-              [
-                {
-                  "marginLeft": 5,
-                  "marginRight": 5,
-                  "paddingBottom": 5,
-                  "paddingLeft": 5,
-                  "paddingRight": 5,
-                  "paddingTop": 5,
-                },
-              ]
-            }
-          >
-            <View
-              border={30}
-              borderc="#99E1E1"
-              borderw={2}
-              style={
-                [
-                  {
-                    "borderColor": "#99E1E1",
-                    "borderRadius": 30,
-                    "borderWidth": 2,
-                  },
-                ]
-              }
-            >
-              <View
                 accessibilityLabel="JobDetailsScreenSubmitButtonTestId"
                 accessibilityState={
                   {
@@ -2432,7 +2250,7 @@ exports[`Job Details loading actions Screen Should work as expected to get snaps
                     ]
                   }
                 >
-                  PLEASE SUBMIT
+                  INTERESTED
                 </Text>
               </View>
             </View>

@@ -55,6 +55,7 @@ export type AppNavigationProps = {
   Cityform: {
     name: string;
     state: string;
+    image:string;
     _id: string;
   };
   DepartmentForm: {
