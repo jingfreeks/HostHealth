@@ -4,6 +4,9 @@ import {renderWithProviders} from '@/utils/testframeworknew';
 import {City} from '../index';
 
 const deleteCity = () => ({data: {}});
+const addCity=()=>jest.fn()
+const updateCity=()=>jest.fn()
+const uploadProfile=()=>jest.fn()
 jest.mock('@/slice', () => {
   return {
     useGetCityQuery: () => ({
@@ -38,6 +41,9 @@ jest.mock('@/slice', () => {
         ids: ['655f656dbed03fb0a5baddf0'],
       },
     }),
+    useAddCityMutation:()=>[addCity,{isLoading:false,isError:false}],
+    useUpdateCityMutation:()=>[updateCity,{isLoading:false,isError:false}],
+    useUploadProfileMutation:()=>[uploadProfile,{isLoading:false,isError:false}],
     useDeleteCityMutation: () => [
       deleteCity,
       {isLoading: false, isError: false},

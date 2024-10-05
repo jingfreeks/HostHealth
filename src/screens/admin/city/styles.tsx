@@ -37,3 +37,8 @@ export const StateEmptyContainerStyled=styled.View`
   align-items:center;
   justify-content:center;
 `
+export const ProfileAvatarContainerStyled = styled.View`
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+`;

@@ -40,6 +40,10 @@ export const LocationContainerStyled = styled.View`
   left: 20px;
   flex-direction: row;
   background-color: #00000066;
+    align-items:center;
+  justify-content:center;
+  border-radius:3px;
+  padding:3px;
 `;
 
 export const LocationTextStyled = styled(Text)`
@@ -47,6 +51,7 @@ export const LocationTextStyled = styled(Text)`
   font-size: 14px;
   color: ${colors.primary};
   margin-left: 10px;
+  margin-right:10px;
 `;
 
 export const JobInfoHeaderContainerStyled = styled.View`
