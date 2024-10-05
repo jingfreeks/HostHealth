@@ -35,6 +35,7 @@ export const ImageContainerStyled = styled.View`
 export const ImageStyled = styled.Image`
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  height:100px;
   flex: 1;
 `;
 

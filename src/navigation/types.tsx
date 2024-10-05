@@ -25,6 +25,7 @@ export type RootNavigationProps = {
   BankForm?: BankForm;
   ProfileDetails:undefined;
   ProfileBankInfo:undefined;
+  CityJobsList:{cityId?:string};
 };
 
 export type AppNavigationProps = {
@@ -79,4 +80,5 @@ export type AppNavigationProps = {
   TimeCard: undefined;
   TimeCard1: undefined;
   ProfileDetails:undefined;
+  CityJobsList:{cityId?:string}
 };
