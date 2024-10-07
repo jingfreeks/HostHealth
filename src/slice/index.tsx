@@ -45,3 +45,5 @@ export {
 } from './onboarding';
 
 export {useGetJobsQuery,useGetCityJobsQuery} from './suggested'
+export {useGetMyJobsQuery,usePostInterestedJobsMutation} from './myjobs'
+export {useGetJobDetailsQuery} from './jobdetails'
