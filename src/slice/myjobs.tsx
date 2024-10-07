@@ -23,8 +23,16 @@ export const myJobsApiSlice = apiSlice.injectEndpoints({
             ...result.ids.map((id:string | number) => ({ type: 'MyJobs', id }))
         ]: ['MyJobs']
     }),
+    postInterestedJobs: builder.mutation({
+      query: credentials => ({
+        url: '/jobs/myjobs',
+        method: 'POST',
+        body: {...credentials},
+      }),
+      invalidatesTags: ['MyJobs'] as string[] & undefined,
+    }),
   }),
   overrideExisting: false,
 });
 
-export const {useGetMyJobsQuery} = myJobsApiSlice;
+export const {useGetMyJobsQuery,usePostInterestedJobsMutation} = myJobsApiSlice;

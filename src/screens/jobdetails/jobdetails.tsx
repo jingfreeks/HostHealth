@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 //@ts-check
-import React, {useState, memo} from 'react';
+import React, {useState, memo, useMemo} from 'react';
+import {Alert} from 'react-native';
 import {testingProps} from '@/utils/testframework';
 import {
   ContainerStyled,
@@ -40,14 +41,21 @@ import {ShareIcon, HeartRedIcon, LocationIcon, DropDownIcon} from '@/assets';
 import {colors} from '@/utils/themes';
 import {Details} from './component/details';
 import {Requirements} from './component/requirements';
-import {useGetJobDetailsQuery} from '@/slice/jobdetails';
+import {useGetJobDetailsQuery, usePostInterestedJobsMutation} from '@/slice';
 import Bbutton from '@/component/molecules/bbutton/bbutton';
 import {Loaders} from '@/component/atoms/loaders';
 import type {RoutesProps} from './types';
+import {useSelector} from 'react-redux';
+import type {State} from '@/config/types';
+import {useJobDetailsHooks} from './hooks';
+
 const JobDetailScreen = (props: RoutesProps) => {
   const {route} = props;
   const {jobdetail} = route.params;
-  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const {postInterestedJobs, interestedLoading, isVisible, setIsVisible} =
+    useJobDetailsHooks();
+  const userId = useSelector((state: State) => state.auth.userId);
+
   const {
     refetch,
     data: jobDetails,
@@ -62,17 +70,43 @@ const JobDetailScreen = (props: RoutesProps) => {
     isSuccess: boolean;
     isError: boolean;
     error: string;
-  }>({jobId: jobdetail.jobId || jobdetail._id});
+  }>(
+    useMemo(() => {
+      return {jobId: jobdetail.jobId || jobdetail._id};
+    }, [jobdetail]),
+  );
+
   if (isLoading) {
     return <Loaders size="small" />;
   }
+  console.log('jobdetail', jobdetail);
+  const handleInterested = async () => {
+    try {
+      const response: any = await postInterestedJobs({
+        jobId: jobdetail.jobId || jobdetail._id,
+        userId,
+      });
+
+      if (response?.error) {
+        Alert.alert(response?.error?.data?.message);
+      } else {
+        setIsVisible(!isVisible);
+      }
+      console.log('response', response);
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
   if (isSuccess) {
     return (
       <>
         <ScrollViewContainer>
           <ContainerStyled>
             <ImageHeaderContaierStyled>
-              <ImageStyled source={{uri: jobDetails.image}}    resizeMode={'stretch'}/>
+              <ImageStyled
+                source={{uri: jobDetails.image}}
+                resizeMode={'stretch'}
+              />
               <FavoriteContainerStyled>
                 <FavoriteImageContainer>
                   <ImageHeaderStyled
@@ -145,11 +179,12 @@ const JobDetailScreen = (props: RoutesProps) => {
               </ButtonContainerStyled> */}
               <ButtonContainerStyled>
                 <Bbutton
+                  loaders={interestedLoading}
                   bcolor={'#d6f3f3'}
                   border={30}
                   testId="JobDetailsScreenSubmitButtonTestId"
                   title="INTERESTED"
-                  onPress={() => setIsVisible(!isVisible)}
+                  onPress={handleInterested}
                 />
               </ButtonContainerStyled>
             </ButtonFooterContainerStyled>

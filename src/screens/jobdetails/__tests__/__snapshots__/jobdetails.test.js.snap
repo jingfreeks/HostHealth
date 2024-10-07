@@ -20,24 +20,3 @@ exports[`Job Details Screen Should work as expected to get snapshot 1`] = `
   }
 />
 `;
-
-exports[`Job Details Screen Should work as expected to get snapshot 2`] = `
-<ActivityIndicator
-  color="#0000ff"
-  size="small"
-  style={
-    [
-      {
-        "flexBasis": 0,
-        "flexGrow": 1,
-        "flexShrink": 1,
-        "justifyContent": "center",
-        "paddingBottom": 19.61764705882353,
-        "paddingLeft": 19.61764705882353,
-        "paddingRight": 19.61764705882353,
-        "paddingTop": 19.61764705882353,
-      },
-    ]
-  }
-/>
-`;
