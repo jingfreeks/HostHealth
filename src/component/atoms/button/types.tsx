@@ -9,4 +9,5 @@ export type ButtonProps = {
   onPress: () => void;
   padding?: number;
   testId?:string;
+  disabled?:boolean;
 };

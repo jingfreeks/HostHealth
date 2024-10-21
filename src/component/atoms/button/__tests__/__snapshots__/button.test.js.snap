@@ -36,24 +36,28 @@ exports[`Buton Component Should work as expected to get snapshot 1`] = `
     accessible={true}
     collapsable={false}
     focusable={true}
+    onBlur={[Function]}
     onClick={[Function]}
+    onFocus={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
     onResponderTerminate={[Function]}
     onResponderTerminationRequest={[Function]}
     onStartShouldSetResponder={[Function]}
+    padding={15}
     style={
-      {
-        "alignItems": "center",
-        "backgroundColor": "",
-        "borderRadius": "px",
-        "opacity": 1,
-        "paddingBottom": 15,
-        "paddingLeft": 15,
-        "paddingRight": 15,
-        "paddingTop": 15,
-      }
+      [
+        {
+          "alignItems": "center",
+          "backgroundColor": "",
+          "borderRadius": "px",
+          "paddingBottom": 15,
+          "paddingLeft": 15,
+          "paddingRight": 15,
+          "paddingTop": 15,
+        },
+      ]
     }
     testID="AtomsButtonTestId"
   />

@@ -7,8 +7,8 @@ export const jobDetailsApiSlice = apiSlice.injectEndpoints({
     getJobDetails: builder.query({  
         query: ({jobId}:{jobId:string}) => `/jobs/${jobId}`,
         transformResponse: responseData => {
-            const {_doc,cityname,compaddress,compname,deptname,shiftname,statename}=responseData
-            return {..._doc,cityname,compaddress,compname,deptname,shiftname,statename}
+            const {_doc,cityname,compaddress,compname,deptname,shiftname,statename,status}=responseData
+            return {..._doc,cityname,compaddress,compname,deptname,shiftname,statename,status}
         },
     }),
   }),

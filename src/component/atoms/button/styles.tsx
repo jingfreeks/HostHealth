@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-export const ButtonContainer = styled.TouchableOpacity<{
+export const ButtonContainer = styled.Pressable<{
   bcolor: string;
   border: number;
   padding: number;

@@ -1054,13 +1054,13 @@ exports[`Job Details loading actions Screen Should work as expected to get snaps
               <View
                 border={30}
                 borderc="#99E1E1"
-                borderw={2}
+                borderw={0}
                 style={
                   [
                     {
                       "borderColor": "#99E1E1",
                       "borderRadius": 30,
-                      "borderWidth": 2,
+                      "borderWidth": 0,
                     },
                   ]
                 }
@@ -1071,7 +1071,7 @@ exports[`Job Details loading actions Screen Should work as expected to get snaps
                     {
                       "busy": undefined,
                       "checked": undefined,
-                      "disabled": undefined,
+                      "disabled": true,
                       "expanded": undefined,
                       "selected": undefined,
                     }
@@ -1085,26 +1085,32 @@ exports[`Job Details loading actions Screen Should work as expected to get snaps
                     }
                   }
                   accessible={true}
+                  bcolor="#D3D3D3"
+                  border={30}
                   collapsable={false}
                   focusable={true}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
                   onResponderGrant={[Function]}
                   onResponderMove={[Function]}
                   onResponderRelease={[Function]}
                   onResponderTerminate={[Function]}
                   onResponderTerminationRequest={[Function]}
                   onStartShouldSetResponder={[Function]}
+                  padding={15}
                   style={
-                    {
-                      "alignItems": "center",
-                      "backgroundColor": "#d6f3f3",
-                      "borderRadius": 30,
-                      "opacity": 1,
-                      "paddingBottom": 15,
-                      "paddingLeft": 15,
-                      "paddingRight": 15,
-                      "paddingTop": 15,
-                    }
+                    [
+                      {
+                        "alignItems": "center",
+                        "backgroundColor": "#D3D3D3",
+                        "borderRadius": 30,
+                        "paddingBottom": 15,
+                        "paddingLeft": 15,
+                        "paddingRight": 15,
+                        "paddingTop": 15,
+                      },
+                    ]
                   }
                   testID="JobDetailsScreenSubmitButtonTestId"
                 >
@@ -1119,9 +1125,7 @@ exports[`Job Details loading actions Screen Should work as expected to get snaps
                         },
                       ]
                     }
-                  >
-                    INTERESTED
-                  </Text>
+                  />
                 </View>
               </View>
             </View>
@@ -1259,7 +1263,7 @@ exports[`Job Details loading actions Screen Should work as expected to get snaps
                   {
                     "busy": undefined,
                     "checked": undefined,
-                    "disabled": undefined,
+                    "disabled": false,
                     "expanded": undefined,
                     "selected": undefined,
                   }
@@ -1273,26 +1277,32 @@ exports[`Job Details loading actions Screen Should work as expected to get snaps
                   }
                 }
                 accessible={true}
+                bcolor="#d6f3f3"
+                border={5}
                 collapsable={false}
                 focusable={true}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
                 onResponderTerminate={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
+                padding={15}
                 style={
-                  {
-                    "alignItems": "center",
-                    "backgroundColor": "#d6f3f3",
-                    "borderRadius": 5,
-                    "opacity": 1,
-                    "paddingBottom": 15,
-                    "paddingLeft": 15,
-                    "paddingRight": 15,
-                    "paddingTop": 15,
-                  }
+                  [
+                    {
+                      "alignItems": "center",
+                      "backgroundColor": "#d6f3f3",
+                      "borderRadius": 5,
+                      "paddingBottom": 15,
+                      "paddingLeft": 15,
+                      "paddingRight": 15,
+                      "paddingTop": 15,
+                    },
+                  ]
                 }
                 testID="JobDetailsScreenAlertModalSubmitOkButtonTestId"
               >
@@ -2374,13 +2384,13 @@ exports[`Job Details loading actions Screen Should work as expected to get snaps
               <View
                 border={30}
                 borderc="#99E1E1"
-                borderw={2}
+                borderw={0}
                 style={
                   [
                     {
                       "borderColor": "#99E1E1",
                       "borderRadius": 30,
-                      "borderWidth": 2,
+                      "borderWidth": 0,
                     },
                   ]
                 }
@@ -2391,7 +2401,7 @@ exports[`Job Details loading actions Screen Should work as expected to get snaps
                     {
                       "busy": undefined,
                       "checked": undefined,
-                      "disabled": undefined,
+                      "disabled": true,
                       "expanded": undefined,
                       "selected": undefined,
                     }
@@ -2405,26 +2415,32 @@ exports[`Job Details loading actions Screen Should work as expected to get snaps
                     }
                   }
                   accessible={true}
+                  bcolor="#D3D3D3"
+                  border={30}
                   collapsable={false}
                   focusable={true}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
                   onResponderGrant={[Function]}
                   onResponderMove={[Function]}
                   onResponderRelease={[Function]}
                   onResponderTerminate={[Function]}
                   onResponderTerminationRequest={[Function]}
                   onStartShouldSetResponder={[Function]}
+                  padding={15}
                   style={
-                    {
-                      "alignItems": "center",
-                      "backgroundColor": "#d6f3f3",
-                      "borderRadius": 30,
-                      "opacity": 1,
-                      "paddingBottom": 15,
-                      "paddingLeft": 15,
-                      "paddingRight": 15,
-                      "paddingTop": 15,
-                    }
+                    [
+                      {
+                        "alignItems": "center",
+                        "backgroundColor": "#D3D3D3",
+                        "borderRadius": 30,
+                        "paddingBottom": 15,
+                        "paddingLeft": 15,
+                        "paddingRight": 15,
+                        "paddingTop": 15,
+                      },
+                    ]
                   }
                   testID="JobDetailsScreenSubmitButtonTestId"
                 >
@@ -2439,9 +2455,7 @@ exports[`Job Details loading actions Screen Should work as expected to get snaps
                         },
                       ]
                     }
-                  >
-                    INTERESTED
-                  </Text>
+                  />
                 </View>
               </View>
             </View>
@@ -2579,7 +2593,7 @@ exports[`Job Details loading actions Screen Should work as expected to get snaps
                   {
                     "busy": undefined,
                     "checked": undefined,
-                    "disabled": undefined,
+                    "disabled": false,
                     "expanded": undefined,
                     "selected": undefined,
                   }
@@ -2593,26 +2607,32 @@ exports[`Job Details loading actions Screen Should work as expected to get snaps
                   }
                 }
                 accessible={true}
+                bcolor="#d6f3f3"
+                border={5}
                 collapsable={false}
                 focusable={true}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
                 onResponderTerminate={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
+                padding={15}
                 style={
-                  {
-                    "alignItems": "center",
-                    "backgroundColor": "#d6f3f3",
-                    "borderRadius": 5,
-                    "opacity": 1,
-                    "paddingBottom": 15,
-                    "paddingLeft": 15,
-                    "paddingRight": 15,
-                    "paddingTop": 15,
-                  }
+                  [
+                    {
+                      "alignItems": "center",
+                      "backgroundColor": "#d6f3f3",
+                      "borderRadius": 5,
+                      "paddingBottom": 15,
+                      "paddingLeft": 15,
+                      "paddingRight": 15,
+                      "paddingTop": 15,
+                    },
+                  ]
                 }
                 testID="JobDetailsScreenAlertModalSubmitOkButtonTestId"
               >

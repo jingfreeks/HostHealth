@@ -75,11 +75,10 @@ const JobDetailScreen = (props: RoutesProps) => {
       return {jobId: jobdetail.jobId || jobdetail._id};
     }, [jobdetail]),
   );
-
+  console.log('jobDetails', jobDetails);
   if (isLoading) {
     return <Loaders size="small" />;
   }
-  console.log('jobdetail', jobdetail);
   const handleInterested = async () => {
     try {
       const response: any = await postInterestedJobs({
@@ -91,6 +90,7 @@ const JobDetailScreen = (props: RoutesProps) => {
         Alert.alert(response?.error?.data?.message);
       } else {
         setIsVisible(!isVisible);
+        await refetch()
       }
       console.log('response', response);
     } catch (error) {
@@ -180,10 +180,17 @@ const JobDetailScreen = (props: RoutesProps) => {
               <ButtonContainerStyled>
                 <Bbutton
                   loaders={interestedLoading}
-                  bcolor={'#d6f3f3'}
+                  disabled={jobDetails?.status == 'available' ? false : true}
+                  bcolor={
+                    jobDetails?.status === 'available' ? '#d6f3f3' : '#D3D3D3'
+                  }
                   border={30}
                   testId="JobDetailsScreenSubmitButtonTestId"
-                  title="INTERESTED"
+                  title={
+                    jobDetails?.status === 'available'
+                      ? 'INTERESTED'
+                      : jobDetails?.status
+                  }
                   onPress={handleInterested}
                 />
               </ButtonContainerStyled>
@@ -212,7 +219,9 @@ const JobDetailScreen = (props: RoutesProps) => {
                   border={5}
                   testId="JobDetailsScreenAlertModalSubmitOkButtonTestId"
                   title="OK"
-                  onPress={() => setIsVisible(!isVisible)}
+                  onPress={() => {
+                    setIsVisible(!isVisible);
+                  }}
                 />
               </AlertModalTextContainerStyled>
             </AlertModalViewStyled>
