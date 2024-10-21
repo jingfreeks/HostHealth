@@ -45,6 +45,7 @@ export type AppNavigationProps = {
       joborderno?: string;
       id?: number;
       jobId?: string;
+      status?:string;
       _id?: string;
     };
   };

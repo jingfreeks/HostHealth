@@ -1,7 +1,12 @@
 import React from 'react';
 import bottomtab from './bottomtabnavigation';
 import {Navigation} from './constant';
-import {JobsDetails, ProfileDetails, ProfileBankInfo,CityJobsList} from '@/screens';
+import {
+  JobsDetails,
+  ProfileDetails,
+  ProfileBankInfo,
+  CityJobsList,
+} from '@/screens';
 import type {AppNavigationProps, RootNavigationProps} from './types';
 import {
   createNativeStackNavigator,
@@ -23,7 +28,11 @@ export const Appnavigation = () => {
       <Stack.Screen
         component={JobsDetails}
         name="JobsDetails"
-        options={{headerShown: true, title: 'JOB DETAILS'}}
+        options={{
+          headerBackTitleVisible: false,
+          headerShown: true,
+          title: 'JOB DETAILS',
+        }}
       />
       <Stack.Screen
         component={ProfileDetails}

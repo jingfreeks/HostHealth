@@ -17,6 +17,7 @@ const Bbutton = (props: BbuttonProps) => {
     loaderColor,
     loaderSize = 'small',
     testId,
+    disabled=false,
   } = props;
   return (
     <ContainerStyled>
@@ -27,6 +28,7 @@ const Bbutton = (props: BbuttonProps) => {
         borderw={borderw}
         padding={padding}
         testId={testId}
+        disabled={disabled}
         onPress={onPress}>
         {loaders ? (
           <Loaders color={loaderColor} size={loaderSize} />

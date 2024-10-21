@@ -46,7 +46,7 @@ exports[`Welcome Button group Template Component Should work as expected to get 
           {
             "busy": undefined,
             "checked": undefined,
-            "disabled": undefined,
+            "disabled": false,
             "expanded": undefined,
             "selected": undefined,
           }
@@ -60,26 +60,32 @@ exports[`Welcome Button group Template Component Should work as expected to get 
           }
         }
         accessible={true}
+        bcolor="#d6f3f3"
+        border={10}
         collapsable={false}
         focusable={true}
+        onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
         onResponderTerminate={[Function]}
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
+        padding={15}
         style={
-          {
-            "alignItems": "center",
-            "backgroundColor": "#d6f3f3",
-            "borderRadius": 10,
-            "opacity": 1,
-            "paddingBottom": 15,
-            "paddingLeft": 15,
-            "paddingRight": 15,
-            "paddingTop": 15,
-          }
+          [
+            {
+              "alignItems": "center",
+              "backgroundColor": "#d6f3f3",
+              "borderRadius": 10,
+              "paddingBottom": 15,
+              "paddingLeft": 15,
+              "paddingRight": 15,
+              "paddingTop": 15,
+            },
+          ]
         }
         testID="WelcomeButtonGroupSignUnPressTestId"
       >
@@ -134,7 +140,7 @@ exports[`Welcome Button group Template Component Should work as expected to get 
           {
             "busy": undefined,
             "checked": undefined,
-            "disabled": undefined,
+            "disabled": false,
             "expanded": undefined,
             "selected": undefined,
           }
@@ -148,26 +154,32 @@ exports[`Welcome Button group Template Component Should work as expected to get 
           }
         }
         accessible={true}
+        bcolor="#FFFFFF"
+        border={10}
         collapsable={false}
         focusable={true}
+        onBlur={[Function]}
         onClick={[Function]}
+        onFocus={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
         onResponderTerminate={[Function]}
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
+        padding={15}
         style={
-          {
-            "alignItems": "center",
-            "backgroundColor": "#FFFFFF",
-            "borderRadius": 10,
-            "opacity": 1,
-            "paddingBottom": 15,
-            "paddingLeft": 15,
-            "paddingRight": 15,
-            "paddingTop": 15,
-          }
+          [
+            {
+              "alignItems": "center",
+              "backgroundColor": "#FFFFFF",
+              "borderRadius": 10,
+              "paddingBottom": 15,
+              "paddingLeft": 15,
+              "paddingRight": 15,
+              "paddingTop": 15,
+            },
+          ]
         }
         testID="WelcomeButtonGroupSignInPressTestId"
       >

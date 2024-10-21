@@ -135,26 +135,32 @@ exports[`Department admin with data screen Should work as expected to get snapsh
                   }
                 }
                 accessible={true}
+                bcolor="transparent"
+                border={0}
                 collapsable={false}
                 focusable={true}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
                 onResponderTerminate={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
+                padding={15}
                 style={
-                  {
-                    "alignItems": "center",
-                    "backgroundColor": "transparent",
-                    "borderRadius": 0,
-                    "opacity": 1,
-                    "paddingBottom": 15,
-                    "paddingLeft": 15,
-                    "paddingRight": 15,
-                    "paddingTop": 15,
-                  }
+                  [
+                    {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "borderRadius": 0,
+                      "paddingBottom": 15,
+                      "paddingLeft": 15,
+                      "paddingRight": 15,
+                      "paddingTop": 15,
+                    },
+                  ]
                 }
                 testID="DepartmentEditFormTestId"
               >
@@ -200,26 +206,32 @@ exports[`Department admin with data screen Should work as expected to get snapsh
                   }
                 }
                 accessible={true}
+                bcolor="transparent"
+                border={0}
                 collapsable={false}
                 focusable={true}
+                onBlur={[Function]}
                 onClick={[Function]}
+                onFocus={[Function]}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
                 onResponderTerminate={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
+                padding={15}
                 style={
-                  {
-                    "alignItems": "center",
-                    "backgroundColor": "transparent",
-                    "borderRadius": 0,
-                    "opacity": 1,
-                    "paddingBottom": 15,
-                    "paddingLeft": 15,
-                    "paddingRight": 15,
-                    "paddingTop": 15,
-                  }
+                  [
+                    {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "borderRadius": 0,
+                      "paddingBottom": 15,
+                      "paddingLeft": 15,
+                      "paddingRight": 15,
+                      "paddingTop": 15,
+                    },
+                  ]
                 }
                 testID="DepartmentDeleteItemTestId"
               >

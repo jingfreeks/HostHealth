@@ -642,7 +642,7 @@ exports[`My Jobs Screen Should work as expected to get snapshot 1`] = `
                     {
                       "busy": undefined,
                       "checked": undefined,
-                      "disabled": undefined,
+                      "disabled": false,
                       "expanded": undefined,
                       "selected": undefined,
                     }
@@ -656,26 +656,32 @@ exports[`My Jobs Screen Should work as expected to get snapshot 1`] = `
                     }
                   }
                   accessible={true}
+                  bcolor="#d6f3f3"
+                  border={50}
                   collapsable={false}
                   focusable={true}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
                   onResponderGrant={[Function]}
                   onResponderMove={[Function]}
                   onResponderRelease={[Function]}
                   onResponderTerminate={[Function]}
                   onResponderTerminationRequest={[Function]}
                   onStartShouldSetResponder={[Function]}
+                  padding={5}
                   style={
-                    {
-                      "alignItems": "center",
-                      "backgroundColor": "#d6f3f3",
-                      "borderRadius": 50,
-                      "opacity": 1,
-                      "paddingBottom": 5,
-                      "paddingLeft": 5,
-                      "paddingRight": 5,
-                      "paddingTop": 5,
-                    }
+                    [
+                      {
+                        "alignItems": "center",
+                        "backgroundColor": "#d6f3f3",
+                        "borderRadius": 50,
+                        "paddingBottom": 5,
+                        "paddingLeft": 5,
+                        "paddingRight": 5,
+                        "paddingTop": 5,
+                      },
+                    ]
                   }
                   testID="MoleculesSuggestedCardSubmitButtonTestId"
                 >
@@ -1279,7 +1285,7 @@ exports[`My Jobs Screen Should work as expected to get snapshot 1`] = `
                     {
                       "busy": undefined,
                       "checked": undefined,
-                      "disabled": undefined,
+                      "disabled": false,
                       "expanded": undefined,
                       "selected": undefined,
                     }
@@ -1293,26 +1299,32 @@ exports[`My Jobs Screen Should work as expected to get snapshot 1`] = `
                     }
                   }
                   accessible={true}
+                  bcolor="#d6f3f3"
+                  border={50}
                   collapsable={false}
                   focusable={true}
+                  onBlur={[Function]}
                   onClick={[Function]}
+                  onFocus={[Function]}
                   onResponderGrant={[Function]}
                   onResponderMove={[Function]}
                   onResponderRelease={[Function]}
                   onResponderTerminate={[Function]}
                   onResponderTerminationRequest={[Function]}
                   onStartShouldSetResponder={[Function]}
+                  padding={5}
                   style={
-                    {
-                      "alignItems": "center",
-                      "backgroundColor": "#d6f3f3",
-                      "borderRadius": 50,
-                      "opacity": 1,
-                      "paddingBottom": 5,
-                      "paddingLeft": 5,
-                      "paddingRight": 5,
-                      "paddingTop": 5,
-                    }
+                    [
+                      {
+                        "alignItems": "center",
+                        "backgroundColor": "#d6f3f3",
+                        "borderRadius": 50,
+                        "paddingBottom": 5,
+                        "paddingLeft": 5,
+                        "paddingRight": 5,
+                        "paddingTop": 5,
+                      },
+                    ]
                   }
                   testID="MoleculesSuggestedCardSubmitButtonTestId"
                 >

@@ -14,5 +14,6 @@ export type JobDetailsProps = {
   salaryrange: string;
   shift: string;
   jobId:string;
+  status:string;
   _id:string;
 };

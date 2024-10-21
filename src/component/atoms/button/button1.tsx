@@ -11,12 +11,14 @@ const Button1 = (props: ButtonProps) => {
     onPress,
     padding = 15,
     testId = 'AtomsButtonTestId',
+    disabled,
   } = props;
   return (
     <ButtonContainer
       bcolor={bcolor}
       border={border}
       padding={padding}
+      disabled={disabled}
       {...testingProps(testId)}
       onPress={onPress}>
         {children}

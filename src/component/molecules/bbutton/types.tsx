@@ -1,6 +1,6 @@
 export type BbuttonProps = {
   onPress?: () => void;
-  title: string;
+  title?: string;
   border: number;
   bcolor: string;
   padding?: number;
@@ -10,4 +10,5 @@ export type BbuttonProps = {
   loaderColor?: string;
   loaderSize?: 'small' | 'large';
   testId?:string;
+  disabled?:boolean;
 };
