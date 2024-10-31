@@ -12,7 +12,7 @@ const initialState = jobsAdapter.getInitialState();
 export const jobsApiSlice = apiSlice.injectEndpoints({
   endpoints: builder => ({
     getJobs: builder.query({
-      query: () => '/jobs',
+      query: ({usrId}) => `/jobs/${usrId}`,
       transformResponse: responseData => {
         return jobsAdapter.setAll(initialState, responseData);
       },

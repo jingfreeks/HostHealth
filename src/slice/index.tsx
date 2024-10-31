@@ -45,5 +45,5 @@ export {
 } from './onboarding';
 
 export {useGetJobsQuery,useGetCityJobsQuery} from './suggested'
-export {useGetMyJobsQuery,usePostInterestedJobsMutation} from './myjobs'
+export {useGetMyJobsQuery,usePostInterestedJobsMutation,usePostBookmarkingJobsMutation} from './myjobs'
 export {useGetJobDetailsQuery} from './jobdetails'

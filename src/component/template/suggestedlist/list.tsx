@@ -1,23 +1,32 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from 'react';
+import React, {useMemo} from 'react';
 import {useGetJobsQuery} from '@/slice/suggested';
-import type {JobIdList} from './types'
+import type {JobIdList} from './types';
 import SuggestedCard from '@/component/molecules/suggesstedcard/suggestedcard';
-import {
-    RenderItemStyled,
-  } from './styles';
-const ListScreen=(props:JobIdList)=>{
-    const {jobId} = props;
+import {RenderItemStyled} from './styles';
+const ListScreen = (props: JobIdList) => {
+  const {jobId, usrId} = props;
 
-    const {jobs} = useGetJobsQuery('getJobs', {
+  // const {jobs} = useGetJobsQuery('getJobs', {
+  //   selectFromResult: ({data}: any) => ({
+  //     jobs: data?.entities[jobId],
+  //   }),
+  // });
+  const {jobs} = useGetJobsQuery(
+    useMemo(() => {
+      return {usrId};
+    }, [usrId]),
+    {
       selectFromResult: ({data}: any) => ({
         jobs: data?.entities[jobId],
       }),
-    });
-    return(
-        <RenderItemStyled>
-          <SuggestedCard data={jobs} />
-        </RenderItemStyled>
-    )
+    },
+  );
+  console.log('jobs', jobs);
+  return (
+    <RenderItemStyled>
+      <SuggestedCard data={jobs} />
+    </RenderItemStyled>
+  );
 };
-export default ListScreen
+export default ListScreen;

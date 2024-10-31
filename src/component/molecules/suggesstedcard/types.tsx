@@ -16,5 +16,6 @@ export type SuggestedCardDetailsProps = {
   address?: string;
   joborderno?: string;
   id?: number;
-  _id:string;
+  bookmark: boolean;
+  _id: string;
 };

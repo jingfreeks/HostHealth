@@ -1,21 +1,20 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React,{useMemo,useEffect} from 'react';
-import {testingProps} from '@/utils/testframework'
-import {RefreshControl} from 'react-native'
+import React, {useMemo, useEffect} from 'react';
+import {testingProps} from '@/utils/testframework';
+import {RefreshControl} from 'react-native';
 import {Text} from '@/component/atoms/text';
 import {SuggestedList} from '@/component/template/suggestedlist';
 import {PopularList} from '@/component/template/popularlist';
 import {HomeHeaderList} from '@/component/template/homeheaderlist';
-import {useSelector,useDispatch} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import {useGetJobsQuery} from '@/slice/suggested';
 import {useGetCityQuery} from '@/slice/city';
 import {useGetProfileQuery} from '@/slice/profile';
-import {selectCurrentUserId,selectUserRoles} from '@/slice/auth';
+import {selectCurrentUserId, selectUserRoles} from '@/slice/auth';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import type {RootNavigationProps} from '@/navigation/types';
-//import {fetchSuggested} from '@/slice/suggested';
-import {setLogout} from '@/slice/auth'
+
 import {ThunkDispatch} from '@reduxjs/toolkit';
 import {
   ScrollViewContainer,
@@ -23,25 +22,34 @@ import {
   SuggestedTextContainerStyled,
 } from './styles';
 const HomeScreen = () => {
+  const usrId = useSelector(selectCurrentUserId)?.toString();
+  const usrRoles = useSelector(selectUserRoles);
+  const {refetch: suggestedrefresh} = useGetJobsQuery<any>(
+    useMemo(() => {
+      return {usrId};
+    }, [usrId]),
+  );
   const {
-    refetch:suggestedrefresh,
-  } = useGetJobsQuery<any>('getJobs');
-  const {
-    refetch:pcitiesFetch,
+    refetch: pcitiesFetch,
     isLoading,
     isSuccess,
   } = useGetCityQuery<any>('getcity');
-  const usrId = useSelector(selectCurrentUserId);
-  const usrRoles =useSelector(selectUserRoles)
+
   const navigation = useNavigation<StackNavigationProp<RootNavigationProps>>();
   const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
-  const {data: profiles,isLoading:profileLoading,isError,error,refetch:profileRefetch} = useGetProfileQuery<{
+  const {
+    data: profiles,
+    isLoading: profileLoading,
+    isError,
+    error,
+    refetch: profileRefetch,
+  } = useGetProfileQuery<{
     refetch: () => void;
     data: any;
-    isLoading:boolean;
-    isError:boolean;
-    error:any;
-  }>(useMemo(()=>({userId: usrId}),[usrId,navigation]));
+    isLoading: boolean;
+    isError: boolean;
+    error: any;
+  }>(useMemo(() => ({userId: usrId}), [usrId, navigation]));
   // useEffect(()=>{
   //   const unsubscribe = navigation.addListener('focus', () => {
   //     // The screen is focused
@@ -60,15 +68,17 @@ const HomeScreen = () => {
   //   }
   // },[profiles,navigation,error,isError,profileLoading])
 
-  const onRefresh=async()=>{
-    await suggestedrefresh()
-    await pcitiesFetch()
-  }
+  const onRefresh = async () => {
+    await suggestedrefresh();
+    await pcitiesFetch();
+  };
 
   return (
-    <ScrollViewContainer {...testingProps('HomeScreenOnRefreshTestId')} refreshControl={
-      <RefreshControl refreshing={false} onRefresh={onRefresh} />
-    }>
+    <ScrollViewContainer
+      {...testingProps('HomeScreenOnRefreshTestId')}
+      refreshControl={
+        <RefreshControl refreshing={false} onRefresh={onRefresh} />
+      }>
       <HomeHeaderList />
 
       <ListsContainerStyled>

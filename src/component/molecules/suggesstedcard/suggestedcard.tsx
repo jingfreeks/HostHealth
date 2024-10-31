@@ -1,4 +1,3 @@
-
 import {
   Container,
   ImageHeaderContainer,
@@ -25,7 +24,7 @@ import {
   EstimatedAmount,
   SubmitContainerStyled,
 } from './styles';
-import React,{memo} from 'react';
+import React, {memo,useState} from 'react';
 import {
   ShareIcon,
   HeartIcon,
@@ -33,16 +32,40 @@ import {
   StethoscopeIcon,
   CalendarIcon,
   SunICon,
+  HeartRedIcon,
 } from '@/assets';
 import {ImageHeaderStyled} from '@/navigation/styles';
-import Bbutton from '@/component/molecules/bbutton/bbutton';
+import {Loaders} from '@/component/atoms/loaders';
 import {UseSuggestedCardHooks} from './hooks';
 import type {SuggestedCardProps} from './types';
 import {Text} from '@/component/atoms/text';
+import {Bbutton} from '@/component';
+import {usePostBookmarkingJobsMutation} from '@/slice';
+import {selectCurrentUserId} from '@/slice/auth';
+import {useSelector} from 'react-redux';
 const SuggestedCardScreen = (props: SuggestedCardProps) => {
   const {data} = props;
-  console.log('jobs',data)
+  const [bookmark,setBookmarking]=useState<boolean>(data?.bookmark);
+  const usrId = useSelector(selectCurrentUserId)?.toString();
+  const [postBookmarkingJobs, {isLoading}] = usePostBookmarkingJobsMutation();
   const {handlesubmit} = UseSuggestedCardHooks();
+
+  const handleBookMarking = async () => {
+    try {
+      const response = await postBookmarkingJobs({
+        jobId: data._id?.toString(),
+        userId: usrId,
+      });
+      if(response){
+        setBookmarking(!bookmark)
+      }
+   
+      console.log('response', response);
+    } catch (err) {
+      console.log('error', err);
+    }
+  };
+
   if (data) {
     return (
       <Container>
@@ -54,8 +77,15 @@ const SuggestedCardScreen = (props: SuggestedCardProps) => {
             }}
           />
           <FavoriteContainerStyled>
-            <FavoriteImageContainer>
-              <ImageHeaderStyled resizeMode={'contain'} source={HeartIcon} />
+            <FavoriteImageContainer onPress={handleBookMarking}>
+              {isLoading ? (
+                <Loaders size={'small'} />
+              ) : (
+                <ImageHeaderStyled
+                  resizeMode={'contain'}
+                  source={bookmark ? HeartRedIcon : HeartIcon}
+                />
+              )}
             </FavoriteImageContainer>
             <FavoriteImageContainer>
               <ImageHeaderStyled resizeMode={'contain'} source={ShareIcon} />
@@ -135,5 +165,5 @@ const SuggestedCardScreen = (props: SuggestedCardProps) => {
   return null;
 };
 
-const SuggestedCardMemo=memo(SuggestedCardScreen)
+const SuggestedCardMemo = memo(SuggestedCardScreen);
 export default SuggestedCardMemo;

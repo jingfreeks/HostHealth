@@ -26,4 +26,5 @@ export type RenderItemProps = {
 
 export type JobIdList={
   jobId:string;
+  usrId?:string;
 }
