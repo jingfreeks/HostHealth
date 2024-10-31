@@ -1,21 +1,30 @@
 import React from 'react';
-import {render, fireEvent} from '@testing-library/react-native';
+import {fireEvent} from '@testing-library/react-native';
+import {renderWithProviders} from '@/utils/testframeworknew';
 import Suggestedcard from '../suggestedcard';
 
-jest.mock('@react-navigation/native', () => {
-  return {
-    ...jest.requireActual('@react-navigation/native'),
-    useNavigation: () => ({
-      // eslint-disable-next-line @typescript-eslint/no-empty-function
-      navigate: () => {},
-    }),
-    useIsFocused: () => true,
-    useDispatch: () => ({dispatch: jest.fn()}),
-  };
-});
+// jest.mock('@react-navigation/native', () => {
+//   return {
+//     ...jest.requireActual('@react-navigation/native'),
+//     useNavigation: () => ({
+//       // eslint-disable-next-line @typescript-eslint/no-empty-function
+//       navigate: () => {},
+//     }),
+//     useIsFocused: () => true,
+//     useDispatch: () => ({dispatch: jest.fn()}),
+//   };
+// });
+
+const bookmarkJobs = () => ({data: {}});
+jest.mock('@/slice/myjobs',()=>({
+  usePostBookmarkingJobsMutation:()=>[
+    bookmarkJobs,
+    {isLoading: false, isError: false},
+  ]
+}))
 describe('Suggested Card Component', () => {
   it('Should work as expected to get snapshot', () => {
-    const all = render(
+    const all = renderWithProviders(
       <Suggestedcard
         data={{
           image:
@@ -31,6 +40,7 @@ describe('Suggested Card Component', () => {
           salaryrange: '3,656.09-4,500',
           address: '55 Fruit Street, Boston, MA 02114',
           joborderno: '179827',
+          bookmark:false,
           id: 1,
         }}
       />,
@@ -38,7 +48,7 @@ describe('Suggested Card Component', () => {
     expect(all.toJSON()).toMatchSnapshot();
   });
   it('Should work to trigger handle submit button', () => {
-    const all = render(
+    const all = renderWithProviders(
       <Suggestedcard
         data={{
           image:
@@ -54,6 +64,7 @@ describe('Suggested Card Component', () => {
           salaryrange: '3,656.09-4,500',
           address: '55 Fruit Street, Boston, MA 02114',
           joborderno: '179827',
+          bookmark:false,
           id: 1,
         }}
       />,
@@ -64,7 +75,7 @@ describe('Suggested Card Component', () => {
   });
 
   it('Should work null data to get snapshots', () => {
-    const all = render(<Suggestedcard data={null} />);
+    const all = renderWithProviders(<Suggestedcard data={null} />);
     expect(all.toJSON()).toMatchSnapshot();
   });
 });

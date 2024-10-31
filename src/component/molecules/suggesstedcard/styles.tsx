@@ -34,7 +34,7 @@ export const FavoriteContainerStyled = styled.View`
   border-bottom-left-radius: 10px;
   flex-direction: row;
 `;
-export const FavoriteImageContainer = styled.View`
+export const FavoriteImageContainer = styled.TouchableOpacity`
   padding: 10px;
 `;
 

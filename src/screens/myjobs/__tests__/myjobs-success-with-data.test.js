@@ -1,12 +1,9 @@
 import React from 'react';
 import {fireEvent,act} from '@testing-library/react-native';
-import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock';
 import {renderWithProviders} from '@/utils/testframeworknew';
 import {waitFor} from '@testing-library/react-native';
 import Myjobs from '../myjobs';
 
-jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
-jest.mock('@supabase/supabase-js');
 jest.useFakeTimers();
 jest.mock('@react-navigation/native', () => {
   return {
@@ -19,7 +16,7 @@ jest.mock('@react-navigation/native', () => {
     useDispatch: () => ({dispatch: jest.fn()}),
   };
 });
-
+const bookmarkJobs = () => ({data: {}});
 jest.mock('@/slice/myjobs',()=>({
   useGetMyJobsQuery:()=>{
     return{
@@ -34,7 +31,11 @@ jest.mock('@/slice/myjobs',()=>({
         name: 'Bank of Philippine Island',
       }
     }
-  }
+  },
+  usePostBookmarkingJobsMutation:()=>[
+    bookmarkJobs,
+    {isLoading: false, isError: false},
+  ]
 }))
 describe('My Jobs Screen', () => {
   

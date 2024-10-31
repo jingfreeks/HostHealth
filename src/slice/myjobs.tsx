@@ -31,8 +31,16 @@ export const myJobsApiSlice = apiSlice.injectEndpoints({
       }),
       invalidatesTags: ['MyJobs'] as string[] & undefined,
     }),
+    postBookmarkingJobs: builder.mutation({
+      query: credentials => ({
+        url: '/jobs/jobbookmark',
+        method: 'POST',
+        body: {...credentials},
+      }),
+      invalidatesTags: ['Jobs'] as string[] & undefined,
+    }),
   }),
   overrideExisting: false,
 });
 
-export const {useGetMyJobsQuery,usePostInterestedJobsMutation} = myJobsApiSlice;
+export const {useGetMyJobsQuery,usePostInterestedJobsMutation,usePostBookmarkingJobsMutation} = myJobsApiSlice;
