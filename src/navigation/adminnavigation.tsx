@@ -7,6 +7,7 @@ import {
   ShiftForm,
   CompanyForm,
   BankForm,
+  JobsForm,
 } from '@/screens';
 import {DrawerNavigation} from '@/navigation/drawernavigation';
 import type {AppNavigationProps, RootNavigationProps} from './types';
@@ -27,32 +28,71 @@ export const Adminappnavigation = () => {
       <Stack.Screen
         component={StateForm}
         name={'StateForm'}
-        options={{headerShown: true, title: 'State Form'}}
+        options={{
+          headerShown: true,
+          title: 'State Form',
+          headerBackVisible: true,
+        }}
       />
       <Stack.Screen
         component={Cityform}
         name={'Cityform'}
-        options={{headerShown: true, title: 'City Form'}}
+        options={{
+          headerShown: true,
+          title: 'City Form',
+          headerBackVisible: true,
+          headerBackTitle: 'Back',
+        }}
       />
       <Stack.Screen
         component={DepartmentForm}
         name={'DepartmentForm'}
-        options={{headerShown: true, title: 'City Form'}}
+        options={{
+          headerShown: true,
+          title: 'City Form',
+          headerBackVisible: true,
+          headerBackTitle: 'Back',
+        }}
       />
       <Stack.Screen
         component={ShiftForm}
         name={'ShiftForm'}
-        options={{headerShown: true, title: 'Shift Form'}}
+        options={{
+          headerShown: true,
+          title: 'Shift Form',
+          headerBackVisible: true,
+          headerBackTitle: 'Back',
+        }}
       />
       <Stack.Screen
         component={CompanyForm}
         name={'CompanyForm'}
-        options={{headerShown: true, title: 'Company Form'}}
+        options={{
+          headerShown: true,
+          title: 'Company Form',
+          headerBackVisible: true,
+          headerBackTitle: 'Back',
+        }}
       />
       <Stack.Screen
         component={BankForm}
         name={'BankForm'}
-        options={{headerShown: true, title: 'Bank Form'}}
+        options={{
+          headerShown: true,
+          title: 'Bank Form',
+          headerBackVisible: true,
+          headerBackTitle: 'Back',
+        }}
+      />
+      <Stack.Screen
+        component={JobsForm}
+        name={'JobsForm'}
+        options={{
+          headerShown: true,
+          title: 'Jobs Form',
+          headerBackVisible: true,
+          headerBackTitle: 'Back',
+        }}
       />
     </Stack.Navigator>
   );

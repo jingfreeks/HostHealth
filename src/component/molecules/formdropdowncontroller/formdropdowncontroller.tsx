@@ -11,6 +11,7 @@ const FormTextController = (props: FormTextControllerTypes) => {
     onBlur = () => {},
     loading,
     data,
+    placeholder,
     ...rest
   } = props;
 
@@ -27,10 +28,12 @@ const FormTextController = (props: FormTextControllerTypes) => {
           errmessage={formState.errors[name]?.message?.toString()}
           loading={loading}
           data={data}
-          onChange={({value}: {value:string}) => {
+          placeholder={placeholder}
+          onChange={({value}: {value: string}) => {
             field.onChange(value);
-          } }
-          {...rest}        />
+          }}
+          {...rest}
+        />
       )}
       rules={rules}
     />

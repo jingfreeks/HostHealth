@@ -2,8 +2,8 @@ import React from 'react';
 import type {AppNavigationProps, RootNavigationProps} from './types';
 import {setCredentials} from '@/slice/auth';
 import {useDispatch} from 'react-redux';
-import {compose, ThunkDispatch} from '@reduxjs/toolkit';
-import {Banks, City, State, Department, Shift, Company} from '@/screens';
+import {ThunkDispatch} from '@reduxjs/toolkit';
+import {Banks, City, State, Department, Shift, Company,Jobs} from '@/screens';
 import {apiSlice} from '@/config/apiSlice';
 import {
   createDrawerNavigator,
@@ -11,7 +11,7 @@ import {
   DrawerItemList,
   DrawerItem,
 } from '@react-navigation/drawer';
-import {useLogoutMutation} from '@/slice/authApi'
+import {useLogoutMutation} from '@/slice/authApi';
 
 const Drawer = createDrawerNavigator<
   RootNavigationProps & AppNavigationProps
@@ -19,19 +19,17 @@ const Drawer = createDrawerNavigator<
 export const DrawerNavigation = () => {
   const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
   const [logout, {isLoading}] = useLogoutMutation();
-  
+
   const handleSignout = async () => {
-    try{
-      const response = await logout({}).unwrap()
-      console.log('responsess',response)
+    try {
+      await logout({}).unwrap();
       await dispatch(
         setCredentials({user: null, accessToken: null, userId: null}),
       );
       await dispatch(apiSlice.util.resetApiState());
-    }catch(error){
-      console.log('errorss',error)
+    } catch (error) {
+      console.log('errorss', error);
     }
-
   };
   return (
     <Drawer.Navigator
@@ -50,6 +48,7 @@ export const DrawerNavigation = () => {
       <Drawer.Screen name="Banks" component={Banks} />
       <Drawer.Screen name="Department" component={Department} />
       <Drawer.Screen name="Shift" component={Shift} />
+      <Drawer.Screen name="Jobs" component={Jobs} />
     </Drawer.Navigator>
   );
 };

@@ -8,7 +8,7 @@ import FontAwesome from 'react-native-vector-icons/MaterialIcons';
 
 const Dropdownscreen = (props: dropdownTypes) => {
   const [isFocus, setIsFocus] = useState<boolean>(false);
-  const {loading, data, value='', isError, errmessage,onChange} = props;
+  const {loading, data, value='', isError, errmessage,onChange,placeholder} = props;
   return (
     <>
       <Dropdown
@@ -22,7 +22,7 @@ const Dropdownscreen = (props: dropdownTypes) => {
         maxHeight={300}
         labelField="label"
         valueField="value"
-        placeholder={!isFocus ? 'Select item' : '...'}
+        placeholder={!isFocus ? placeholder : '...'}
         searchPlaceholder="Search..."
         value={value}
         onFocus={() => setIsFocus(true)}

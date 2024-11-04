@@ -23,7 +23,7 @@ import {
 } from './styles';
 const HomeScreen = () => {
   const usrId = useSelector(selectCurrentUserId)?.toString();
-  const usrRoles = useSelector(selectUserRoles);
+  // const usrRoles = useSelector(selectUserRoles);
   const {refetch: suggestedrefresh} = useGetJobsQuery<any>(
     useMemo(() => {
       return {usrId};
@@ -36,37 +36,20 @@ const HomeScreen = () => {
   } = useGetCityQuery<any>('getcity');
 
   const navigation = useNavigation<StackNavigationProp<RootNavigationProps>>();
-  const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
-  const {
-    data: profiles,
-    isLoading: profileLoading,
-    isError,
-    error,
-    refetch: profileRefetch,
-  } = useGetProfileQuery<{
-    refetch: () => void;
-    data: any;
-    isLoading: boolean;
-    isError: boolean;
-    error: any;
-  }>(useMemo(() => ({userId: usrId}), [usrId, navigation]));
-  // useEffect(()=>{
-  //   const unsubscribe = navigation.addListener('focus', () => {
-  //     // The screen is focused
-  //     // Call any action
-  //     profileRefetch()
-  //   });
-
-  //   // Return the function to unsubscribe from the event so it gets removed on unmount
-  //   return unsubscribe;
-  // },[navigation,usrId])
-  // useEffect(()=>{
-  //   if(!profileLoading && isError && error?.status===400 && !usrRoles.find((item:string)=>item==='Admin')){
-  //     navigation.navigate('OnBoardingProfile')
-  //   }else if(!profileLoading && isError && error?.status===403){
-  //      dispatch(setLogout());
-  //   }
-  // },[profiles,navigation,error,isError,profileLoading])
+  // const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
+  // const {
+  //   data: profiles,
+  //   isLoading: profileLoading,
+  //   isError,
+  //   error,
+  //   refetch: profileRefetch,
+  // } = useGetProfileQuery<{
+  //   refetch: () => void;
+  //   data: any;
+  //   isLoading: boolean;
+  //   isError: boolean;
+  //   error: any;
+  // }>(useMemo(() => ({userId: usrId}), [usrId, navigation]));
 
   const onRefresh = async () => {
     await suggestedrefresh();

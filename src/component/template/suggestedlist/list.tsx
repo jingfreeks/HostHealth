@@ -22,7 +22,6 @@ const ListScreen = (props: JobIdList) => {
       }),
     },
   );
-  console.log('jobs', jobs);
   return (
     <RenderItemStyled>
       <SuggestedCard data={jobs} />
