@@ -51,7 +51,7 @@ export const useOnBoardingHooks = () => {
   const [updateOnBoardingBankInfo, {isLoading: bankInfoLoading}] = useUpdateOnBoardingBankInfoMutation(
     {fixedCacheKey: 'BankInfo'},
   );
-  console.log('usrId', usrId);
+
 
   const formProfileMethod = useForm<FormProfileData>({
     defaultValues: {

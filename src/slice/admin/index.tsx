@@ -25,3 +25,5 @@ export {
     useUpdateBanksMutation,
     useDeleteBanksMutation,
   } from './bank'
+
+  export {useGetJobsQuery,useGetCityJobsQuery,useAddJobsMutation,useUpdateJobsMutation} from './jobs'

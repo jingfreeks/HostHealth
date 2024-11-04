@@ -1,6 +1,8 @@
-type BankForm={
-  name?: string; address?: string; _id: string
-}
+type BankForm = {
+  name?: string;
+  address?: string;
+  _id: string;
+};
 
 export type RootNavigationProps = {
   BottomTab: undefined;
@@ -23,9 +25,10 @@ export type RootNavigationProps = {
   ShiftForm: undefined;
   CompanyForm: undefined;
   BankForm?: BankForm;
-  ProfileDetails:undefined;
-  ProfileBankInfo:undefined;
-  CityJobsList:{cityId?:string};
+  JobsForm?: undefined;
+  ProfileDetails: undefined;
+  ProfileBankInfo: undefined;
+  CityJobsList: {cityId?: string};
 };
 
 export type AppNavigationProps = {
@@ -45,7 +48,7 @@ export type AppNavigationProps = {
       joborderno?: string;
       id?: number;
       jobId?: string;
-      status?:string;
+      status?: string;
       _id?: string;
     };
   };
@@ -56,7 +59,7 @@ export type AppNavigationProps = {
   Cityform: {
     name: string;
     state: string;
-    image:string;
+    image: string;
     _id: string;
   };
   DepartmentForm: {
@@ -75,12 +78,21 @@ export type AppNavigationProps = {
     cityId: string;
     _id: string;
   };
+  JobsForm: {
+    image: string;
+    jobtitle: string;
+    company: string;
+    department: string;
+    shift: string;
+    salaryrange: string;
+    _id: string;
+  };
   BankForm: BankForm;
   Home: undefined;
   Search: undefined;
   MyJob: undefined;
   TimeCard: undefined;
   TimeCard1: undefined;
-  ProfileDetails:undefined;
-  CityJobsList:{cityId?:string}
+  ProfileDetails: undefined;
+  CityJobsList: {cityId?: string};
 };

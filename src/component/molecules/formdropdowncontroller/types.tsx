@@ -5,7 +5,7 @@ type dataTypes={
 }
 export type FormTextControllerTypes = {
   Label?: string;
-  placeholder: string;
+  placeholder?: string;
   name?: string;
   type?: string;
   rules: {required: boolean};

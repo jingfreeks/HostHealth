@@ -12,4 +12,5 @@ export type dropdownTypes = {
   errmessage?:string;
   name:string;
   onChange:(params:any)=>void;
+  placeholder?:string;
 };

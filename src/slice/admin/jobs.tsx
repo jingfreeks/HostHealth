@@ -24,8 +24,24 @@ export const jobsApiSlice = apiSlice.injectEndpoints({
             ]
           : ['Jobs'],
     }),
+    addJobs: builder.mutation({
+      query: credentials => ({
+        url: '/jobs',
+        method: 'POST',
+        body: {...credentials},
+      }),
+      invalidatesTags: ['Jobs'] as string[] & undefined,
+    }),
+    updateJobs: builder.mutation({
+      query: credentials => ({
+        url: '/jobs',
+        method: 'PATCH',
+        body: {...credentials},
+      }),
+      invalidatesTags: ['Jobs'] as string[] & undefined,
+    }),
     getCityJobs: builder.query({
-      query: ({cityId}:{cityId:string}) => `/city/${cityId}`,
+      query: ({cityId}: {cityId: string}) => `/city/${cityId}`,
       transformResponse: responseData => {
         return jobsAdapter.setAll(initialState, responseData);
       },
@@ -33,7 +49,10 @@ export const jobsApiSlice = apiSlice.injectEndpoints({
         result
           ? [
               {type: 'CityJobs', id: 'LIST'},
-              ...result.ids.map((id: string | number) => ({type: 'CityJobs', id})),
+              ...result.ids.map((id: string | number) => ({
+                type: 'CityJobs',
+                id,
+              })),
             ]
           : ['CityJobs'],
     }),
@@ -41,4 +60,9 @@ export const jobsApiSlice = apiSlice.injectEndpoints({
   overrideExisting: true,
 });
 
-export const {useGetJobsQuery,useGetCityJobsQuery} = jobsApiSlice;
+export const {
+  useGetJobsQuery,
+  useGetCityJobsQuery,
+  useAddJobsMutation,
+  useUpdateJobsMutation,
+} = jobsApiSlice;

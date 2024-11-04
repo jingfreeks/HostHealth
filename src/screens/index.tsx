@@ -20,4 +20,6 @@ export {
   CompanyForm,
   Banks,
   BankForm,
+  Jobs,
+  JobsForm
 } from '@/screens/admin';
