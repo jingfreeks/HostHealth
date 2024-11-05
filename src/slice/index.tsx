@@ -18,7 +18,8 @@ export {
   useGetJobsQuery,
   useGetCityJobsQuery,
   useAddJobsMutation,
-  useUpdateJobsMutation
+  useUpdateJobsMutation,
+  useDeleteJobsMutation
 } from './admin';
 
 export {

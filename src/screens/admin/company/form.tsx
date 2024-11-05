@@ -2,14 +2,12 @@ import React, {useMemo} from 'react';
 import {
   FormHeaderContainerStyled,
   FormTextInputContainerStyled,
-  FormContainerStyled,
   FormHeaderTextStyled,
   StateContainerStyled,
 } from './styles';
-import {FormTextController, Bbutton, Text} from '@/component';
+import {FormTextController, Text, FormContainer} from '@/component';
 import {useCompanyHooks} from './hooks';
-import {colors} from '@/utils/themes';
-import {useForm, FormProvider, SubmitHandler} from 'react-hook-form';
+import {useForm, SubmitHandler} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
 import {useAddCompanyMutation, useUpdateCompanyMutation} from '@/slice';
 import {Schema} from './schema';
@@ -85,57 +83,50 @@ const Form = (props: RoutesProps) => {
     }
   };
   return (
-    <FormContainerStyled>
-      <FormProvider {...formMethod}>
-        <FormHeaderContainerStyled>
-          <FormHeaderTextStyled TextMode="Htitlenormal">
-            Company Form Information
-          </FormHeaderTextStyled>
-        </FormHeaderContainerStyled>
-        <FormTextInputContainerStyled>
-          <FormTextController
-            Label="Name"
-            name="name"
-            placeholder="Name"
-            rules={{
-              required: true,
-            }}
-          />
-        </FormTextInputContainerStyled>
-        <FormTextInputContainerStyled>
-          <FormTextController
-            Label="Address"
-            name="address"
-            placeholder="Address"
-            rules={{
-              required: true,
-            }}
-          />
-        </FormTextInputContainerStyled>
-        <Formdropdowncontroller
-          Label="City"
-          name="cityId"
-          placeholder="City"
+    <FormContainer
+      formMethod={formMethod}
+      loaders={addCompanyLoading || updateCompanyLoading}
+      onPress={formMethod.handleSubmit(onSubmit)}>
+      <FormHeaderContainerStyled>
+        <FormHeaderTextStyled TextMode="Htitlenormal">
+          Company Form Information
+        </FormHeaderTextStyled>
+      </FormHeaderContainerStyled>
+      <FormTextInputContainerStyled>
+        <FormTextController
+          Label="Name"
+          name="name"
+          placeholder="Name"
           rules={{
             required: true,
           }}
-          loading={cityLoading}
-          data={citysdata}
         />
-        <StateContainerStyled>
-          <Text TextMode="Title">State</Text>
-          <Text TextMode="Text">{getStateInfo}</Text>
-        </StateContainerStyled>
-
-        <Bbutton
-          bcolor={colors.lightergreen}
-          border={10}
-          loaders={addCompanyLoading || updateCompanyLoading}
-          title="Save"
-          onPress={formMethod.handleSubmit(onSubmit)}
+      </FormTextInputContainerStyled>
+      <FormTextInputContainerStyled>
+        <FormTextController
+          Label="Address"
+          name="address"
+          placeholder="Address"
+          rules={{
+            required: true,
+          }}
         />
-      </FormProvider>
-    </FormContainerStyled>
+      </FormTextInputContainerStyled>
+      <Formdropdowncontroller
+        Label="City"
+        name="cityId"
+        placeholder="City"
+        rules={{
+          required: true,
+        }}
+        loading={cityLoading}
+        data={citysdata}
+      />
+      <StateContainerStyled>
+        <Text TextMode="Title">State</Text>
+        <Text TextMode="Text">{getStateInfo}</Text>
+      </StateContainerStyled>
+    </FormContainer>
   );
 };
 

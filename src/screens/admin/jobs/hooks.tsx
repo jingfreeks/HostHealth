@@ -12,7 +12,8 @@ import {
   useGetJobsQuery,
   useGetDeptQuery,
   useGetShiftQuery,
-  useUploadProfileMutation
+  useUploadProfileMutation,
+  useDeleteJobsMutation
 } from '@/slice';
 
 export const useJobsHooks = () => {
@@ -37,16 +38,17 @@ export const useJobsHooks = () => {
 
   const {
     data: jobs,
+    isFetching:fetchingJobs,
     isLoading: jobLoading,
     isSuccess: jobsSuccess,
     isError: jobIsError,
     error: jobsError,
-  } = useGetJobsQuery<any>(
-    useMemo(() => {
-      return {usrId};
-    }, [usrId]),
+  } = useGetJobsQuery<any>('getJobs'
+    // useMemo(() => {
+    //   return {usrId};
+    // }, [usrId]),
   );
-
+ 
   const {
     data: dept,
     isLoading: depIsLoading,
@@ -77,12 +79,12 @@ export const useJobsHooks = () => {
     error: any;
   }>('getShift');
 
-  const [deleteCompany, {isLoading: deleteLoading}] =
-    useDeleteCompanyMutation();
+  const [deletJobs, {isLoading: deleteLoading}] =
+  useDeleteJobsMutation();
 
-  const handleDeleteCompany = async (id: string) => {
+  const handleDeleteJobs = async (id: string) => {
     try {
-      await deleteCompany({
+      await deletJobs({
         id,
       }).unwrap();
     } catch (error) {
@@ -121,10 +123,11 @@ export const useJobsHooks = () => {
     companySuccess,
     companyIsError,
     companyError,
-    handleDeleteCompany,
+    handleDeleteJobs,
     deleteLoading,
     jobs,
     jobLoading,
+    fetchingJobs,
     jobsSuccess,
     jobIsError,
     jobsError,

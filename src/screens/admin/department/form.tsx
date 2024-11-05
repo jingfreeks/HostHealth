@@ -2,13 +2,11 @@ import React from 'react';
 import {
   FormHeaderContainerStyled,
   FormTextInputContainerStyled,
-  FormContainerStyled,
   FormHeaderTextStyled,
 } from './styles';
-import {FormTextController, Bbutton} from '@/component';
+import {FormTextController, Bbutton, FormContainer} from '@/component';
 import {useDepartmentHooks} from './hooks';
-import {colors} from '@/utils/themes';
-import {useForm, FormProvider, SubmitHandler} from 'react-hook-form';
+import {useForm, SubmitHandler} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
 import {useAddDeptMutation, useUpdateDeptMutation} from '@/slice';
 import {Schema} from './schema';
@@ -54,32 +52,26 @@ const Form = (props: RoutesProps) => {
     }
   };
   return (
-    <FormContainerStyled>
-      <FormProvider {...formMethod}>
-        <FormHeaderContainerStyled>
-          <FormHeaderTextStyled TextMode="Htitlenormal">
-            Department Form Information
-          </FormHeaderTextStyled>
-        </FormHeaderContainerStyled>
-        <FormTextInputContainerStyled>
-          <FormTextController
-            Label="Name"
-            name="name"
-            placeholder="Name"
-            rules={{
-              required: true,
-            }}
-          />
-        </FormTextInputContainerStyled>
-        <Bbutton
-          bcolor={colors.lightergreen}
-          border={10}
-          loaders={addDeptLoading || updateStateLoading}
-          title="Save"
-          onPress={formMethod.handleSubmit(onSubmit)}
+    <FormContainer
+      formMethod={formMethod}
+      loaders={addDeptLoading || updateStateLoading}
+      onPress={formMethod.handleSubmit(onSubmit)}>
+      <FormHeaderContainerStyled>
+        <FormHeaderTextStyled TextMode="Htitlenormal">
+          Department Form Information
+        </FormHeaderTextStyled>
+      </FormHeaderContainerStyled>
+      <FormTextInputContainerStyled>
+        <FormTextController
+          Label="Name"
+          name="name"
+          placeholder="Name"
+          rules={{
+            required: true,
+          }}
         />
-      </FormProvider>
-    </FormContainerStyled>
+      </FormTextInputContainerStyled>
+    </FormContainer>
   );
 };
 

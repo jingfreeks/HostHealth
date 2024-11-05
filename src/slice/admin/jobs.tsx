@@ -9,20 +9,24 @@ const jobsAdapter = createEntityAdapter<jobsTypes>({
   sortComparer: (a, b) => a.jobtitle.localeCompare(b.jobtitle),
 });
 const initialState = jobsAdapter.getInitialState();
+
 export const jobsApiSlice = apiSlice.injectEndpoints({
   endpoints: builder => ({
     getJobs: builder.query({
-      query: ({usrId}) => `/jobs/${usrId}`,
+      query: ({usrId}) => `/jobs`,
       transformResponse: responseData => {
         return jobsAdapter.setAll(initialState, responseData);
       },
-      providesTags: (result: any, error, arg): any =>
-        result
-          ? [
-              {type: 'Jobs', id: 'LIST'},
-              ...result.ids.map((id: string | number) => ({type: 'Jobs', id})),
-            ]
-          : ['Jobs'],
+      providesTags: (result: any, error, arg): any =>{
+        console.log('resultss',result)
+        return result
+        ? [
+            {type: 'Jobs', id: 'LIST'},
+            ...result.ids.map((id: string | number) => ({type: 'Jobs', id})),
+          ]
+        : ['Jobs']
+      }
+   
     }),
     addJobs: builder.mutation({
       query: credentials => ({
@@ -30,12 +34,29 @@ export const jobsApiSlice = apiSlice.injectEndpoints({
         method: 'POST',
         body: {...credentials},
       }),
+      async onQueryStarted({ id }, { dispatch, queryFulfilled }) {
+        try {
+          const { data: createdPost } = await queryFulfilled
+          const patchResult = dispatch(
+            jobsApiSlice.util.upsertQueryData('getJobs', id, createdPost)
+          )
+          console.log('patchResult',patchResult)
+        } catch {}
+      },
       invalidatesTags: ['Jobs'] as string[] & undefined,
     }),
     updateJobs: builder.mutation({
       query: credentials => ({
         url: '/jobs',
         method: 'PATCH',
+        body: {...credentials},
+      }),
+      invalidatesTags: ['Jobs'] as string[] & undefined,
+    }),
+    deleteJobs: builder.mutation({
+      query: credentials => ({
+        url: '/jobs',
+        method: 'DELETE',
         body: {...credentials},
       }),
       invalidatesTags: ['Jobs'] as string[] & undefined,
@@ -65,4 +86,5 @@ export const {
   useGetCityJobsQuery,
   useAddJobsMutation,
   useUpdateJobsMutation,
+  useDeleteJobsMutation,
 } = jobsApiSlice;

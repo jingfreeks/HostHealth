@@ -2,19 +2,16 @@ import React from 'react';
 import {
   FormHeaderContainerStyled,
   FormTextInputContainerStyled,
-  FormContainerStyled,
   FormHeaderTextStyled,
 } from './styles';
-import {FormTextController, Bbutton} from '@/component';
+import {FormTextController, FormContainer} from '@/component';
 import {useBankHooks} from './hooks';
-import {colors} from '@/utils/themes';
-import {useForm, FormProvider, SubmitHandler} from 'react-hook-form';
+import {useForm, SubmitHandler} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
 import {useAddBanksMutation, useUpdateBanksMutation} from '@/slice';
 import {Schema} from './schema';
 import * as yup from 'yup';
 import type {RoutesProps} from './types';
-import {testingProps} from '@/utils/testframework';
 
 const Form = (props: RoutesProps) => {
   const {navigation} = useBankHooks();
@@ -58,43 +55,37 @@ const Form = (props: RoutesProps) => {
     }
   };
   return (
-    <FormContainerStyled>
-      <FormProvider {...formMethod}>
-        <FormHeaderContainerStyled>
-          <FormHeaderTextStyled TextMode="Htitlenormal">
-            Bank Form Information
-          </FormHeaderTextStyled>
-        </FormHeaderContainerStyled>
-        <FormTextInputContainerStyled>
-          <FormTextController
-            Label="Name"
-            name="name"
-            placeholder="Name"
-            rules={{
-              required: true,
-            }}
-          />
-        </FormTextInputContainerStyled>
-        <FormTextInputContainerStyled>
-          <FormTextController
-            Label="Address"
-            name="address"
-            placeholder="Address"
-            rules={{
-              required: true,
-            }}
-          />
-        </FormTextInputContainerStyled>
-        <Bbutton
-          testId="bankFormButtonSubmitTestId"
-          bcolor={colors.lightergreen}
-          border={10}
-          loaders={addBanksLoading || updateBanksLoading}
-          title="Save"
-          onPress={formMethod.handleSubmit(onSubmit)}
+    <FormContainer
+      btnTestId="bankFormButtonSubmitTestId"
+      formMethod={formMethod}
+      loaders={addBanksLoading || updateBanksLoading}
+      onPress={formMethod.handleSubmit(onSubmit)}>
+      <FormHeaderContainerStyled>
+        <FormHeaderTextStyled TextMode="Htitlenormal">
+          Bank Form Information
+        </FormHeaderTextStyled>
+      </FormHeaderContainerStyled>
+      <FormTextInputContainerStyled>
+        <FormTextController
+          Label="Name"
+          name="name"
+          placeholder="Name"
+          rules={{
+            required: true,
+          }}
         />
-      </FormProvider>
-    </FormContainerStyled>
+      </FormTextInputContainerStyled>
+      <FormTextInputContainerStyled>
+        <FormTextController
+          Label="Address"
+          name="address"
+          placeholder="Address"
+          rules={{
+            required: true,
+          }}
+        />
+      </FormTextInputContainerStyled>
+    </FormContainer>
   );
 };
 

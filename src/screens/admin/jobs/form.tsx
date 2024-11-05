@@ -2,16 +2,17 @@ import React, {useCallback, useMemo, useEffect} from 'react';
 import {
   FormHeaderContainerStyled,
   FormTextInputContainerStyled,
-  FormContainerStyled,
   FormHeaderTextStyled,
-  ButtonContainerStyled,
   DropdownContainerStyled,
 } from './styles';
-import {ScrollView} from 'react-native';
-import {FormTextController, Bbutton, Text, Avatar} from '@/component';
+import {
+  FormTextController,
+  Text,
+  Avatar,
+  FormContainer,
+} from '@/component';
 import {useJobsHooks} from './hooks';
-import {colors} from '@/utils/themes';
-import {useForm, FormProvider, SubmitHandler} from 'react-hook-form';
+import {useForm,SubmitHandler} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
 import {useAddJobsMutation, useUpdateJobsMutation} from '@/slice';
 import {launchImageLibrary} from 'react-native-image-picker';
@@ -119,106 +120,96 @@ const Form = (props: RoutesProps) => {
           salaryrange: data.salaryrange,
         });
       }
-      console.log('error', response)
+
       if (response?.error) {
         alert(response?.error?.data?.message);
       } else {
         navigation.goBack();
       }
     } catch (error) {
-      console.log('error', error);
+      console.log('errorss', error);
     }
   };
 
   return (
-    <FormContainerStyled>
-      <FormProvider {...formMethod}>
-        <ScrollView style={{flex: 1}}>
-          <FormHeaderContainerStyled>
-            <FormHeaderTextStyled TextMode="Htitlenormal">
-              Jobs Form Information
-            </FormHeaderTextStyled>
-            <FormTextInputContainerStyled>
-              <Avatar
-                isView
-                testIds={{uploadImage: 'ProfileAvatarUploadImageTestId'}}
-                uri={uri}
-                size={250}
-                onPress={handleViewImage}
-              />
-            </FormTextInputContainerStyled>
-          </FormHeaderContainerStyled>
-
+    <FormContainer
+      formMethod={formMethod}
+      loaders={addJobsLoading || updateJobsLoading}
+      onPress={formMethod.handleSubmit(onSubmit)}>
+        <FormHeaderContainerStyled>
+          <FormHeaderTextStyled TextMode="Htitlenormal">
+            Jobs Form Information
+          </FormHeaderTextStyled>
           <FormTextInputContainerStyled>
-            <FormTextController
-              Label="Job Title"
-              name="jobtitle"
-              placeholder="Job Title"
-              rules={{
-                required: true,
-              }}
+            <Avatar
+              isView
+              testIds={{uploadImage: 'ProfileAvatarUploadImageTestId'}}
+              uri={uri}
+              size={250}
+              onPress={handleViewImage}
             />
           </FormTextInputContainerStyled>
-          <DropdownContainerStyled>
-            <Text TextMode="Title">Company</Text>
-            <Formdropdowncontroller
-              Label="Company"
-              name="company"
-              placeholder="Company"
-              rules={{
-                required: true,
-              }}
-              loading={companyLoading}
-              data={companyData}
-            />
-          </DropdownContainerStyled>
-          <DropdownContainerStyled>
-            <Text TextMode="Title">Department</Text>
-            <Formdropdowncontroller
-              Label="Department"
-              name="department"
-              placeholder="Department"
-              rules={{
-                required: true,
-              }}
-              loading={depIsLoading}
-              data={deptData}
-            />
-          </DropdownContainerStyled>
-          <Text TextMode="Title">Shift</Text>
-          <Formdropdowncontroller
-            Label="Shift"
-            name="shift"
-            placeholder="Shift"
+        </FormHeaderContainerStyled>
+
+        <FormTextInputContainerStyled>
+          <FormTextController
+            Label="Job Title"
+            name="jobtitle"
+            placeholder="Job Title"
             rules={{
               required: true,
             }}
-            loading={shiftIsLoading}
-            data={shiftData}
           />
+        </FormTextInputContainerStyled>
+        <DropdownContainerStyled>
+          <Text TextMode="Title">Company</Text>
+          <Formdropdowncontroller
+            Label="Company"
+            name="company"
+            placeholder="Company"
+            rules={{
+              required: true,
+            }}
+            loading={companyLoading}
+            data={companyData}
+          />
+        </DropdownContainerStyled>
+        <DropdownContainerStyled>
+          <Text TextMode="Title">Department</Text>
+          <Formdropdowncontroller
+            Label="Department"
+            name="department"
+            placeholder="Department"
+            rules={{
+              required: true,
+            }}
+            loading={depIsLoading}
+            data={deptData}
+          />
+        </DropdownContainerStyled>
+        <Text TextMode="Title">Shift</Text>
+        <Formdropdowncontroller
+          Label="Shift"
+          name="shift"
+          placeholder="Shift"
+          rules={{
+            required: true,
+          }}
+          loading={shiftIsLoading}
+          data={shiftData}
+        />
 
-          <FormTextInputContainerStyled>
-            <FormTextController
-              Label="Salary Range"
-              name="salaryrange"
-              placeholder="Salary Range"
-              rules={{
-                required: true,
-              }}
-            />
-          </FormTextInputContainerStyled>
-        </ScrollView>
-        <ButtonContainerStyled>
-          <Bbutton
-            bcolor={colors.lightergreen}
-            border={10}
-            loaders={addJobsLoading || updateJobsLoading}
-            title="Save"
-            onPress={formMethod.handleSubmit(onSubmit)}
+        <FormTextInputContainerStyled>
+          <FormTextController
+            Label="Salary Range"
+            name="salaryrange"
+            placeholder="Salary Range"
+            rules={{
+              required: true,
+            }}
           />
-        </ButtonContainerStyled>
-      </FormProvider>
-    </FormContainerStyled>
+        </FormTextInputContainerStyled>
+    </FormContainer>
   );
 };
 
