@@ -2,13 +2,11 @@ import React from 'react';
 import {
   FormHeaderContainerStyled,
   FormTextInputContainerStyled,
-  FormContainerStyled,
   FormHeaderTextStyled,
 } from './styles';
-import {FormTextController, Bbutton} from '@/component';
+import {FormTextController, Bbutton,FormContainer} from '@/component';
 import {useShiftHooks} from './hooks';
-import {colors} from '@/utils/themes';
-import {useForm, FormProvider, SubmitHandler} from 'react-hook-form';
+import {useForm, SubmitHandler} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
 import {useAddShiftMutation, useUpdateShiftMutation} from '@/slice';
 import {Schema} from './schema';
@@ -54,8 +52,10 @@ const Form = (props: RoutesProps) => {
     }
   };
   return (
-    <FormContainerStyled>
-      <FormProvider {...formMethod}>
+    <FormContainer
+      formMethod={formMethod}
+      loaders={addShiftLoading || updateShiftLoading}
+      onPress={formMethod.handleSubmit(onSubmit)}>
         <FormHeaderContainerStyled>
           <FormHeaderTextStyled TextMode="Htitlenormal">
             Shift Form Information
@@ -71,15 +71,7 @@ const Form = (props: RoutesProps) => {
             }}
           />
         </FormTextInputContainerStyled>
-        <Bbutton
-          bcolor={colors.lightergreen}
-          border={10}
-          loaders={addShiftLoading || updateShiftLoading}
-          title="Save"
-          onPress={formMethod.handleSubmit(onSubmit)}
-        />
-      </FormProvider>
-    </FormContainerStyled>
+        </FormContainer>
   );
 };
 

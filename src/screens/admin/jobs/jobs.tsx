@@ -11,7 +11,7 @@ import {testingProps} from '@/utils/testframework';
 
 const Jobs = () => {
   let content;
-  const {navigation, jobs, jobLoading, jobsSuccess, jobIsError, jobsError,usrId} =
+  const {navigation, jobs, jobLoading,fetchingJobs, jobsSuccess, jobIsError, jobsError,usrId} =
     useJobsHooks();
 
   const renderItem: ListRenderItem<any> = useCallback(
@@ -21,7 +21,7 @@ const Jobs = () => {
     [],
   );
 
-  if (jobLoading || jobIsError) {
+  if (jobLoading || fetchingJobs || jobIsError ) {
     let messages;
     if (jobsError?.status === 403) {
       messages = message[100001];

@@ -49,7 +49,7 @@ export const Adminappnavigation = () => {
         name={'DepartmentForm'}
         options={{
           headerShown: true,
-          title: 'City Form',
+          title: 'Department Form',
           headerBackVisible: true,
           headerBackTitle: 'Back',
         }}

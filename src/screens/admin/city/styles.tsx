@@ -12,12 +12,6 @@ export const ContainerStyled = styled.SafeAreaView`
   margin-bottom: 10px;
 `;
 
-export const FormContainerStyled = styled.View`
-  flex: 1;
-  justify-content: center;
-  margin-left: ${verticalScale(20)}px;
-  margin-right: ${verticalScale(20)}px;
-`;
 export const FormHeaderContainerStyled = styled.View`
   align-items: center;
   margin-bottom: ${verticalScale(20)}px;
