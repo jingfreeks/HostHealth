@@ -14,11 +14,11 @@ export const jobsApiSlice = apiSlice.injectEndpoints({
   endpoints: builder => ({
     getJobs: builder.query({
       query: ({usrId}) => `/jobs`,
+      keepUnusedDataFor:120,
       transformResponse: responseData => {
         return jobsAdapter.setAll(initialState, responseData);
       },
       providesTags: (result: any, error, arg): any =>{
-        console.log('resultss',result)
         return result
         ? [
             {type: 'Jobs', id: 'LIST'},

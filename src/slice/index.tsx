@@ -49,11 +49,10 @@ export {
   useUpdateOnBoardingBankInfoMutation,
 } from './onboarding';
 
-// export {useGetJobsQuery,useGetCityJobsQuery} from './suggested'
+export {useGetJobsQuery as useGetJobsSuggested} from './suggested'
 export {
   useGetMyJobsQuery,
-  usePostInterestedJobsMutation,
   usePostBookmarkingJobsMutation,
 } from './myjobs';
-export {useGetJobDetailsQuery} from './jobdetails';
+export {useGetJobDetailsQuery,usePostInterestedJobsMutation} from './jobdetails';
 export {selectCurrentUserId} from './auth';
