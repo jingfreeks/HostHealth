@@ -85,7 +85,7 @@ const JobDetailScreen = (props: RoutesProps) => {
         jobId: jobdetail.jobId || jobdetail._id,
         userId,
       });
-
+      console.log('response',response)
       if (response?.error) {
         Alert.alert(response?.error?.data?.message);
       } else {
