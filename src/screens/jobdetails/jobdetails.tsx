@@ -1,34 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 //@ts-check
-import React, {useState, memo, useMemo} from 'react';
+import React, {memo, useMemo} from 'react';
 import {Alert} from 'react-native';
 import {testingProps} from '@/utils/testframework';
 import {
-  ContainerStyled,
-  ImageHeaderContaierStyled,
-  JobInfoHeaderContainerStyled,
-  JobInfoContainerStyled,
-  JobMatchContainerStyled,
-  ImageStyled,
-  FavoriteContainerStyled,
-  FavoriteImageContainer,
-  LocationContainerStyled,
-  LocationTextStyled,
-  JobTitleContainerStyled,
-  JobTitleTextStyled,
-  JobNumberTextStyled,
-  JobMatchTextContainerStyled,
-  MatchTextStyled,
-  MatchSubTextStyled,
-  CompanyTextStyled,
-  EstimateContainerStyled,
-  EstimateTitleTextStyled,
-  EstimateValueTextStyled,
   ButtonContainerStyled,
-  ScrollViewContainer,
-  LineContainerStyled,
   ButtonFooterContainerStyled,
-  FavoriteDropdownContainer,
   AlertModalStyled,
   AlertModalContainerStyled,
   AlertModalViewStyled,
@@ -36,18 +13,15 @@ import {
   AlertModalTextContainerStyled,
   AlertModalTextSubtitleStyled,
 } from './styles';
-import {ImageHeaderStyled} from '@/navigation/styles';
-import {ShareIcon, HeartRedIcon, LocationIcon, DropDownIcon} from '@/assets';
-import {colors} from '@/utils/themes';
-import {Details} from './component/details';
-import {Requirements} from './component/requirements';
-import {useGetJobDetailsQuery, usePostInterestedJobsMutation} from '@/slice';
+import {useGetJobDetailsQuery} from '@/slice';
 import Bbutton from '@/component/molecules/bbutton/bbutton';
 import {Loaders} from '@/component/atoms/loaders';
 import type {RoutesProps} from './types';
 import {useSelector} from 'react-redux';
 import type {State} from '@/config/types';
 import {useJobDetailsHooks} from './hooks';
+import {JobDetailsTemplate} from '@/component'
+
 
 const JobDetailScreen = (props: RoutesProps) => {
   const {route} = props;
@@ -72,10 +46,9 @@ const JobDetailScreen = (props: RoutesProps) => {
     error: string;
   }>(
     useMemo(() => {
-      return {jobId: jobdetail.jobId || jobdetail._id};
+      return {jobId: jobdetail.jobId || jobdetail._id,userId};
     }, [jobdetail]),
   );
-  console.log('jobDetails', jobDetails);
   if (isLoading) {
     return <Loaders size="small" />;
   }
@@ -85,7 +58,6 @@ const JobDetailScreen = (props: RoutesProps) => {
         jobId: jobdetail.jobId || jobdetail._id,
         userId,
       });
-      console.log('response',response)
       if (response?.error) {
         Alert.alert(response?.error?.data?.message);
       } else {
@@ -100,74 +72,7 @@ const JobDetailScreen = (props: RoutesProps) => {
   if (isSuccess) {
     return (
       <>
-        <ScrollViewContainer>
-          <ContainerStyled>
-            <ImageHeaderContaierStyled>
-              <ImageStyled
-                source={{uri: jobDetails.image}}
-                resizeMode={'stretch'}
-              />
-              <FavoriteContainerStyled>
-                <FavoriteImageContainer>
-                  <ImageHeaderStyled
-                    resizeMode={'contain'}
-                    source={HeartRedIcon}
-                  />
-                </FavoriteImageContainer>
-                <FavoriteImageContainer>
-                  <ImageHeaderStyled
-                    resizeMode={'contain'}
-                    source={ShareIcon}
-                  />
-                </FavoriteImageContainer>
-              </FavoriteContainerStyled>
-              <LocationContainerStyled>
-                <ImageHeaderStyled
-                  resizeMode={'contain'}
-                  size={15}
-                  source={LocationIcon}
-                />
-                <LocationTextStyled>
-                  {jobDetails.compaddress}
-                </LocationTextStyled>
-              </LocationContainerStyled>
-              <FavoriteDropdownContainer>
-                <ImageHeaderStyled
-                  resizeMode={'contain'}
-                  source={DropDownIcon}
-                />
-              </FavoriteDropdownContainer>
-            </ImageHeaderContaierStyled>
-            <JobInfoHeaderContainerStyled>
-              <JobInfoContainerStyled>
-                <JobTitleContainerStyled>
-                  <JobTitleTextStyled>{jobDetails.jobtitle}</JobTitleTextStyled>
-                  <JobNumberTextStyled>
-                    {jobDetails.joborderno}
-                  </JobNumberTextStyled>
-                </JobTitleContainerStyled>
-                <CompanyTextStyled>{jobDetails.compname}</CompanyTextStyled>
-              </JobInfoContainerStyled>
-              <JobMatchContainerStyled>
-                <MatchTextStyled>{jobDetails.match}</MatchTextStyled>
-              </JobMatchContainerStyled>
-            </JobInfoHeaderContainerStyled>
-            <JobMatchTextContainerStyled>
-              <MatchSubTextStyled>% match</MatchSubTextStyled>
-            </JobMatchTextContainerStyled>
-            <EstimateContainerStyled>
-              <EstimateTitleTextStyled>
-                Estimated{' '}
-                <EstimateValueTextStyled>
-                  {jobDetails.salaryrange}{' '}
-                </EstimateValueTextStyled>
-                <EstimateTitleTextStyled>/wk</EstimateTitleTextStyled>
-              </EstimateTitleTextStyled>
-            </EstimateContainerStyled>
-            <LineContainerStyled />
-            <Details data={jobDetails} />
-            <LineContainerStyled />
-            <Requirements />
+            <JobDetailsTemplate data={jobDetails}>
             <ButtonFooterContainerStyled>
               {/* <ButtonContainerStyled>
                 <Bbutton
@@ -195,8 +100,9 @@ const JobDetailScreen = (props: RoutesProps) => {
                 />
               </ButtonContainerStyled>
             </ButtonFooterContainerStyled>
-          </ContainerStyled>
-        </ScrollViewContainer>
+            </JobDetailsTemplate>
+          {/* </ContainerStyled>
+        </ScrollViewContainer> */}
         <AlertModalStyled
           animationType="slide"
           {...testingProps('JobDetailsAlertModalTestId')}

@@ -1,0 +1,1 @@
+export {default as JobDetailsContainer} from './jobdetailcontainer'
