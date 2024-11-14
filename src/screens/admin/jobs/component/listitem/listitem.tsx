@@ -10,12 +10,13 @@ import {
   ImageContainerStyled,
   ImageStyled,
 } from './styles';
-
-const ListItem = (props: {item: any}) => {
+import {AdminJobsCardDetailsProps} from './types'
+const ListItem = (props: {item: AdminJobsCardDetailsProps}) => {
   const {item} = props;
   const {handleDeleteJobs, deleteLoading, navigation} = useJobsHooks();
+
   return (
-    <ContainerStyled>
+    <ContainerStyled onPress={()=>navigation.navigate('AdminJobDetails',{adminJobDetail:item})}>
       <InfoContainerStyled>
         <Text numberOfLines={1} TextMode="Htitle">
           {item?.jobtitle}
@@ -29,7 +30,7 @@ const ListItem = (props: {item: any}) => {
       </InfoContainerStyled>
       <ActionButtonContainerStyled>
         <Button1
-          testId={'CompanyEditFormTestId'}
+          // testId={'CompanyEditFormTestId'}
           bcolor="transparent"
           onPress={() =>
             navigation.navigate('JobsForm', {...item, cityId: item.city})

@@ -13,3 +13,22 @@ export type StateFormProps = {
   stateid:string;
   _id:string;
 };
+
+
+type JobsDetailsScreenRouteProp = RouteProp<AppNavigationProps, 'AdminJobDetails'>;
+export type RoutesAdminJobsProps = {
+  route: JobsDetailsScreenRouteProp
+};
+
+export type JobDetailsProps = {
+  image: string;
+  address: string;
+  jobtitle: string;
+  joborderno: string;
+  company: string;
+  salaryrange: string;
+  shift: string;
+  jobId:string;
+  status:string;
+  _id:string;
+};

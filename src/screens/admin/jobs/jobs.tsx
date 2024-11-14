@@ -21,7 +21,7 @@ const Jobs = () => {
     [],
   );
 
-  if (jobLoading || fetchingJobs || jobIsError ) {
+  if (jobLoading || jobIsError ) {
     let messages;
     if (jobsError?.status === 403) {
       messages = message[100001];

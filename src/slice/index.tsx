@@ -54,5 +54,5 @@ export {
   useGetMyJobsQuery,
   usePostBookmarkingJobsMutation,
 } from './myjobs';
-export {useGetJobDetailsQuery,usePostInterestedJobsMutation} from './jobdetails';
+export {useGetJobDetailsQuery,usePostInterestedJobsMutation,useGetAdminJobDetailsQuery} from './jobdetails';
 export {selectCurrentUserId} from './auth';

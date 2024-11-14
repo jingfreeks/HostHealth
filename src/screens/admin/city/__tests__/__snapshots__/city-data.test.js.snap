@@ -152,9 +152,7 @@ exports[`City admin with data screen Should work as expected to get snapshot 1`]
                     },
                   ]
                 }
-              >
-                California
-              </Text>
+              />
               <Text
                 style={
                   [

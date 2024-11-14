@@ -26,17 +26,16 @@ const PopularCardScreen = (props: PopularCardProps) => {
       <InfoContainerStyled>
         <TitleContainterStyled>
           <Text TextMode="Ptitle">
-            {item.name} <Text TextMode="Pstitle">{item.statename}</Text>
+            {item.name} <Text TextMode="Pstitle">{item?.stateInfo?.name}</Text>
           </Text>
         </TitleContainterStyled>
         <SubtitleContainerStyled>
           <MatchesContainerStyled>
-            {/* <Text>15 Matches</Text> */}
             <Text TextMode="MtextBold">
               {item.matches} <Text TextMode="Pstitle">Matches</Text>
             </Text>
           </MatchesContainerStyled>
-          <Text TextMode="TextNormalBold">{item.salary}</Text>
+          <Text TextMode="TextNormalBold">{item.salary|| '$2000'}</Text>
           <PriceContainerStyled>
             <Text TextMode="TextNormalRegular"> /wk</Text>
           </PriceContainerStyled>

@@ -11,6 +11,13 @@ export const jobDetailsApiSlice = apiSlice.injectEndpoints({
             return {..._doc,cityname,compaddress,compname,deptname,shiftname,statename,status}
         },
     }),
+    getAdminJobDetails: builder.query({  
+      query: ({jobId}:{jobId:string;}) => `/admin/jobDetails/${jobId}`,
+      transformResponse: responseData => {
+          const {_doc,cityname,compaddress,compname,deptname,shiftname,statename,status,interested}=responseData
+          return {..._doc,cityname,compaddress,compname,deptname,shiftname,statename,status,interested}
+      },
+  }),
     postInterestedJobs: builder.mutation({
       query: credentials => ({
         url: `/jobs/details/${credentials?.jobId}/${credentials.userId}`,
@@ -24,4 +31,4 @@ export const jobDetailsApiSlice = apiSlice.injectEndpoints({
   overrideExisting: true,
 });
 
-export const {useGetJobDetailsQuery,usePostInterestedJobsMutation} = jobDetailsApiSlice;
+export const {useGetJobDetailsQuery,usePostInterestedJobsMutation,useGetAdminJobDetailsQuery} = jobDetailsApiSlice;

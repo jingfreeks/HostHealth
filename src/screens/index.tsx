@@ -21,5 +21,6 @@ export {
   Banks,
   BankForm,
   Jobs,
-  JobsForm
+  JobsForm,
+  AdminJobDetails
 } from '@/screens/admin';

@@ -147,9 +147,7 @@ exports[`Popular List Template Component Should work as expected to get snapshot
                     },
                   ]
                 }
-              >
-                California
-              </Text>
+              />
             </Text>
           </View>
           <View
@@ -395,9 +393,7 @@ exports[`Popular List Template Component Should work as expected to get snapshot
                     },
                   ]
                 }
-              >
-                California
-              </Text>
+              />
             </Text>
           </View>
           <View

@@ -8,6 +8,7 @@ import {
   CompanyForm,
   BankForm,
   JobsForm,
+  AdminJobDetails
 } from '@/screens';
 import {DrawerNavigation} from '@/navigation/drawernavigation';
 import type {AppNavigationProps, RootNavigationProps} from './types';
@@ -90,6 +91,16 @@ export const Adminappnavigation = () => {
         options={{
           headerShown: true,
           title: 'Jobs Form',
+          headerBackVisible: true,
+          headerBackTitle: 'Back',
+        }}
+      />
+      <Stack.Screen
+        component={AdminJobDetails}
+        name={'AdminJobDetails'}
+        options={{
+          headerShown: true,
+          title: 'Jobs Details',
           headerBackVisible: true,
           headerBackTitle: 'Back',
         }}

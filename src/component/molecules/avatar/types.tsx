@@ -3,6 +3,6 @@ export type AvatarProps = {
   title?: string;
   uri?: string;
   onPress?:()=>void;
-  testIds:{uploadImage:string;}
+  testIds?:{uploadImage:string;}
   isView:boolean;
 };
