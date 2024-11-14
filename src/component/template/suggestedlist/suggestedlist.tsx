@@ -25,7 +25,6 @@ const SuggestedList = () => {
       return {usrId};
     }, [usrId]),
   );
- 
   const renderItem: ListRenderItem<JobIdList> = useCallback(
     ({item}: ListRenderItemInfo<any>) => {
 

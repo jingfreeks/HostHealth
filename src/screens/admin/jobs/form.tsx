@@ -67,7 +67,6 @@ const Form = (props: RoutesProps) => {
     setUri(image);
     formMethod.setValue('id', _id);
   }, [
-    image,
     company,
     jobtitle,
     department,

@@ -49,7 +49,7 @@ const SuggestedCardScreen = (props: SuggestedCardProps) => {
   const usrId = useSelector(selectCurrentUserId)?.toString();
   const [postBookmarkingJobs, {isLoading}] = usePostBookmarkingJobsMutation();
   const {handlesubmit} = UseSuggestedCardHooks();
-
+  console.log('data',data)
   const handleBookMarking = async () => {
     try {
       const response = await postBookmarkingJobs({
@@ -59,8 +59,6 @@ const SuggestedCardScreen = (props: SuggestedCardProps) => {
       if(response){
         setBookmarking(!bookmark)
       }
-   
-      console.log('response', response);
     } catch (err) {
       console.log('error', err);
     }
@@ -105,7 +103,7 @@ const SuggestedCardScreen = (props: SuggestedCardProps) => {
         <JobInfoContainerStyled>
           <JobInfoTextContainerStyled>
             <Text TextMode="Ptitle">{data?.jobtitle}</Text>
-            <JobTextSubTitleStyled>{data?.compname}</JobTextSubTitleStyled>
+            <JobTextSubTitleStyled>{data?.companyinfo?.name}</JobTextSubTitleStyled>
           </JobInfoTextContainerStyled>
           <MatchContainersStyled>
             <MatchTextStyled>{data?.match}</MatchTextStyled>
@@ -122,7 +120,7 @@ const SuggestedCardScreen = (props: SuggestedCardProps) => {
               source={StethoscopeIcon}
             />
           </DeptImageContainerStyled>
-          <DeptTitleTextStyled>{data?.deptname}</DeptTitleTextStyled>
+          <DeptTitleTextStyled>{data?.departmentinfo?.name}</DeptTitleTextStyled>
         </DeptContainerStyled>
         <WeeksContaienrStyled>
           <DeptImageContainerStyled>
@@ -142,7 +140,7 @@ const SuggestedCardScreen = (props: SuggestedCardProps) => {
               source={SunICon}
             />
           </DeptImageContainerStyled>
-          <DeptTitleTextStyled>{data?.shiftname}</DeptTitleTextStyled>
+          <DeptTitleTextStyled>{data?.shiftinfo?.title}</DeptTitleTextStyled>
         </ShiftContainerStyled>
         <EstimatedContainerStyled>
           <EstimatedTextStyled>Estimated</EstimatedTextStyled>

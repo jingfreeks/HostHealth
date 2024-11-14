@@ -12,7 +12,7 @@ const AvatarScreen = (props: AvatarProps) => {
     title = 'LW',
     uri = 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
     onPress=()=>{},
-    testIds,
+    testIds={uploadImage:''},
     isView = true,
   } = props;
   return (
@@ -29,7 +29,7 @@ const AvatarScreen = (props: AvatarProps) => {
       />
       {isView && (
         <BrowseButtonStyled
-          {...testingProps(testIds?.uploadImage)}
+          {...testingProps(testIds.uploadImage)}
           onPress={onPress}>
           <IconIonic color={colors.gray} name={'camera'} size={25} />
         </BrowseButtonStyled>

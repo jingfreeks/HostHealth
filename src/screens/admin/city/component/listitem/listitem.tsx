@@ -29,7 +29,7 @@ const ListItem = (props: {item: any}) => {
           {item?.name}
         </Text>
         <Text numberOfLines={1} TextMode="Htitle">
-          {item?.statename}
+          {item?.statename?.name}
         </Text>
         <Text>United State Of America</Text>
       </InfoContainerStyled>

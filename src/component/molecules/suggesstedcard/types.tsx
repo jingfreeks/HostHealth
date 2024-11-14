@@ -1,7 +1,10 @@
 export type SuggestedCardProps = {
   data: SuggestedCardDetailsProps;
 };
-
+type companyInfo={
+  address?:string;
+  name?:string;
+}
 export type SuggestedCardDetailsProps = {
   image?: string;
   cityname?: string;
@@ -17,5 +20,8 @@ export type SuggestedCardDetailsProps = {
   joborderno?: string;
   id?: number;
   bookmark: boolean;
+  companyinfo:companyInfo;
+  departmentinfo:{name?:string};
+  shiftinfo:{title?:string};
   _id: string;
 };
