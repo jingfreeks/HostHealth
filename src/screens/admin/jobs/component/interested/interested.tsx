@@ -15,7 +15,6 @@ const InterestedScreen=(props:interestedProps)=>{
       );
     return(
         <ContainerStyled>
-         <Text>Test</Text>
         <FlatList
           data={data}
           extraData={data}

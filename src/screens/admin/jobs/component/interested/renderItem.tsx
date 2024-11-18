@@ -1,21 +1,23 @@
 import React from 'react';
 import {interestedTypes} from './types';
-import {Text} from '@/component'
+import {Text} from '@/component';
 import {Avatar} from '@/component/molecules';
+import {
+  RenderItemContainerStyled,
+  ListItemInterestedInfoStyled,
+} from './styles';
 
 const RenderItem = (props: {item: interestedTypes}) => {
   const {item} = props;
   return (
-    <>
-      <Avatar
-        isView={false}
-        uri={item.picture}
-        size={100}
-      />
-      <Text>{item.firstname}</Text>
-      <Text>{item.lastname}</Text>
-      <Text>{item.middlename}</Text>
-    </>
+    <RenderItemContainerStyled>
+      <Avatar isView={false} uri={item.picture} size={100} />
+      <ListItemInterestedInfoStyled>
+        <Text TextMode='Title'>{`${item.firstname} `}</Text>
+        <Text TextMode='Title'>{`${item.lastname} `}</Text>
+        <Text TextMode='Title'>{item.middlename}</Text>
+      </ListItemInterestedInfoStyled>
+    </RenderItemContainerStyled>
   );
 };
 export default RenderItem;

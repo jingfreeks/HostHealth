@@ -49,7 +49,6 @@ const SuggestedCardScreen = (props: SuggestedCardProps) => {
   const usrId = useSelector(selectCurrentUserId)?.toString();
   const [postBookmarkingJobs, {isLoading}] = usePostBookmarkingJobsMutation();
   const {handlesubmit} = UseSuggestedCardHooks();
-  console.log('data',data)
   const handleBookMarking = async () => {
     try {
       const response = await postBookmarkingJobs({

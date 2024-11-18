@@ -7,3 +7,14 @@ export const ContainerStyled = styled.View`
   flex-direction: row;
   align-items: center;
 `;
+
+export const RenderItemContainerStyled=styled.View`
+  flex:1;
+  flex-direction:row;
+  align-items:center
+  padding:20px;
+`
+export const ListItemInterestedInfoStyled=styled.View`
+  margin-left:10px;
+  flex-direction:row;
+`
