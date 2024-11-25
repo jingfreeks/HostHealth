@@ -19,7 +19,11 @@ export {
   useGetCityJobsQuery,
   useAddJobsMutation,
   useUpdateJobsMutation,
-  useDeleteJobsMutation
+  useDeleteJobsMutation,
+  useGetSkillsQuery,
+  useAddSkillsMutation,
+  useUpdateSkillsMutation,
+  useDeleteSkillsMutation,
 } from './admin';
 
 export {
