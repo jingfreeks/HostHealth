@@ -26,8 +26,8 @@ export const message = {
   100025: 'Image should be required',
   100026: 'Job title should be required',
   100027: 'Salary range should be required',
-  100028: '',
-  100029: '',
+  100028: 'Skill Name should be required',
+  100029: 'No Skills matches your preferred locations',
   100030: '',
   100031: '',
   100032: '',
@@ -46,4 +46,5 @@ export const TagTypes = [
   'Banks',
   'BankInfo',
   'CityJobs',
+  'Skill',
 ];

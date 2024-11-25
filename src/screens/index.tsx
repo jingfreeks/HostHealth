@@ -2,10 +2,10 @@ export {Welcome} from '@/screens/welcome';
 export {Login} from '@/screens/login';
 export {Signup} from '@/screens/signup';
 export {HomeScreen} from '@/screens/home';
-export {Pcities,CityJobsList} from '@/screens/pcities';
+export {Pcities, CityJobsList} from '@/screens/pcities';
 export {MyJobs} from '@/screens/myjobs';
 export {JobsDetails} from '@/screens/jobdetails';
-export {Profile,ProfileDetails,ProfileBankInfo} from '@/screens/profile';
+export {Profile, ProfileDetails, ProfileBankInfo} from '@/screens/profile';
 export {OnBoardingProfile, OnBoardingBankInfo} from '@/screens/onboarding';
 export {
   City,
@@ -22,5 +22,7 @@ export {
   BankForm,
   Jobs,
   JobsForm,
-  AdminJobDetails
+  AdminJobDetails,
+  Skills,
+  SkillsForm,
 } from '@/screens/admin';

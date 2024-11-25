@@ -4,7 +4,7 @@ type BankForm = {
   _id: string;
 };
 
-type JobsDetails={
+type JobsDetails = {
   image?: string;
   city?: string;
   state?: string;
@@ -21,20 +21,20 @@ type JobsDetails={
   jobId?: string;
   status?: string;
   _id?: string;
-}
+};
 
-type JobsInfoProps={
+type JobsInfoProps = {
   image: string;
   cityname?: string;
   statename?: string;
   jobtitle: string;
   compname?: string;
-  company:string;
+  company: string;
   deptname?: string;
-  department:string;
+  department: string;
   weeks?: string;
   shiftname?: string;
-  shift:string;
+  shift: string;
   match?: string;
   salaryrange: string;
   address?: string;
@@ -42,9 +42,9 @@ type JobsInfoProps={
   id?: number;
   bookmark: boolean;
   _id: string;
-  city:string;
-  cityId:string;
-}
+  city: string;
+  cityId: string;
+};
 export type RootNavigationProps = {
   BottomTab: undefined;
   app: undefined;
@@ -53,7 +53,7 @@ export type RootNavigationProps = {
   Welcome: undefined;
   auth: undefined;
   JobsDetails: undefined;
-  AdminJobDetails:{adminJobDetail:JobsDetails};
+  AdminJobDetails: {adminJobDetail: JobsDetails};
   Home: undefined;
   Search: undefined;
   MyJob: undefined;
@@ -67,6 +67,7 @@ export type RootNavigationProps = {
   ShiftForm: undefined;
   CompanyForm: undefined;
   BankForm?: BankForm;
+  SkillsForm?: {name: string};
   JobsForm?: JobsInfoProps;
   ProfileDetails: undefined;
   ProfileBankInfo: undefined;
@@ -94,7 +95,7 @@ export type AppNavigationProps = {
       _id?: string;
     };
   };
-  AdminJobDetails:{
+  AdminJobDetails: {
     adminJobDetail: {
       image?: string;
       city?: string;
@@ -132,6 +133,7 @@ export type AppNavigationProps = {
     title: string;
     _id: string;
   };
+  SkillsForm?: {name: string; _id: string};
   CompanyForm: {
     address: string;
     name: string;
