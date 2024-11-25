@@ -1,0 +1,1 @@
+export {default as OnBoardingSkills} from './skills'

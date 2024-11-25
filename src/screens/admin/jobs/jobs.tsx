@@ -20,7 +20,6 @@ const Jobs = () => {
     },
     [],
   );
-
   if (jobLoading || jobIsError ) {
     let messages;
     if (jobsError?.status === 403) {
