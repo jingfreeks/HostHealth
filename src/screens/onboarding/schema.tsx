@@ -1,5 +1,6 @@
 import * as yup from 'yup';
 import {message} from '@/config/constant'
+
 export const ProfileSchema = yup
   .object({
     firstName: yup.string().required(message[100016]),
